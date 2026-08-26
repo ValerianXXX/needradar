@@ -1,0 +1,27 @@
+name: Method or code issue
+description: Report a reproducible problem in the public portfolio edition.
+title: "[Issue] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, personal data, or private source content.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is incorrect or not reproducible?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproduction or evidence
+      description: Provide the minimum safe information needed to verify the issue.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+

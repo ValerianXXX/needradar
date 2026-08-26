@@ -1,0 +1,16 @@
+{
+  "name": "needradar-portfolio",
+  "version": "3.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A curated, English-only portfolio edition of NeedRadar's evidence and publication policy.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check:english": "node scripts/check-english.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run check:english && npm test"
+  }
+}
+

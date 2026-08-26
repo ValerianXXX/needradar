@@ -1,0 +1,27 @@
+name: Opportunity-method proposal
+description: Propose a change to the evidence model or decision method.
+title: "[Method] "
+labels: [method]
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision problem
+      description: Which decision would this change improve?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and counterevidence
+      description: State what supports the change and what may disconfirm it.
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk and human ownership
+      description: Which decisions should remain accountable to a person?
+    validations:
+      required: true
+

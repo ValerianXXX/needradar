@@ -1,0 +1,4 @@
+*.pptx binary
+*.png binary
+* text=auto eol=lf
+
