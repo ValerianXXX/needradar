@@ -73,6 +73,18 @@ The public card is a decision object, not a scraped-post summary. It separates:
 
 My role covered product framing, evidence architecture, governance design, operating-model definition, implementation, quality controls, and portfolio communication.
 
+## Evidence-to-execution ecosystem
+
+NeedRadar now acts as the portfolio's opportunity-intelligence front door without becoming a shared runtime dependency:
+
+1. NeedRadar exports a governed `OPPORTUNITY_HANDOFF_V1` decision object.
+2. [AI Skill Product Discovery](https://github.com/ValerianXXX/ai-skill-product-discovery) can evaluate the general-AI substitute, critical-data gap, authoritative sources, narrow scope, and human gates.
+3. [BillFit](https://github.com/ValerianXXX/billfit) remains a bounded reference implementation; it is not attached to a current NeedRadar card without a semantic-fit review.
+4. [From Feed to Agent](https://github.com/ValerianXXX/from-feed-to-agent) contributes evidence-handoff and provenance patterns as one research artifact.
+5. [JobFlow](https://github.com/ValerianXXX/JobFlow) applies evidence, approval, privacy, and external-action controls without sharing private workflow data.
+
+The public registry is in [data/project-registry.json](data/project-registry.json), and the contracts are in [schemas](schemas). See [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md) for relationship semantics and the non-circular evidence policy.
+
 ## Representative policy code
 
 This public repository is a **curated portfolio edition**, not a deployment mirror. It intentionally excludes production secrets, operational databases, personal data, and private administrative surfaces. It includes representative, runnable policy logic:
@@ -113,10 +125,12 @@ See [docs/PORTFOLIO_CLAIMS.md](docs/PORTFOLIO_CLAIMS.md) for interview-safe word
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | System layers and information flow |
 | [docs/EVIDENCE_MODEL.md](docs/EVIDENCE_MODEL.md) | Evidence levels and interpretation rules |
 | [docs/GOVERNANCE.md](docs/GOVERNANCE.md) | Decision rights, risks, and controls |
+| [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md) | Project relationships, handoff contract, and runtime boundaries |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Proposed 90-day discovery and pilot plan |
 | [portfolio](portfolio) | Recruiter-ready presentation artifact |
 | [src](src) | Representative policy implementation |
 | [tests](tests) | Executable policy checks |
+| [schemas](schemas) | Machine-readable opportunity and project connection contracts |
 
 ## Interview summary
 
@@ -125,4 +139,3 @@ See [docs/PORTFOLIO_CLAIMS.md](docs/PORTFOLIO_CLAIMS.md) for interview-safe word
 ## License and data boundary
 
 The representative code and original documentation in this repository use the MIT License. Third-party observations remain governed by their original source terms and are not relicensed here. This repository contains no operational dataset or personal data.
-

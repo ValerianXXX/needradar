@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-08-27",
+  "scope": "personal-public-portfolio",
+  "runtimePolicy": "Connections are metadata-only unless a downstream project explicitly adopts the handoff contract.",
+  "evidencePolicy": "First-party repository activity cannot independently validate market demand.",
+  "projects": [
+    {
+      "id": "needradar",
+      "name": "NeedRadar",
+      "repositoryUrl": "https://github.com/ValerianXXX/needradar",
+      "liveUrl": "https://needradar-ai.xusihan615.chatgpt.site",
+      "stage": "DISCOVER_AND_GOVERN",
+      "relationship": "SYSTEM_OF_RECORD",
+      "connectionState": "LIVE",
+      "accepts": ["GOVERNED_PUBLIC_SIGNAL"],
+      "emits": ["OPPORTUNITY_HANDOFF_V1"],
+      "runtimeDependency": false,
+      "evidenceBoundary": "A published brief is a governed repeated signal, not customer adoption or product-market fit."
+    },
+    {
+      "id": "ai-skill-product-discovery",
+      "name": "AI Skill Product Discovery",
+      "repositoryUrl": "https://github.com/ValerianXXX/ai-skill-product-discovery",
+      "stage": "EVALUATE_AND_PRIORITIZE",
+      "relationship": "VALIDATION_METHOD",
+      "connectionState": "MANUAL_HANDOFF_READY",
+      "accepts": ["OPPORTUNITY_HANDOFF_V1"],
+      "emits": ["CASE_DECISION_RECORD"],
+      "runtimeDependency": false,
+      "evidenceBoundary": "Selection, rejection, and deferral remain explicit research decisions; a score does not prove demand."
+    },
+    {
+      "id": "billfit",
+      "name": "BillFit",
+      "repositoryUrl": "https://github.com/ValerianXXX/billfit",
+      "stage": "BUILD_BOUNDED_PRODUCT",
+      "relationship": "REFERENCE_IMPLEMENTATION",
+      "connectionState": "DOCUMENTED_NO_RUNTIME_LINK",
+      "accepts": [],
+      "emits": ["PUBLIC_ENGINEERING_STATUS"],
+      "runtimeDependency": false,
+      "evidenceBoundary": "Engineering validation and a public release do not establish adoption, savings, or market demand."
+    },
+    {
+      "id": "from-feed-to-agent",
+      "name": "From Feed to Agent",
+      "repositoryUrl": "https://github.com/ValerianXXX/from-feed-to-agent",
+      "liveUrl": "https://valerianxxx.github.io/from-feed-to-agent/",
+      "stage": "CROSS_CUTTING_RESEARCH_METHOD",
+      "relationship": "METHOD_INPUT",
+      "connectionState": "DOCUMENTED_NO_RUNTIME_LINK",
+      "accepts": [],
+      "emits": ["PUBLIC_AGGREGATE_RESEARCH_ARTIFACT"],
+      "runtimeDependency": false,
+      "evidenceBoundary": "The study is one research artifact; its rows or respondents are never inflated into independent NeedRadar observations."
+    },
+    {
+      "id": "jobflow",
+      "name": "JobFlow",
+      "repositoryUrl": "https://github.com/ValerianXXX/JobFlow",
+      "stage": "OPERATIONALIZE_GOVERNED_WORKFLOW",
+      "relationship": "APPLIES_PATTERN",
+      "connectionState": "DOCUMENTED_NO_RUNTIME_LINK",
+      "accepts": [],
+      "emits": ["SANITIZED_PUBLIC_CAPABILITY_STATUS"],
+      "runtimeDependency": false,
+      "evidenceBoundary": "Private profiles, resumes, application state, secure references, and external-action records never enter NeedRadar."
+    }
+  ]
+}

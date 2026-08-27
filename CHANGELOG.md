@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.0 — 2026-08-27
+
+- Added an English-only public project registry for the five personal portfolio projects.
+- Added Opportunity Handoff v1 and Project Connection v1 JSON Schemas.
+- Documented the evidence-to-execution portfolio architecture and non-circular validation policy.
+- Added executable checks for project scope, runtime independence, and evidence boundaries.
+
 ## 3.1.0 — 2026-08-26
 
 - Rebuilt the public repository as an English-only AI strategy portfolio edition.
@@ -7,4 +14,3 @@
 - Added runnable evidence, similarity, and publication-policy examples.
 - Added an English-only repository check to continuous integration.
 - Documented the production snapshot and the boundary between system output and market validation.
-

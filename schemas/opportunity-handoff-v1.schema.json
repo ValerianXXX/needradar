@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ValerianXXX/needradar/main/schemas/opportunity-handoff-v1.schema.json",
+  "title": "NeedRadar Opportunity Handoff v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schemaVersion", "exportedAt", "source", "opportunity", "evidenceRefs", "relatedProjects", "availableConnections", "nextDecision", "claimBoundary"],
+  "properties": {
+    "schema": { "type": "string", "format": "uri" },
+    "schemaVersion": { "const": "1.0.0" },
+    "exportedAt": { "type": "string", "format": "date-time" },
+    "source": {
+      "type": "object",
+      "required": ["system", "opportunityUrl", "apiUrl"],
+      "properties": {
+        "system": { "const": "NeedRadar" },
+        "opportunityUrl": { "type": "string", "format": "uri" },
+        "apiUrl": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "opportunity": {
+      "type": "object",
+      "required": ["id", "slug", "title", "persona", "domain", "jobToBeDone", "trigger", "currentWorkflow", "desiredOutcome", "aiPath", "humanGates", "counterEvidence", "unknowns", "validation"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "persona": { "type": "string" },
+        "domain": { "type": "string" },
+        "jobToBeDone": { "type": "string" },
+        "trigger": { "type": "string" },
+        "currentWorkflow": { "type": "string" },
+        "desiredOutcome": { "type": "string" },
+        "aiPath": { "type": "array", "items": { "type": "string" } },
+        "humanGates": { "type": "array", "items": { "type": "string" } },
+        "counterEvidence": { "type": "array", "items": { "type": "string" } },
+        "unknowns": { "type": "array", "items": { "type": "string" } },
+        "validation": {
+          "type": "object",
+          "required": ["level", "label", "evidenceCount", "sourcePolicyCount", "independentAuthorGroupCount"],
+          "properties": {
+            "level": { "type": "integer", "minimum": 0, "maximum": 8 },
+            "label": { "type": "string" },
+            "evidenceCount": { "type": "integer", "minimum": 0 },
+            "sourcePolicyCount": { "type": "integer", "minimum": 0 },
+            "independentAuthorGroupCount": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sourcePolicyId", "sourceName", "sourceUrl", "observedAt", "accessStatus", "contentLicense"],
+        "properties": {
+          "id": { "type": "string" },
+          "sourcePolicyId": { "type": ["string", "null"] },
+          "sourceName": { "type": "string" },
+          "sourceUrl": { "type": ["string", "null"], "format": "uri" },
+          "observedAt": { "type": "string" },
+          "accessStatus": { "type": "string" },
+          "contentLicense": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relatedProjects": { "type": "array", "items": { "type": "object" } },
+    "availableConnections": { "type": "array", "items": { "type": "object" } },
+    "nextDecision": {
+      "type": "object",
+      "required": ["action", "manualReviewRequired", "issueTemplateUrl"],
+      "properties": {
+        "action": { "const": "RUN_GENERAL_AI_SUBSTITUTE_AND_CRITICAL_DATA_GAP_TESTS" },
+        "manualReviewRequired": { "const": true },
+        "issueTemplateUrl": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "claimBoundary": {
+      "type": "object",
+      "required": ["publicSignalIsMarketValidation", "repositoryExistenceValidatesDemand", "manualResearchDecisionRequired"],
+      "properties": {
+        "publicSignalIsMarketValidation": { "const": false },
+        "repositoryExistenceValidatesDemand": { "const": false },
+        "manualResearchDecisionRequired": { "const": true }
+      },
+      "additionalProperties": false
+    }
+  }
+}
