@@ -14,6 +14,15 @@ const sample = cases[0].left;
 const observation = (evidenceKey, extra = {}) => ({ evidenceKey, authorGroup: `author-${evidenceKey}`, sourcePolicy: `policy-${evidenceKey}`,
   sourceAccessible: true, containsPersonalData: false, rightsApproved: true, ...extra });
 
+test('missing text cannot become a literal null persona or task match', async () => {
+  assert.deepEqual(tokenize(null), []);
+  for (const field of ['persona', 'jobToBeDone']) {
+    const missing = { ...sample, [field]: null };
+    assert.equal(findLikelyDuplicate(missing, [missing]).duplicate, false);
+    assert.equal((await reviewDuplicates(missing, [missing])).requiresReview, true);
+  }
+});
+
 test('Chinese survives normalization and exact text deduplicates across evidence keys', () => {
   const zh = cases.find((row) => row.id === 'same-chinese');
   assert.ok(tokenize(zh.left.jobToBeDone).length > 1);

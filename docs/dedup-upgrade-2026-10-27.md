@@ -18,6 +18,7 @@ it has **not** been deployed. No private source or operational data is included 
 ## Implementation
 
 - Unicode segmentation and Han bigrams retain multilingual text.
+- Null text remains missing; two absent personas/tasks cannot establish exact identity.
 - Identity scores exclude corroboration. Exact task/persona/outcome and compatible
   structured constraints may suppress a duplicate proposal. Other pairs require
   grounded semantic or human review; low lexical overlap is not proof of novelty.
@@ -103,7 +104,7 @@ Checked 27 October 2026: [Structured Outputs](https://developers.openai.com/api/
 Decisions and Terra remain candidates: no direct account availability or comparative
 benefit was established, so no production dependency or model switch was introduced.
 
-Validation: 19 public tests and the unchanged English-only check pass. The hosted
+Validation: 20 public tests and the unchanged English-only check pass. The hosted
 source has a separate baseline and adaptation validation record, retained privately.
 Source integration, scheduling, authenticated reviewer controls, persistence and a
 production observation sample still require validation in that deployment.

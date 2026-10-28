@@ -1,7 +1,7 @@
 const STOP_WORDS = new Set(['a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'in', 'into',
   'is', 'it', 'of', 'on', 'or', 'that', 'the', 'their', 'this', 'to', 'with']);
 const segmenter = new Intl.Segmenter('und', { granularity: 'word' });
-const normalize = (value = '') => String(value).normalize('NFKC').toLowerCase().replace(/\s+/gu, ' ').trim();
+const normalize = (value = '') => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/gu, ' ').trim();
 
 export function tokenize(value = '') {
   const normalized = normalize(value);
