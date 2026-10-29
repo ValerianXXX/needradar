@@ -1,0 +1,25 @@
+{
+  "protocol": "NEEDRADAR_LOCAL_ENCODER_V1",
+  "model": "intfloat/multilingual-e5-small",
+  "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "license": "MIT",
+  "verifiedAt": "2026-10-29",
+  "modelCard": "https://huggingface.co/intfloat/multilingual-e5-small",
+  "dimensions": 384,
+  "maxTokens": 512,
+  "inputFormat": "NEEDRADAR_OPPORTUNITY_IDENTITY_TEXT_V1",
+  "prefix": "query: ",
+  "pooling": "attention-mask mean then L2 normalization",
+  "files": {
+    "model_qint8_avx512_vnni.onnx": {
+      "path": "onnx/model_qint8_avx512_vnni.onnx",
+      "bytes": 118346824,
+      "sha256": "dd476dd0c2514e9b9be83aeb3853fac0763e0bdf4a71645407587d77c48a2d88"
+    },
+    "tokenizer.json": {
+      "path": "onnx/tokenizer.json",
+      "bytes": 17082730,
+      "sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+    }
+  }
+}
