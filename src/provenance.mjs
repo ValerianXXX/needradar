@@ -4,7 +4,9 @@ export function canonicalEvidenceUrl(value) {
   try {
     const url = new URL(value);
     if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return null;
-    url.hash = '';
+    // An anchor may identify a different forum comment. Only a source adapter
+    // with evidence about that site's semantics may supply a fragment-free
+    // canonicalUrl; generic normalization must not collapse those authors.
     for (const key of [...url.searchParams.keys()]) {
       if (/^(utm_|fbclid$|gclid$)/iu.test(key)) url.searchParams.delete(key);
     }
@@ -24,6 +26,30 @@ function keys(item) {
   }
   if (typeof item.contentHash === 'string' && /^sha256:[0-9a-f]{64}$/u.test(item.contentHash)) result.push(item.contentHash);
   return result;
+}
+
+function referencedOrigins(item) {
+  const refs = [];
+  for (const field of ['repostOf', 'originKey']) {
+    if (typeof item[field] === 'string' && item[field].trim() && item[field] !== item.evidenceKey) refs.push(`origin:${item[field].trim()}`);
+  }
+  const originalUrl = canonicalEvidenceUrl(item.originalUrl);
+  if (originalUrl) refs.push(`url:${originalUrl}`);
+  return refs;
+}
+
+function chooseOriginal(items) {
+  const originals = items.filter(item => !item.repostOf && !item.originalUrl);
+  const references = new Set(items.flatMap(referencedOrigins));
+  const anchored = originals.filter(item => keys(item).some(key => references.has(key)));
+  const candidates = anchored.length ? anchored : originals;
+  const conflicting = ['authorGroup', 'originGroup'].some(field => new Set(candidates.map(item => item[field]).filter(Boolean)).size > 1);
+  const stable = [...(candidates.length ? candidates : items)].sort((a, b) => {
+    const aKey = JSON.stringify([!a.originGroup, !a.authorGroup, keys(a).sort(), a.sourcePolicy ?? '', a.authorGroup ?? '']);
+    const bKey = JSON.stringify([!b.originGroup, !b.authorGroup, keys(b).sort(), b.sourcePolicy ?? '', b.authorGroup ?? '']);
+    return aKey < bKey ? -1 : aKey > bKey ? 1 : 0;
+  });
+  return { original: stable[0], unresolvedRepost: !originals.length, conflicting };
 }
 
 export function groupEvidence(observations = []) {
@@ -46,13 +72,17 @@ export function groupEvidence(observations = []) {
   });
   return [...groups.values()].map((items) => {
     const identityKeys = [...new Set(items.flatMap(keys))].sort();
-    // Prefer the explicitly referenced original. A repost is not a new author/source.
-    const original = items.find((item) => !item.repostOf && !item.originalUrl) ?? items[0];
-    const unresolvedRepost = items.every((item) => item.repostOf || item.originalUrl);
+    const { original, unresolvedRepost, conflicting } = chooseOriginal(items);
+    const independenceReasons = [
+      ...(!identityKeys.length ? ['MISSING_IDENTITY'] : []),
+      ...(unresolvedRepost ? ['UNRESOLVED_REPOST'] : []),
+      ...(conflicting ? ['CONFLICTING_ORIGINAL_PROVENANCE'] : []),
+      ...(!original.authorGroup && !original.originGroup ? ['MISSING_ORIGIN_ATTRIBUTION'] : []),
+    ];
     return {
       id: createHash('sha256').update(JSON.stringify(identityKeys)).digest('hex'),
       identityKeys, observations: items, original,
-      independenceKnown: identityKeys.length > 0 && !unresolvedRepost && Boolean(original.authorGroup || original.originGroup),
+      independenceKnown: independenceReasons.length === 0, independenceReasons,
       duplicateCaptures: items.length - 1,
     };
   });
@@ -61,10 +91,12 @@ export function groupEvidence(observations = []) {
 export function evidenceSummary(observations = []) {
   const groups = groupEvidence(observations);
   const independent = groups.filter((group) => group.independenceKnown);
+  const independentOriginIds = [...new Set(independent.map(group => createHash('sha256')
+    .update(String(group.original.originGroup || group.original.authorGroup)).digest('hex')))].sort();
   return {
     groups, captureCount: observations.length, uniqueEvidenceCount: groups.length,
     duplicateCaptures: observations.length - groups.length,
-    independentEvidenceCount: new Set(independent.map((group) => group.original.originGroup || group.original.authorGroup)).size,
+    independentEvidenceCount: independentOriginIds.length, independentOriginIds,
     independentAuthorGroups: new Set(independent.map((group) => group.original.authorGroup).filter(Boolean)).size,
     sourcePolicies: new Set(independent.map((group) => group.original.sourcePolicy).filter(Boolean)).size,
     unresolvedProvenanceCount: groups.filter((group) => !group.independenceKnown).length,

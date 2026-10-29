@@ -1,0 +1,13 @@
+{
+  "protocol": "BOUNDARY_PILOT_V1",
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "syntheticOnly": true,
+  "selectedBeforeResponses": true,
+  "maxModelCalls": 12,
+  "selectionRule": "First and seventh development domains plus first held-out domain, four ambiguous categories each; six same and six different. Authored fixtures, not an independent blind evaluation.",
+  "selectedIds": [
+    "invoice--cross_language", "invoice--low_overlap", "invoice--same_persona_different_task", "invoice--nearby_distinct",
+    "support--cross_language", "support--low_overlap", "support--same_persona_different_task", "support--nearby_distinct",
+    "research--cross_language", "research--low_overlap", "research--same_persona_different_task", "research--nearby_distinct"
+  ]
+}
