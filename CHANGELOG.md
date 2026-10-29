@@ -13,6 +13,7 @@
   expose deterministic freshness review states without an uncalibrated demand score.
 - Add 140 fixed synthetic pairs, scale observations and a 12-request real Hermes pilot.
   Record unresolved large-corpus retrieval and unmeasured token/cost data explicitly.
+- Run the existing quality checks for PRs targeting task branches as well as main.
 
 ## Unreleased - 2026-10-27
 

@@ -156,6 +156,10 @@ Use a fresh output path. Default evaluations and replay make no model calls.
 If npm is unavailable, the complete check is `node scripts/check-english.mjs`
 followed by `node --test tests/*.test.mjs`. Existing Node 24.19.0 was used here;
 the declared Node >=20 compatibility range was not tested as a runtime matrix.
+The existing quality workflow also accepts pull requests targeting `codex/**`
+task branches so stacked PRs receive the same English-only and test checks.
+Previously only `main` targets triggered it. Permissions and checks are unchanged;
+the latest hosted run must be assessed separately from the local receipt.
 
 For an intentional new pilot, configure the existing command adapter as in
 [the earlier guide](dedup-upgrade-2026-10-27.md#run-and-configure), then run:
