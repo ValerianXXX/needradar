@@ -1,0 +1,2896 @@
+{
+  "observedAt": "2026-10-29T22:05:00.079Z",
+  "status": "COMPLETED_OBSERVATION",
+  "syntheticOnly": true,
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "sourceLFHashes": {
+    "src/local-encoder.mjs": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+    "scripts/local-embed.py": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+    "src/embedding-contract.mjs": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+    "src/semantic-retrieval.mjs": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1",
+    "scripts/evaluate-local-reversal.mjs": "9b4ad8d639cf66651c1851a8feec25d1000b348d85b5f7470dd59d4a25b901d0"
+  },
+  "encoding": [
+    {
+      "reverse": false,
+      "corpus": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1022.171,
+        "inferenceMs": 495.964,
+        "memory": {
+          "rssBytes": 465629184,
+          "peakRssBytes": 467001344,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 40,
+        "elapsedMs": 2131.3235
+      },
+      "queries": {
+        "encoded": 0,
+        "cloudRequests": 0,
+        "batches": 0,
+        "runtime": null,
+        "provider": null,
+        "startupMs": 0,
+        "inferenceMs": 0,
+        "reusedInputs": 140,
+        "elapsedMs": 0.2531000000003587
+      }
+    },
+    {
+      "reverse": true,
+      "corpus": {
+        "encoded": 0,
+        "cloudRequests": 0,
+        "batches": 0,
+        "runtime": null,
+        "provider": null,
+        "startupMs": 0,
+        "inferenceMs": 0,
+        "reusedInputs": 140,
+        "elapsedMs": 0.16160000000036234
+      },
+      "queries": {
+        "encoded": 0,
+        "cloudRequests": 0,
+        "batches": 0,
+        "runtime": null,
+        "provider": null,
+        "startupMs": 0,
+        "inferenceMs": 0,
+        "reusedInputs": 140,
+        "elapsedMs": 0.1768000000001848
+      }
+    }
+  ],
+  "summary": {
+    "forward": {
+      "pairs": 140,
+      "duplicateTargetMisses": 0,
+      "allPairedTargetMisses": 0,
+      "repeatDisagreements": 0,
+      "inputOrderDisagreements": 0
+    },
+    "reverse": {
+      "pairs": 140,
+      "duplicateTargetMisses": 0,
+      "allPairedTargetMisses": 0,
+      "repeatDisagreements": 0,
+      "inputOrderDisagreements": 0
+    }
+  },
+  "observations": [
+    {
+      "id": "invoice--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 13,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 19,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 22,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 17,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 18,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 8,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 17,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": false,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": false,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "invoice--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "clinic--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "school--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "property--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "freight--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "nonprofit--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "support--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "insurance--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "procurement--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "expenses--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "retail--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--different_evidence",
+      "category": "different_evidence",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--cross_language",
+      "category": "cross_language",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--low_overlap",
+      "category": "low_overlap",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "development",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "equipment--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "development",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "research--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "shipment--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "laboratory--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "software--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 3,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 12,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "museum--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 10,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "utilities--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 2,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 11,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "recruiting--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 7,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--different_evidence",
+      "category": "different_evidence",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 1,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--cross_language",
+      "category": "cross_language",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--low_overlap",
+      "category": "low_overlap",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--same_persona_different_task",
+      "category": "same_persona_different_task",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 9,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--same_task_different_constraint",
+      "category": "same_task_different_constraint",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 6,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--repost_same_origin",
+      "category": "repost_same_origin",
+      "split": "held_out",
+      "expected": "same",
+      "reverse": true,
+      "pairedTargetRank": 4,
+      "repeatStable": true,
+      "inputOrderStable": true
+    },
+    {
+      "id": "construction--nearby_distinct",
+      "category": "nearby_distinct",
+      "split": "held_out",
+      "expected": "different",
+      "reverse": true,
+      "pairedTargetRank": 5,
+      "repeatStable": true,
+      "inputOrderStable": true
+    }
+  ],
+  "cloudInferenceRequests": 0,
+  "scope": "Direction tests use separately indexed counterpart corpora; repeat/order checks compare candidate IDs, not transient array positions. No semantic adjudication or independent holdout."
+}

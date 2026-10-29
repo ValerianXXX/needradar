@@ -14,6 +14,7 @@
     "eval:boundaries": "node scripts/evaluate-boundaries.mjs",
     "eval:scale": "node --expose-gc scripts/benchmark-retrieval.mjs",
     "eval:boundary-pilot": "node scripts/evaluate-boundary-pilot.mjs",
+    "eval:local-retrieval": "node --expose-gc scripts/evaluate-local-retrieval.mjs",
     "check": "npm run check:english && npm test"
   }
 }

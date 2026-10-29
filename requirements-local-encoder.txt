@@ -1,0 +1,5 @@
+# Optional isolated CPU encoder. Default Node policy checks need none of these.
+# Verified on Python 3.11.3 / Windows x64; do not upgrade a shared Agent environment.
+numpy==2.4.6
+onnxruntime==1.31.1
+tokenizers==0.23.3

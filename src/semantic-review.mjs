@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { retrieveCandidates } from './similarity.mjs';
 import { timestamp } from './timestamps.mjs';
+import { isSemanticCandidateIndex, retrieveSemanticCandidates } from './semantic-retrieval.mjs';
 
 export const REVIEW_VERSION = 'OPPORTUNITY_PAIR_REVIEW_V1';
 const fields = ['title', 'persona', 'jobToBeDone', 'desiredOutcome', 'constraints'];
@@ -53,11 +54,13 @@ export function validateReview(value, left, right) {
 
 export async function reviewDuplicates(candidate, existing, { reviewer, humanDecisions = [], maxModelCalls = 8, ...retrievalOptions } = {}) {
   if (!Number.isInteger(maxModelCalls) || maxModelCalls < 0 || maxModelCalls > 64) throw new TypeError('INVALID_REVIEW_BUDGET');
-  const retrieval = retrieveCandidates(candidate, existing, retrievalOptions);
+  const retrieval = isSemanticCandidateIndex(existing)
+    ? retrieveSemanticCandidates(candidate, existing, retrievalOptions) : retrieveCandidates(candidate, existing, retrievalOptions);
   const reviews = [];
   let modelCalls = 0;
   for (const row of retrieval.rows) {
-    const common = { index: row.index, pairDigest: pairDigest(candidate, row.existing), lexicalScore: row.score };
+    const common = { index: row.index, pairDigest: pairDigest(candidate, row.existing), lexicalScore: row.score,
+      ...(row.retrievalEvidence ? { retrievalEvidence: row.retrievalEvidence } : {}) };
     // Caller-owned review records must come from authenticated human actions, never model output.
     const human = resolveHumanDecision(candidate, row.existing, humanDecisions);
     if (human?.decision === 'same' && (row.constraints.conflicts.length || row.constraints.missing.length || row.invalidIdentityFields.length)) {

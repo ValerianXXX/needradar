@@ -1,6 +1,7 @@
 import { evaluateEvidenceCluster } from './evidence-policy.mjs';
 import { findLikelyDuplicate } from './similarity.mjs';
 import { reviewDuplicates } from './semantic-review.mjs';
+import { lexicalCandidateIndex } from './semantic-retrieval.mjs';
 
 export function decidePublication(cluster, existingOpportunities, options = {}) {
   const evidence = evaluateEvidenceCluster(cluster, options.rules);
@@ -21,7 +22,7 @@ export function decidePublication(cluster, existingOpportunities, options = {}) 
   };
   const similarity = findLikelyDuplicate(
     candidate,
-    existingOpportunities,
+    lexicalCandidateIndex(existingOpportunities),
     options.similarityThreshold ?? 0.78,
   );
 

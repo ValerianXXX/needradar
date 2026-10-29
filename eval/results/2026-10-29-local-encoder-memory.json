@@ -1,0 +1,133 @@
+{
+  "observedAt": "2026-10-29T22:04:31.070Z",
+  "status": "COMPLETED_OBSERVATION",
+  "syntheticOnly": true,
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "sourceLFHashes": {
+    "src/local-encoder.mjs": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+    "scripts/local-embed.py": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+    "src/embedding-contract.mjs": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+    "scripts/profile-local-encoder.mjs": "c0e732c53c9fbf4f914f66ee5ea83f364c3243cfe2d6a1304517551b0df459a3"
+  },
+  "cloudRequests": 0,
+  "observations": [
+    {
+      "size": 100,
+      "encoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1001.717,
+        "inferenceMs": 475.58899999999994,
+        "memory": {
+          "rssBytes": 465031168,
+          "peakRssBytes": 465997824,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 0,
+        "elapsedMs": 2075.2
+      },
+      "nodeMemoryBefore": {
+        "rss": 64765952,
+        "heapTotal": 10739712,
+        "heapUsed": 5531576,
+        "external": 2502904,
+        "arrayBuffers": 143611
+      },
+      "nodeMemoryAfter": {
+        "rss": 68243456,
+        "heapTotal": 11264000,
+        "heapUsed": 7812032,
+        "external": 2994807,
+        "arrayBuffers": 613323
+      }
+    },
+    {
+      "size": 1000,
+      "encoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1042.681,
+        "inferenceMs": 4639.0999999999985,
+        "memory": {
+          "rssBytes": 469299200,
+          "peakRssBytes": 470032384,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 0,
+        "elapsedMs": 6484.4751
+      },
+      "nodeMemoryBefore": {
+        "rss": 68579328,
+        "heapTotal": 11264000,
+        "heapUsed": 6224936,
+        "external": 2994807,
+        "arrayBuffers": 450818
+      },
+      "nodeMemoryAfter": {
+        "rss": 78417920,
+        "heapTotal": 17342464,
+        "heapUsed": 11649704,
+        "external": 6228902,
+        "arrayBuffers": 3847418
+      }
+    },
+    {
+      "size": 10000,
+      "encoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1057.095,
+        "inferenceMs": 46515.03600000006,
+        "memory": {
+          "rssBytes": 479498240,
+          "peakRssBytes": 480903168,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 0,
+        "elapsedMs": 50211.4651
+      },
+      "nodeMemoryBefore": {
+        "rss": 78835712,
+        "heapTotal": 27828224,
+        "heapUsed": 9941080,
+        "external": 5904309,
+        "arrayBuffers": 3215618
+      },
+      "nodeMemoryAfter": {
+        "rss": 151998464,
+        "heapTotal": 59076608,
+        "heapUsed": 38041616,
+        "external": 35689187,
+        "arrayBuffers": 33307703
+      }
+    }
+  ],
+  "scope": "Separate fresh encoder process per size; Python peak RSS and Node snapshots. Their sum is not a synchronized whole-system peak."
+}
