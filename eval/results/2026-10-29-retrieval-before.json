@@ -1,0 +1,482 @@
+{
+  "observedAt": "2026-10-29T21:03:51.041Z",
+  "syntheticOnly": true,
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "node": "v24.19.0",
+  "commit": "71e30a70623c065ff538ab3ff7225f22b97acd60",
+  "sourceLFHash": "e4727ab22573be07db82de13056ea64e098225cebd3bf77ad8802ecae99ae261",
+  "liveProviderCalls": 0,
+  "explicitGC": true,
+  "concurrentLoad": "JobFlow regression may run on the same host; timings are descriptive, not an isolated speed claim.",
+  "memoryScope": "Process RSS/heap snapshots, not peak memory or per-query allocations.",
+  "measurements": [
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.001,
+      "queryMs": 17.484,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 66510848,
+        "heapTotal": 10739712,
+        "heapUsed": 5548992,
+        "external": 2489031,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 71524352,
+        "heapTotal": 11264000,
+        "heapUsed": 5741576,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.001,
+      "queryMs": 14.069,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 66510848,
+        "heapTotal": 10739712,
+        "heapUsed": 5548992,
+        "external": 2489031,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 72155136,
+        "heapTotal": 11264000,
+        "heapUsed": 5936200,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.001,
+      "queryMs": 16.147,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 66510848,
+        "heapTotal": 10739712,
+        "heapUsed": 5548992,
+        "external": 2489031,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 72564736,
+        "heapTotal": 11264000,
+        "heapUsed": 6101256,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.002,
+      "queryMs": 11.78,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71028736,
+        "heapTotal": 10739712,
+        "heapUsed": 5698480,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 72413184,
+        "heapTotal": 11001856,
+        "heapUsed": 7771528,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.002,
+      "queryMs": 11.883,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71028736,
+        "heapTotal": 10739712,
+        "heapUsed": 5698480,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 72364032,
+        "heapTotal": 11001856,
+        "heapUsed": 7804776,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.002,
+      "queryMs": 13.554,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71028736,
+        "heapTotal": 10739712,
+        "heapUsed": 5698480,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 72769536,
+        "heapTotal": 11001856,
+        "heapUsed": 7862480,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.001,
+      "queryMs": 126.116,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71196672,
+        "heapTotal": 11264000,
+        "heapUsed": 5952528,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 73379840,
+        "heapTotal": 11526144,
+        "heapUsed": 6614024,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.001,
+      "queryMs": 116.094,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71196672,
+        "heapTotal": 11264000,
+        "heapUsed": 5952528,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 80527360,
+        "heapTotal": 16769024,
+        "heapUsed": 9523224,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.001,
+      "queryMs": 108.142,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 71196672,
+        "heapTotal": 11264000,
+        "heapUsed": 5952528,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 81637376,
+        "heapTotal": 16769024,
+        "heapUsed": 10088560,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.001,
+      "queryMs": 114.947,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 77545472,
+        "heapTotal": 16506880,
+        "heapUsed": 6234440,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 80592896,
+        "heapTotal": 16506880,
+        "heapUsed": 10057136,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.001,
+      "queryMs": 110.386,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 77545472,
+        "heapTotal": 16506880,
+        "heapUsed": 6234440,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 80551936,
+        "heapTotal": 16506880,
+        "heapUsed": 9446136,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.001,
+      "queryMs": 127.622,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 77545472,
+        "heapTotal": 16506880,
+        "heapUsed": 6234440,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 81874944,
+        "heapTotal": 17031168,
+        "heapUsed": 8701096,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.001,
+      "queryMs": 1123.905,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 78823424,
+        "heapTotal": 26992640,
+        "heapUsed": 8476264,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 100941824,
+        "heapTotal": 30924800,
+        "heapUsed": 17001040,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.001,
+      "queryMs": 1152.336,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 78823424,
+        "heapTotal": 26992640,
+        "heapUsed": 8476264,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 132886528,
+        "heapTotal": 50847744,
+        "heapUsed": 29963584,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.001,
+      "queryMs": 1119.564,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 78823424,
+        "heapTotal": 26992640,
+        "heapUsed": 8476264,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 136994816,
+        "heapTotal": 54517760,
+        "heapUsed": 33838200,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 0,
+      "buildMs": 0.001,
+      "queryMs": 1091.338,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 120459264,
+        "heapTotal": 52420608,
+        "heapUsed": 11175408,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 139055104,
+        "heapTotal": 52682752,
+        "heapUsed": 29534832,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 1,
+      "buildMs": 0.001,
+      "queryMs": 1158.141,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 120459264,
+        "heapTotal": 52420608,
+        "heapUsed": 11175408,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 189210624,
+        "heapTotal": 87023616,
+        "heapUsed": 29936584,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "indexed": false,
+      "repeat": 2,
+      "buildMs": 0.001,
+      "queryMs": 940.017,
+      "targetRetrieved": false,
+      "selected": 32,
+      "complete": false,
+      "strategy": "UNICODE_LEXICAL",
+      "memoryBefore": {
+        "rss": 120459264,
+        "heapTotal": 52420608,
+        "heapUsed": 11175408,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      },
+      "memoryAfter": {
+        "rss": 197206016,
+        "heapTotal": 90955776,
+        "heapUsed": 29707888,
+        "external": 2483417,
+        "arrayBuffers": 143611
+      }
+    }
+  ]
+}

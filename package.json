@@ -11,6 +11,9 @@
     "check:english": "node scripts/check-english.mjs",
     "test": "node --test tests/*.test.mjs",
     "eval:dedup": "node scripts/evaluate-dedup.mjs",
+    "eval:boundaries": "node scripts/evaluate-boundaries.mjs",
+    "eval:scale": "node --expose-gc scripts/benchmark-retrieval.mjs",
+    "eval:boundary-pilot": "node scripts/evaluate-boundary-pilot.mjs",
     "check": "npm run check:english && npm test"
   }
 }

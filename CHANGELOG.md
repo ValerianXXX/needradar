@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased - 2026-10-29
+
+- Stop title changes and lexical shortlist truncation from hiding exact opportunity identity.
+- Reject coerced identity values and malformed or conflicting review records; retain symmetric,
+  content-bound human decisions without bypassing explicit task constraints.
+- Preserve distinct URL comment anchors, flag conflicting original provenance, and count new
+  evidence correctly when a bridge also joins existing evidence groups.
+- Add immutable in-memory retrieval snapshots, conservative complete-link review clusters,
+  append-only split decisions and explicit historical replay without deleting originals.
+- Keep recapture time, new independent evidence, counterevidence and business validation separate;
+  expose deterministic freshness review states without an uncalibrated demand score.
+- Add 140 fixed synthetic pairs, scale observations and a 12-request real Hermes pilot.
+  Record unresolved large-corpus retrieval and unmeasured token/cost data explicitly.
+- Run the existing quality checks for PRs targeting task branches as well as main.
+
 ## Unreleased - 2026-10-27
 
 - Preserve Chinese text and separate opportunity identity from evidence independence.

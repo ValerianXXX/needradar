@@ -9,14 +9,16 @@ NeedRadar is an evidence-first decision system for finding AI-solvable workflow 
 
 The live product opens in English and includes a persistent Chinese-language switch. This repository and every attached portfolio asset are English-only.
 
-**October 2026 engineering update:** this edition now preserves Chinese text,
-separates duplicate identity from corroboration, and provides optional grounded
-Hermes/Responses review plus reversible human decisions. On 16 fixed synthetic
-pairs, the old policy produced 4 false merges and 5 missed duplicates; the offline
-replacement leaves 9 pairs for review, and one real Hermes round resolved those
-pairs correctly. These are limited engineering results, not market validation.
-The hosted version was checked separately; its adaptation is not deployed.
-See [implementation, comparison, configuration and limits](docs/dedup-upgrade-2026-10-27.md).
+**29 October 2026 code milestone:** the public edition now has immutable retrieval
+snapshots, conservative review clusters, reversible split records, order-independent
+provenance checks and separate source/independent-evidence freshness. A frozen set
+contains 140 synthetic pairs: the offline policy leaves 80 for review. An actual
+12-pair Hermes pilot resolved its selected six duplicates and six distinct tasks;
+the other ambiguous pairs were not model-tested. Large-corpus cross-language and
+low-overlap retrieval still fails the two recorded stress queries. No production
+deployment or market-validation claim follows from these results.
+See [implementation, measured limits and runnable examples](docs/evidence-clusters-2026-10-29.md).
+The [earlier 16-pair comparison](docs/dedup-upgrade-2026-10-27.md) remains historical evidence.
 
 ## Executive answer
 
@@ -43,7 +45,8 @@ Snapshot retrieved from the public production API on **26 August 2026**.
 
 These are production-system counts, **not market-validation metrics**. No customer count, adoption, revenue, savings, ROI, or product-market fit is claimed.
 
-The current snapshot is preserved in [data/production-snapshot.json](data/production-snapshot.json).
+That dated snapshot is preserved in [data/production-snapshot.json](data/production-snapshot.json);
+it is not a current deployment or usage audit.
 
 ## From signal to decision object
 
@@ -103,6 +106,7 @@ This public repository is a **curated portfolio edition**, not a deployment mirr
 - [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
 - [src/provenance.mjs](src/provenance.mjs) — independent evidence grouping;
 - [src/opportunity-state.mjs](src/opportunity-state.mjs) — evidence and validation history;
+- [src/opportunity-clusters.mjs](src/opportunity-clusters.mjs) — conservative human-reviewed groups and non-destructive splits;
 - [src/pipeline.mjs](src/pipeline.mjs) — publication, suppression, and hold decisions;
 - [tests/pipeline.test.mjs](tests/pipeline.test.mjs) — executable policy examples.
 
@@ -112,7 +116,12 @@ Run the checks with Node.js 20 or newer:
 npm test
 npm run check:english
 npm run eval:dedup
+node scripts/evaluate-boundaries.mjs --output boundary-results.json
+node --expose-gc scripts/benchmark-retrieval.mjs --output retrieval-results.json
 ```
+
+Evaluation outputs must be new paths. These commands use synthetic fixtures and
+make no model calls. See the milestone guide for the separately opted-in Hermes pilot.
 
 ## Decision rights
 
