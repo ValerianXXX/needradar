@@ -1,0 +1,4157 @@
+{
+  "observedAt": "2026-10-29T22:07:04.110Z",
+  "status": "PASS",
+  "syntheticOnly": true,
+  "mode": "ACTUAL_LOCAL_RETRIEVAL_WITH_RECORDED_REAL_PAIR_RESPONSE_AND_UNCERTAIN_CONTRACT_STUBS",
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "sourceLFHashes": {
+    "src/pipeline.mjs": "a58c706dc3c70273ddbcdf5fc39037a8f3af872354d343aecc164299fffc0129",
+    "src/semantic-review.mjs": "5ce6c05a527a98b229ed111e9c16dd4bd5d64b4c1135c2049e5cfdd714664fd6",
+    "src/semantic-retrieval.mjs": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1",
+    "src/local-encoder.mjs": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+    "scripts/local-embed.py": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+    "scripts/check-retrieval-review-workflow.mjs": "774b416f6096f1ca3f6bf2907addf6e2cd04d0ec0d3e2b9bcd48fa903b511d66"
+  },
+  "journalLFHash": "793cc457fbe3916bf781bd1ee484d1968fe2c5d01f6f6889f060988fa4ded710",
+  "recordedResponses": 1,
+  "explicitUncertainStubs": 7,
+  "liveLlmRequests": 0,
+  "sourceRecordsRemoved": 0,
+  "encoding": {
+    "corpus": {
+      "encoded": 100,
+      "cloudRequests": 0,
+      "batches": 7,
+      "runtime": {
+        "python": "3.11.3",
+        "onnxruntime": "1.31.1",
+        "numpy": "2.4.6"
+      },
+      "provider": [
+        "CPUExecutionProvider"
+      ],
+      "startupMs": 981.142,
+      "inferenceMs": 441.066,
+      "memory": {
+        "rssBytes": 464588800,
+        "peakRssBytes": 465354752,
+        "scope": "Current Python child process only; GetProcessMemoryInfo."
+      },
+      "reusedInputs": 0,
+      "elapsedMs": 2020.8627000000001
+    },
+    "query": {
+      "encoded": 1,
+      "cloudRequests": 0,
+      "batches": 1,
+      "runtime": {
+        "python": "3.11.3",
+        "onnxruntime": "1.31.1",
+        "numpy": "2.4.6"
+      },
+      "provider": [
+        "CPUExecutionProvider"
+      ],
+      "startupMs": 1059.264,
+      "inferenceMs": 8.4,
+      "memory": {
+        "rssBytes": 448450560,
+        "peakRssBytes": 462110720,
+        "scope": "Current Python child process only; GetProcessMemoryInfo."
+      },
+      "reusedInputs": 0,
+      "elapsedMs": 1651.3043000000002
+    }
+  },
+  "result": {
+    "decision": "SUPPRESS_DUPLICATE",
+    "reasons": [
+      "REVIEWED_DUPLICATE_PROPOSAL"
+    ],
+    "evidence": {
+      "eligible": true,
+      "accessibleCount": 3,
+      "counterevidenceCount": 0,
+      "independentAuthorGroups": 3,
+      "sourcePolicies": 3,
+      "independentEvidenceCount": 3,
+      "duplicateCaptures": 0,
+      "unresolvedProvenanceCount": 0,
+      "missingFields": [],
+      "reasons": []
+    },
+    "similarity": {
+      "duplicate": false,
+      "threshold": 0.78,
+      "best": {
+        "existing": {
+          "id": "other-0",
+          "title": "Related but distinct workflow",
+          "persona": "Accounts payable reviewers",
+          "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 0.",
+          "desiredOutcome": "A reviewable result preserving source evidence.",
+          "constraints": {
+            "processing": "offline",
+            "humanReview": "required"
+          },
+          "evidenceKeys": [
+            "invoice-original"
+          ]
+        },
+        "index": 0,
+        "score": 0.2447,
+        "components": {
+          "title": 0,
+          "job": 0.15789473684210525,
+          "persona": 1,
+          "evidence": 0
+        },
+        "constraints": {
+          "conflicts": [],
+          "missing": [],
+          "compatible": true
+        },
+        "invalidIdentityFields": [],
+        "autoDuplicate": false,
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ],
+        "aboveLexicalThreshold": false
+      },
+      "ranked": [
+        {
+          "existing": {
+            "id": "other-0",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 0.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 0,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-1",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 1.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 1,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-10",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 10.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 10,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-11",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 11.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 11,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-12",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 12.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 12,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-13",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 13.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 13,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-14",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 14.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 14,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-15",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 15.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 15,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-16",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 16.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 16,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-17",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 17.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 17,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-18",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 18.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 18,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-19",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 19.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 19,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-2",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 2.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 2,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-20",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 20.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 20,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-21",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 21.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 21,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-22",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 22.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 22,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-23",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 23.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 23,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-24",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 24.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 24,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-25",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 25.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 25,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-26",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 26.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 26,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-27",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 27.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 27,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-28",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 28.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 28,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-29",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 29.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 29,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-3",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 3.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 3,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-30",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 30.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 30,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-31",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 31.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 31,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-32",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 32.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 32,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-33",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 33.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 33,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-34",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 34.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 34,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-35",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 35.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 35,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-36",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 36.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 36,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-37",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 37.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 37,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-38",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 38.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 38,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-39",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 39.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 39,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-4",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 4.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 4,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-40",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 40.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 40,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-41",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 41.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 41,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-42",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 42.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 42,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-43",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 43.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 43,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-44",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 44.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 44,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-45",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 45.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 45,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-46",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 46.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 46,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-47",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 47.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 47,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-48",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 48.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 48,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-49",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 49.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 49,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-5",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 5.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 5,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-50",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 50.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 50,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-51",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 51.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 51,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-52",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 52.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 52,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-53",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 53.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 53,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-54",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 54.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 54,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-55",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 55.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 55,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-56",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 56.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 56,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-57",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 57.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 57,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-58",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 58.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 58,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-59",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 59.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 59,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-6",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 6.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 6,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-60",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 60.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 60,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-61",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 61.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 61,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-62",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 62.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 62,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-63",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 63.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 63,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-64",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 64.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 64,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-65",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 65.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 65,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-66",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 66.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 66,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-67",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 67.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 67,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-68",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 68.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 68,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-69",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 69.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 69,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-7",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 7.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 7,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-70",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 70.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 70,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-71",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 71.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 71,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-72",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 72.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 72,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-73",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 73.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 73,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-74",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 74.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 74,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-75",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 75.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 75,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-76",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 76.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 76,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-77",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 77.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 77,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-78",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 78.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 78,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-79",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 79.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 79,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-8",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 8.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 8,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-80",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 80.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 80,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-81",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 81.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 81,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-82",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 82.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 82,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-83",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 83.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 83,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-84",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 84.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 84,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-85",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 85.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 85,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-86",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 86.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 86,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-87",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 87.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 87,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-88",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 88.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 88,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-89",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 89.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 89,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-9",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 9.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 9,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-90",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 90.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 90,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-91",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 91.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 91,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-92",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 92.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 92,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-93",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 93.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 93,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-94",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 94.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 94,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-95",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 95.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 95,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-96",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 96.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 96,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-97",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 97.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 97,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "other-98",
+            "title": "Related but distinct workflow",
+            "persona": "Accounts payable reviewers",
+            "jobToBeDone": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 98.",
+            "desiredOutcome": "A reviewable result preserving source evidence.",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-original"
+            ]
+          },
+          "index": 98,
+          "score": 0.2447,
+          "components": {
+            "title": 0,
+            "job": 0.15789473684210525,
+            "persona": 1,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        },
+        {
+          "existing": {
+            "id": "target",
+            "title": "\u5c06\u53d1\u7968\u8bc6\u522b\u4e2d\u4e0d\u786e\u5b9a\u7684\u5b57\u6bb5\u4ea4\u7ed9\u4eba\u5de5\u5ba1\u6838\uff0c\u5e76\u94fe\u63a5\u5230\u539f\u59cb\u56fe\u7247\u533a\u57df\u3002",
+            "persona": "\u5e94\u4ed8\u8d26\u6b3e\u5ba1\u6838\u4eba\u5458",
+            "jobToBeDone": "\u5c06\u53d1\u7968\u8bc6\u522b\u4e2d\u4e0d\u786e\u5b9a\u7684\u5b57\u6bb5\u4ea4\u7ed9\u4eba\u5de5\u5ba1\u6838\uff0c\u5e76\u94fe\u63a5\u5230\u539f\u59cb\u56fe\u7247\u533a\u57df\u3002",
+            "desiredOutcome": "\u4fdd\u7559\u6765\u6e90\u8bc1\u636e\u7684\u53ef\u590d\u6838\u7ed3\u679c\u3002",
+            "constraints": {
+              "processing": "offline",
+              "humanReview": "required"
+            },
+            "evidenceKeys": [
+              "invoice-translation-source"
+            ]
+          },
+          "index": 99,
+          "score": 0,
+          "components": {
+            "title": 0,
+            "job": 0,
+            "persona": 0,
+            "evidence": 0
+          },
+          "constraints": {
+            "conflicts": [],
+            "missing": [],
+            "compatible": true
+          },
+          "invalidIdentityFields": [],
+          "autoDuplicate": false,
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "aboveLexicalThreshold": false
+        }
+      ],
+      "requiresReview": true
+    },
+    "semantic": {
+      "protocol": "OPPORTUNITY_PAIR_REVIEW_V1",
+      "reviews": [
+        {
+          "index": 97,
+          "pairDigest": "a0f3c2b2c478214b8c35040d44f90250ed2df2ed4886f976d708506a92b7edaf",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 1,
+            "denseSimilarity": 0.9106623542192893,
+            "lexicalRank": 98,
+            "diversityRank": 1,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 97.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 0,
+          "pairDigest": "5ef15c12ac61e3425f67eba59ada3e3b3163e29ca8ad867db3b79a2c0c9877b2",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 12,
+            "denseSimilarity": 0.90517327224403,
+            "lexicalRank": 1,
+            "diversityRank": 32,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 0.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 99,
+          "pairDigest": "c42e5f489eecb1feea648c624819260d08e8e2e1a371faba3bc563ffc2cadb9f",
+          "lexicalScore": 0,
+          "retrievalEvidence": {
+            "denseRank": 100,
+            "denseSimilarity": 0.847017928194333,
+            "lexicalRank": 100,
+            "diversityRank": 2,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "\u5c06\u53d1\u7968\u8bc6\u522b\u4e2d\u4e0d\u786e\u5b9a\u7684\u5b57\u6bb5\u4ea4\u7ed9\u4eba\u5de5\u5ba1\u6838\uff0c\u5e76\u94fe\u63a5\u5230\u539f\u59cb\u56fe\u7247\u533a\u57df\u3002",
+          "method": "MODEL_PROPOSAL",
+          "model": "gpt-5.6-sol",
+          "elapsedMs": 8965,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 1,
+          "pairDigest": "33d77c135223abc67fdec2120e304f82dc21d219b55a56fb09c9099b0dc8d3a2",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 31,
+            "denseSimilarity": 0.9030729088226558,
+            "lexicalRank": 2,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 1.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 31,
+          "pairDigest": "0bf73dd4addb9501240f142eb4f6274a9ef2847de9b1653566c87923c8e898f4",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 13,
+            "denseSimilarity": 0.9048140693573519,
+            "lexicalRank": 26,
+            "diversityRank": 3,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 31.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 10,
+          "pairDigest": "66396a7344dedd52c1a1e713291bfad678a2055e8f74e3eb8ea4c44b0846d306",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 9,
+            "denseSimilarity": 0.9053388515435685,
+            "lexicalRank": 3,
+            "diversityRank": 10,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 10.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 25,
+          "pairDigest": "863293c6746f98c04a03937ef784f6fb3cf5d8f1754fb8659ff40c35841b0088",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 29,
+            "denseSimilarity": 0.9031871741617366,
+            "lexicalRank": 19,
+            "diversityRank": 4,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 25.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 11,
+          "pairDigest": "0e60b6020ac770addca48b7690d3f2b8b6fafd5fbaf9dbe66883067defb992e8",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 34,
+            "denseSimilarity": 0.9027827623656409,
+            "lexicalRank": 4,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty. Reference queue 11.",
+          "method": "MODEL_PROPOSAL",
+          "model": "EXPLICIT_UNCERTAIN_CONTRACT_STUB",
+          "elapsedMs": null,
+          "usage": null,
+          "costUsd": null
+        },
+        {
+          "index": 6,
+          "pairDigest": "2bd54520baeb2ed91ffda01e3aaf22318ce15916ca7fc26f5e6d6bd80f144871",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 21,
+            "denseSimilarity": 0.903749006949789,
+            "lexicalRank": 57,
+            "diversityRank": 5,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 12,
+          "pairDigest": "ef62a317263077336eee7ddf57b6cb048276183b595bbe2381abb275020faf49",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 95,
+            "denseSimilarity": 0.8970338399041997,
+            "lexicalRank": 5,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 88,
+          "pairDigest": "98971912194c9472ac8a9ae0c1484dc447810709a4aa04716cfc1c8b09b11c74",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 24,
+            "denseSimilarity": 0.9033952536645254,
+            "lexicalRank": 88,
+            "diversityRank": 6,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 13,
+          "pairDigest": "fe07e23c3d7848b1a9cc50c0ac462f8365f8d772188d6320a0def88ba0b47190",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 70,
+            "denseSimilarity": 0.9005057219168437,
+            "lexicalRank": 6,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 35,
+          "pairDigest": "be012acd22663d46e481812fac3e3d50184523334f56778bdd34ddc51811a537",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 4,
+            "denseSimilarity": 0.9068720562995957,
+            "lexicalRank": 30,
+            "diversityRank": 7,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 14,
+          "pairDigest": "0f774e99faa49c3267e1aff15f34ff29e01e1cdd2376db7ab23ccd0af682d519",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 63,
+            "denseSimilarity": 0.9009818902086817,
+            "lexicalRank": 7,
+            "diversityRank": 8,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 15,
+          "pairDigest": "710dec28617d6c83e38619308b633768002df5dc80851a8e249c46c2595564a8",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 16,
+            "denseSimilarity": 0.9043073113101945,
+            "lexicalRank": 8,
+            "diversityRank": 26,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 17,
+          "pairDigest": "330884ec47a18659d0bd27b3c689255aec8152272078de42b17d27fb5aaea2d4",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 5,
+            "denseSimilarity": 0.9065895638547179,
+            "lexicalRank": 10,
+            "diversityRank": 9,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 16,
+          "pairDigest": "ca732b3d2672a8f050829810190820f89eea61e9c78ba527cdcdedb5a50cc8c5",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 15,
+            "denseSimilarity": 0.9044523851183787,
+            "lexicalRank": 9,
+            "diversityRank": 30,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 21,
+          "pairDigest": "1075c0a4cc033dbeec2fcf7ded7b999c86197a410e0ccd6c58a60b0ae8801b50",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 3,
+            "denseSimilarity": 0.9071571738853432,
+            "lexicalRank": 15,
+            "diversityRank": 11,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 18,
+          "pairDigest": "72cbe440e749084f6f54d3a12952f6be8b9fd221c7ee2708f3a63105578dc65e",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 23,
+            "denseSimilarity": 0.9035266311210894,
+            "lexicalRank": 11,
+            "diversityRank": 27,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 95,
+          "pairDigest": "e3eb33048a5f3cf39073ab653442985f4c93522e613d0910649f9efae2169206",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 2,
+            "denseSimilarity": 0.9076150404602584,
+            "lexicalRank": 96,
+            "diversityRank": 12,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 19,
+          "pairDigest": "6a468e19ea9d0ea8c70542df6d22082c2bf9128fe04d836a7b09f228d57089a9",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 32,
+            "denseSimilarity": 0.9029354757542334,
+            "lexicalRank": 12,
+            "diversityRank": 14,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 7,
+          "pairDigest": "7e005e8bd59c141e78138e542093d0bc87ad224aa3b14e0507c22c74a1a86d8a",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 11,
+            "denseSimilarity": 0.9052283133117126,
+            "lexicalRank": 68,
+            "diversityRank": 13,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 2,
+          "pairDigest": "26fa40d067d6a240dee4c1bca20821a75d115c1e8b5b29e0c78667bef0fa1dcb",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 26,
+            "denseSimilarity": 0.9032742871630314,
+            "lexicalRank": 13,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 20,
+          "pairDigest": "285f8c74171c2bb88755766b5896f7e6a670588d520b270748ae08fe5e32ffed",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 10,
+            "denseSimilarity": 0.9052556684677119,
+            "lexicalRank": 14,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 72,
+          "pairDigest": "2350adc57e1f4dd3f58a527d6ba35951dea1871592ef98d08836455daf054942",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 6,
+            "denseSimilarity": 0.9063329636082016,
+            "lexicalRank": 71,
+            "diversityRank": 15,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 43,
+          "pairDigest": "07e4e07b5cb82f23ebc7dc691060feffdd50cc624a62498070035a0496c007c9",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 20,
+            "denseSimilarity": 0.9038373034139056,
+            "lexicalRank": 39,
+            "diversityRank": 16,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 22,
+          "pairDigest": "54cd0fff88fceea022daed6917055015171ee803fa36ecb31cc9965c73be6ae6",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 37,
+            "denseSimilarity": 0.9026084468704966,
+            "lexicalRank": 16,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 29,
+          "pairDigest": "47b59f33ae0be42252632094576e07e24ee68e8f6c32812c70844b310164d6dc",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 43,
+            "denseSimilarity": 0.9022626177856784,
+            "lexicalRank": 23,
+            "diversityRank": 17,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 23,
+          "pairDigest": "0cddbb3808fe001b1445702341bf86b97dfda6180a0406a230424e50de6c1a60",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 61,
+            "denseSimilarity": 0.9010229469144683,
+            "lexicalRank": 17,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 52,
+          "pairDigest": "b90da06ca5490e541530301770e060ac581fc3d7a52e4a176e7d8e1dd41538de",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 17,
+            "denseSimilarity": 0.9042567866512593,
+            "lexicalRank": 49,
+            "diversityRank": 18,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 24,
+          "pairDigest": "40b4fff50023b2473c8836bfefd900d53af8c5e0ae5b81a2e59bae374ba4ec0a",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 60,
+            "denseSimilarity": 0.901187509596844,
+            "lexicalRank": 18,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "index": 3,
+          "pairDigest": "239f0be15b800558d1412cfbbbb18b2589be3aeef1799eba451667a2177528f8",
+          "lexicalScore": 0.2447,
+          "retrievalEvidence": {
+            "denseRank": 48,
+            "denseSimilarity": 0.9019561155562952,
+            "lexicalRank": 24,
+            "diversityRank": 19,
+            "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+          },
+          "verdict": "uncertain",
+          "reason": "INSUFFICIENT_INFORMATION",
+          "method": "HUMAN_REVIEW_REQUIRED"
+        }
+      ],
+      "modelCalls": 8,
+      "retrievalComplete": false,
+      "duplicate": true,
+      "requiresReview": true,
+      "automaticMerge": false
+    },
+    "automaticMerge": false
+  },
+  "limitation": "Current integration replay, not a new live Hermes test, authenticated human merge or production publication."
+}

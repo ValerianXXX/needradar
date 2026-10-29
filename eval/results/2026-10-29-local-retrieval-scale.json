@@ -1,0 +1,1145 @@
+{
+  "observedAt": "2026-10-29T21:57:56.255Z",
+  "protocol": "LOCAL_RETRIEVAL_OBSERVATION_V1",
+  "mode": "scale",
+  "syntheticOnly": true,
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "planLFHash": "157a00cc768f8110a4c2885967250c9673bc5737a9d2a89d81c0c951cbaeea46",
+  "encoderId": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305",
+  "encoder": {
+    "protocol": "NEEDRADAR_LOCAL_ENCODER_V1",
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "license": "MIT",
+    "verifiedAt": "2026-10-29",
+    "modelCard": "https://huggingface.co/intfloat/multilingual-e5-small",
+    "dimensions": 384,
+    "maxTokens": 512,
+    "inputFormat": "NEEDRADAR_TASK_RETRIEVAL_TEXT_V2",
+    "inputFields": [
+      "jobToBeDone"
+    ],
+    "identityBindingFields": [
+      "persona",
+      "jobToBeDone",
+      "desiredOutcome"
+    ],
+    "prefix": "query: ",
+    "pooling": "attention-mask mean then L2 normalization",
+    "files": {
+      "model_qint8_avx512_vnni.onnx": {
+        "path": "onnx/model_qint8_avx512_vnni.onnx",
+        "bytes": 118346824,
+        "sha256": "dd476dd0c2514e9b9be83aeb3853fac0763e0bdf4a71645407587d77c48a2d88"
+      },
+      "tokenizer.json": {
+        "path": "onnx/tokenizer.json",
+        "bytes": 17082730,
+        "sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+      }
+    }
+  },
+  "node": "v24.19.0",
+  "sourceCommit": "bd011da162d1dd3eeed6d6bbdbc387c6434e16c4",
+  "workingTreeObservation": true,
+  "sourceLFHashes": {
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+    "src/semantic-review.mjs": "5ce6c05a527a98b229ed111e9c16dd4bd5d64b4c1135c2049e5cfdd714664fd6",
+    "src/semantic-retrieval.mjs": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1",
+    "src/embedding-contract.mjs": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+    "src/local-encoder.mjs": "5508f089d5f3387959974ad22c34905c88bf581c39075e0161453a83d0c02acc",
+    "src/pipeline.mjs": "a58c706dc3c70273ddbcdf5fc39037a8f3af872354d343aecc164299fffc0129",
+    "scripts/local-embed.py": "befd3a0fa1abcdbc5f1c4e37a4e84e1366d8d8077c2390e87efa6c70001d6fda",
+    "scripts/evaluate-local-retrieval.mjs": "ec87fdc48222d432bde0b7f783960b1a26b34fd93287ecb7ecd4e2e41b8c055d",
+    "config/local-encoder.json": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305"
+  },
+  "cloudInferenceRequests": 0,
+  "paidApiCostUsd": 0,
+  "machineEnergyCost": null,
+  "llmAdjudicationCalls": 0,
+  "limits": "Authored fixtures, not independent blind validation. Shared host; process memory snapshots, not peak or per-query allocation. Dense scores never establish identity.",
+  "status": "COMPLETED_OBSERVATION",
+  "observations": [
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "repeat": 0,
+      "lexicalQueryMs": 1.5931000000000495,
+      "hybridQueryMs": 4.104600000000119,
+      "indexBuildIncludingEncodingMs": 2166.7248,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1065.106,
+        "inferenceMs": 8.344,
+        "reusedInputs": 0,
+        "elapsedMs": 1674.9802000000004
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.288,
+        "inferenceMs": 479.39399999999995,
+        "reusedInputs": 0,
+        "elapsedMs": 2150.5369
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 66781184,
+        "heapTotal": 11264000,
+        "heapUsed": 5826928,
+        "external": 2812967,
+        "arrayBuffers": 143819
+      },
+      "memoryAfter": {
+        "rss": 75038720,
+        "heapTotal": 16506880,
+        "heapUsed": 10662584,
+        "external": 2991525,
+        "arrayBuffers": 610041
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "repeat": 1,
+      "lexicalQueryMs": 1.4938999999999396,
+      "hybridQueryMs": 2.85550000000012,
+      "indexBuildIncludingEncodingMs": 2166.7248,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1065.106,
+        "inferenceMs": 8.344,
+        "reusedInputs": 0,
+        "elapsedMs": 1674.9802000000004
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.288,
+        "inferenceMs": 479.39399999999995,
+        "reusedInputs": 0,
+        "elapsedMs": 2150.5369
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 66781184,
+        "heapTotal": 11264000,
+        "heapUsed": 5826928,
+        "external": 2812967,
+        "arrayBuffers": 143819
+      },
+      "memoryAfter": {
+        "rss": 75595776,
+        "heapTotal": 17031168,
+        "heapUsed": 9284544,
+        "external": 2993061,
+        "arrayBuffers": 611577
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "invoice--cross_language",
+      "repeat": 2,
+      "lexicalQueryMs": 0.788300000000163,
+      "hybridQueryMs": 3.12480000000005,
+      "indexBuildIncludingEncodingMs": 2166.7248,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1065.106,
+        "inferenceMs": 8.344,
+        "reusedInputs": 0,
+        "elapsedMs": 1674.9802000000004
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.288,
+        "inferenceMs": 479.39399999999995,
+        "reusedInputs": 0,
+        "elapsedMs": 2150.5369
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 66781184,
+        "heapTotal": 11264000,
+        "heapUsed": 5826928,
+        "external": 2812967,
+        "arrayBuffers": 143819
+      },
+      "memoryAfter": {
+        "rss": 77053952,
+        "heapTotal": 17031168,
+        "heapUsed": 7924816,
+        "external": 2993061,
+        "arrayBuffers": 611577
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "repeat": 0,
+      "lexicalQueryMs": 1.1378999999997177,
+      "hybridQueryMs": 6.009799999999814,
+      "indexBuildIncludingEncodingMs": 2084.1208,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1079.769,
+        "inferenceMs": 8.183,
+        "reusedInputs": 0,
+        "elapsedMs": 1678.9475000000002
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1047.244,
+        "inferenceMs": 422.66700000000003,
+        "reusedInputs": 0,
+        "elapsedMs": 2071.6512
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 77225984,
+        "heapTotal": 16244736,
+        "heapUsed": 6897264,
+        "external": 2993061,
+        "arrayBuffers": 607490
+      },
+      "memoryAfter": {
+        "rss": 78671872,
+        "heapTotal": 16506880,
+        "heapUsed": 9774112,
+        "external": 3455196,
+        "arrayBuffers": 1073712
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "repeat": 1,
+      "lexicalQueryMs": 0.5762999999997191,
+      "hybridQueryMs": 6.914099999999962,
+      "indexBuildIncludingEncodingMs": 2084.1208,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1079.769,
+        "inferenceMs": 8.183,
+        "reusedInputs": 0,
+        "elapsedMs": 1678.9475000000002
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1047.244,
+        "inferenceMs": 422.66700000000003,
+        "reusedInputs": 0,
+        "elapsedMs": 2071.6512
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 77225984,
+        "heapTotal": 16244736,
+        "heapUsed": 6897264,
+        "external": 2993061,
+        "arrayBuffers": 607490
+      },
+      "memoryAfter": {
+        "rss": 78262272,
+        "heapTotal": 17293312,
+        "heapUsed": 8281248,
+        "external": 3456732,
+        "arrayBuffers": 1075248
+      }
+    },
+    {
+      "size": 100,
+      "queryId": "research--low_overlap",
+      "repeat": 2,
+      "lexicalQueryMs": 0.6374999999998181,
+      "hybridQueryMs": 1.9110000000000582,
+      "indexBuildIncludingEncodingMs": 2084.1208,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1079.769,
+        "inferenceMs": 8.183,
+        "reusedInputs": 0,
+        "elapsedMs": 1678.9475000000002
+      },
+      "corpusEncoding": {
+        "encoded": 100,
+        "cloudRequests": 0,
+        "batches": 7,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1047.244,
+        "inferenceMs": 422.66700000000003,
+        "reusedInputs": 0,
+        "elapsedMs": 2071.6512
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 77225984,
+        "heapTotal": 16244736,
+        "heapUsed": 6897264,
+        "external": 2993061,
+        "arrayBuffers": 607490
+      },
+      "memoryAfter": {
+        "rss": 78553088,
+        "heapTotal": 17293312,
+        "heapUsed": 10274440,
+        "external": 3459068,
+        "arrayBuffers": 1077584
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "repeat": 0,
+      "lexicalQueryMs": 9.2507999999998,
+      "hybridQueryMs": 22.245499999999083,
+      "indexBuildIncludingEncodingMs": 6787.418,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1116.539,
+        "inferenceMs": 8.567,
+        "reusedInputs": 0,
+        "elapsedMs": 1742.560300000001
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1112.478,
+        "inferenceMs": 4761.629,
+        "reusedInputs": 0,
+        "elapsedMs": 6673.2919999999995
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 78413824,
+        "heapTotal": 16769024,
+        "heapUsed": 7215360,
+        "external": 3459068,
+        "arrayBuffers": 893200
+      },
+      "memoryAfter": {
+        "rss": 121339904,
+        "heapTotal": 47165440,
+        "heapUsed": 26451576,
+        "external": 7147246,
+        "arrayBuffers": 4765762
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "repeat": 1,
+      "lexicalQueryMs": 9.066900000001624,
+      "hybridQueryMs": 20.03280000000086,
+      "indexBuildIncludingEncodingMs": 6787.418,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1116.539,
+        "inferenceMs": 8.567,
+        "reusedInputs": 0,
+        "elapsedMs": 1742.560300000001
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1112.478,
+        "inferenceMs": 4761.629,
+        "reusedInputs": 0,
+        "elapsedMs": 6673.2919999999995
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 78413824,
+        "heapTotal": 16769024,
+        "heapUsed": 7215360,
+        "external": 3459068,
+        "arrayBuffers": 893200
+      },
+      "memoryAfter": {
+        "rss": 117338112,
+        "heapTotal": 49262592,
+        "heapUsed": 26529584,
+        "external": 7147246,
+        "arrayBuffers": 4765762
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "invoice--cross_language",
+      "repeat": 2,
+      "lexicalQueryMs": 4.6317999999992026,
+      "hybridQueryMs": 19.256799999999203,
+      "indexBuildIncludingEncodingMs": 6787.418,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1116.539,
+        "inferenceMs": 8.567,
+        "reusedInputs": 0,
+        "elapsedMs": 1742.560300000001
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1112.478,
+        "inferenceMs": 4761.629,
+        "reusedInputs": 0,
+        "elapsedMs": 6673.2919999999995
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 78413824,
+        "heapTotal": 16769024,
+        "heapUsed": 7215360,
+        "external": 3459068,
+        "arrayBuffers": 893200
+      },
+      "memoryAfter": {
+        "rss": 117424128,
+        "heapTotal": 49262592,
+        "heapUsed": 24399680,
+        "external": 7147246,
+        "arrayBuffers": 4765762
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "repeat": 0,
+      "lexicalQueryMs": 8.053400000000693,
+      "hybridQueryMs": 18.64259999999922,
+      "indexBuildIncludingEncodingMs": 6194.988399999998,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1071.81,
+        "inferenceMs": 8.294,
+        "reusedInputs": 0,
+        "elapsedMs": 1666.6038999999982
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.435,
+        "inferenceMs": 4225.998,
+        "reusedInputs": 0,
+        "elapsedMs": 6082.378800000002
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 116764672,
+        "heapTotal": 47702016,
+        "heapUsed": 12739552,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 131575808,
+        "heapTotal": 84799488,
+        "heapUsed": 27449432,
+        "external": 7147246,
+        "arrayBuffers": 4765762
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "repeat": 1,
+      "lexicalQueryMs": 4.704200000000128,
+      "hybridQueryMs": 20.350099999999657,
+      "indexBuildIncludingEncodingMs": 6194.988399999998,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1071.81,
+        "inferenceMs": 8.294,
+        "reusedInputs": 0,
+        "elapsedMs": 1666.6038999999982
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.435,
+        "inferenceMs": 4225.998,
+        "reusedInputs": 0,
+        "elapsedMs": 6082.378800000002
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 116764672,
+        "heapTotal": 47702016,
+        "heapUsed": 12739552,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 141926400,
+        "heapTotal": 85061632,
+        "heapUsed": 42064496,
+        "external": 7156782,
+        "arrayBuffers": 4775298
+      }
+    },
+    {
+      "size": 1000,
+      "queryId": "research--low_overlap",
+      "repeat": 2,
+      "lexicalQueryMs": 8.444700000000012,
+      "hybridQueryMs": 19.038500000002387,
+      "indexBuildIncludingEncodingMs": 6194.988399999998,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1071.81,
+        "inferenceMs": 8.294,
+        "reusedInputs": 0,
+        "elapsedMs": 1666.6038999999982
+      },
+      "corpusEncoding": {
+        "encoded": 1000,
+        "cloudRequests": 0,
+        "batches": 63,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.435,
+        "inferenceMs": 4225.998,
+        "reusedInputs": 0,
+        "elapsedMs": 6082.378800000002
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 116764672,
+        "heapTotal": 47702016,
+        "heapUsed": 12739552,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 139976704,
+        "heapTotal": 85061632,
+        "heapUsed": 25110488,
+        "external": 7147246,
+        "arrayBuffers": 4765762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "repeat": 0,
+      "lexicalQueryMs": 58.09459999999672,
+      "hybridQueryMs": 273.77390000000014,
+      "indexBuildIncludingEncodingMs": 51681.7264,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1020.45,
+        "inferenceMs": 11.35,
+        "reusedInputs": 0,
+        "elapsedMs": 1637.6877000000095
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.057,
+        "inferenceMs": 46904.02599999995,
+        "reusedInputs": 0,
+        "elapsedMs": 50607.39689999999
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 139767808,
+        "heapTotal": 85975040,
+        "heapUsed": 15054168,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 347193344,
+        "heapTotal": 218095616,
+        "heapUsed": 124451064,
+        "external": 48691246,
+        "arrayBuffers": 46309762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "repeat": 1,
+      "lexicalQueryMs": 41.95019999999204,
+      "hybridQueryMs": 273.8536999999924,
+      "indexBuildIncludingEncodingMs": 51681.7264,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1020.45,
+        "inferenceMs": 11.35,
+        "reusedInputs": 0,
+        "elapsedMs": 1637.6877000000095
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.057,
+        "inferenceMs": 46904.02599999995,
+        "reusedInputs": 0,
+        "elapsedMs": 50607.39689999999
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 139767808,
+        "heapTotal": 85975040,
+        "heapUsed": 15054168,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 347287552,
+        "heapTotal": 218095616,
+        "heapUsed": 141091608,
+        "external": 48691246,
+        "arrayBuffers": 46309762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "invoice--cross_language",
+      "repeat": 2,
+      "lexicalQueryMs": 40.60460000000603,
+      "hybridQueryMs": 258.69250000000466,
+      "indexBuildIncludingEncodingMs": 51681.7264,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1020.45,
+        "inferenceMs": 11.35,
+        "reusedInputs": 0,
+        "elapsedMs": 1637.6877000000095
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1055.057,
+        "inferenceMs": 46904.02599999995,
+        "reusedInputs": 0,
+        "elapsedMs": 50607.39689999999
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 139767808,
+        "heapTotal": 85975040,
+        "heapUsed": 15054168,
+        "external": 7147246,
+        "arrayBuffers": 4754690
+      },
+      "memoryAfter": {
+        "rss": 347504640,
+        "heapTotal": 218095616,
+        "heapUsed": 92591568,
+        "external": 48691246,
+        "arrayBuffers": 46309762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "repeat": 0,
+      "lexicalQueryMs": 59.04809999999998,
+      "hybridQueryMs": 274.1719000000012,
+      "indexBuildIncludingEncodingMs": 46613.4696,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1019.417,
+        "inferenceMs": 8.051,
+        "reusedInputs": 0,
+        "elapsedMs": 1620.2479000000021
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1015.118,
+        "inferenceMs": 41922.784999999974,
+        "reusedInputs": 0,
+        "elapsedMs": 45579.9348
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 338681856,
+        "heapTotal": 211218432,
+        "heapUsed": 69883792,
+        "external": 48691246,
+        "arrayBuffers": 46226690
+      },
+      "memoryAfter": {
+        "rss": 395890688,
+        "heapTotal": 238161920,
+        "heapUsed": 154486096,
+        "external": 48691246,
+        "arrayBuffers": 46309762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "repeat": 1,
+      "lexicalQueryMs": 42.86250000000291,
+      "hybridQueryMs": 249.26459999999497,
+      "indexBuildIncludingEncodingMs": 46613.4696,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1019.417,
+        "inferenceMs": 8.051,
+        "reusedInputs": 0,
+        "elapsedMs": 1620.2479000000021
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1015.118,
+        "inferenceMs": 41922.784999999974,
+        "reusedInputs": 0,
+        "elapsedMs": 45579.9348
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 338681856,
+        "heapTotal": 211218432,
+        "heapUsed": 69883792,
+        "external": 48691246,
+        "arrayBuffers": 46226690
+      },
+      "memoryAfter": {
+        "rss": 395907072,
+        "heapTotal": 238161920,
+        "heapUsed": 107852288,
+        "external": 48691246,
+        "arrayBuffers": 46309762
+      }
+    },
+    {
+      "size": 10000,
+      "queryId": "research--low_overlap",
+      "repeat": 2,
+      "lexicalQueryMs": 42.801499999986845,
+      "hybridQueryMs": 259.8481000000029,
+      "indexBuildIncludingEncodingMs": 46613.4696,
+      "queryEncoding": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1019.417,
+        "inferenceMs": 8.051,
+        "reusedInputs": 0,
+        "elapsedMs": 1620.2479000000021
+      },
+      "corpusEncoding": {
+        "encoded": 10000,
+        "cloudRequests": 0,
+        "batches": 625,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1015.118,
+        "inferenceMs": 41922.784999999974,
+        "reusedInputs": 0,
+        "elapsedMs": 45579.9348
+      },
+      "lexicalTargetRank": null,
+      "hybridTargetRank": 3,
+      "selected": 32,
+      "complete": false,
+      "memoryBefore": {
+        "rss": 338681856,
+        "heapTotal": 211218432,
+        "heapUsed": 69883792,
+        "external": 48691246,
+        "arrayBuffers": 46226690
+      },
+      "memoryAfter": {
+        "rss": 396431360,
+        "heapTotal": 239935488,
+        "heapUsed": 129565824,
+        "external": 48692782,
+        "arrayBuffers": 46311298
+      }
+    }
+  ],
+  "elapsedMs": 128586.8241
+}

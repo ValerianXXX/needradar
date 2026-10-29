@@ -2,6 +2,12 @@
 
 ## Unreleased - 2026-10-29
 
+- Add an opt-in, pinned local CPU encoder and a diverse dense/lexical shortlist;
+  keep vector rank separate from opportunity identity, constraints and corroboration.
+- Reject stale/mismatched embeddings, oversized token sequences and incomplete
+  child results; prevent failed partial batches from populating the cache.
+- Preserve the weak first embedding experiment, final forward/reverse comparison,
+  scale/child-memory observations and a recorded-response integration replay.
 - Stop title changes and lexical shortlist truncation from hiding exact opportunity identity.
 - Reject coerced identity values and malformed or conflicting review records; retain symmetric,
   content-bound human decisions without bypassing explicit task constraints.

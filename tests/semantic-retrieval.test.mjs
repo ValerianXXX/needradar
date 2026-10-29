@@ -89,3 +89,19 @@ test('embedding inputs exclude raw evidence and executable configuration', () =>
   assert.throws(() => createLocalEncoder({ allowExecution: true, pythonExecutable: 'from-draft', modelDirectory: 'from-draft' }), /EXPLICIT_LOCAL_ENCODER/u);
   assert.throws(() => { encoderSpec.files['tokenizer.json'].sha256 = 'wrong'; }, TypeError);
 });
+
+test('diversity admits a weaker multilingual candidate among repeated high-score neighbors', () => {
+  const near = unit(0); near[0] = 0.98; near[1] = 0.20;
+  const distinct = unit(0); distinct[0] = 0.83; distinct[1] = -0.56;
+  const rows = Array.from({ length: 100 }, (_, index) => ({ ...candidate, id: `near-${index}`, jobToBeDone: 'Review uncertain invoice categories' }));
+  const target = { ...candidate, id: 'target', persona: 'Accounting operators', jobToBeDone: 'Reconcile ambiguous billing entries' };
+  rows.push(target);
+  const index = createSemanticCandidateIndex(rows, { encoderId, rows: rows.map(row => ({ ...packet(row), vector: row.id === 'target' ? distinct : near })) });
+  const result = retrieveSemanticCandidates(candidate, index, { queryEmbedding: packet(candidate) });
+  const rank = result.rows.findIndex(row => row.existing.id === 'target');
+  assert.ok(rank >= 0 && rank < 3);
+  assert.equal(result.rows[rank].retrievalEvidence.denseRank, 101);
+  assert.equal(result.rows[rank].retrievalEvidence.diversityRank, 2);
+  assert.equal(result.complete, false);
+  assert.equal(result.automaticMerge, false);
+});

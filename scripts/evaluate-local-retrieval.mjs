@@ -16,7 +16,7 @@ if (!output || process.env.NEEDRADAR_ALLOW_LOCAL_ENCODER !== 'true') throw new E
 const settings = { pythonExecutable: process.env.NEEDRADAR_ENCODER_PYTHON, modelDirectory: process.env.NEEDRADAR_ENCODER_MODEL_DIR,
   allowExecution: true, threads: 2 };
 const fixtures = await loadFixtures();
-const planText = (await readFile(new URL('../eval/boundaries-v2/retrieval-plan.json', import.meta.url), 'utf8')).replaceAll('\r\n', '\n');
+const planText = (await readFile(new URL('../eval/boundaries-v2/retrieval-plan-v2.json', import.meta.url), 'utf8')).replaceAll('\r\n', '\n');
 const plan = JSON.parse(planText);
 if (plan.fixtureHash !== fixtureHash || plan.retrievalLimit !== 32 || plan.revision !== encoderSpec.revision) throw new Error('FROZEN_RETRIEVAL_PLAN_REQUIRED');
 const hash = text => createHash('sha256').update(text.replaceAll('\r\n', '\n')).digest('hex');

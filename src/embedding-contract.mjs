@@ -13,9 +13,12 @@ export function embeddingInput(draft) {
     if (typeof value !== 'string' || (field !== 'desiredOutcome' && !value.trim())) throw new TypeError('EMBEDDING_IDENTITY_REQUIRED');
     return value.normalize('NFKC').replace(/\s+/gu, ' ').trim();
   });
-  const text = `${encoderSpec.prefix}User: ${values[0]}\nTask: ${values[1]}\nOutcome: ${values[2]}`;
+  // Retrieval emphasizes the requested operation. Persona/outcome still bind
+  // the packet to the current source and remain authoritative during review.
+  const text = `${encoderSpec.prefix}${values[1]}`;
   if (Buffer.byteLength(text) > 16000) throw new TypeError('EMBEDDING_TEXT_LIMIT');
-  return { text, inputDigest: createHash('sha256').update(text).digest('hex') };
+  return { text, inputDigest: createHash('sha256').update(text).digest('hex'),
+    identityDigest: createHash('sha256').update(JSON.stringify(values)).digest('hex') };
 }
 
 export function normalizedVector(value) {
@@ -27,6 +30,8 @@ export function normalizedVector(value) {
 }
 
 export function verifyEmbedding(draft, packet) {
-  if (!packet || packet.encoderId !== encoderId || packet.inputDigest !== embeddingInput(draft).inputDigest) throw new TypeError('STALE_OR_INCOMPATIBLE_EMBEDDING');
+  const input = embeddingInput(draft);
+  if (!packet || packet.encoderId !== encoderId || packet.inputDigest !== input.inputDigest
+    || packet.identityDigest !== input.identityDigest) throw new TypeError('STALE_OR_INCOMPATIBLE_EMBEDDING');
   return normalizedVector(packet.vector);
 }

@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-29T22:03:32.107Z",
+  "status": "PASS",
+  "syntheticOnly": true,
+  "cloudRequests": 0,
+  "sourceLFHashes": {
+    "scripts/local-embed.py": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+    "src/local-encoder.mjs": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+    "src/embedding-contract.mjs": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+    "config/local-encoder.json": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305",
+    "scripts/check-local-encoder.mjs": "42172b22f55cce54cd3993da9a9b19ca4e42c63d9ae0b09989854d1a9b3ca754"
+  },
+  "observations": [
+    {
+      "check": "ACTUAL_LOCAL_MODEL",
+      "result": "PASS",
+      "observation": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 1004.367,
+        "inferenceMs": 6.684,
+        "memory": {
+          "rssBytes": 448348160,
+          "peakRssBytes": 462172160,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 0,
+        "elapsedMs": 1598.9252000000001
+      }
+    },
+    {
+      "check": "CACHE_REUSE_WITH_NEW_IDENTITY_BINDING",
+      "result": "PASS"
+    },
+    {
+      "check": "RETURNED_VECTOR_MUTATION_ISOLATED",
+      "result": "PASS"
+    },
+    {
+      "check": "NO_SILENT_TRUNCATION_OR_PARTIAL_CACHE_COMMIT",
+      "result": "PASS",
+      "recovery": {
+        "encoded": 1,
+        "cloudRequests": 0,
+        "batches": 1,
+        "runtime": {
+          "python": "3.11.3",
+          "onnxruntime": "1.31.1",
+          "numpy": "2.4.6"
+        },
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "startupMs": 990.627,
+        "inferenceMs": 6.822,
+        "memory": {
+          "rssBytes": 448184320,
+          "peakRssBytes": 461946880,
+          "scope": "Current Python child process only; GetProcessMemoryInfo."
+        },
+        "reusedInputs": 0,
+        "elapsedMs": 1571.5936000000002
+      }
+    }
+  ],
+  "independentHumanAcceptance": false
+}

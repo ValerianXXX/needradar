@@ -1,0 +1,186 @@
+{
+  "observedAt": "2026-10-29T22:15:17.844Z",
+  "status": "STAGE_VERIFIED_WITH_REMAINING_LIMITS",
+  "baseCommit": "c7df2dcc3a9c7ded44362444a6e8df1184f91621",
+  "prototypeCommit": "bd011da162d1dd3eeed6d6bbdbc387c6434e16c4",
+  "workingTreeObservation": true,
+  "scope": "Public curated library only; no hosted application, database, release or deployment changes.",
+  "sourceLFHashes": {
+    "src/embedding-contract.mjs": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+    "src/local-encoder.mjs": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+    "src/semantic-retrieval.mjs": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1",
+    "src/semantic-review.mjs": "5ce6c05a527a98b229ed111e9c16dd4bd5d64b4c1135c2049e5cfdd714664fd6",
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+    "src/pipeline.mjs": "a58c706dc3c70273ddbcdf5fc39037a8f3af872354d343aecc164299fffc0129",
+    "scripts/local-embed.py": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+    "scripts/download-local-encoder.py": "5b64dcdd5ca7a968dc86093285e3a9a3d8e44e8a9ede12ec2c0414daae2e1b89",
+    "scripts/evaluate-local-retrieval.mjs": "ec87fdc48222d432bde0b7f783960b1a26b34fd93287ecb7ecd4e2e41b8c055d",
+    "scripts/check-local-encoder.mjs": "42172b22f55cce54cd3993da9a9b19ca4e42c63d9ae0b09989854d1a9b3ca754",
+    "scripts/check-retrieval-review-workflow.mjs": "774b416f6096f1ca3f6bf2907addf6e2cd04d0ec0d3e2b9bcd48fa903b511d66",
+    "scripts/profile-local-encoder.mjs": "c0e732c53c9fbf4f914f66ee5ea83f364c3243cfe2d6a1304517551b0df459a3",
+    "scripts/evaluate-local-reversal.mjs": "9b4ad8d639cf66651c1851a8feec25d1000b348d85b5f7470dd59d4a25b901d0",
+    "tests/semantic-retrieval.test.mjs": "6e091e2756f62104db3ade22b7666a0cb3c23ab448835f62c444bc266d34c60b",
+    "config/local-encoder.json": "ee593c7e2595a2a144b92714de2274f1a90ec10ee793f76244ae6f2c95ab9305",
+    "requirements-local-encoder.txt": "a0a07309d3327e57b89d9f541acd3f43f096279df736b96df8fd8b09cdba040b"
+  },
+  "receiptLFHashes": {
+    "2026-10-29-local-encoder-memory.json": "5ad5216146458172359002839f2100e71cbf8cff9155e875cdc4e8359420a307",
+    "2026-10-29-local-encoder-runtime.json": "00c4081a8f9bc1e78b71f1a82a7e870d86e69a3115be95b0f78a316c0d49ad9d",
+    "2026-10-29-local-precision-diagnostic.json": "3572c8e3a1cdac7d8aa13c7b633c27be4afdd6dd88eb2d648a2fd65cc4d854d4",
+    "2026-10-29-local-retrieval-initial.json": "ddc16785db30bb64b9b43ebff81cc70a704f71655553877bdb58c7cbb7667107",
+    "2026-10-29-local-retrieval-pairs.json": "c52747da507c2e80b58361ee96db5c6c16496832d0c47e873faada1a5882e816",
+    "2026-10-29-local-retrieval-scale.json": "f4ce5cb4f50979a83c62b1f97fe884595ddb6e7940cbdd3ca39b8bc54e70ed9a",
+    "2026-10-29-local-reversal.json": "d0534b4ce1d7a6961211ad6e3e95fc952a39b996c3afa55637815f89845d53ed",
+    "2026-10-29-local-review-workflow.json": "3df6d1583791378a23d40c8e450659e356bb262f32088e4c7c0667916f77c578"
+  },
+  "fixedCorpusLFHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "localTests": {
+    "baseline": 43,
+    "final": 50,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "runtime": "v24.19.0",
+    "logLFHash": "d09e01e295d60814b25140ba7c3724f240d35a2fab74e1cf6da147cb7bd0c5a4",
+    "command": "node --test tests/*.test.mjs",
+    "englishCheck": "PASS",
+    "diffCheck": "PASS"
+  },
+  "optionalPythonEnvironment": {
+    "version": "3.11.3",
+    "platform": "Windows x64",
+    "pipCheck": "PASS",
+    "installedPackages": [
+      "anyio==4.15.1",
+      "click==8.5.0",
+      "colorama==0.4.6",
+      "filelock==4.2.4",
+      "flatbuffers==25.12.19",
+      "fsspec==2026.9.0",
+      "h11==0.16.0",
+      "hf-xet==1.7.1",
+      "httpcore2==2.16.0",
+      "httpx2==2.16.0",
+      "huggingface_hub==2.4.0",
+      "idna==3.20",
+      "numpy==2.4.6",
+      "onnxruntime==1.31.1",
+      "packaging==26.3",
+      "protobuf==7.36.2",
+      "PyYAML==6.0.3",
+      "tokenizers==0.23.3",
+      "tqdm==4.70.1",
+      "truststore==0.10.5",
+      "typing_extensions==4.16.0"
+    ],
+    "model": {
+      "protocol": "NEEDRADAR_LOCAL_ENCODER_V1",
+      "model": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "license": "MIT",
+      "verifiedAt": "2026-10-29",
+      "modelCard": "https://huggingface.co/intfloat/multilingual-e5-small",
+      "dimensions": 384,
+      "maxTokens": 512,
+      "inputFormat": "NEEDRADAR_TASK_RETRIEVAL_TEXT_V2",
+      "inputFields": [
+        "jobToBeDone"
+      ],
+      "identityBindingFields": [
+        "persona",
+        "jobToBeDone",
+        "desiredOutcome"
+      ],
+      "prefix": "query: ",
+      "pooling": "attention-mask mean then L2 normalization",
+      "files": {
+        "model_qint8_avx512_vnni.onnx": {
+          "path": "onnx/model_qint8_avx512_vnni.onnx",
+          "bytes": 118346824,
+          "sha256": "dd476dd0c2514e9b9be83aeb3853fac0763e0bdf4a71645407587d77c48a2d88"
+        },
+        "tokenizer.json": {
+          "path": "onnx/tokenizer.json",
+          "bytes": 17082730,
+          "sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+        }
+      }
+    },
+    "hardware": "Intel Core i7-10700K; two encoder CPU threads",
+    "isolatedFromHermes": true,
+    "inferenceNetworkRequests": 0
+  },
+  "pairedRetrieval": {
+    "pairs": 140,
+    "duplicatePairs": 80,
+    "lexicalDuplicateTargetMisses": 20,
+    "hybridDuplicateTargetMisses": 0,
+    "lexicalAllPairedTargetMisses": 20,
+    "hybridAllPairedTargetMisses": 0,
+    "defaultBudgetCanReachDuplicateTarget": 73,
+    "falseSamePairedProposals": 0,
+    "duplicatePairedProposalsDecidedDifferent": 0,
+    "unresolvedDuplicatePairedProposals": 40,
+    "unresolvedPairedProposals": 80
+  },
+  "reversal": {
+    "forward": {
+      "pairs": 140,
+      "duplicateTargetMisses": 0,
+      "allPairedTargetMisses": 0,
+      "repeatDisagreements": 0,
+      "inputOrderDisagreements": 0
+    },
+    "reverse": {
+      "pairs": 140,
+      "duplicateTargetMisses": 0,
+      "allPairedTargetMisses": 0,
+      "repeatDisagreements": 0,
+      "inputOrderDisagreements": 0
+    }
+  },
+  "runtimeChecks": [
+    {
+      "check": "ACTUAL_LOCAL_MODEL",
+      "result": "PASS"
+    },
+    {
+      "check": "CACHE_REUSE_WITH_NEW_IDENTITY_BINDING",
+      "result": "PASS"
+    },
+    {
+      "check": "RETURNED_VECTOR_MUTATION_ISOLATED",
+      "result": "PASS"
+    },
+    {
+      "check": "NO_SILENT_TRUNCATION_OR_PARTIAL_CACHE_COMMIT",
+      "result": "PASS"
+    }
+  ],
+  "integration": {
+    "decision": "SUPPRESS_DUPLICATE",
+    "recordedResponses": 1,
+    "explicitUncertainStubs": 7,
+    "liveLlmRequests": 0,
+    "sourceRecordsRemoved": 0,
+    "level": "Real local encoding plus recorded one-pair Hermes replay and explicit uncertain stubs; not new live LLM or hosted acceptance."
+  },
+  "measurementSequence": "Initial failed retrieval preserved. Task-only MMR plan frozen before V2 pair/scale runs. Memory-only instrumentation followed those runs; reversal, runtime and integration used final instrumented sources. Historical hashes are retained.",
+  "independentBlindHoldout": false,
+  "independentHumanAcceptance": false,
+  "machineEnergyCost": null,
+  "maintenanceCost": null,
+  "newPaidApiCalls": 0,
+  "uiChanged": false,
+  "databaseMigration": false,
+  "automaticMerges": 0,
+  "rollback": "Disable optional encoder and rebuild the lexical snapshot; keep all source records, evidence and human journals. Known lexical recall gaps remain.",
+  "remaining": [
+    "80 offline pair decisions unresolved, including 40 expected duplicates.",
+    "Seven expected duplicate targets are beyond the default eight ambiguous-review-call budget.",
+    "Authored synthetic shared transformations are not independently blind real-language evaluation.",
+    "Only two difficult queries were measured at 100, 1000 and 10000 records; shared-host timings are descriptive.",
+    "Independent CPU-process memory peaks and Node RSS snapshots are not a synchronized system peak.",
+    "Other hardware, runtime combinations, real review workload and hosted integration remain unvalidated."
+  ]
+}

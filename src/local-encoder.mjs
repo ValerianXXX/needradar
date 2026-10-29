@@ -45,6 +45,7 @@ export function createLocalEncoder({ pythonExecutable, modelDirectory, allowExec
           } else if (item.type === 'DONE' && ready && item.encoded === pending.length && fresh.size === pending.length && item.cloudRequests === 0) {
             done = true;
             observation.encoded = item.encoded;
+            observation.memory = item.memory ?? null;
           } else throw new Error('INVALID_ENCODER_STREAM');
         };
         child.stdout.setEncoding('utf8');
@@ -72,11 +73,11 @@ export function createLocalEncoder({ pythonExecutable, modelDirectory, allowExec
       for (const [key, value] of fresh) cache.set(key, value);
       while (cache.size > 10000) cache.delete(cache.keys().next().value);
       // Preserve this request's results even when it displaces older cache entries.
-      return { encoderId, rows: inputs.map(row => ({ ...(fresh.get(row.inputDigest) ?? cached.get(row.inputDigest)),
+      return { encoderId, rows: inputs.map(row => ({ ...(fresh.get(row.inputDigest) ?? cached.get(row.inputDigest)), identityDigest: row.identityDigest,
         vector: Float32Array.from((fresh.get(row.inputDigest) ?? cached.get(row.inputDigest)).vector) })),
         observation: { ...observation, reusedInputs: inputs.length - pending.length, elapsedMs: performance.now() - started } };
     }
-    return { encoderId, rows: inputs.map(row => ({ ...cache.get(row.inputDigest), vector: Float32Array.from(cache.get(row.inputDigest).vector) })),
+    return { encoderId, rows: inputs.map(row => ({ ...cache.get(row.inputDigest), identityDigest: row.identityDigest, vector: Float32Array.from(cache.get(row.inputDigest).vector) })),
       observation: { ...observation, reusedInputs: inputs.length, elapsedMs: performance.now() - started } };
   };
 }

@@ -20,6 +20,35 @@ def load_spec():
     return json.loads(raw), hashlib.sha256(raw.encode()).hexdigest()
 
 
+def memory_observation():
+    try:
+        if sys.platform == 'win32':
+            import ctypes
+            from ctypes import wintypes
+            class Counters(ctypes.Structure):
+                _fields_ = [('cb', wintypes.DWORD), ('PageFaultCount', wintypes.DWORD)] + [
+                    (name, ctypes.c_size_t) for name in ['PeakWorkingSetSize', 'WorkingSetSize',
+                    'QuotaPeakPagedPoolUsage', 'QuotaPagedPoolUsage', 'QuotaPeakNonPagedPoolUsage',
+                    'QuotaNonPagedPoolUsage', 'PagefileUsage', 'PeakPagefileUsage']]
+            kernel = ctypes.WinDLL('kernel32.dll', winmode=0x800)
+            api = ctypes.WinDLL('psapi.dll', winmode=0x800)
+            kernel.GetCurrentProcess.restype = wintypes.HANDLE
+            api.GetProcessMemoryInfo.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+            api.GetProcessMemoryInfo.restype = wintypes.BOOL
+            counters = Counters()
+            counters.cb = ctypes.sizeof(counters)
+            if not api.GetProcessMemoryInfo(kernel.GetCurrentProcess(), ctypes.byref(counters), counters.cb):
+                raise OSError('MEMORY_PROFILE_UNAVAILABLE')
+            return {'rssBytes': counters.WorkingSetSize, 'peakRssBytes': counters.PeakWorkingSetSize,
+                    'scope': 'Current Python child process only; GetProcessMemoryInfo.'}
+        import resource
+        peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        return {'rssBytes': None, 'peakRssBytes': peak if sys.platform == 'darwin' else peak * 1024,
+                'scope': 'Current Python child process only; ru_maxrss.'}
+    except Exception:
+        return {'rssBytes': None, 'peakRssBytes': None, 'scope': 'Unavailable; not zero.'}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model-dir', required=True)
@@ -87,7 +116,7 @@ def main():
         emit({'type': 'BATCH', 'encoderId': encoder_id, 'elapsedMs': round((time.perf_counter() - before) * 1000, 3),
               'rows': [{'inputDigest': row['inputDigest'], 'tokens': length, 'vector': vector.tolist()}
                        for row, length, vector in zip(batch, lengths, vectors)]})
-    emit({'type': 'DONE', 'encoderId': encoder_id, 'encoded': len(rows), 'cloudRequests': 0,
+    emit({'type': 'DONE', 'encoderId': encoder_id, 'encoded': len(rows), 'cloudRequests': 0, 'memory': memory_observation(),
           'elapsedMs': round((time.perf_counter() - started) * 1000, 3)})
 
 

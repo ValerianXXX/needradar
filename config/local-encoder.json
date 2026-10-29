@@ -7,7 +7,9 @@
   "modelCard": "https://huggingface.co/intfloat/multilingual-e5-small",
   "dimensions": 384,
   "maxTokens": 512,
-  "inputFormat": "NEEDRADAR_OPPORTUNITY_IDENTITY_TEXT_V1",
+  "inputFormat": "NEEDRADAR_TASK_RETRIEVAL_TEXT_V2",
+  "inputFields": ["jobToBeDone"],
+  "identityBindingFields": ["persona", "jobToBeDone", "desiredOutcome"],
   "prefix": "query: ",
   "pooling": "attention-mask mean then L2 normalization",
   "files": {

@@ -9,15 +9,17 @@ NeedRadar is an evidence-first decision system for finding AI-solvable workflow 
 
 The live product opens in English and includes a persistent Chinese-language switch. This repository and every attached portfolio asset are English-only.
 
-**29 October 2026 code milestone:** the public edition now has immutable retrieval
-snapshots, conservative review clusters, reversible split records, order-independent
-provenance checks and separate source/independent-evidence freshness. A frozen set
-contains 140 synthetic pairs: the offline policy leaves 80 for review. An actual
-12-pair Hermes pilot resolved its selected six duplicates and six distinct tasks;
-the other ambiguous pairs were not model-tested. Large-corpus cross-language and
-low-overlap retrieval still fails the two recorded stress queries. No production
-deployment or market-validation claim follows from these results.
-See [implementation, measured limits and runnable examples](docs/evidence-clusters-2026-10-29.md).
+**29 October 2026 code milestones:** the public edition has immutable retrieval
+snapshots, conservative review clusters, reversible split records and separate
+evidence/validation state. Optional local multilingual embeddings now recover the
+paired targets in the 140-case synthetic retrieval test, including the two prior
+stress-query misses at 100/1,000/10,000 records. This improves candidate retrieval;
+the offline pair policy still leaves 80 cases for semantic adjudication. The
+earlier actual 12-pair Hermes pilot remains a separate, limited observation.
+Default checks need only Node; local embeddings require explicit setup and have
+measured CPU, startup and memory costs. No hosted deployment or market result is claimed.
+See [local retrieval, measurements and setup](docs/local-retrieval-2026-10-29.md)
+and [evidence clusters and reversible decisions](docs/evidence-clusters-2026-10-29.md).
 The [earlier 16-pair comparison](docs/dedup-upgrade-2026-10-27.md) remains historical evidence.
 
 ## Executive answer
@@ -103,6 +105,7 @@ This public repository is a **curated portfolio edition**, not a deployment mirr
 
 - [src/evidence-policy.mjs](src/evidence-policy.mjs) — evidence completeness and source-safety gates;
 - [src/similarity.mjs](src/similarity.mjs) — Unicode lexical retrieval and conservative identity checks;
+- [src/semantic-retrieval.mjs](src/semantic-retrieval.mjs) — optional local dense/lexical candidates with diversity and source-bound vectors;
 - [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
 - [src/provenance.mjs](src/provenance.mjs) — independent evidence grouping;
 - [src/opportunity-state.mjs](src/opportunity-state.mjs) — evidence and validation history;
