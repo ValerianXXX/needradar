@@ -107,7 +107,14 @@ benefit was established, so no production dependency or model switch was introdu
 Validation: 20 public tests and the unchanged English-only check pass. The hosted
 source has a separate baseline and adaptation validation record, retained privately.
 Source integration, scheduling, authenticated reviewer controls, persistence and a
-production observation sample still require validation in that deployment.
+production observation sample require separate validation in that deployment.
+
+Follow-up on 28 October: the isolated hosted-source adaptation now implements
+persisted editor review and provenance-aware publication gates, with local
+synthetic database and browser verification. Its source and validation artifacts
+remain private. Hosted authorization, queue-volume behavior and a representative
+production sample are still unverified; no deployment has occurred. These results
+do not change this public module's fixed-fixture accuracy or model measurements.
 
 Publishing requires review of the staged hosted-source diff and a production backup.
 No schema migration is introduced by the staged conservative gate. Rollback is the
