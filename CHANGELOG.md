@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased - 2026-10-27
+
+- Preserve Chinese text and separate opportunity identity from evidence independence.
+- Keep null persona/task fields missing instead of treating the literal word `null` as an exact identity match.
+- Add bounded multilingual review, optional Hermes/Responses adapters, source grouping,
+  opportunity lifecycle events and reversible content-bound human corrections.
+- Add fixed synthetic comparison and real Hermes results; distinguish public code
+  from the independently verified hosted deployment and its unpublished adaptation.
+
 ## 3.2.0 — 2026-08-27
 
 - Added an English-only public project registry for the five personal portfolio projects.

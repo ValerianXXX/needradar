@@ -1,3 +1,5 @@
+import { evidenceSummary } from './provenance.mjs';
+
 export const PUBLICATION_RULES = Object.freeze({
   minimumAccessibleObservations: 2,
   minimumIndependentAuthorGroups: 3,
@@ -29,16 +31,17 @@ export function qualifyingObservations(observations = []) {
 }
 
 export function evaluateEvidenceCluster(cluster, rules = PUBLICATION_RULES) {
-  const observations = qualifyingObservations(cluster.observations);
-  const accessibleCount = observations.length;
-  const independentAuthorGroups = new Set(observations.map((item) => item.authorGroup).filter(Boolean)).size;
-  const sourcePolicies = new Set(observations.map((item) => item.sourcePolicy).filter(Boolean)).size;
+  const qualified = qualifyingObservations(cluster.observations);
+  const observations = qualified.filter((item) => !item.stance || item.stance === 'supporting');
+  const provenance = evidenceSummary(observations);
+  const accessibleCount = provenance.uniqueEvidenceCount;
+  const { independentAuthorGroups, sourcePolicies, independentEvidenceCount } = provenance;
   const missingFields = rules.requiredDraftFields.filter((field) => !hasValue(cluster.draft?.[field]));
 
   const sufficientVolume = accessibleCount >= rules.minimumAccessibleObservations;
   const sufficientIndependence =
     independentAuthorGroups >= rules.minimumIndependentAuthorGroups ||
-    sourcePolicies >= rules.minimumSourcePolicies;
+    (sourcePolicies >= rules.minimumSourcePolicies && independentEvidenceCount >= 2);
   const completeDraft = missingFields.length === 0;
 
   const reasons = [];
@@ -49,8 +52,12 @@ export function evaluateEvidenceCluster(cluster, rules = PUBLICATION_RULES) {
   return {
     eligible: sufficientVolume && sufficientIndependence && completeDraft,
     accessibleCount,
+    counterevidenceCount: evidenceSummary(qualified.filter((item) => item.stance === 'counterevidence')).uniqueEvidenceCount,
     independentAuthorGroups,
     sourcePolicies,
+    independentEvidenceCount,
+    duplicateCaptures: provenance.duplicateCaptures,
+    unresolvedProvenanceCount: provenance.unresolvedProvenanceCount,
     missingFields,
     reasons,
   };

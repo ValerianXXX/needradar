@@ -72,7 +72,7 @@ test('suppresses a candidate that substantially repeats a published brief', () =
   assert.ok(result.similarity.best.score >= result.similarity.threshold);
 });
 
-test('publishes a complete and distinct candidate', () => {
+test('requires semantic review before asserting low-overlap drafts are distinct', () => {
   const cluster = {
     draft: completeDraft,
     observations: [
@@ -87,7 +87,8 @@ test('publishes a complete and distinct candidate', () => {
     evidenceKeys: ['vector-1', 'vector-2'],
   }];
   const result = decidePublication(cluster, existing);
-  assert.equal(result.decision, 'PUBLISH');
+  assert.equal(result.decision, 'REVIEW');
+  assert.ok(result.reasons.includes('SEMANTIC_REVIEW_REQUIRED'));
 });
 
 test('reports transparent similarity components', () => {

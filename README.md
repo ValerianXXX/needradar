@@ -9,6 +9,15 @@ NeedRadar is an evidence-first decision system for finding AI-solvable workflow 
 
 The live product opens in English and includes a persistent Chinese-language switch. This repository and every attached portfolio asset are English-only.
 
+**October 2026 engineering update:** this edition now preserves Chinese text,
+separates duplicate identity from corroboration, and provides optional grounded
+Hermes/Responses review plus reversible human decisions. On 16 fixed synthetic
+pairs, the old policy produced 4 false merges and 5 missed duplicates; the offline
+replacement leaves 9 pairs for review, and one real Hermes round resolved those
+pairs correctly. These are limited engineering results, not market validation.
+The hosted version was checked separately; its adaptation is not deployed.
+See [implementation, comparison, configuration and limits](docs/dedup-upgrade-2026-10-27.md).
+
 ## Executive answer
 
 The problem is not a shortage of AI ideas. It is the absence of a repeatable way to decide which workflow deserves evidence, a pilot, and organizational attention.
@@ -90,7 +99,10 @@ The public registry is in [data/project-registry.json](data/project-registry.jso
 This public repository is a **curated portfolio edition**, not a deployment mirror. It intentionally excludes production secrets, operational databases, personal data, and private administrative surfaces. It includes representative, runnable policy logic:
 
 - [src/evidence-policy.mjs](src/evidence-policy.mjs) — evidence completeness and source-safety gates;
-- [src/similarity.mjs](src/similarity.mjs) — transparent semantic-overlap scoring;
+- [src/similarity.mjs](src/similarity.mjs) — Unicode lexical retrieval and conservative identity checks;
+- [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
+- [src/provenance.mjs](src/provenance.mjs) — independent evidence grouping;
+- [src/opportunity-state.mjs](src/opportunity-state.mjs) — evidence and validation history;
 - [src/pipeline.mjs](src/pipeline.mjs) — publication, suppression, and hold decisions;
 - [tests/pipeline.test.mjs](tests/pipeline.test.mjs) — executable policy examples.
 
@@ -99,6 +111,7 @@ Run the checks with Node.js 20 or newer:
 ```bash
 npm test
 npm run check:english
+npm run eval:dedup
 ```
 
 ## Decision rights

@@ -1,0 +1,323 @@
+{
+  "evaluatedOn": "2026-10-27T22:52:21.188Z",
+  "node": "v24.19.0",
+  "fixture": "SYNTHETIC_V1",
+  "integration": "OFFLINE_DETERMINISTIC",
+  "elapsedMs": 8,
+  "paidCallsRequested": 0,
+  "legacy": {
+    "metrics": {
+      "cases": 16,
+      "false_merges": 4,
+      "missed_merges": 5,
+      "unresolved_duplicates": 0,
+      "human_review_pairs": 0,
+      "decided_pairs": 16,
+      "correct_duplicate_proposals": 1
+    },
+    "rows": [
+      {
+        "id": "same-new-evidence",
+        "category": "different_evidence",
+        "expected": "same",
+        "predicted": "different"
+      },
+      {
+        "id": "same-chinese",
+        "category": "chinese",
+        "expected": "same",
+        "predicted": "different"
+      },
+      {
+        "id": "same-bilingual",
+        "category": "cross_language",
+        "expected": "same",
+        "predicted": "different"
+      },
+      {
+        "id": "same-paraphrase",
+        "category": "low_overlap",
+        "expected": "same",
+        "predicted": "different"
+      },
+      {
+        "id": "same-repost",
+        "category": "repost",
+        "expected": "same",
+        "predicted": "same"
+      },
+      {
+        "id": "same-case",
+        "category": "normalization",
+        "expected": "same",
+        "predicted": "different"
+      },
+      {
+        "id": "different-job",
+        "category": "same_persona",
+        "expected": "different",
+        "predicted": "different"
+      },
+      {
+        "id": "different-constraints",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "same"
+      },
+      {
+        "id": "different-budget",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "same"
+      },
+      {
+        "id": "different-timing",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "same"
+      },
+      {
+        "id": "nearby-need",
+        "category": "nearby_nonduplicate",
+        "expected": "different",
+        "predicted": "different"
+      },
+      {
+        "id": "negated-task",
+        "category": "negation",
+        "expected": "different",
+        "predicted": "different"
+      },
+      {
+        "id": "same-evidence-different-job",
+        "category": "evidence_not_identity",
+        "expected": "different",
+        "predicted": "different"
+      },
+      {
+        "id": "different-user",
+        "category": "same_task_different_persona",
+        "expected": "different",
+        "predicted": "same"
+      },
+      {
+        "id": "unrelated",
+        "category": "unrelated",
+        "expected": "different",
+        "predicted": "different"
+      },
+      {
+        "id": "chinese-different-job",
+        "category": "chinese_nonduplicate",
+        "expected": "different",
+        "predicted": "different"
+      }
+    ]
+  },
+  "current": {
+    "metrics": {
+      "cases": 16,
+      "false_merges": 0,
+      "missed_merges": 0,
+      "unresolved_duplicates": 2,
+      "human_review_pairs": 9,
+      "decided_pairs": 7,
+      "correct_duplicate_proposals": 4
+    },
+    "rows": [
+      {
+        "id": "same-new-evidence",
+        "category": "different_evidence",
+        "expected": "same",
+        "predicted": "same",
+        "method": "EXACT_TASK",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "same-chinese",
+        "category": "chinese",
+        "expected": "same",
+        "predicted": "same",
+        "method": "EXACT_TASK",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "same-bilingual",
+        "category": "cross_language",
+        "expected": "same",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0
+      },
+      {
+        "id": "same-paraphrase",
+        "category": "low_overlap",
+        "expected": "same",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.15
+      },
+      {
+        "id": "same-repost",
+        "category": "repost",
+        "expected": "same",
+        "predicted": "same",
+        "method": "EXACT_TASK",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "same-case",
+        "category": "normalization",
+        "expected": "same",
+        "predicted": "same",
+        "method": "EXACT_TASK",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "different-job",
+        "category": "same_persona",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.15
+      },
+      {
+        "id": "different-constraints",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "different",
+        "method": "EXPLICIT_CONSTRAINTS",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "different-budget",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "different",
+        "method": "EXPLICIT_CONSTRAINTS",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "different-timing",
+        "category": "constraints",
+        "expected": "different",
+        "predicted": "different",
+        "method": "EXPLICIT_CONSTRAINTS",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 1
+      },
+      {
+        "id": "nearby-need",
+        "category": "nearby_nonduplicate",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.3417
+      },
+      {
+        "id": "negated-task",
+        "category": "negation",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.6
+      },
+      {
+        "id": "same-evidence-different-job",
+        "category": "evidence_not_identity",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.15
+      },
+      {
+        "id": "different-user",
+        "category": "same_task_different_persona",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.85
+      },
+      {
+        "id": "unrelated",
+        "category": "unrelated",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0
+      },
+      {
+        "id": "chinese-different-job",
+        "category": "chinese_nonduplicate",
+        "expected": "different",
+        "predicted": "uncertain",
+        "method": "HUMAN_REVIEW_REQUIRED",
+        "model": null,
+        "elapsedMs": null,
+        "usage": null,
+        "costUsd": null,
+        "lexicalScore": 0.415
+      }
+    ]
+  },
+  "claims": "Synthetic engineering evidence only. Uncertain pairs require human review. Null cost means unmeasured, not free."
+}

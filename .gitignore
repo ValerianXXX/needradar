@@ -3,4 +3,8 @@ coverage/
 .DS_Store
 *.log
 *.tmp
+reports/
+.env
+.env.local
+__pycache__/
 
