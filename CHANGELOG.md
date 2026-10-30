@@ -2,6 +2,14 @@
 
 ## Unreleased - 2026-10-30
 
+- Separate capture grouping from typed author/organization independence units.
+  Preserve complementary attribution, reject malformed attribution and prevent
+  known shared origins from inflating the independent-author publication gate.
+- Count independent arrivals by prior capture and attribution membership instead
+  of mutable identity digests. Retain legacy timestamps with an explicit review
+  requirement; never invent historical freshness or alter validation events.
+- Preserve fourteen frozen regression contracts, their eleven original failures,
+  the full 88-test result and unchanged 140-pair offline semantic metrics.
 - Freeze a fourteen-attempt targeted semantic protocol with a shared restart
   budget, two-failure stop, exclusive invocation lock and zero-call replay.
 - Record fourteen actual Hermes pair judgments and saved-proposal reuse, keeping

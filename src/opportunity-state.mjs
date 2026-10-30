@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { evidenceSummary } from './provenance.mjs';
+import { independentEvidenceChange } from './evidence-independence.mjs';
 import { qualifyingObservations } from './evidence-policy.mjs';
 import { pairDigest } from './semantic-review.mjs';
 import { timestamp } from './timestamps.mjs';
@@ -11,10 +12,19 @@ export function addEvidence(opportunity, observations, { observedAt } = {}) {
   const combined = [...prior, ...accepted];
   const before = evidenceSummary(prior), after = evidenceSummary(combined);
   const lastSeen = opportunity.last_seen ? timestamp(opportunity.last_seen) : seenAt;
-  const priorCaptures = new Set(prior), priorOrigins = new Set(before.independentOriginIds);
-  const newIndependent = after.independentOriginIds.filter(id => !priorOrigins.has(id)).length;
+  const priorCaptures = new Set(prior);
+  const change = independentEvidenceChange(before, after, priorCaptures);
+  const newIndependent = change.added;
   const lastIndependent = opportunity.last_new_independent_evidence ? timestamp(opportunity.last_new_independent_evidence) : seenAt;
+  const priorRecencyVerified = opportunity.evidence_state_version === 2 && opportunity.independent_recency_verified === true;
+  // Legacy dates are retained, not backfilled from the current ingestion time.
+  // A newly arrived origin can establish recency only at/after the stored clock.
+  const recencyVerified = newIndependent > 0 && seenAt >= lastIndependent
+    || priorRecencyVerified && change.consolidatedOrLost === 0;
   return { ...structuredClone(opportunity), observations: structuredClone(combined),
+    evidence_state_version: 2, independent_recency_verified: recencyVerified,
+    provenance_change: { newIndependentOrigins: change.added, resolvedExistingOrigins: change.resolvedExisting,
+      consolidatedOrLostOrigins: change.consolidatedOrLost },
     last_seen: accepted.length ? (lastSeen > seenAt ? lastSeen : seenAt) : (opportunity.last_seen ?? null),
     evidence_added: after.groups.filter(group => group.observations.every(item => !priorCaptures.has(item))).length,
     independent_evidence_added: newIndependent,
@@ -64,8 +74,12 @@ export function assessOpportunityFreshness(opportunity, { asOf, agingDays = 30, 
       at, ageDays: Number(ageDays.toFixed(4)) };
   };
   const lastSeen = status(opportunity.last_seen), independentEvidence = status(opportunity.last_new_independent_evidence);
+  independentEvidence.verified = opportunity.evidence_state_version === 2
+    && opportunity.independent_recency_verified === true && independentEvidence.at !== null;
+  independentEvidence.verificationReason = independentEvidence.verified ? 'TRACKED_INDEPENDENT_ARRIVAL'
+    : opportunity.evidence_state_version !== 2 ? 'LEGACY_RECENCY_UNVERIFIED' : 'PROVENANCE_RECENCY_REVIEW_REQUIRED';
   return { checkedAt, policy: { agingDays, staleDays, calibrated: false }, lastSeen, independentEvidence,
-    requiresReview: [lastSeen, independentEvidence].some(item => item.status !== 'FRESH'),
+    requiresReview: !independentEvidence.verified || [lastSeen, independentEvidence].some(item => item.status !== 'FRESH'),
     validation: structuredClone(opportunity.validation ?? { status: 'UNVALIDATED', events: [] }),
     counterevidenceKeys: [...(opportunity.counterevidence ?? [])],
     scope: 'Source and independent-origin recency only; no automatic publication, deletion, demand score or business validation.' };

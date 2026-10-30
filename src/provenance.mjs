@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { attributionKey, attributionValue, independentEvidenceUnits } from './evidence-independence.mjs';
 
 export function canonicalEvidenceUrl(value) {
   try {
@@ -43,13 +44,16 @@ function chooseOriginal(items) {
   const references = new Set(items.flatMap(referencedOrigins));
   const anchored = originals.filter(item => keys(item).some(key => references.has(key)));
   const candidates = anchored.length ? anchored : originals;
-  const conflicting = ['authorGroup', 'originGroup'].some(field => new Set(candidates.map(item => item[field]).filter(Boolean)).size > 1);
+  const conflicting = ['authorGroup', 'originGroup'].some(field => new Set(candidates.map(item => attributionValue(item[field])).filter(Boolean)).size > 1);
+  const invalidAttribution = candidates.some(item => ['authorGroup', 'originGroup'].some(field => item[field] != null && typeof item[field] !== 'string'));
+  const attributionKeys = [...new Set(candidates.flatMap(item => ['authorGroup', 'originGroup']
+    .filter(field => attributionValue(item[field])).map(field => attributionKey(field, item[field]))))].sort();
   const stable = [...(candidates.length ? candidates : items)].sort((a, b) => {
     const aKey = JSON.stringify([!a.originGroup, !a.authorGroup, keys(a).sort(), a.sourcePolicy ?? '', a.authorGroup ?? '']);
     const bKey = JSON.stringify([!b.originGroup, !b.authorGroup, keys(b).sort(), b.sourcePolicy ?? '', b.authorGroup ?? '']);
     return aKey < bKey ? -1 : aKey > bKey ? 1 : 0;
   });
-  return { original: stable[0], unresolvedRepost: !originals.length, conflicting };
+  return { original: stable[0], unresolvedRepost: !originals.length, conflicting, invalidAttribution, attributionKeys };
 }
 
 export function groupEvidence(observations = []) {
@@ -72,16 +76,17 @@ export function groupEvidence(observations = []) {
   });
   return [...groups.values()].map((items) => {
     const identityKeys = [...new Set(items.flatMap(keys))].sort();
-    const { original, unresolvedRepost, conflicting } = chooseOriginal(items);
+    const { original, unresolvedRepost, conflicting, invalidAttribution, attributionKeys } = chooseOriginal(items);
     const independenceReasons = [
       ...(!identityKeys.length ? ['MISSING_IDENTITY'] : []),
       ...(unresolvedRepost ? ['UNRESOLVED_REPOST'] : []),
       ...(conflicting ? ['CONFLICTING_ORIGINAL_PROVENANCE'] : []),
-      ...(!original.authorGroup && !original.originGroup ? ['MISSING_ORIGIN_ATTRIBUTION'] : []),
+      ...(invalidAttribution ? ['INVALID_ORIGIN_ATTRIBUTION'] : []),
+      ...(!attributionKeys.length ? ['MISSING_ORIGIN_ATTRIBUTION'] : []),
     ];
     return {
       id: createHash('sha256').update(JSON.stringify(identityKeys)).digest('hex'),
-      identityKeys, observations: items, original,
+      identityKeys, attributionKeys, observations: items, original,
       independenceKnown: independenceReasons.length === 0, independenceReasons,
       duplicateCaptures: items.length - 1,
     };
@@ -91,14 +96,16 @@ export function groupEvidence(observations = []) {
 export function evidenceSummary(observations = []) {
   const groups = groupEvidence(observations);
   const independent = groups.filter((group) => group.independenceKnown);
-  const independentOriginIds = [...new Set(independent.map(group => createHash('sha256')
-    .update(String(group.original.originGroup || group.original.authorGroup)).digest('hex')))].sort();
+  const independentUnits = independentEvidenceUnits(groups);
+  const independentOriginIds = independentUnits.map(unit => unit.id);
   return {
     groups, captureCount: observations.length, uniqueEvidenceCount: groups.length,
     duplicateCaptures: observations.length - groups.length,
-    independentEvidenceCount: independentOriginIds.length, independentOriginIds,
-    independentAuthorGroups: new Set(independent.map((group) => group.original.authorGroup).filter(Boolean)).size,
-    sourcePolicies: new Set(independent.map((group) => group.original.sourcePolicy).filter(Boolean)).size,
+    independentEvidenceCount: independentUnits.length, independentOriginIds, independentUnits,
+    independentAuthorGroups: independentUnits.filter(unit => unit.hasAuthorAttribution).length,
+    distinctAttributedAuthorGroups: new Set(independentUnits.flatMap(unit => unit.attributionKeys)
+      .filter(key => JSON.parse(key)[0] === 'authorGroup')).size,
+    sourcePolicies: new Set(independent.map(group => attributionValue(group.original.sourcePolicy)).filter(Boolean)).size,
     unresolvedProvenanceCount: groups.filter((group) => !group.independenceKnown).length,
   };
 }

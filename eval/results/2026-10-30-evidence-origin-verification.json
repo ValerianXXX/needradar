@@ -1,0 +1,98 @@
+{
+  "protocol": "INDEPENDENT_EVIDENCE_CORRECTION_V1",
+  "checkedAt": "2026-10-30",
+  "scope": "PUBLIC_CURATED_EDITION_SYNTHETIC_ONLY",
+  "baselineCommit": "5b58e5378a204bc10b35c70f3706c66ec8f79eec",
+  "frozenContractsCommit": "f86b3598cd3c43441dbd6ef3ad9ece39f0aa5f95",
+  "runtimeCommit": "ec9ad0e0e9c0614d9a2dc89728d516236d3aeb9a",
+  "node": "v24.19.0",
+  "baselineSuite": {
+    "tests": 74,
+    "passed": 74,
+    "seconds": 1.2351553,
+    "logSHA256": "842f3238b4f0317285bc67925618728d898788009ae9d3df5b24aa275aa7e4e3"
+  },
+  "frozenBefore": {
+    "tests": 14,
+    "passed": 3,
+    "failed": 11,
+    "seconds": 0.2011632,
+    "failedContracts": [
+      "enriching a capture with an organization does not report fresh independent demand",
+      "one author across policies remains one origin despite partially enriched attribution",
+      "different authors in a known shared origin cannot pass the author-count shortcut",
+      "author and organization namespaces do not collide merely because their labels match",
+      "complementary original annotations and transitive attribution are order invariant",
+      "malformed attribution does not create independence through JavaScript coercion",
+      "nonempty trimmed attribution is stable without name guessing or lowercasing",
+      "resolving an existing unattributed capture does not invent its observation date",
+      "legacy derived recency remains visible but is not silently certified by a recapture",
+      "an earlier new origin cannot certify an unverified later legacy clock",
+      "losing or consolidating previously known origins requires recency review"
+    ]
+  },
+  "relatedAfter": {
+    "tests": 44,
+    "passed": 44,
+    "seconds": 0.3451112
+  },
+  "fullAfter": {
+    "tests": 88,
+    "passed": 88,
+    "skipped": 0,
+    "seconds": 1.1517838
+  },
+  "sourceLFHashes": {
+    "src/provenance.mjs": "c6b090e77aa9950fdd605cd3c5590b986a9c37d97675ef5f67b47643d8b505a0",
+    "src/evidence-independence.mjs": "c00fec9d94b8ab05405f793bce4b985884be6fd05da5a8ba6334d2ef48cf1065",
+    "src/opportunity-state.mjs": "6a8108dd9488f38e235dcd9e960dda049bbbe705bc264300d0b2d49cace66a62",
+    "tests/evidence-independence.test.mjs": "308058d1ab9b40085977bbadfe733a6f1b03853bbf5224f435aba90d772af364"
+  },
+  "localLogSHA256": {
+    "evidence-independence-before-20261030.log": "406dd19c8aaf746533a3551dc823f3e0c6a4d8d795c06661c7618a466d4b1dbe",
+    "evidence-independence-related-20261030.log": "8c65b469fda7da15bddef527ae002fb9b88693a8d48cfa6c06307e7411dc6054",
+    "evidence-all-tests-20261030.log": "93d96a3e1ddc22565202d9f2bd87a67002809ef38b23301795b8995582fadb87",
+    "evidence-english-20261030.log": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+    "evidence-saved-replay-20261030.log": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+    "evidence-dedup-20261030.log": "50c5a2e7f5801d8b2729a4d06978abfecff2fd1c469e10fd21c0a33356f4c548",
+    "evidence-boundaries-20261030.log": "a6394d2a7f8e826bb4952844e1b404a1f0cde6977c3877069951a4abf005642e"
+  },
+  "checkExecution": "npm was absent from PATH; all three equivalent Node commands passed. No npm-install or dependency change.",
+  "savedProposalReplay": {
+    "passed": true,
+    "cases": 14,
+    "newProviderCalls": 0,
+    "originalBilledCostUsd": null,
+    "closedProtocolUnchanged": true
+  },
+  "boundaryMetrics": {
+    "pairs": 140,
+    "false_merges": 0,
+    "missed_merges": 0,
+    "unresolved_duplicates": 40,
+    "human_review_pairs": 80,
+    "correct_duplicate_proposals": 40,
+    "decided_distinct": 20,
+    "synchronous_exact_identity_misses": 0,
+    "reverse_disagreements": 0,
+    "evidence_count_mismatches": 0
+  },
+  "boundaryMetricsEqualHistoricalOffline": true,
+  "boundaryReportLFHash": "6d99e82c40c00578e43e3f452237991a15ac8413f1e3774c79803976dd97b3f9",
+  "boundaryReportWorkingTreeObservation": true,
+  "semanticAccuracyImprovementMeasured": false,
+  "newProviderCalls": 0,
+  "humanReviewTimeMeasured": false,
+  "productionActions": 0,
+  "deploymentMirror": false,
+  "databaseMigrationPerformed": false,
+  "rawObservationsPreserved": true,
+  "validationHistoryPreserved": true,
+  "independentRecencyVersion": 2,
+  "wholeGoalComplete": false,
+  "remaining": [
+    "Full semantic retrieval queue completion",
+    "Independent authored holdouts and human review workload",
+    "Hosted source adaptation and approved deployment"
+  ]
+}
