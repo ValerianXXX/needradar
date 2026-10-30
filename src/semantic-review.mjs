@@ -1,12 +1,9 @@
-import { createHash } from 'node:crypto';
 import { retrieveCandidates } from './similarity.mjs';
 import { timestamp } from './timestamps.mjs';
 import { isSemanticCandidateIndex, retrieveSemanticCandidates } from './semantic-retrieval.mjs';
-
-export const REVIEW_VERSION = 'OPPORTUNITY_PAIR_REVIEW_V1';
-const fields = ['title', 'persona', 'jobToBeDone', 'desiredOutcome', 'constraints'];
-const publicDraft = (draft) => Object.fromEntries(fields.map((key) => [key, draft[key] ?? (key === 'constraints' ? {} : '')]));
-export const pairDigest = (left, right) => createHash('sha256').update(JSON.stringify([publicDraft(left), publicDraft(right)])).digest('hex');
+import { REVIEW_VERSION, publicDraft, pairDigest, reviewSchema, validateReview } from './review-contract.mjs';
+import { createReviewContinuation, journalResponse, MAX_PAIR_ATTEMPTS } from './review-journal.mjs';
+export { REVIEW_VERSION, pairDigest, reviewSchema, validateReview } from './review-contract.mjs';
 
 // Existing V1 digests stay valid. A same/different relationship is symmetric;
 // matching either exact orientation does not approve changed source content.
@@ -28,34 +25,20 @@ export function resolveHumanDecision(left, right, events = []) {
   return { decision: representative.decision, reason: representative.reason, method: 'HUMAN_DECISION', reviewId: representative.id, reviewIds };
 }
 
-export const reviewSchema = {
-  type: 'object', additionalProperties: false, required: ['verdict', 'reason', 'leftQuote', 'rightQuote'],
-  properties: {
-    verdict: { type: 'string', enum: ['same', 'different', 'uncertain'] },
-    reason: { type: 'string', enum: ['SAME_TASK_AND_CONSTRAINTS', 'DIFFERENT_TASK', 'DIFFERENT_PERSONA', 'CONSTRAINT_CONFLICT', 'INSUFFICIENT_INFORMATION'] },
-    leftQuote: { type: 'string' }, rightQuote: { type: 'string' },
-  },
-};
-
-export function validateReview(value, left, right) {
-  if (!value || Object.keys(value).sort().join(',') !== 'leftQuote,reason,rightQuote,verdict'
-      || !reviewSchema.properties.verdict.enum.includes(value.verdict)
-      || !reviewSchema.properties.reason.enum.includes(value.reason)) throw new Error('INVALID_SEMANTIC_REVIEW');
-  for (const [quote, draft] of [[value.leftQuote, left], [value.rightQuote, right]]) {
-    if (typeof quote !== 'string' || quote.length < 4 || quote.length > 800
-        || !fields.some((field) => typeof draft[field] === 'string' && draft[field].includes(quote))) {
-      throw new Error('UNGROUNDED_SEMANTIC_REVIEW');
-    }
-  }
-  if ((value.verdict === 'same') !== (value.reason === 'SAME_TASK_AND_CONSTRAINTS')
-      || (value.verdict === 'uncertain') !== (value.reason === 'INSUFFICIENT_INFORMATION')) throw new Error('CONTRADICTORY_SEMANTIC_REVIEW');
-  return value;
-}
-
-export async function reviewDuplicates(candidate, existing, { reviewer, humanDecisions = [], maxModelCalls = 8, ...retrievalOptions } = {}) {
+export async function reviewDuplicates(candidate, existing, { reviewer, humanDecisions = [], maxModelCalls = 8,
+  reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs, signal, ...retrievalOptions } = {}) {
   if (!Number.isInteger(maxModelCalls) || maxModelCalls < 0 || maxModelCalls > 64) throw new TypeError('INVALID_REVIEW_BUDGET');
+  if (reviewerRevision === undefined && [reviewJournal, onCheckpoint, retryFailedPairs].some(value => value !== undefined)) throw new TypeError('REVIEW_JOURNAL_REVISION_REQUIRED');
+  const continuation = reviewerRevision === undefined ? null : createReviewContinuation({ reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs });
+  if (continuation) candidate = structuredClone(candidate);
   const retrieval = isSemanticCandidateIndex(existing)
     ? retrieveSemanticCandidates(candidate, existing, retrievalOptions) : retrieveCandidates(candidate, existing, retrievalOptions);
+  if (continuation) retrieval.rows = retrieval.rows.map(row => ({ ...row, existing: structuredClone(row.existing) }));
+  // Validate every applicable saved proposal before starting any new provider call.
+  for (const row of retrieval.rows) {
+    const cached = continuation?.latest(pairDigest(candidate, row.existing));
+    if (cached?.type === 'RESULT') validateReview(cached.response.decision, candidate, row.existing);
+  }
   const reviews = [];
   let modelCalls = 0;
   for (const row of retrieval.rows) {
@@ -70,23 +53,58 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
     } else if (human) reviews.push({ ...common, verdict: human.decision, reason: human.reason, method: human.method, reviewId: human.reviewId, reviewIds: human.reviewIds });
     else if (row.constraints.conflicts.length) reviews.push({ ...common, verdict: 'different', reason: 'CONSTRAINT_CONFLICT', method: 'EXPLICIT_CONSTRAINTS' });
     else if (row.autoDuplicate) reviews.push({ ...common, verdict: 'same', reason: 'SAME_TASK_AND_CONSTRAINTS', method: 'EXACT_TASK' });
-    else if (!reviewer || modelCalls >= maxModelCalls) reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method: 'HUMAN_REVIEW_REQUIRED' });
     else {
-      modelCalls++;
-      try {
-        const response = await reviewer({ protocol: REVIEW_VERSION, left: publicDraft(candidate), right: publicDraft(row.existing), schema: reviewSchema });
-        const result = validateReview(response.decision, candidate, row.existing);
-        const decision = (row.constraints.missing.length || row.invalidIdentityFields.length) && result.verdict === 'same'
-          ? { ...result, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION' } : result;
-        reviews.push({ ...common, ...decision, method: 'MODEL_PROPOSAL', model: response.model ?? null,
-          elapsedMs: response.elapsedMs ?? null, usage: response.usage ?? null, costUsd: response.costUsd ?? null });
-      } catch {
-        reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method: 'REVIEW_FAILED' });
+      const previous = continuation?.latest(common.pairDigest);
+      const constrained = result => (row.constraints.missing.length || row.invalidIdentityFields.length) && result.verdict === 'same'
+        ? { ...result, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION' } : result;
+      const unresolved = method => reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method });
+      if (previous?.type === 'RESULT') {
+        const { decision, ...observation } = previous.response;
+        reviews.push({ ...common, ...constrained(decision), ...observation, method: 'MODEL_PROPOSAL_REUSED', originalAttemptId: previous.attemptId });
+        continue;
       }
+      if (previous && !continuation.retryRequested(common.pairDigest)) {
+        unresolved(previous.type === 'FAILED' ? 'REVIEW_FAILED' : 'REVIEW_INTERRUPTED');
+        continue;
+      }
+      if (continuation && continuation.attempts(common.pairDigest) >= MAX_PAIR_ATTEMPTS) { unresolved('REVIEW_RETRY_LIMIT'); continue; }
+      if (signal?.aborted) { unresolved('REVIEW_CANCELLED'); continue; }
+      if (!reviewer || modelCalls >= maxModelCalls) { unresolved('HUMAN_REVIEW_REQUIRED'); continue; }
+      const started = continuation ? await continuation.start(common.pairDigest) : null;
+      if (signal?.aborted) {
+        if (continuation) await continuation.finish(started, null);
+        unresolved('REVIEW_CANCELLED');
+        continue;
+      }
+      modelCalls++;
+      let response = null, result;
+      try {
+        response = await reviewer({ protocol: REVIEW_VERSION, left: publicDraft(candidate), right: publicDraft(row.existing), schema: reviewSchema }, { signal });
+        result = validateReview(response.decision, candidate, row.existing);
+        if (continuation) {
+          response = journalResponse(response);
+          result = response.decision;
+        }
+      } catch {
+        response = null;
+      }
+      // Persistence errors propagate; they must never look like a completed review.
+      if (continuation) await continuation.finish(started, response);
+      if (response) reviews.push({ ...common, ...constrained(result), method: 'MODEL_PROPOSAL', model: response.model ?? null,
+        elapsedMs: response.elapsedMs ?? null, usage: response.usage ?? null, costUsd: response.costUsd ?? null });
+      else unresolved('REVIEW_FAILED');
     }
   }
   return { protocol: REVIEW_VERSION, reviews, modelCalls, retrievalComplete: retrieval.complete,
     duplicate: reviews.some((item) => item.verdict === 'same'),
     requiresReview: !retrieval.complete || reviews.some((item) => item.verdict === 'uncertain'),
+    ...(continuation ? { reviewJournal: continuation.snapshot(), reviewProgress: {
+      retrievedPairs: reviews.length, cachedProposals: reviews.filter(row => row.method === 'MODEL_PROPOSAL_REUSED').length,
+      pendingPairs: reviews.filter(row => row.method === 'HUMAN_REVIEW_REQUIRED').length,
+      failedPairs: reviews.filter(row => ['REVIEW_FAILED', 'REVIEW_RETRY_LIMIT'].includes(row.method)).length,
+      interruptedPairs: reviews.filter(row => row.method === 'REVIEW_INTERRUPTED').length,
+      cancelledPairs: reviews.filter(row => row.method === 'REVIEW_CANCELLED').length,
+      uncertainPairs: reviews.filter(row => row.verdict === 'uncertain').length,
+    } } : {}),
     automaticMerge: false };
 }

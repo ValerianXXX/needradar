@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-30T03:51:39.707393+00:00",
+  "sourceBase": "1a2b05caa9ba992b7107f4dae78bbc926ca9ff30",
+  "frozenTestsCommit": "327743a44d1dc17d94566148e13b8702b1437d32",
+  "runtime": {
+    "node": "24.19.0",
+    "platform": "Windows x64"
+  },
+  "baseline": {
+    "tests": 50,
+    "passed": 50
+  },
+  "frozenBefore": {
+    "tests": 12,
+    "passed": 2,
+    "failed": 10
+  },
+  "frozenAfter": {
+    "tests": 12,
+    "passed": 12,
+    "unchanged": true
+  },
+  "additionalTests": {
+    "tests": 9,
+    "passed": 9
+  },
+  "finalFull": {
+    "tests": 71,
+    "passed": 71,
+    "failed": 0,
+    "skipped": 0,
+    "milliseconds": 973.2857
+  },
+  "englishCheck": "PASS",
+  "sourceLFHashes": {
+    "src/semantic-review.mjs": "5e5d134034782318c3779a77f08ea10bdde8283486eca222c26a4924ceb3a53b",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-journal-file.mjs": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e",
+    "tests/review-continuation.test.mjs": "be401b2fabe83656162c0de78d1da62a56c0ca1e2d0ef3e874c65e5303379382",
+    "tests/review-journal-file.test.mjs": "249c49ac47a63fef7b113e7ede0dfa44cc2d393e76005936f0a99348ec95e1e8",
+    "scripts/evaluate-review-continuation.mjs": "5f43349c6d076032827c6b242a7b12765c031cb9cd4980a8ecd4aa80fd2d7577"
+  },
+  "localLogLFHashes": {
+    "needradar-resume-baseline-20261029.log": "5b6f5f703335916f0eae3f3f50aa3bf5d88c3150815742fa84761217b1c0dbfa",
+    "needradar-continuation-frozen-before-20261029.log": "3f09d92adfa7f3520ca35ee2271df63f14189f838aaa3d9e233bd101768c1c39",
+    "needradar-continuation-related-20261029.log": "c624b2fd2b2adc414361a5505caf9d0d4f0ef8ec0c6522242e205c3e5b086f57",
+    "needradar-continuation-final-full-20261029.log": "bd35259e0ba482c88561e495f8ece3c5f6fbb55e2a43de2f55ff1dd829fc6aaa"
+  },
+  "comparison": "2026-10-29-review-continuation.json",
+  "comparisonTimingNote": "The preserved comparison preceded final JSON error redaction and defensive result copying; the final 71-test suite covers these changes. Its source hashes remain unchanged historical observations.",
+  "actualComponents": [
+    "Local filesystem write-ahead checkpoints",
+    "Separate Node process resume",
+    "Owned child process killed during synthetic provider wait",
+    "Concurrent writer rejected"
+  ],
+  "modelObservation": "One earlier pinned real response and nineteen explicit uncertain stubs; no new live requests or new semantic quality observation",
+  "originalModelCostUsd": null,
+  "originalModelTokens": null,
+  "sourceRecordsDeleted": 0,
+  "automaticMerge": false,
+  "productionActions": 0,
+  "migration": false,
+  "independentHumanAcceptance": false,
+  "remaining": [
+    "Independent holdout",
+    "Human review effort",
+    "New live review of previously over-budget pairs",
+    "Hosted adaptation and deployment approval"
+  ]
+}

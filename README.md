@@ -22,6 +22,12 @@ See [local retrieval, measurements and setup](docs/local-retrieval-2026-10-29.md
 and [evidence clusters and reversible decisions](docs/evidence-clusters-2026-10-29.md).
 The [earlier 16-pair comparison](docs/dedup-upgrade-2026-10-27.md) remains historical evidence.
 
+Optional [review checkpoints](docs/review-continuation-2026-10-29.md) now let an
+eight-call budget advance through later candidates across restarts. Content and
+reviewer revision bind saved proposals; human corrections remain authoritative.
+The fixed offline replay visits 20 distinct pairs in three invocations instead of
+repeating the first eight. This improves scheduling, not measured model accuracy.
+
 ## Executive answer
 
 The problem is not a shortage of AI ideas. It is the absence of a repeatable way to decide which workflow deserves evidence, a pilot, and organizational attention.

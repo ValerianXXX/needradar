@@ -2,6 +2,12 @@
 
 ## Unreleased - 2026-10-29
 
+- Add opt-in, content-bound model-review journals with per-invocation budgets,
+  explicit retries, cancellation of subsequent work and durable local checkpoints.
+- Separate the unchanged pair protocol, human correction policy, execution journal
+  and single-writer file adapter; preserve failures and interrupted attempts.
+- Record a frozen scheduling comparison, actual process restart/interruption and
+  concurrent-writer tests. No new live model or hosted deployment is claimed.
 - Add an opt-in, pinned local CPU encoder and a diverse dense/lexical shortlist;
   keep vector rank separate from opportunity identity, constraints and corroboration.
 - Reject stale/mismatched embeddings, oversized token sequences and incomplete
