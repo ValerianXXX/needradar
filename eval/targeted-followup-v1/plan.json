@@ -1,0 +1,68 @@
+{
+  "protocol": "TARGETED_SEMANTIC_FOLLOWUP_V1",
+  "createdAt": "2026-10-30T05:17:59.593Z",
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "retrievalObservationLFHash": "c52747da507c2e80b58361ee96db5c6c16496832d0c47e873faada1a5882e816",
+  "baseCommit": "39f65441b90ed0bdcdc2b6d367ae8d5469e0eb0c",
+  "selectedIds": [
+    "invoice--cross_language",
+    "invoice--nearby_distinct",
+    "clinic--cross_language",
+    "clinic--nearby_distinct",
+    "property--cross_language",
+    "property--nearby_distinct",
+    "freight--cross_language",
+    "freight--nearby_distinct",
+    "retail--cross_language",
+    "retail--nearby_distinct",
+    "laboratory--cross_language",
+    "laboratory--nearby_distinct",
+    "construction--cross_language",
+    "construction--nearby_distinct"
+  ],
+  "maxAdapterAttempts": 14,
+  "maxNewCallsPerInvocation": 7,
+  "stopAfterFailures": 2,
+  "automaticRetry": false,
+  "runtime": {
+    "hermesRevision": "afe53708ee7400919ae3e17a6dde9b02629e5c87",
+    "pythonVersion": "3.11.15",
+    "provider": "openai-codex",
+    "configuredModel": "gpt-5.6-sol"
+  },
+  "productLFHashes": {
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+    "src/semantic-review.mjs": "5e5d134034782318c3779a77f08ea10bdde8283486eca222c26a4924ceb3a53b",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-journal-file.mjs": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e",
+    "src/command-reviewer.mjs": "cb40f442c98e4dbf688519f660712dae8bf4f4e2696846044640934607ba167e",
+    "scripts/hermes-review.py": "efff4ca6a7555d468d63753dcad345b391318fa5ef618e61609079e3eb76ce73"
+  },
+  "syntheticOnly": true,
+  "expectedLabelsSentToModel": false,
+  "selection": "All seven prior over-budget duplicate targets, interleaved with their same-domain nearby-distinct controls.",
+  "execution": "Each preselected pair is assessed directly; two explicit processes each allow at most seven new calls. A third replay allows zero. Saved grounded proposals remain unapproved.",
+  "stop": "No retries; close after 14 reserved attempts or two failed responses/transports. Unknown interrupted attempts are not retried.",
+  "metrics": [
+    "false merge proposals",
+    "false distinct proposals",
+    "unresolved duplicate pairs",
+    "all unresolved pairs",
+    "adapter attempts and latency",
+    "saved proposal reuse"
+  ],
+  "unknownMetrics": [
+    "internal provider requests",
+    "tokens",
+    "billed cost",
+    "human review time"
+  ],
+  "limits": [
+    "Exposed authored synthetic fixtures, including formerly held-out labels; no fresh blind holdout",
+    "No full 140-record queue completion or corrected population-wide accuracy",
+    "No hosted adaptation, automatic merge or market evidence"
+  ],
+  "methodReference": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+  "referenceCheckedAt": "2026-10-30"
+}

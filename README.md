@@ -28,6 +28,14 @@ reviewer revision bind saved proposals; human corrections remain authoritative.
 The fixed offline replay visits 20 distinct pairs in three invocations instead of
 repeating the first eight. This improves scheduling, not measured model accuracy.
 
+**30 October targeted follow-up:** fourteen real Hermes requests directly reviewed
+the seven previously over-budget translated targets and seven nearby-distinct
+controls. All matched the frozen synthetic labels; a separate zero-call replay
+reused all fourteen grounded proposals. This is a selected-pair observation, not
+completion of every retrieval queue, an independent accuracy estimate or measured
+human time saved. [Protocol, results and offline replay](docs/targeted-semantic-followup-2026-10-30.md)
+preserve unknown costs and the unchanged historical population results.
+
 ## Executive answer
 
 The problem is not a shortage of AI ideas. It is the absence of a repeatable way to decide which workflow deserves evidence, a pilot, and organizational attention.

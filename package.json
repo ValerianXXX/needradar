@@ -16,6 +16,7 @@
     "eval:boundary-pilot": "node scripts/evaluate-boundary-pilot.mjs",
     "eval:local-retrieval": "node --expose-gc scripts/evaluate-local-retrieval.mjs",
     "eval:review-continuation": "node scripts/evaluate-review-continuation.mjs",
-    "check": "npm run check:english && npm test"
+    "eval:targeted-replay": "node scripts/replay-targeted-followup.mjs",
+    "check": "npm run check:english && npm test && npm run eval:targeted-replay"
   }
 }

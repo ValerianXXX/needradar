@@ -143,8 +143,11 @@ not a measured gain in semantic accuracy, provider latency, cost or human effort
 The local replay times include different filesystem work and are not model timings.
 
 The historical 140-pair result, 80 unresolved decisions and seven duplicate targets
-beyond the first eight-call budget remain unchanged observations. This mechanism
-can advance a caller's queue; those targets have not received a new live review.
+beyond the first eight-call budget remain unchanged observations. At this stage,
+those targets had not received a new live review. The subsequent
+[targeted follow-up](targeted-semantic-followup-2026-10-30.md) directly reviews
+those seven pairs with seven nearby-distinct controls and checks persisted reuse;
+it does not establish completion of their full retrieval queues.
 Independent held-out evaluation, human review effort, hosted adaptation and live
 complete-workflow acceptance remain outstanding. Truncated retrieval still sets
 `retrievalComplete: false` and cannot clear a novelty/publication gate even after
