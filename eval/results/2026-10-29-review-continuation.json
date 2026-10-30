@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-30T03:45:09.871Z",
+  "status": "PASS",
+  "mode": "OFFLINE_RECORDED_RESPONSE_AND_UNCERTAIN_STUB_COMPARISON",
+  "syntheticOnly": true,
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "journalLFHash": "793cc457fbe3916bf781bd1ee484d1968fe2c5d01f6f6889f060988fa4ded710",
+  "sourceLFHashes": {
+    "src/semantic-review.mjs": "668734e40196e58701c036eb56b603a483fa80a021abf284cb78575d9c30c06f",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-journal-file.mjs": "2276714daeb2eddeac11422a25ee6544a318f83b34e3b18c7b87ceffa8bb5e2b",
+    "scripts/evaluate-review-continuation.mjs": "5f43349c6d076032827c6b242a7b12765c031cb9cd4980a8ecd4aa80fd2d7577"
+  },
+  "targetRank": 20,
+  "invocations": 3,
+  "maxCallsPerInvocation": 8,
+  "stateless": {
+    "invocations": [
+      8,
+      8,
+      8
+    ],
+    "totalReviewerCallbacks": 24,
+    "distinctRequests": 8,
+    "duplicateCallbacks": 16,
+    "unvisitedRetrievedPairs": 12,
+    "recordedResponses": 0,
+    "uncertainStubs": 24,
+    "targetProposedSame": false,
+    "unresolvedPairs": 20,
+    "requiresReview": true,
+    "retrievalComplete": true,
+    "automaticMerge": false,
+    "replayWallMs": 5.854
+  },
+  "continuation": {
+    "invocations": [
+      8,
+      8,
+      4
+    ],
+    "totalReviewerCallbacks": 20,
+    "distinctRequests": 20,
+    "duplicateCallbacks": 0,
+    "unvisitedRetrievedPairs": 0,
+    "recordedResponses": 1,
+    "uncertainStubs": 19,
+    "targetProposedSame": true,
+    "unresolvedPairs": 19,
+    "requiresReview": true,
+    "retrievalComplete": true,
+    "automaticMerge": false,
+    "replayWallMs": 300.28
+  },
+  "liveModelCalls": 0,
+  "originalProviderCostUsd": null,
+  "originalProviderTokens": null,
+  "evidence": "Actual local file checkpoint/reload; one pinned earlier Hermes response and nineteen explicit uncertain contract stubs.",
+  "limits": [
+    "No new model quality observation",
+    "No independent holdout or human acceptance",
+    "Replay wall time is not model latency",
+    "No retrieval rerun or improvement to the historical 140-pair semantic score",
+    "No hosted source, database, merge, publication or deployment change"
+  ]
+}
