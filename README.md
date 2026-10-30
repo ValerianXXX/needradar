@@ -36,6 +36,12 @@ completion of every retrieval queue, an independent accuracy estimate or measure
 human time saved. [Protocol, results and offline replay](docs/targeted-semantic-followup-2026-10-30.md)
 preserve unknown costs and the unchanged historical population results.
 
+**Independent evidence correction:** attribution enrichment and repeat posts by
+one author no longer create fresh independent demand. Known shared organizations
+also constrain the author-count gate. Original captures and validation history
+remain intact; legacy recency stays unverified until a new tracked arrival can
+establish it. See [behavior, tests and migration boundaries](docs/evidence-origin-units-2026-10-30.md).
+
 ## Executive answer
 
 The problem is not a shortage of AI ideas. It is the absence of a repeatable way to decide which workflow deserves evidence, a pilot, and organizational attention.
@@ -121,7 +127,8 @@ This public repository is a **curated portfolio edition**, not a deployment mirr
 - [src/similarity.mjs](src/similarity.mjs) — Unicode lexical retrieval and conservative identity checks;
 - [src/semantic-retrieval.mjs](src/semantic-retrieval.mjs) — optional local dense/lexical candidates with diversity and source-bound vectors;
 - [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
-- [src/provenance.mjs](src/provenance.mjs) — independent evidence grouping;
+- [src/provenance.mjs](src/provenance.mjs) — capture grouping and provenance diagnostics;
+- [src/evidence-independence.mjs](src/evidence-independence.mjs) — independent attribution units and arrival accounting;
 - [src/opportunity-state.mjs](src/opportunity-state.mjs) — evidence and validation history;
 - [src/opportunity-clusters.mjs](src/opportunity-clusters.mjs) — conservative human-reviewed groups and non-destructive splits;
 - [src/pipeline.mjs](src/pipeline.mjs) — publication, suppression, and hold decisions;
