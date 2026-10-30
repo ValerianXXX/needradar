@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "reviewProtocol": "OPPORTUNITY_PAIR_REVIEW_V1",
+  "reviewerRevision": "3df31efdf0a7fed93de84e80eb04ce19e03f2b27f15a5eb83d6a136fc5a2922f",
+  "events": [
+    {
+      "type": "STARTED",
+      "attemptId": 1,
+      "pairDigest": "c42e5f489eecb1feea648c624819260d08e8e2e1a371faba3bc563ffc2cadb9f",
+      "recordedAt": "2026-10-30T05:18:40.507Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 1,
+      "pairDigest": "c42e5f489eecb1feea648c624819260d08e8e2e1a371faba3bc563ffc2cadb9f",
+      "recordedAt": "2026-10-30T05:18:45.239Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "\u5c06\u53d1\u7968\u8bc6\u522b\u4e2d\u4e0d\u786e\u5b9a\u7684\u5b57\u6bb5\u4ea4\u7ed9\u4eba\u5de5\u5ba1\u6838\uff0c\u5e76\u94fe\u63a5\u5230\u539f\u59cb\u56fe\u7247\u533a\u57df\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4624,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 2,
+      "pairDigest": "1a6e08639f5c317c36198f907b84f2ce33fc4b8371a8083b5e468dd5e80f4abe",
+      "recordedAt": "2026-10-30T05:18:45.249Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 2,
+      "pairDigest": "1a6e08639f5c317c36198f907b84f2ce33fc4b8371a8083b5e468dd5e80f4abe",
+      "recordedAt": "2026-10-30T05:18:49.229Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Route uncertain invoice OCR fields to a person with links to the original image regions.",
+          "rightQuote": "Archive original invoice images for retention without reviewing OCR uncertainty."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 3870,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 3,
+      "pairDigest": "87cee25be599472f98b710fae40c7bc9a7c93a262d78b8d16a62287a8e3d433d",
+      "recordedAt": "2026-10-30T05:18:49.238Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 3,
+      "pairDigest": "87cee25be599472f98b710fae40c7bc9a7c93a262d78b8d16a62287a8e3d433d",
+      "recordedAt": "2026-10-30T05:18:53.546Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Compare appointment requests with room availability and prepare scheduling conflicts for a receptionist.",
+          "rightQuote": "\u5bf9\u7167\u8bca\u5ba4\u7a7a\u95f2\u60c5\u51b5\u68c0\u67e5\u9884\u7ea6\u8bf7\u6c42\uff0c\u628a\u65f6\u95f4\u51b2\u7a81\u4ea4\u7ed9\u524d\u53f0\u5904\u7406\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4192,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 4,
+      "pairDigest": "b626129b0983a9d5a86fe657126e496c014e0ee939753497205e40d8a78e8495",
+      "recordedAt": "2026-10-30T05:18:53.556Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 4,
+      "pairDigest": "b626129b0983a9d5a86fe657126e496c014e0ee939753497205e40d8a78e8495",
+      "recordedAt": "2026-10-30T05:18:58.018Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Compare appointment requests with room availability and prepare scheduling conflicts for a receptionist.",
+          "rightQuote": "Send reminders for already confirmed appointments without checking room conflicts."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4345,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 5,
+      "pairDigest": "20194da87d30f756bc47d806c2aac4731a22302d15be8bffc2b9f6b4f16826e0",
+      "recordedAt": "2026-10-30T05:18:58.027Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 5,
+      "pairDigest": "20194da87d30f756bc47d806c2aac4731a22302d15be8bffc2b9f6b4f16826e0",
+      "recordedAt": "2026-10-30T05:19:02.253Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Group tenant repair reports about the same unit and fault while preserving separate reporter evidence.",
+          "rightQuote": "\u6309\u76f8\u540c\u623f\u5c4b\u5355\u5143\u548c\u6545\u969c\u5f52\u5e76\u4f4f\u6237\u62a5\u4fee\uff0c\u540c\u65f6\u4fdd\u7559\u5404\u62a5\u544a\u4eba\u7684\u72ec\u7acb\u8bc1\u636e\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4111,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 6,
+      "pairDigest": "bd0ff6098fe8490d4a22e2c106e87e38e20198896a9253d0b8b6373958193f2b",
+      "recordedAt": "2026-10-30T05:19:02.262Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 6,
+      "pairDigest": "bd0ff6098fe8490d4a22e2c106e87e38e20198896a9253d0b8b6373958193f2b",
+      "recordedAt": "2026-10-30T05:19:06.724Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Group tenant repair reports about the same unit and fault while preserving separate reporter evidence.",
+          "rightQuote": "Rank different repair jobs by urgency without deciding whether reports describe one fault."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4353,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 7,
+      "pairDigest": "f2c14e55a681cdeb1a9b7d62946eefc66ed71b01b47bee3811615b39fe289f74",
+      "recordedAt": "2026-10-30T05:19:06.735Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 7,
+      "pairDigest": "f2c14e55a681cdeb1a9b7d62946eefc66ed71b01b47bee3811615b39fe289f74",
+      "recordedAt": "2026-10-30T05:19:11.226Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Match shipment identifiers across carrier invoices and delivery receipts and flag unmatched charges.",
+          "rightQuote": "\u6838\u5bf9\u627f\u8fd0\u5546\u53d1\u7968\u4e0e\u4ea4\u4ed8\u56de\u6267\u4e2d\u7684\u8d27\u8fd0\u7f16\u53f7\uff0c\u5e76\u6807\u8bb0\u65e0\u6cd5\u5339\u914d\u7684\u8d39\u7528\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4381,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 8,
+      "pairDigest": "85c03639be9b408427cfcaa5042477b734d98698820ec1917799ffb51818b94e",
+      "recordedAt": "2026-10-30T05:20:13.697Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 8,
+      "pairDigest": "85c03639be9b408427cfcaa5042477b734d98698820ec1917799ffb51818b94e",
+      "recordedAt": "2026-10-30T05:20:18.744Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Match shipment identifiers across carrier invoices and delivery receipts and flag unmatched charges.",
+          "rightQuote": "Convert carrier invoice currencies without linking charges to delivery evidence."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4936,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 9,
+      "pairDigest": "b239852c3b8f11b36f24012adadfbaad3a9fce19359ee42d063f9ef2a1a4b9e1",
+      "recordedAt": "2026-10-30T05:20:18.753Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 9,
+      "pairDigest": "b239852c3b8f11b36f24012adadfbaad3a9fce19359ee42d063f9ef2a1a4b9e1",
+      "recordedAt": "2026-10-30T05:20:23.319Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Match supplier product variants to store catalog identifiers and flag ambiguous mappings for a person.",
+          "rightQuote": "\u5c06\u4f9b\u5e94\u5546\u4ea7\u54c1\u53d8\u4f53\u5339\u914d\u5230\u95e8\u5e97\u76ee\u5f55\u7f16\u53f7\uff0c\u5e76\u628a\u6709\u6b67\u4e49\u7684\u6620\u5c04\u4ea4\u7ed9\u4eba\u5de5\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4457,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 10,
+      "pairDigest": "86c6da151f91e0ad263c85fcc7512b12236de9f38053b412e24d21ac363e02b2",
+      "recordedAt": "2026-10-30T05:20:23.329Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 10,
+      "pairDigest": "86c6da151f91e0ad263c85fcc7512b12236de9f38053b412e24d21ac363e02b2",
+      "recordedAt": "2026-10-30T05:20:27.706Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Match supplier product variants to store catalog identifiers and flag ambiguous mappings for a person.",
+          "rightQuote": "Count stock for known catalog identifiers without resolving supplier variant mappings."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4259,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 11,
+      "pairDigest": "369485f24f11b673409de55b54d45214c42c51cf4909b92f95bef930627c0177",
+      "recordedAt": "2026-10-30T05:20:27.715Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 11,
+      "pairDigest": "369485f24f11b673409de55b54d45214c42c51cf4909b92f95bef930627c0177",
+      "recordedAt": "2026-10-30T05:20:32.087Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Check sample metadata tables for missing collection fields and inconsistent identifiers without interpreting test results.",
+          "rightQuote": "\u68c0\u67e5\u6837\u672c\u5143\u6570\u636e\u8868\u4e2d\u7f3a\u5931\u7684\u91c7\u96c6\u5b57\u6bb5\u548c\u4e0d\u4e00\u81f4\u7f16\u53f7\uff0c\u4e0d\u89e3\u8bfb\u68c0\u6d4b\u7ed3\u679c\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4252,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 12,
+      "pairDigest": "47f869f318b3a2d5648b2a4549de008c2e3b7742a82a9709ce9dfdf31aa0a3b4",
+      "recordedAt": "2026-10-30T05:20:32.097Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 12,
+      "pairDigest": "47f869f318b3a2d5648b2a4549de008c2e3b7742a82a9709ce9dfdf31aa0a3b4",
+      "recordedAt": "2026-10-30T05:20:37.111Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Check sample metadata tables for missing collection fields and inconsistent identifiers without interpreting test results.",
+          "rightQuote": "Interpret assay results instead of validating sample collection metadata."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4895,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 13,
+      "pairDigest": "dc0629edb3e5cf41444b8ce29dc3300fc150d71bf4555baa0aec1580a3d79b8b",
+      "recordedAt": "2026-10-30T05:20:37.120Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 13,
+      "pairDigest": "dc0629edb3e5cf41444b8ce29dc3300fc150d71bf4555baa0aec1580a3d79b8b",
+      "recordedAt": "2026-10-30T05:20:41.322Z",
+      "response": {
+        "decision": {
+          "verdict": "same",
+          "reason": "SAME_TASK_AND_CONSTRAINTS",
+          "leftQuote": "Compare document registers with drawing revision labels and flag outdated references for a coordinator.",
+          "rightQuote": "\u5bf9\u7167\u6587\u4ef6\u767b\u8bb0\u8868\u4e0e\u56fe\u7eb8\u4fee\u8ba2\u6807\u8bb0\uff0c\u5411\u534f\u8c03\u5458\u63d0\u793a\u8fc7\u671f\u5f15\u7528\u3002"
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4094,
+        "costUsd": null,
+        "usage": null
+      }
+    },
+    {
+      "type": "STARTED",
+      "attemptId": 14,
+      "pairDigest": "43d6ac0e8da4a9f9783f5642fa2db244c41dd80507956891c8c1acff33778e6d",
+      "recordedAt": "2026-10-30T05:20:41.331Z"
+    },
+    {
+      "type": "RESULT",
+      "attemptId": 14,
+      "pairDigest": "43d6ac0e8da4a9f9783f5642fa2db244c41dd80507956891c8c1acff33778e6d",
+      "recordedAt": "2026-10-30T05:20:45.712Z",
+      "response": {
+        "decision": {
+          "verdict": "different",
+          "reason": "DIFFERENT_TASK",
+          "leftQuote": "Compare document registers with drawing revision labels and flag outdated references for a coordinator.",
+          "rightQuote": "Approve structural design decisions instead of checking drawing version references."
+        },
+        "model": "gpt-5.6-sol",
+        "elapsedMs": 4261,
+        "costUsd": null,
+        "usage": null
+      }
+    }
+  ]
+}

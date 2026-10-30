@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased - 2026-10-30
+
+- Freeze a fourteen-attempt targeted semantic protocol with a shared restart
+  budget, two-failure stop, exclusive invocation lock and zero-call replay.
+- Record fourteen actual Hermes pair judgments and saved-proposal reuse, keeping
+  full-queue completion, independent holdouts, human effort and costs separate.
+- Add a portable, offline hash-bound replay of the published synthetic results;
+  leave product prompts, deduplication rules, retrieval and hosted services unchanged.
+
 ## Unreleased - 2026-10-29
 
 - Add opt-in, content-bound model-review journals with per-invocation budgets,

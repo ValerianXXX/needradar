@@ -1,0 +1,91 @@
+{
+  "observedAt": "2026-10-30T05:23:47.623Z",
+  "sourceCommit": "2012a45a4c4f1f99c8d61f1bbd1bdfae4d6633f8",
+  "protocolHash": "6c9f344cc80580ad1c611d92de659ab7570b9fd979e84afed4cf7de088a17267",
+  "runnerHash": "dda764caa6472c50fa22fb3c8580adbc70294fc5fca0cd3f686c2e07d12df5aa",
+  "runtime": {
+    "hermesRevision": "afe53708ee7400919ae3e17a6dde9b02629e5c87",
+    "pythonVersion": "3.11.15",
+    "provider": "openai-codex",
+    "configuredModel": "gpt-5.6-sol"
+  },
+  "syntheticOnly": true,
+  "observations": "Actual configured Hermes, two separate Node invocations, followed by zero-call saved-proposal replay",
+  "status": "COMPLETED_TARGETED_OBSERVATION",
+  "adapterAttempts": [
+    7,
+    7,
+    0
+  ],
+  "totalAdapterAttempts": 14,
+  "failedAttempts": 0,
+  "toolCalls": 0,
+  "before": {
+    "pairs": 14,
+    "falseMergeProposals": 0,
+    "falseDistinctProposals": 0,
+    "unresolvedDuplicatePairs": 7,
+    "unresolvedPairs": 14,
+    "sameProposals": 0,
+    "differentProposals": 0
+  },
+  "after": {
+    "pairs": 14,
+    "falseMergeProposals": 0,
+    "falseDistinctProposals": 0,
+    "unresolvedDuplicatePairs": 0,
+    "unresolvedPairs": 0,
+    "sameProposals": 7,
+    "differentProposals": 7
+  },
+  "modelUnresolvedPairs": 0,
+  "milliseconds": {
+    "adapterSum": 61030,
+    "adapterMinimum": 3870,
+    "adapterMaximum": 4936,
+    "adapterMedian": 4303,
+    "invocationsSum": 62808.718
+  },
+  "internalProviderRequests": null,
+  "tokenUsage": null,
+  "billedCostUsd": null,
+  "humanReviewSeconds": null,
+  "userCorrectionActions": null,
+  "tests": {
+    "passed": 74,
+    "failed": 0,
+    "skipped": 0,
+    "milliseconds": 1160.0833,
+    "logRawSha256": "3589d11ea84e6137d89ed078a02194b700e7e5eee2ed81796b055be4a9afbcf1",
+    "newContracts": 3
+  },
+  "originalLocalHashes": {
+    "observation-001.json": "65b4367041693d9524211992f1b96a3ff6de3ffd424aa456bee8ce40ce1db2a8",
+    "observation-002.json": "65c489ed95b03d45bd726b612a43383f62243936712e0158b1ce6f14a5a144a5",
+    "observation-003.json": "61ff07fddebc616f2583c5ffff520875f74f62ca401e69d465461a48acc3dc8c",
+    "proposals.json": "a1ffab16ef8b4eb14b9e499f84ed1a212d48bf37d86489c6a2633392097138fc",
+    "requests.jsonl": "c7e9d02e09cadb6979c34b3905f7c9e1d2066fe64b9cb5f7c7d8802de3fbae5e"
+  },
+  "publishedLFHashes": {
+    "2026-10-30-targeted-followup-first.json": "65b4367041693d9524211992f1b96a3ff6de3ffd424aa456bee8ce40ce1db2a8",
+    "2026-10-30-targeted-followup-second.json": "65c489ed95b03d45bd726b612a43383f62243936712e0158b1ce6f14a5a144a5",
+    "2026-10-30-targeted-followup-replay.json": "61ff07fddebc616f2583c5ffff520875f74f62ca401e69d465461a48acc3dc8c",
+    "2026-10-30-targeted-followup-proposals.json": "972012701cffc4988255fa3792ecde4148e5df088fb89d2097fa1f948e7ecd06",
+    "2026-10-30-targeted-followup-requests.jsonl": "c7e9d02e09cadb6979c34b3905f7c9e1d2066fe64b9cb5f7c7d8802de3fbae5e"
+  },
+  "productionActions": 0,
+  "automaticMerge": false,
+  "migration": false,
+  "sourceRecordsDeleted": 0,
+  "productAlgorithmChanged": false,
+  "newModelOrProvider": false,
+  "independentHumanAcceptance": false,
+  "limits": [
+    "Fourteen preselected exposed pairs, not full retrieval queues",
+    "Seven former over-budget duplicates were selected directly, not reached by spending through all distractors",
+    "Earlier 140-pair and 12-pair results remain unchanged",
+    "Former held-out labels are historical; no new blind holdout",
+    "Human effort and actual cost remain unknown",
+    "Hosted adaptation and independent natural-data validation remain open"
+  ]
+}
