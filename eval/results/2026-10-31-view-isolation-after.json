@@ -1,0 +1,180 @@
+{
+  "observedAt": "2026-10-31T16:50:08.468Z",
+  "protocol": "EVIDENCE_VIEW_ISOLATION_V1",
+  "syntheticOnly": true,
+  "sourceCommit": "cc707982859f9dad7c3435ce500e3859f25e0192",
+  "sourceHashes": {
+    "src/opportunity-clusters.mjs": "79bcfdbb85dc6a06656ae4d48c333622d6e5830fe894e3e22d9dc267acb563c2",
+    "src/opportunity-state.mjs": "5feee7408a3bc9436ace80164105208d324a55fe785f8d9bbdd1c4e4c008f685"
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "platform": "win32"
+  },
+  "behavior": {
+    "publicationBeforePreviewEdit": {
+      "decision": "HOLD",
+      "reasons": [
+        "INSUFFICIENT_INDEPENDENCE"
+      ],
+      "evidence": {
+        "eligible": false,
+        "accessibleCount": 2,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 2,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 2,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": [
+          "INSUFFICIENT_INDEPENDENCE"
+        ]
+      },
+      "similarity": null
+    },
+    "publicationAfterPreviewEdit": {
+      "decision": "HOLD",
+      "reasons": [
+        "INSUFFICIENT_INDEPENDENCE"
+      ],
+      "evidence": {
+        "eligible": false,
+        "accessibleCount": 2,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 2,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 2,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": [
+          "INSUFFICIENT_INDEPENDENCE"
+        ]
+      },
+      "similarity": null
+    },
+    "sourceRightsPreserved": true,
+    "returnedViewPreservedAfterSourceEdit": true,
+    "priorValidationHistoryPreserved": true,
+    "explicitSplitAndRestorePreserved": true,
+    "originalUneditedViewHash": "f679363cd6e3a898241a09c365d7d78073f2dc3a3e45848a288cf2e545e22882"
+  },
+  "scale": [
+    {
+      "size": 100,
+      "humanEvents": 99,
+      "inputHash": "2433509e5afa00f2db81c4653d06cad71acc483f8bda348da16de2afb83c31a6",
+      "medianMs": 25.706199999999995,
+      "observations": [
+        {
+          "elapsedMs": 23.861999999999995,
+          "heapBeforeBytes": 6595104,
+          "heapAfterBytes": 7678520,
+          "rssAfterBytes": 53284864,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 25.706199999999995,
+          "heapBeforeBytes": 6768152,
+          "heapAfterBytes": 7792864,
+          "rssAfterBytes": 53653504,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 27.916799999999995,
+          "heapBeforeBytes": 6775872,
+          "heapAfterBytes": 7902816,
+          "rssAfterBytes": 53829632,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        }
+      ]
+    },
+    {
+      "size": 1000,
+      "humanEvents": 999,
+      "inputHash": "c460d97f46da50d6114ab7ead3ed052d017a37969e9626d2b98fae2c2673a25b",
+      "medianMs": 311.1612,
+      "observations": [
+        {
+          "elapsedMs": 299.11449999999996,
+          "heapBeforeBytes": 9970264,
+          "heapAfterBytes": 19323056,
+          "rssAfterBytes": 74387456,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 315.8329,
+          "heapBeforeBytes": 10932368,
+          "heapAfterBytes": 18998296,
+          "rssAfterBytes": 76222464,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 311.1612,
+          "heapBeforeBytes": 11030072,
+          "heapAfterBytes": 25559232,
+          "rssAfterBytes": 91693056,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        }
+      ]
+    },
+    {
+      "size": 10000,
+      "humanEvents": 9999,
+      "inputHash": "afa22580b713c4caf1decf37a03537b9c4f724a932c974cde2ea93e0b1839bd7",
+      "medianMs": 3605.1211999999996,
+      "observations": [
+        {
+          "elapsedMs": 3505.7299,
+          "heapBeforeBytes": 42222136,
+          "heapAfterBytes": 122650888,
+          "rssAfterBytes": 247631872,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3605.1211999999996,
+          "heapBeforeBytes": 51725680,
+          "heapAfterBytes": 128441400,
+          "rssAfterBytes": 260038656,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3611.5926999999992,
+          "heapBeforeBytes": 51787496,
+          "heapAfterBytes": 126279792,
+          "rssAfterBytes": 261074944,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        }
+      ]
+    }
+  ],
+  "modelCalls": 0,
+  "externalActions": 0,
+  "hostedProductChanged": false,
+  "independentHumanAcceptance": false,
+  "limits": [
+    "Public policy library on synthetic in-memory data, not a deployment or authenticated persistence transaction",
+    "Three shared-host observations per size; memory snapshots are not peak memory or allocations",
+    "Three-member reviewed groups do not measure dense graph worst-case behavior",
+    "No semantic-accuracy, model-latency or human-effort benefit measured"
+  ]
+}

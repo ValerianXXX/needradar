@@ -1,0 +1,440 @@
+{
+  "observed_at": "2026-10-31T16:54:08.967191+00:00",
+  "status": "LOCAL_SOURCE_VIEW_ISOLATION_VERIFIED_SEMANTIC_AND_HOSTED_REQUIREMENTS_OPEN",
+  "branch": "codex/evidence-view-isolation-20261031",
+  "baseline_commit": "5f052b552b36f32d48ae36a93b4dcf25f2734ef6",
+  "runtime_commit": "cc707982859f9dad7c3435ce500e3859f25e0192",
+  "frozen_test_commit": "f6859d6bf6f1a393918ddbd84a310204b416707b",
+  "baseline": {
+    "tests": 112,
+    "ci_run": 41211718343,
+    "unchanged_baseline_reused": true
+  },
+  "frozen_before": {
+    "passed": 2,
+    "failed": 6
+  },
+  "frozen_after": {
+    "passed": 8,
+    "failed": 0,
+    "duration_ms": 165.1421,
+    "test_blob_unchanged": true
+  },
+  "full": {
+    "passed": 120,
+    "skipped": 0,
+    "duration_ms": 1981.5406,
+    "node": "v24.22.1",
+    "platform": "win32"
+  },
+  "wrapper_attempt": {
+    "command": "npm run check",
+    "status": "NOT_EXECUTED_NPM_UNAVAILABLE",
+    "shell_exit_zero_not_counted_as_success": true,
+    "recovery": "All three declared commands executed directly with Node and their actual exit codes checked"
+  },
+  "behavior_before": {
+    "publicationBeforePreviewEdit": {
+      "decision": "HOLD",
+      "reasons": [
+        "INSUFFICIENT_INDEPENDENCE"
+      ],
+      "evidence": {
+        "eligible": false,
+        "accessibleCount": 2,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 2,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 2,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": [
+          "INSUFFICIENT_INDEPENDENCE"
+        ]
+      },
+      "similarity": null
+    },
+    "publicationAfterPreviewEdit": {
+      "decision": "PUBLISH",
+      "reasons": [
+        "EVIDENCE_COMPLETE",
+        "DISTINCT_FROM_PUBLISHED_BRIEFS"
+      ],
+      "evidence": {
+        "eligible": true,
+        "accessibleCount": 3,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 3,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 3,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": []
+      },
+      "similarity": {
+        "duplicate": false,
+        "threshold": 0.78,
+        "best": null,
+        "ranked": [],
+        "requiresReview": false
+      }
+    },
+    "sourceRightsPreserved": false,
+    "returnedViewPreservedAfterSourceEdit": false,
+    "priorValidationHistoryPreserved": false,
+    "explicitSplitAndRestorePreserved": true,
+    "originalUneditedViewHash": "f679363cd6e3a898241a09c365d7d78073f2dc3a3e45848a288cf2e545e22882"
+  },
+  "behavior_after": {
+    "publicationBeforePreviewEdit": {
+      "decision": "HOLD",
+      "reasons": [
+        "INSUFFICIENT_INDEPENDENCE"
+      ],
+      "evidence": {
+        "eligible": false,
+        "accessibleCount": 2,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 2,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 2,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": [
+          "INSUFFICIENT_INDEPENDENCE"
+        ]
+      },
+      "similarity": null
+    },
+    "publicationAfterPreviewEdit": {
+      "decision": "HOLD",
+      "reasons": [
+        "INSUFFICIENT_INDEPENDENCE"
+      ],
+      "evidence": {
+        "eligible": false,
+        "accessibleCount": 2,
+        "counterevidenceCount": 0,
+        "independentAuthorGroups": 2,
+        "sourcePolicies": 1,
+        "independentEvidenceCount": 2,
+        "duplicateCaptures": 0,
+        "unresolvedProvenanceCount": 0,
+        "missingFields": [],
+        "reasons": [
+          "INSUFFICIENT_INDEPENDENCE"
+        ]
+      },
+      "similarity": null
+    },
+    "sourceRightsPreserved": true,
+    "returnedViewPreservedAfterSourceEdit": true,
+    "priorValidationHistoryPreserved": true,
+    "explicitSplitAndRestorePreserved": true,
+    "originalUneditedViewHash": "f679363cd6e3a898241a09c365d7d78073f2dc3a3e45848a288cf2e545e22882"
+  },
+  "scale_before": [
+    {
+      "size": 100,
+      "humanEvents": 99,
+      "inputHash": "2433509e5afa00f2db81c4653d06cad71acc483f8bda348da16de2afb83c31a6",
+      "medianMs": 23.3125,
+      "observations": [
+        {
+          "elapsedMs": 22.866000000000042,
+          "heapBeforeBytes": 6602080,
+          "heapAfterBytes": 7520240,
+          "rssAfterBytes": 53108736,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 23.982199999999978,
+          "heapBeforeBytes": 6739408,
+          "heapAfterBytes": 7569224,
+          "rssAfterBytes": 53293056,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 23.3125,
+          "heapBeforeBytes": 6746664,
+          "heapAfterBytes": 7679984,
+          "rssAfterBytes": 53551104,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        }
+      ]
+    },
+    {
+      "size": 1000,
+      "humanEvents": 999,
+      "inputHash": "c460d97f46da50d6114ab7ead3ed052d017a37969e9626d2b98fae2c2673a25b",
+      "medianMs": 317.0211999999999,
+      "observations": [
+        {
+          "elapsedMs": 299.416,
+          "heapBeforeBytes": 9938656,
+          "heapAfterBytes": 17242816,
+          "rssAfterBytes": 74022912,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 328.5479,
+          "heapBeforeBytes": 10596824,
+          "heapAfterBytes": 16613152,
+          "rssAfterBytes": 75141120,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 317.0211999999999,
+          "heapBeforeBytes": 10694200,
+          "heapAfterBytes": 15930960,
+          "rssAfterBytes": 76410880,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        }
+      ]
+    },
+    {
+      "size": 10000,
+      "humanEvents": 9999,
+      "inputHash": "afa22580b713c4caf1decf37a03537b9c4f724a932c974cde2ea93e0b1839bd7",
+      "medianMs": 3455.6575000000003,
+      "observations": [
+        {
+          "elapsedMs": 3455.6575000000003,
+          "heapBeforeBytes": 41838192,
+          "heapAfterBytes": 101674376,
+          "rssAfterBytes": 243740672,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3534.0248999999994,
+          "heapBeforeBytes": 48317200,
+          "heapAfterBytes": 104321720,
+          "rssAfterBytes": 250056704,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3082.1821,
+          "heapBeforeBytes": 48364608,
+          "heapAfterBytes": 100442984,
+          "rssAfterBytes": 251600896,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        }
+      ]
+    }
+  ],
+  "scale_after": [
+    {
+      "size": 100,
+      "humanEvents": 99,
+      "inputHash": "2433509e5afa00f2db81c4653d06cad71acc483f8bda348da16de2afb83c31a6",
+      "medianMs": 25.706199999999995,
+      "observations": [
+        {
+          "elapsedMs": 23.861999999999995,
+          "heapBeforeBytes": 6595104,
+          "heapAfterBytes": 7678520,
+          "rssAfterBytes": 53284864,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 25.706199999999995,
+          "heapBeforeBytes": 6768152,
+          "heapAfterBytes": 7792864,
+          "rssAfterBytes": 53653504,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        },
+        {
+          "elapsedMs": 27.916799999999995,
+          "heapBeforeBytes": 6775872,
+          "heapAfterBytes": 7902816,
+          "rssAfterBytes": 53829632,
+          "pairChecks": 99,
+          "groups": 34,
+          "resultHash": "f0468b7911d1c2dd89494343e8de484b6d198618c5611744a25b58d827fe7d6f"
+        }
+      ]
+    },
+    {
+      "size": 1000,
+      "humanEvents": 999,
+      "inputHash": "c460d97f46da50d6114ab7ead3ed052d017a37969e9626d2b98fae2c2673a25b",
+      "medianMs": 311.1612,
+      "observations": [
+        {
+          "elapsedMs": 299.11449999999996,
+          "heapBeforeBytes": 9970264,
+          "heapAfterBytes": 19323056,
+          "rssAfterBytes": 74387456,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 315.8329,
+          "heapBeforeBytes": 10932368,
+          "heapAfterBytes": 18998296,
+          "rssAfterBytes": 76222464,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        },
+        {
+          "elapsedMs": 311.1612,
+          "heapBeforeBytes": 11030072,
+          "heapAfterBytes": 25559232,
+          "rssAfterBytes": 91693056,
+          "pairChecks": 999,
+          "groups": 334,
+          "resultHash": "f2688cb9beff49aff2993ebbf6ff3564317c05651828c75e9a6b1a0033a492b7"
+        }
+      ]
+    },
+    {
+      "size": 10000,
+      "humanEvents": 9999,
+      "inputHash": "afa22580b713c4caf1decf37a03537b9c4f724a932c974cde2ea93e0b1839bd7",
+      "medianMs": 3605.1211999999996,
+      "observations": [
+        {
+          "elapsedMs": 3505.7299,
+          "heapBeforeBytes": 42222136,
+          "heapAfterBytes": 122650888,
+          "rssAfterBytes": 247631872,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3605.1211999999996,
+          "heapBeforeBytes": 51725680,
+          "heapAfterBytes": 128441400,
+          "rssAfterBytes": 260038656,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        },
+        {
+          "elapsedMs": 3611.5926999999992,
+          "heapBeforeBytes": 51787496,
+          "heapAfterBytes": 126279792,
+          "rssAfterBytes": 261074944,
+          "pairChecks": 9999,
+          "groups": 3334,
+          "resultHash": "c2ae38ae749c902fcc6eb6cd501904501c2fd0a73a7dc4a82c2502303bc1c100"
+        }
+      ]
+    }
+  ],
+  "all_nine_scaled_content_hashes_match": true,
+  "offline_population": {
+    "pairs": 140,
+    "false_merges": 0,
+    "missed_merges": 0,
+    "unresolved_duplicates": 40,
+    "human_review_pairs": 80,
+    "correct_duplicate_proposals": 40,
+    "decided_distinct": 20,
+    "synchronous_exact_identity_misses": 0,
+    "reverse_disagreements": 0,
+    "evidence_count_mismatches": 0
+  },
+  "saved_proposal_replay": {
+    "cases": 14,
+    "new_model_calls": 0,
+    "original_cost_usd": null
+  },
+  "model_calls": 0,
+  "hosted_product_changed": false,
+  "independent_human_acceptance": false,
+  "logs": {
+    "before": {
+      "original_sha256": "a4b7475d36e0af1fc6b2c26dafa414a33ba1ce790d5b01ac65ff5d985af9a55b",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-before-20261031.txt",
+      "portable_sha256": "4ecf81b6b8af2555facb180584cc6b5a4b922e987552f6698f32c6d1baa5f6f5"
+    },
+    "after": {
+      "original_sha256": "fd2275e1bd7966a33ad38ab8a38ae8e61db2f037d766d5e0e9a4bc378fb025d8",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-after-20261031.txt",
+      "portable_sha256": "39ef3974382bb7aac38c373f2b981b01f5895918aee1dbc8a4bcd0bd7808696d"
+    },
+    "workflow-before": {
+      "original_sha256": "60491e137c5d78bc8a26cd0e0f776f5fd9710eab6521bce8538999d0f036a384",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-before-20261031.txt",
+      "portable_sha256": "8bf6acca4de21e4cba253a82ae3dff5cfe9b2e342023d2e7f40f8f43b8b2c259"
+    },
+    "workflow-after": {
+      "original_sha256": "48a9d75b6996ff08d64c59513982509ec220385309effbc530909174df31fa03",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-after-20261031.txt",
+      "portable_sha256": "176b5581eb050240d09f219457a2be7cbdec74f96c75506f3931f64ec2229ad8"
+    },
+    "english": {
+      "original_sha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-english-20261031.txt",
+      "portable_sha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363"
+    },
+    "full": {
+      "original_sha256": "826296a542958d699d033c0eae92bafd229953cce8df0a1c2af997d308b544f0",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-full-20261031.txt",
+      "portable_sha256": "826296a542958d699d033c0eae92bafd229953cce8df0a1c2af997d308b544f0"
+    },
+    "saved-replay": {
+      "original_sha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-saved-replay-20261031.txt",
+      "portable_sha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06"
+    },
+    "boundaries": {
+      "original_sha256": "a6394d2a7f8e826bb4952844e1b404a1f0cde6977c3877069951a4abf005642e",
+      "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-boundaries-20261031.txt",
+      "portable_sha256": "c4fe0338b518de404d30e93d04a31b79fcdc171532e4d4c54faf13017b6968b1"
+    }
+  },
+  "lf_sha256": {
+    "tests/evidence-view-isolation.test.mjs": "8814f546386e6525a8202c0f9efa8dd5f2ce4568a461553b91c25e8d1d521417",
+    "src/opportunity-clusters.mjs": "79bcfdbb85dc6a06656ae4d48c333622d6e5830fe894e3e22d9dc267acb563c2",
+    "src/opportunity-state.mjs": "5feee7408a3bc9436ace80164105208d324a55fe785f8d9bbdd1c4e4c008f685",
+    "scripts/evaluate-view-isolation.mjs": "87581f4b309360d375c4a766f3701a59c47b5ee1544caa9b814855f90dd97941",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-before-20261031.txt": "4ecf81b6b8af2555facb180584cc6b5a4b922e987552f6698f32c6d1baa5f6f5",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-after-20261031.txt": "39ef3974382bb7aac38c373f2b981b01f5895918aee1dbc8a4bcd0bd7808696d",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-before-20261031.txt": "8bf6acca4de21e4cba253a82ae3dff5cfe9b2e342023d2e7f40f8f43b8b2c259",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-after-20261031.txt": "176b5581eb050240d09f219457a2be7cbdec74f96c75506f3931f64ec2229ad8",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-english-20261031.txt": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-full-20261031.txt": "826296a542958d699d033c0eae92bafd229953cce8df0a1c2af997d308b544f0",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-saved-replay-20261031.txt": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-boundaries-20261031.txt": "c4fe0338b518de404d30e93d04a31b79fcdc171532e4d4c54faf13017b6968b1",
+    "eval/results/2026-10-31-view-isolation-before.json": "50844a52da0a894553a43cf503da20ea6918b6622fda7d04616fcd8e10005784",
+    "eval/results/2026-10-31-view-isolation-after.json": "defddb4ad5502ab0ad537892cfa710de3f8abf655fdcfc9d2c12a50b41c69fb5",
+    "eval/results/2026-10-31-view-isolation-boundaries.json": "f27c3b1c4f08ffaf49bb22b5448d4bf176bf64e75e0a1d55f213755fe4acd529"
+  },
+  "whole_goal_complete": false,
+  "remaining": [
+    "Forty unresolved duplicate pairs and eighty review pairs in the offline population",
+    "Independent holdouts and actual human effort",
+    "Authenticated source edits and authoritative publication transactions belong to the host",
+    "Trusted hosted source identification and separately approved adaptation/deployment"
+  ]
+}

@@ -9,6 +9,9 @@ NeedRadar is an evidence-first decision system for finding AI-solvable workflow 
 
 The live product opens in English and includes a persistent Chinese-language switch. This repository and every attached portfolio asset are English-only.
 
+The following development work is on unmerged draft branches. The hosted site
+and an installation from `main` do not establish that these changes are deployed.
+
 **29 October 2026 code milestones:** the public edition has immutable retrieval
 snapshots, conservative review clusters, reversible split records and separate
 evidence/validation state. Optional local multilingual embeddings now recover the
@@ -48,6 +51,14 @@ requests and require a new review. Original responses stay bound to their origin
 content. [Behavior, integration, tests and snapshot costs](docs/review-input-consistency-2026-10-31.md)
 also distinguish historical zero-call replay from the closed live experiment.
 This fixes consistency; the 80 unresolved offline pairs remain unresolved.
+
+**31 October evidence-view repair:** editing a returned cluster preview no longer
+changes original source evidence or rights, and a new validation transition keeps
+its historical events separate from the prior state. The same synthetic preview
+edit now leaves publication on HOLD. Full local checks pass 120 tests; measured
+10,000-record view construction rises from 3.46 to 3.61 seconds on the shared host.
+[Reproduction, costs, run instructions and limits](docs/evidence-view-isolation-2026-10-31.md)
+retain the original failure and unchanged semantic-review workload.
 
 ## Executive answer
 
