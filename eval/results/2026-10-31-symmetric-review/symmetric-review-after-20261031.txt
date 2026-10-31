@@ -1,0 +1,35 @@
+✔ reverse same proposal reuses one observation with correctly oriented quotes (5.897ms)
+✔ reverse different proposal reuses one observation with correctly oriented quotes (0.8396ms)
+✔ reverse uncertain proposal reuses one observation with correctly oriented quotes (0.6457ms)
+✔ same-direction cached metadata and original journal remain intact (0.665ms)
+✔ two agreeing legacy orientations select the latest attempt without deleting either (1.3378ms)
+✔ contradictory same/different legacy observations require human review in both directions (1.29ms)
+✔ contradictory same/uncertain legacy observations require human review in both directions (1.529ms)
+✔ agreeing distinct verdicts can retain different reasons while showing the latest source (0.5607ms)
+✔ an authenticated caller human correction still takes precedence over model disagreement (0.7291ms)
+✔ explicit constraint conflicts continue to defeat cached positive proposals (0.6218ms)
+✔ incomplete constraints do not become same merely because the reverse proposal says same (0.4834ms)
+✔ changed source text remains a new bound request instead of reusing another pair (0.9267ms)
+✔ reverse reuse cannot switch reviewer revision (0.5639ms)
+✔ all applicable reverse quotations are validated before any new request (0.5079ms)
+✔ reverse FAILED attempt cannot be silently retried (0.4422ms)
+✔ reverse STARTED attempt cannot be silently retried (0.3253ms)
+✔ explicit retry accepts the current digest and appends one retained attempt (1.1263ms)
+✔ explicit retry accepts the original digest and appends one retained attempt (0.553ms)
+✔ three attempts across both orientations share one retry ceiling (0.5221ms)
+✔ legacy journals with six cross-direction failures remain readable but allow no seventh call (0.6718ms)
+✔ a newer incomplete opposite attempt cannot be hidden behind an older positive result (0.7358ms)
+✔ a newer saved result can resolve an older failed opposite request without another call (0.4803ms)
+✔ equal digests count each attempt once rather than doubling the retry ceiling (0.668ms)
+✔ cancelling an explicitly requested reverse retry records no new attempt (0.3968ms)
+✔ a stale caller revision cannot publish an otherwise reusable reverse proposal (0.3562ms)
+✔ returned reverse quotations and metadata cannot edit the trusted saved observation (0.3919ms)
+✔ separate Node processes share a persisted pair when the second request is reversed (239.9149ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 373.6696

@@ -1,0 +1,565 @@
+{
+  "observed_at": "2026-10-31T20:49:07.425084+00:00",
+  "status": "LOCAL_VERIFIED_HOSTED_PENDING",
+  "branch": "codex/symmetric-review-cache-20261031",
+  "base_commit": "2d38a0eb4eeeb8d7d485a59336e8ccb13cdb189a",
+  "frozen_contract_commit": "5e92eea6448ed7094d0ba7000bef576ca68dc2b7",
+  "runtime_commit": "4648be00dcaf2611a8d3ea7ed6e12b39cd8b4ca6",
+  "baseline": {
+    "tests": 151.0,
+    "pass": 151.0,
+    "fail": 0.0,
+    "skipped": 0.0,
+    "duration_ms": 1596.6145
+  },
+  "frozen_before": {
+    "tests": 27.0,
+    "pass": 10.0,
+    "fail": 17.0,
+    "skipped": 0.0,
+    "duration_ms": 391.2024
+  },
+  "frozen_after": {
+    "tests": 27.0,
+    "pass": 27.0,
+    "fail": 0.0,
+    "skipped": 0.0,
+    "duration_ms": 373.6696
+  },
+  "full": {
+    "tests": 178.0,
+    "pass": 178.0,
+    "fail": 0.0,
+    "skipped": 0.0,
+    "duration_ms": 1513.8371
+  },
+  "frozen_assertions_unchanged": true,
+  "english": "PASS",
+  "historical_forward_replay": {
+    "pairs": 14,
+    "new_calls": 0
+  },
+  "reversed_replay": {
+    "before": {
+      "pairs": 14,
+      "reused": 0,
+      "falseMerge": 0,
+      "falseDistinct": 0,
+      "unresolved": 14,
+      "unresolvedDuplicates": 7,
+      "syntheticPolicyDecisions": {
+        "REVIEW": 14,
+        "SUPPRESS_DUPLICATE": 0,
+        "PUBLISH": 0
+      },
+      "rows": [
+        {
+          "id": "invoice--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "invoice--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "clinic--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "clinic--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "property--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "property--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "freight--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "freight--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "retail--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "retail--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "laboratory--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "laboratory--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "construction--cross_language",
+          "expected": "same",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        },
+        {
+          "id": "construction--nearby_distinct",
+          "expected": "different",
+          "verdict": "uncertain",
+          "method": "HUMAN_REVIEW_REQUIRED",
+          "originalAttemptId": null,
+          "originalPairDigest": null,
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "REVIEW"
+        }
+      ],
+      "newProviderCalls": 0,
+      "originalProviderCostUsd": null
+    },
+    "after": {
+      "pairs": 14,
+      "reused": 14,
+      "falseMerge": 0,
+      "falseDistinct": 0,
+      "unresolved": 0,
+      "unresolvedDuplicates": 0,
+      "syntheticPolicyDecisions": {
+        "REVIEW": 0,
+        "SUPPRESS_DUPLICATE": 7,
+        "PUBLISH": 7
+      },
+      "rows": [
+        {
+          "id": "invoice--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 1,
+          "originalPairDigest": "c42e5f489eecb1feea648c624819260d08e8e2e1a371faba3bc563ffc2cadb9f",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "invoice--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 2,
+          "originalPairDigest": "1a6e08639f5c317c36198f907b84f2ce33fc4b8371a8083b5e468dd5e80f4abe",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "clinic--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 3,
+          "originalPairDigest": "87cee25be599472f98b710fae40c7bc9a7c93a262d78b8d16a62287a8e3d433d",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "clinic--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 4,
+          "originalPairDigest": "b626129b0983a9d5a86fe657126e496c014e0ee939753497205e40d8a78e8495",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "property--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 5,
+          "originalPairDigest": "20194da87d30f756bc47d806c2aac4731a22302d15be8bffc2b9f6b4f16826e0",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "property--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 6,
+          "originalPairDigest": "bd0ff6098fe8490d4a22e2c106e87e38e20198896a9253d0b8b6373958193f2b",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "freight--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 7,
+          "originalPairDigest": "f2c14e55a681cdeb1a9b7d62946eefc66ed71b01b47bee3811615b39fe289f74",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "freight--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 8,
+          "originalPairDigest": "85c03639be9b408427cfcaa5042477b734d98698820ec1917799ffb51818b94e",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "retail--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 9,
+          "originalPairDigest": "b239852c3b8f11b36f24012adadfbaad3a9fce19359ee42d063f9ef2a1a4b9e1",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "retail--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 10,
+          "originalPairDigest": "86c6da151f91e0ad263c85fcc7512b12236de9f38053b412e24d21ac363e02b2",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "laboratory--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 11,
+          "originalPairDigest": "369485f24f11b673409de55b54d45214c42c51cf4909b92f95bef930627c0177",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "laboratory--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 12,
+          "originalPairDigest": "47f869f318b3a2d5648b2a4549de008c2e3b7742a82a9709ce9dfdf31aa0a3b4",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        },
+        {
+          "id": "construction--cross_language",
+          "expected": "same",
+          "verdict": "same",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 13,
+          "originalPairDigest": "dc0629edb3e5cf41444b8ce29dc3300fc150d71bf4555baa0aec1580a3d79b8b",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "SUPPRESS_DUPLICATE"
+        },
+        {
+          "id": "construction--nearby_distinct",
+          "expected": "different",
+          "verdict": "different",
+          "method": "MODEL_PROPOSAL_REUSED",
+          "originalAttemptId": 14,
+          "originalPairDigest": "43d6ac0e8da4a9f9783f5642fa2db244c41dd80507956891c8c1acff33778e6d",
+          "costUsd": null,
+          "automaticMerge": false,
+          "syntheticPolicyDecision": "PUBLISH"
+        }
+      ],
+      "newProviderCalls": 0,
+      "originalProviderCostUsd": null
+    }
+  },
+  "cohort_scheduling": {
+    "before": {
+      "cohorts": 20,
+      "completePerDomainQueues": 20,
+      "stubCallbacks": 848,
+      "redundantReverseCallbacks": 424,
+      "selected": 1008,
+      "uncertain": 848
+    },
+    "after": {
+      "cohorts": 20,
+      "completePerDomainQueues": 20,
+      "stubCallbacks": 424,
+      "redundantReverseCallbacks": 0,
+      "selected": 1008,
+      "uncertain": 848
+    }
+  },
+  "global_lexical_queue_inspection": {
+    "queries": 140,
+    "selected": 4480,
+    "ambiguous": 3800,
+    "directedContentPairs": 1159,
+    "uniqueSymmetricRelations": 1066,
+    "incompleteQueries": 140,
+    "modelExecution": "NOT_RUN",
+    "hybridEncoderExecution": "NOT_RUN",
+    "authorization": "No new campaign authorized by this inspection"
+  },
+  "current_source_lf_hashes": {
+    "src/semantic-review.mjs": "0c0149a1b4a3bbbd33a4a9851aa96a948c61db581c1ffd99eab642e6bb232587",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-journal-file.mjs": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e",
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+    "src/input-snapshot.mjs": "5214cb366b52316463c88a20a7e0a45237439a06d0ddd099915d049b85ab6e24",
+    "src/pipeline.mjs": "6e385ab1887725d03b34b9f59e62fd0863bf0909bd408e580e7e636220a90a0d",
+    "tests/review-symmetry.test.mjs": "a759651c9930db29f6f416e66eea3dd7732495118f5047b98fbbb9fa742c40be",
+    "scripts/evaluate-review-symmetry.mjs": "79df3529411d1798ace8aee030a8d1141c33d5ed30915184c4094ee72a564ece",
+    "README.md": "9c464fca112bbe79930f2678ab61718dcca98a1c46a8dc635d7c655dda974a93",
+    "CHANGELOG.md": "f5760f22364b8211ed8ff000e24e24b3c5603c8b6202a02c803de4461d7f7630",
+    "docs/symmetric-review-2026-10-31.md": "3ec6ab25aa9d1e0a6285d50b86dbd58c9472527605257e268840cd6efa23c2c8"
+  },
+  "artifacts": [
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-after-20261031.txt",
+      "sha256": "1eb50fef5892e902fad2fadbe515e0c5b95bc584da01b3a1400f9b4f529cfc5b",
+      "original_file": "reports/symmetric-review-after-20261031.log",
+      "original_sha256": "5723d7687ff2531ce5a889d52cd7036d9e4c8c4bcf3b5d7340c87761bb4010bb",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-baseline-20261031.txt",
+      "sha256": "11ea667961b82b591910126ee4fa86bafb0cf0f238c8396eac33bbc063f07bd9",
+      "original_file": "reports/symmetric-review-baseline-20261031.log",
+      "original_sha256": "0024cbd8bbb066c69df6a7659bf0f29c320f1adbf30bc05d90d0e3ef98fc409d",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-before-20261031.txt",
+      "sha256": "2e33ef4dfc0763dd3d5b3e9b735aa141f90b6494abafb35baebb7a9b444272c6",
+      "original_file": "reports/symmetric-review-before-20261031.log",
+      "original_sha256": "ebb9c7fd71c0ab4e5fafea37b11f4f210bc36aad76ea28dbbc0c721eec12117f",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-english-20261031.txt",
+      "sha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+      "original_file": "reports/symmetric-review-english-20261031.log",
+      "original_sha256": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-evaluation-after-20261031.json",
+      "sha256": "e2d703225f7bb6ae4a20dcf6c4cbacbdb40d96c17b834e60d1e7c93a1ac8eded",
+      "original_file": "reports/symmetric-review-evaluation-after-20261031.json",
+      "original_sha256": "e2d703225f7bb6ae4a20dcf6c4cbacbdb40d96c17b834e60d1e7c93a1ac8eded",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-evaluation-after-20261031.txt",
+      "sha256": "f02d021e32106b98dd59f83068e65955fda0d06180f3f909692700817b052311",
+      "original_file": "reports/symmetric-review-evaluation-after-20261031.log",
+      "original_sha256": "8932bae94e2f280c698264abbb1ed891c0a6c78bd2654da748a2f32cff25fd43",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-evaluation-before-20261031.json",
+      "sha256": "4c3fdfe54f904da528997a74c3ca2395756866e440738cd387cb0bd559abc0b8",
+      "original_file": "reports/symmetric-review-evaluation-before-20261031.json",
+      "original_sha256": "4c3fdfe54f904da528997a74c3ca2395756866e440738cd387cb0bd559abc0b8",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-evaluation-before-20261031.txt",
+      "sha256": "257f6466a0bec06e0dc7ac345ee6f9522219317ea95edb1bf8bcb93701e677f6",
+      "original_file": "reports/symmetric-review-evaluation-before-20261031.log",
+      "original_sha256": "e66e282659f4acee72b14cf2fdaa53b610458b74703a692318b8473df46da1a3",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-full-20261031.txt",
+      "sha256": "69055579e59ffd12ac33ac4bb0b40fba3d25ec8ad2b0aa0286c6433b1aa836a9",
+      "original_file": "reports/symmetric-review-full-20261031.log",
+      "original_sha256": "89ecfbeb0d200c934ec8a2dbf4caeeebe0e42aed365f3725b3625271b1d8995e",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-historical-replay-20261031.txt",
+      "sha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+      "original_file": "reports/symmetric-review-historical-replay-20261031.log",
+      "original_sha256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-workflow-after-20261031.json",
+      "sha256": "e4b8545b9ebb5e133614d11c8378f4ce53c2afd5f9ca43671a6119ffc149c0cb",
+      "original_file": "reports/symmetric-review-workflow-after-20261031.json",
+      "original_sha256": "e4b8545b9ebb5e133614d11c8378f4ce53c2afd5f9ca43671a6119ffc149c0cb",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-workflow-after-20261031.txt",
+      "sha256": "f02d021e32106b98dd59f83068e65955fda0d06180f3f909692700817b052311",
+      "original_file": "reports/symmetric-review-workflow-after-20261031.log",
+      "original_sha256": "8932bae94e2f280c698264abbb1ed891c0a6c78bd2654da748a2f32cff25fd43",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-workflow-before-20261031.json",
+      "sha256": "41b730e4db3b322a1b24f3ffbef9335d5c832713ecd5b344b114813ee4aebf86",
+      "original_file": "reports/symmetric-review-workflow-before-20261031.json",
+      "original_sha256": "41b730e4db3b322a1b24f3ffbef9335d5c832713ecd5b344b114813ee4aebf86",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    },
+    {
+      "file": "eval/results/2026-10-31-symmetric-review/symmetric-review-workflow-before-20261031.txt",
+      "sha256": "257f6466a0bec06e0dc7ac345ee6f9522219317ea95edb1bf8bcb93701e677f6",
+      "original_file": "reports/symmetric-review-workflow-before-20261031.log",
+      "original_sha256": "e66e282659f4acee72b14cf2fdaa53b610458b74703a692318b8473df46da1a3",
+      "portable_changes": "LF line endings, local path redaction and trailing display whitespace only"
+    }
+  ],
+  "source_hashes_match_both_observed_implementations": true,
+  "runtime_environment": {
+    "platform": "Windows",
+    "node": "v24.22.1"
+  },
+  "verification_levels": {
+    "contract_stubs": "PASS",
+    "separate_node_process_and_journal_file": "PASS",
+    "historical_real_response_replay": "PASS",
+    "new_model_requests": "NOT_RUN",
+    "hosted_ci": "PENDING",
+    "hosted_product": "NOT_RUN",
+    "independent_humans": "NOT_RUN",
+    "ui_changed": false
+  },
+  "new_provider_calls": 0,
+  "billed_cost_usd": null,
+  "human_review_seconds": null,
+  "production_actions": 0,
+  "migration": false,
+  "new_configuration": false,
+  "new_dependencies": false,
+  "M2_complete": false,
+  "remaining": [
+    "Full global hybrid retrieval queue with a separately frozen durable aggregate budget",
+    "Independent authored holdouts and real correction effort",
+    "Attributable provider usage/cost",
+    "Hosted adaptation, authenticated transactional acceptance and approved deployment"
+  ],
+  "limits": [
+    "Historical exposed synthetic observations, not a fresh model or independent holdout",
+    "Contract-stub callback savings are not measured provider cost or human time savings",
+    "Complete per-domain cohorts do not establish full global retrieval-queue completion",
+    "Global queue and costs require a separately frozen, budgeted evaluation; prior live campaign stays closed"
+  ],
+  "rollback": "Stop affected review workers and preserve journals. Reviewed source revert restores redundant reverse calls, separate retry accounting and contradictory proposal behavior; hold affected publication decisions for explicit review."
+}
