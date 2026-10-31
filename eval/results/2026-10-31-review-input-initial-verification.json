@@ -1,0 +1,184 @@
+{
+  "protocol": "ASYNC_REVIEW_INPUT_CONSISTENCY_V1",
+  "checkedAt": "2026-10-31T14:41:51.881Z",
+  "scope": "PUBLIC_CURATED_EDITION_SYNTHETIC_ONLY",
+  "baselineCommit": "b9c94df6b20a052c81f5ac2dd8e15fa4266cbcbd",
+  "runtimeCommit": "5cbdef042f3f8e04d5d15c7d67e810f73e339d1a",
+  "node": "v24.22.1",
+  "frozenContractsCommit": "93860f8335a28bf2057dd96e4a400eb7b3a66337",
+  "additionalContractsCommit": "4cf835bba23c63012ba0b0774ff8aa2b68b73fe4",
+  "frozenBefore": {
+    "tests": 15,
+    "passed": 2,
+    "failed": 13,
+    "milliseconds": 317.7079
+  },
+  "frozenAfterInitialFix": {
+    "tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "milliseconds": 202.9463
+  },
+  "additionalBefore": {
+    "tests": 6,
+    "passed": 1,
+    "failed": 5,
+    "milliseconds": 198.6768
+  },
+  "all21NewContractsUnchanged": true,
+  "firstRelated": {
+    "tests": 60,
+    "passed": 59,
+    "failed": 1,
+    "milliseconds": 1610.4174
+  },
+  "finalRelated": {
+    "tests": 60,
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "milliseconds": 1587.8986
+  },
+  "firstFull": {
+    "tests": 109,
+    "passed": 106,
+    "failed": 3,
+    "milliseconds": 2844.055,
+    "reason": "Historical product hash pins incorrectly coupled offline checks to live execution."
+  },
+  "finalFull": {
+    "tests": 111,
+    "passed": 111,
+    "failed": 0,
+    "skipped": 0,
+    "milliseconds": 2715.1691
+  },
+  "campaignIsolation": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "milliseconds": 2250.6304,
+    "callerProviderRejectedInContractMode": true,
+    "liveSourceGuardRetained": true,
+    "closedCampaignReopened": false
+  },
+  "existingTestChanges": [
+    "Preserve original pair-digest assertion and strengthen post-edit handling to one completed request plus explicit invalidation instead of a second request.",
+    "Retain all three campaign budget/restart/failure/identity/lock scenarios with built-in stubs only; verify request audits instead of caller callback counters. Add two no-provider/live-source-guard checks."
+  ],
+  "savedProposalReplay": {
+    "cases": 14,
+    "passed": true,
+    "newProviderCalls": 0,
+    "historicalBilledCostUsd": null
+  },
+  "boundaryMetrics": {
+    "pairs": 140,
+    "false_merges": 0,
+    "missed_merges": 0,
+    "unresolved_duplicates": 40,
+    "human_review_pairs": 80,
+    "correct_duplicate_proposals": 40,
+    "decided_distinct": 20,
+    "synchronous_exact_identity_misses": 0,
+    "reverse_disagreements": 0,
+    "evidence_count_mismatches": 0
+  },
+  "semanticAccuracyImprovementMeasured": false,
+  "humanReviewTimeMeasured": false,
+  "scaleScope": "Current library overhead only; 18 observations, eight uncertain stubs each, no new model calls. Shared-host process memory snapshots, not peaks or isolated performance guarantees.",
+  "scaleCommit": "077649b137accd1224f17550965605a86399f4fd",
+  "measuredCoreStillMatches": true,
+  "sourceLFHashes": {
+    "scripts/benchmark-review-snapshots.mjs": "e5f03bb1b27e90aa6d2f8ea5d4a632539d3e136e296df95f5ad31a1b562e4910",
+    "scripts/evaluate-targeted-followup.mjs": "93800adbb15bee7cde3082c9600fdcf3391514f66cb21e8fb03133bd8d984a20",
+    "scripts/frozen-followup-plan.mjs": "034d43b54c95329da25297b73830fa16882fdaa5526b07d5f90a626eb7e9b262",
+    "scripts/replay-targeted-followup.mjs": "7821a0382ce9ba634bc526ebad97759680a8467d9b691d924812fc4a485fa5b5",
+    "src/input-snapshot.mjs": "a9eb599d72baf436f42cdf9673f50d0814546cbb6e64e611aded5b888f68d585",
+    "src/pipeline.mjs": "6e385ab1887725d03b34b9f59e62fd0863bf0909bd408e580e7e636220a90a0d",
+    "src/semantic-review.mjs": "adf0c99d15915c9f06fc333013b1972992594aa80dbed7994755fa79acaf4930",
+    "tests/review-input-boundaries.test.mjs": "74d55dd8ac9a9d57dd4e3ad86e4e1a909e02bf4b52b30f62bb35bd7443c309d0",
+    "tests/review-input-consistency.test.mjs": "7c3fe14ea3a1a37f8c829ea554f00fa4467acb6eb7c682d1216e653c742706a3",
+    "tests/review-journal-file.test.mjs": "cfdaa9bd403f67aafeb9f02c122bd73467467d84275cb93b4e06036eaa40ab35",
+    "tests/targeted-followup.test.mjs": "ae1916d067b6ba0d6c0b452b2873df86b1b85fa8bc8d72e12ba3ac5edaa119d1"
+  },
+  "historicalLFHashes": {
+    "eval/targeted-followup-v1/plan.json": "6c9f344cc80580ad1c611d92de659ab7570b9fd979e84afed4cf7de088a17267",
+    "eval/results/2026-10-30-targeted-followup-first.json": "65b4367041693d9524211992f1b96a3ff6de3ffd424aa456bee8ce40ce1db2a8",
+    "eval/results/2026-10-30-targeted-followup-second.json": "65c489ed95b03d45bd726b612a43383f62243936712e0158b1ce6f14a5a144a5",
+    "eval/results/2026-10-30-targeted-followup-replay.json": "61ff07fddebc616f2583c5ffff520875f74f62ca401e69d465461a48acc3dc8c",
+    "eval/results/2026-10-30-targeted-followup-proposals.json": "972012701cffc4988255fa3792ecde4148e5df088fb89d2097fa1f948e7ecd06",
+    "eval/results/2026-10-30-targeted-followup-verification.json": "26c874cd77e8b53e6656c9076321129a169a0abbe594429713d1abe842ee208f"
+  },
+  "artifactLFHashes": {
+    "eval/results/2026-10-31-review-input-boundaries.json": "c70abecae17ce4039e82daf8110198645df95cdfd0b4f079dce20ffb7f6a0e73",
+    "eval/results/2026-10-31-review-snapshot-scale.json": "6b46fc16b46a97e9e2e8d8a7f175f108ca20a3adce2d681029efbcc27c9b7fad"
+  },
+  "logHashes": {
+    "eval/results/2026-10-31-review-input-logs/review-input-before-20261031.txt": {
+      "originalLocalSHA256": "3fb1c38371a5d0f12d713cecbe89bba57ad47046eb85cde89d5e828174bde743",
+      "publishedLFSHA256": "b5160528e97d3f7cf39f9370c5476aac56b346885ce4bb3c983ed5314f4f6f9e"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-after-20261031.txt": {
+      "originalLocalSHA256": "1f51bd09d77066757a4eaf562089d88155ed0b5f01bc09b19f3c980f8840e37c",
+      "publishedLFSHA256": "c4c7084b129e352f598af2c1aa1854efd2086992d229f8392c571d0425cac7f9"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-boundaries-first-20261031.txt": {
+      "originalLocalSHA256": "8e6231a62013e68e05de4593f87aa201e1d5722edfc37d793b7df9fe0ad6d190",
+      "publishedLFSHA256": "b0015d3385268778d25b72c259fb84630ac560ba4db62518951505785b366a3e"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-related-20261031.txt": {
+      "originalLocalSHA256": "4ddebfe6ed07190c5effac63304d393788f8390d4b2498dcce2ffb9f084efdcf",
+      "publishedLFSHA256": "9b5c9863fdf47c979f06e6fbb8c6792851da5a552e9532db1fefc8ee14315df4"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-related-final-20261031.txt": {
+      "originalLocalSHA256": "5f3a650967545150d7831cd922ed5bd2884fa92b4b373fa9f3e40ec39cbed7c2",
+      "publishedLFSHA256": "ce79c5f40ae45d1bc4231721508d92c029e5b075a41e5bcb2941365345b3a382"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-full-20261031.txt": {
+      "originalLocalSHA256": "1418af752612ca6db4fec94ff9f16df96cf7b83cd0f284ac9c7ab88485790027",
+      "publishedLFSHA256": "401d8a81a9241c997d8cb141975cc5e5e931d978f27546f28351dddbf0695e02"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-saved-replay-20261031.txt": {
+      "originalLocalSHA256": "fb992b9854cab025523616f0171f640420f50b94cb8129533f22355f07e711d1",
+      "publishedLFSHA256": "36228da87ed7e099cbc8e1cfc26e57deb68283aaf37437c45eb5f922485990ab"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-campaign-isolation-20261031.txt": {
+      "originalLocalSHA256": "e9a849b99c4921e46e81ba41b01ae294f6c6ff0046bf6de3d1baf4b8f32b5315",
+      "publishedLFSHA256": "a5f367ca1c849dc627bbfc74142580a2ad113558825432bad51e19c669a85053"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-saved-replay-final-20261031.txt": {
+      "originalLocalSHA256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "publishedLFSHA256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-full-final-20261031.txt": {
+      "originalLocalSHA256": "8a3737fa42a69b651d4f9504ba5249cced4a262ca708b30be1e9d4aef1c43ad5",
+      "publishedLFSHA256": "26676fbbc9367f6d513cd0e5d3440dd173e165aec1762c96cfd94418af12b59b"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-population-20261031.txt": {
+      "originalLocalSHA256": "a6394d2a7f8e826bb4952844e1b404a1f0cde6977c3877069951a4abf005642e",
+      "publishedLFSHA256": "c4fe0338b518de404d30e93d04a31b79fcdc171532e4d4c54faf13017b6968b1"
+    },
+    "eval/results/2026-10-31-review-input-logs/review-input-scale-20261031.txt": {
+      "originalLocalSHA256": "353ae85200e9c4571b48cb04e65eea18c76c452035509e5fc2d84b1a8d05eca9",
+      "publishedLFSHA256": "d5d5d6b85f2a8df6f28f1fba606c02f9e0643174edd61edf6bb7a1cd7363966f"
+    }
+  },
+  "externalProviderCalls": 0,
+  "productionActions": 0,
+  "databaseMigrationPerformed": false,
+  "browserAcceptancePerformed": false,
+  "uiChanged": false,
+  "newDependencies": false,
+  "deploymentMirror": false,
+  "checkExecution": "npm absent from PATH; run each of its three Node commands directly. Full suite and replay passed; final English/document check recorded separately before delivery.",
+  "remaining": [
+    "Full semantic retrieval queues",
+    "Independent authored or authorized holdouts",
+    "Actual human review workload",
+    "Hosted source adaptation and approved deployment",
+    "Caller transactional revision validation at real publication"
+  ],
+  "wholeGoalComplete": false,
+  "portableLogTransform": "Normalize LF, replace repository paths and remove trailing display whitespace. Original local raw hashes and all result content retained."
+}

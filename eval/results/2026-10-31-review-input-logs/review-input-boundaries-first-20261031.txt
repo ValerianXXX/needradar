@@ -1,0 +1,103 @@
+✖ an edit observed after a response stays invalid even if a later checkpoint restores the value (8.4978ms)
+✖ revoking evidence rights stops subsequent requests as well as publication (4.6799ms)
+✖ an optional external revision check must explicitly stay true and never reaches the adapter (2.2857ms)
+✖ a revision change in a failed response stops further calls and retains the failure (2.6646ms)
+✖ the publication wrapper preserves a caller revision gate (2.4763ms)
+✔ inaccessible evidence holds before any adapter or caller revision work (0.6691ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 1
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.6768
+
+✖ failing tests:
+
+test at tests\review-input-boundaries.test.mjs:14:1
+✖ an edit observed after a response stays invalid even if a later checkpoint restores the value (8.4978ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-boundaries.test.mjs:20:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-boundaries.test.mjs:25:1
+✖ revoking evidence rights stops subsequent requests as well as publication (4.6799ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-boundaries.test.mjs:33:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-boundaries.test.mjs:37:1
+✖ an optional external revision check must explicitly stay true and never reaches the adapter (2.2857ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 0
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-boundaries.test.mjs:42:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-boundaries.test.mjs:49:1
+✖ a revision change in a failed response stops further calls and retains the failure (2.6646ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-boundaries.test.mjs:53:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-boundaries.test.mjs:59:1
+✖ the publication wrapper preserves a caller revision gate (2.4763ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'PUBLISH'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-boundaries.test.mjs:64:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PUBLISH',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

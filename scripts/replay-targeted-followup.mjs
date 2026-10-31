@@ -2,12 +2,13 @@
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
-import { loadProtocol, summarize } from './evaluate-targeted-followup.mjs';
+import { summarize } from './evaluate-targeted-followup.mjs';
+import { readFrozenFollowupPlan } from './frozen-followup-plan.mjs';
 import { reviewDuplicates } from '../src/semantic-review.mjs';
 import { validateReviewJournal } from '../src/review-journal.mjs';
 
 const read = async name => JSON.parse(await readFile(new URL('../eval/results/' + name, import.meta.url), 'utf8'));
-const { plan, cases, protocolHash, runnerHash } = await loadProtocol();
+const { plan, cases, protocolHash, recordedRunnerHash } = await readFrozenFollowupPlan();
 const prefix = '2026-10-30-targeted-followup-';
 const first = await read(prefix + 'first.json'), second = await read(prefix + 'second.json');
 const recorded = await read(prefix + 'replay.json'), journal = await read(prefix + 'proposals.json');
@@ -20,7 +21,9 @@ const revision = createHash('sha256').update(JSON.stringify([plan.runtime, plan.
 validateReviewJournal(journal, revision);
 assert.deepEqual([first.adapterAttemptsThisInvocation, second.adapterAttemptsThisInvocation, recorded.adapterAttemptsThisInvocation], [7, 7, 0]);
 assert.equal(recorded.protocolHash, protocolHash);
-assert.equal(recorded.runnerHash, runnerHash);
+assert.equal(recorded.runnerHash, recordedRunnerHash);
+assert.equal(receipt.protocolHash, protocolHash);
+assert.equal(receipt.runnerHash, recordedRunnerHash);
 const rows = [];
 for (const item of cases) {
   const result = await reviewDuplicates(item.left, [item.right], {

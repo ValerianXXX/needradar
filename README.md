@@ -42,6 +42,13 @@ also constrain the author-count gate. Original captures and validation history
 remain intact; legacy recency stays unverified until a new tracked arrival can
 establish it. See [behavior, tests and migration boundaries](docs/evidence-origin-units-2026-10-30.md).
 
+**31 October review consistency:** edits to a draft, evidence rights, human
+corrections or comparison inputs during an asynchronous review now stop subsequent
+requests and require a new review. Original responses stay bound to their original
+content. [Behavior, integration, tests and snapshot costs](docs/review-input-consistency-2026-10-31.md)
+also distinguish historical zero-call replay from the closed live experiment.
+This fixes consistency; the 80 unresolved offline pairs remain unresolved.
+
 ## Executive answer
 
 The problem is not a shortage of AI ideas. It is the absence of a repeatable way to decide which workflow deserves evidence, a pilot, and organizational attention.

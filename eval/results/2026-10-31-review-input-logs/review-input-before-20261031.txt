@@ -1,0 +1,301 @@
+✖ stateless: a draft edit during a response cannot change its quoted snapshot or clear review (4.9626ms)
+✖ checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review (4.5892ms)
+✖ a newly arrived exact duplicate invalidates an otherwise complete distinct result (0.907ms)
+✖ editing a later peer never mixes old constraints with new source content (1.1498ms)
+✖ human corrections arriving during review require a new coherent invocation (2.1163ms)
+✖ request adapters receive detached constraints and cannot mutate the validation schema (3.0688ms)
+✖ response usage is copied before a later adapter invocation can alter it (0.8518ms)
+✖ a checkpoint-time edit starts no provider request and preserves the interrupted attempt (1.6172ms)
+✖ a completed old-snapshot response remains replayable without hiding its original cost (0.9763ms)
+✖ publication cannot clear an input edit during review: rights (4.3771ms)
+✖ publication cannot clear an input edit during review: draft (2.2924ms)
+✖ publication cannot clear an input edit during review: rules (1.3527ms)
+✖ publication cannot clear an input edit during review: new-peer (0.9108ms)
+✔ unchanged inputs still permit a distinct decision with no schema or digest migration (1.0189ms)
+✔ an explicit immutable index remains bound to its own snapshot when its old source array changes (0.7575ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 2
+ℹ fail 13
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 317.7079
+
+✖ failing tests:
+
+test at tests\review-input-consistency.test.mjs:20:3
+✖ stateless: a draft edit during a response cannot change its quoted snapshot or clear review (4.9626ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:31:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:20:3
+✖ checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review (4.5892ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:29:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:40:1
+✖ a newly arrived exact duplicate invalidates an otherwise complete distinct result (0.907ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:46:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:52:1
+✖ editing a later peer never mixes old constraints with new source content (1.1498ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:59:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:65:1
+✖ human corrections arriving during review require a new coherent invocation (2.1163ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:72:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:80:1
+✖ request adapters receive detached constraints and cannot mutate the validation schema (3.0688ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      left: {
+        aiPath: [
+          'Prepare review'
+        ],
+        constraints: {
+  +       processing: 'cloud'
+  -       processing: 'offline'
+        },
+        counterEvidence: [
+          'Manual review may suffice'
+        ],
+        currentWorkflow: 'Manual comparison',
+  ...
+          constraints: {
+  +         processing: 'cloud'
+  -         processing: 'offline'
+          },
+          counterEvidence: [
+            'Manual review may suffice'
+          ],
+          currentWorkflow: 'Manual comparison',
+  ...
+          constraints: {
+  +         processing: 'cloud'
+  -         processing: 'offline'
+          },
+          counterEvidence: [
+            'Manual review may suffice'
+          ],
+          currentWorkflow: 'Manual comparison',
+  ...
+              'INSUFFICIENT_INFORMATION',
+  +           'ADAPTER_INVENTED_REASON',
+  +           'ADAPTER_INVENTED_REASON'
+            ],
+            type: 'string'
+          },
+          rightQuote: {
+            type: 'string'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:89:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { left: { id: 'candidate', title: 'Invoice review', persona: 'Document operators', jobToBeDone: 'Review uncertain invoice fields', desiredOutcome: 'Verified fields', constraints: [Object], currentWorkflow: 'Manual comparison', aiPath: [Array], humanGates: [Array], counterEvidence: [Array], unknowns: [Array] }, right: [ [Object], [Object] ], schema: { type: 'object', additionalProperties: false, required: [Array], properties: [Object] } },
+    expected: { left: { id: 'candidate', title: 'Invoice review', persona: 'Document operators', jobToBeDone: 'Review uncertain invoice fields', desiredOutcome: 'Verified fields', constraints: [Object], currentWorkflow: 'Manual comparison', aiPath: [Array], humanGates: [Array], counterEvidence: [Array], unknowns: [Array] }, right: [ [Object], [Object] ], schema: { type: 'object', additionalProperties: false, required: [Array], properties: [Object] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:99:1
+✖ response usage is copied before a later adapter invocation can alter it (0.8518ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  999 !== 10
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:107:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 999,
+    expected: 10,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:112:1
+✖ a checkpoint-time edit starts no provider request and preserves the interrupted attempt (1.6172ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 0
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:119:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:126:1
+✖ a completed old-snapshot response remains replayable without hiding its original cost (0.9763ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:132:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:145:3
+✖ publication cannot clear an input edit during review: rights (4.3771ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'PUBLISH'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:156:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PUBLISH',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:145:3
+✖ publication cannot clear an input edit during review: draft (2.2924ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'PUBLISH'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:156:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PUBLISH',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:145:3
+✖ publication cannot clear an input edit during review: rules (1.3527ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'PUBLISH'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:156:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PUBLISH',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-input-consistency.test.mjs:145:3
+✖ publication cannot clear an input edit during review: new-peer (0.9108ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'PUBLISH'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> ([repository]/tests/review-input-consistency.test.mjs:156:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PUBLISH',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
