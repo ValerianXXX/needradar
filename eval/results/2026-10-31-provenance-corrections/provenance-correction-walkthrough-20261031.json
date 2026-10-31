@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "syntheticOnly": true,
+  "modelCalls": 0,
+  "publicationActions": 0,
+  "databaseWrites": 0,
+  "steps": {
+    "initial": {
+      "captureCount": 3,
+      "independentEvidence": 3,
+      "evidenceGateEligible": true,
+      "validationStatus": "UNVALIDATED",
+      "independentRecencyVerified": true,
+      "newIndependentEvidence": 3,
+      "lastSeen": "2026-10-30T12:00:00.000Z",
+      "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+      "auditEvents": 0
+    },
+    "corrected": {
+      "captureCount": 3,
+      "independentEvidence": 1,
+      "evidenceGateEligible": false,
+      "validationStatus": "UNVALIDATED",
+      "independentRecencyVerified": false,
+      "newIndependentEvidence": 0,
+      "lastSeen": "2026-10-30T12:00:00.000Z",
+      "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+      "auditEvents": 1
+    },
+    "restored": {
+      "captureCount": 3,
+      "independentEvidence": 3,
+      "evidenceGateEligible": true,
+      "validationStatus": "UNVALIDATED",
+      "independentRecencyVerified": false,
+      "newIndependentEvidence": 0,
+      "lastSeen": "2026-10-30T12:00:00.000Z",
+      "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+      "auditEvents": 2
+    }
+  },
+  "staleRejected": true,
+  "originalSources": [
+    {
+      "evidenceKey": "a",
+      "authorGroup": "author-a",
+      "quote": "Original synthetic source a",
+      "sourcePolicy": "synthetic-forum",
+      "sourceAccessible": true,
+      "rightsApproved": true,
+      "containsPersonalData": false
+    },
+    {
+      "evidenceKey": "b",
+      "authorGroup": "author-b",
+      "quote": "Original synthetic source b",
+      "sourcePolicy": "synthetic-forum",
+      "sourceAccessible": true,
+      "rightsApproved": true,
+      "containsPersonalData": false
+    },
+    {
+      "evidenceKey": "c",
+      "authorGroup": "author-c",
+      "quote": "Original synthetic source c",
+      "sourcePolicy": "synthetic-forum",
+      "sourceAccessible": true,
+      "rightsApproved": true,
+      "containsPersonalData": false
+    }
+  ],
+  "correctionHistory": [
+    {
+      "id": "b99499e0e110f86b0b7f642461560acbb6f22ae079e1d34fffde23b17b7e0db9",
+      "schemaVersion": 1,
+      "kind": "ATTRIBUTION_CORRECTED",
+      "actor": "synthetic-reviewer",
+      "reason": "The supplied source annotations identify one shared organization.",
+      "recordedAt": "2026-10-31T12:00:00.000Z",
+      "inputDigest": "e6baf3e54517807b60fe38fd183b960a75519532741924b0b7a92a4491eecbff",
+      "beforeEvidenceDigest": "934185f23fcceeb80dc7c2958821d270a7a79efaa736ed7cc2526002555a9c33",
+      "afterEvidenceDigest": "f41e1582ec0c789f4a1152aa90923e0b05502d6f1d221128c6fbdb4db722114d",
+      "changes": [
+        {
+          "index": 0,
+          "before": {
+            "evidenceKey": "a",
+            "authorGroup": "author-a",
+            "quote": "Original synthetic source a",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          },
+          "after": {
+            "evidenceKey": "a",
+            "authorGroup": "author-a",
+            "quote": "Original synthetic source a",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          }
+        },
+        {
+          "index": 1,
+          "before": {
+            "evidenceKey": "b",
+            "authorGroup": "author-b",
+            "quote": "Original synthetic source b",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          },
+          "after": {
+            "evidenceKey": "b",
+            "authorGroup": "author-b",
+            "quote": "Original synthetic source b",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          }
+        },
+        {
+          "index": 2,
+          "before": {
+            "evidenceKey": "c",
+            "authorGroup": "author-c",
+            "quote": "Original synthetic source c",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          },
+          "after": {
+            "evidenceKey": "c",
+            "authorGroup": "author-c",
+            "quote": "Original synthetic source c",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f09193de9b0829431994cdd0898fe26c071f7459153311091fa0da65b17638fb",
+      "schemaVersion": 1,
+      "kind": "ATTRIBUTION_REVERTED",
+      "actor": "synthetic-reviewer",
+      "reason": "Withdraw the synthetic organization annotation after review.",
+      "recordedAt": "2026-10-31T13:00:00.000Z",
+      "inputDigest": "3697f050ade193d6cca85a4f5f2c96461bd77bee6dc72054f3d7280ab7dbcd6f",
+      "beforeEvidenceDigest": "f41e1582ec0c789f4a1152aa90923e0b05502d6f1d221128c6fbdb4db722114d",
+      "afterEvidenceDigest": "934185f23fcceeb80dc7c2958821d270a7a79efaa736ed7cc2526002555a9c33",
+      "changes": [
+        {
+          "index": 0,
+          "before": {
+            "evidenceKey": "a",
+            "authorGroup": "author-a",
+            "quote": "Original synthetic source a",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          },
+          "after": {
+            "evidenceKey": "a",
+            "authorGroup": "author-a",
+            "quote": "Original synthetic source a",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          }
+        },
+        {
+          "index": 1,
+          "before": {
+            "evidenceKey": "b",
+            "authorGroup": "author-b",
+            "quote": "Original synthetic source b",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          },
+          "after": {
+            "evidenceKey": "b",
+            "authorGroup": "author-b",
+            "quote": "Original synthetic source b",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          }
+        },
+        {
+          "index": 2,
+          "before": {
+            "evidenceKey": "c",
+            "authorGroup": "author-c",
+            "quote": "Original synthetic source c",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false,
+            "originGroup": "same-synthetic-organization"
+          },
+          "after": {
+            "evidenceKey": "c",
+            "authorGroup": "author-c",
+            "quote": "Original synthetic source c",
+            "sourcePolicy": "synthetic-forum",
+            "sourceAccessible": true,
+            "rightsApproved": true,
+            "containsPersonalData": false
+          }
+        }
+      ],
+      "undoes": "b99499e0e110f86b0b7f642461560acbb6f22ae079e1d34fffde23b17b7e0db9"
+    }
+  ],
+  "note": "Gate eligibility is not publication or business validation. Undo restores sources and retains audit; it does not recertify recency invalidated by consolidation."
+}

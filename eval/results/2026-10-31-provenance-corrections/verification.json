@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-31T18:32:28.991Z",
+  "scope": "Public curated edition; no hosted or private deployment change",
+  "baselineRevision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+  "runtimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+  "revisions": {
+    "501e98e": "501e98e7b8daefd2e1dfa95a9298074e90024044",
+    "bce5c34": "bce5c348ba8219366edabcce9d830870c6875a7e",
+    "44d874b": "44d874b3003848efc68d85adee8e22934c51cf16",
+    "9442aff": "9442aff66343bd882891f972a420b17b0e268d20",
+    "fd0fbf7": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+    "57ebe05": "57ebe0577e1a1bf5f3a395a3f3364099ad65b82d",
+    "5d24da6": "5d24da6a5b564c299c515ceacc69556bde338ac4"
+  },
+  "environment": {
+    "platform": "win32",
+    "node": "v24.22.1",
+    "npmWrapperExecutedLocally": false,
+    "reason": "npm was unavailable; all three declared check commands were run directly"
+  },
+  "checks": {
+    "baseline": {
+      "passed": 120,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1555.9884
+    },
+    "initialFrozenContracts": {
+      "total": 22,
+      "before": {
+        "passed": 1,
+        "failed": 21,
+        "existingDeltaFailures": 9,
+        "missingNewApiContracts": 12
+      },
+      "after": {
+        "passed": 22,
+        "failed": 0
+      }
+    },
+    "additionalFaultContracts": {
+      "total": 29,
+      "before": {
+        "passed": 27,
+        "failed": 2
+      },
+      "after": {
+        "passed": 29,
+        "failed": 0
+      }
+    },
+    "jsonPersistenceContracts": {
+      "total": 31,
+      "before": {
+        "passed": 30,
+        "failed": 1
+      },
+      "after": {
+        "passed": 31,
+        "failed": 0,
+        "durationMs": 182.4847
+      }
+    },
+    "finalFull": {
+      "passed": 151,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1565.663,
+      "command": "node --test tests/*.test.mjs"
+    },
+    "english": {
+      "status": "PASS",
+      "command": "node scripts/check-english.mjs"
+    },
+    "savedReplay": {
+      "status": "PASS",
+      "command": "node scripts/replay-targeted-followup.mjs",
+      "pairs": 14,
+      "actualNewModelCalls": 0,
+      "originalModelCostUsd": null
+    }
+  },
+  "walkthrough": {
+    "syntheticOnly": true,
+    "independentPerson": false,
+    "databaseWrites": 0,
+    "modelCalls": 0,
+    "publicationActions": 0,
+    "steps": {
+      "initial": {
+        "captureCount": 3,
+        "independentEvidence": 3,
+        "evidenceGateEligible": true,
+        "validationStatus": "UNVALIDATED",
+        "independentRecencyVerified": true,
+        "newIndependentEvidence": 3,
+        "lastSeen": "2026-10-30T12:00:00.000Z",
+        "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+        "auditEvents": 0
+      },
+      "corrected": {
+        "captureCount": 3,
+        "independentEvidence": 1,
+        "evidenceGateEligible": false,
+        "validationStatus": "UNVALIDATED",
+        "independentRecencyVerified": false,
+        "newIndependentEvidence": 0,
+        "lastSeen": "2026-10-30T12:00:00.000Z",
+        "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+        "auditEvents": 1
+      },
+      "restored": {
+        "captureCount": 3,
+        "independentEvidence": 3,
+        "evidenceGateEligible": true,
+        "validationStatus": "UNVALIDATED",
+        "independentRecencyVerified": false,
+        "newIndependentEvidence": 0,
+        "lastSeen": "2026-10-30T12:00:00.000Z",
+        "lastNewIndependentEvidence": "2026-10-30T12:00:00.000Z",
+        "auditEvents": 2
+      }
+    },
+    "staleRejected": true
+  },
+  "scale": {
+    "observedAt": "2026-10-31T18:20:47.650Z",
+    "scenarios": 9,
+    "repetitionsPerRevision": 3,
+    "assertionsOnCurrent": 27,
+    "timingScope": "Two provenance summaries plus delta matching. Shared host, warm modules, memory snapshots rather than peaks. No speed, semantic quality or user-effort improvement claim.",
+    "measuredSpeedBenefit": false,
+    "memoryPeaksMeasured": false,
+    "largestRows": [
+      {
+        "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+        "implementation": "before",
+        "mode": "unchanged",
+        "medianMs": 3408.6793,
+        "result": {
+          "added": 0,
+          "resolvedExisting": 0,
+          "consolidatedOrLost": 0
+        }
+      },
+      {
+        "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+        "implementation": "after",
+        "mode": "unchanged",
+        "medianMs": 3425.809400000002,
+        "result": {
+          "added": 0,
+          "resolvedExisting": 0,
+          "consolidatedOrLost": 0
+        }
+      },
+      {
+        "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+        "implementation": "before",
+        "mode": "relabel_each_author",
+        "medianMs": 3404.5833999999995,
+        "result": {
+          "added": 10000,
+          "resolvedExisting": 0,
+          "consolidatedOrLost": 10000
+        }
+      },
+      {
+        "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+        "implementation": "after",
+        "mode": "relabel_each_author",
+        "medianMs": 3413.248200000002,
+        "result": {
+          "added": 0,
+          "resolvedExisting": 10000,
+          "consolidatedOrLost": 0
+        }
+      },
+      {
+        "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+        "implementation": "before",
+        "mode": "overlapping_correction_chain",
+        "medianMs": 3363.8040000000037,
+        "result": {
+          "added": 5000,
+          "resolvedExisting": 0,
+          "consolidatedOrLost": 5000
+        }
+      },
+      {
+        "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+        "implementation": "after",
+        "mode": "overlapping_correction_chain",
+        "medianMs": 3368.9141999999993,
+        "result": {
+          "added": 0,
+          "resolvedExisting": 5000,
+          "consolidatedOrLost": 0
+        }
+      }
+    ]
+  },
+  "unchangedOfflineSemanticResults": {
+    "pairs": 140,
+    "false_merges": 0,
+    "missed_merges": 0,
+    "unresolved_duplicates": 40,
+    "human_review_pairs": 80,
+    "correct_duplicate_proposals": 40,
+    "decided_distinct": 20,
+    "synchronous_exact_identity_misses": 0,
+    "reverse_disagreements": 0,
+    "evidence_count_mismatches": 0
+  },
+  "outcomeLimits": [
+    "No new model quality observation",
+    "No measured actual reviewer effort or cost saving",
+    "Pure correction transition is not authentication, signed audit or database CAS",
+    "No hosted adapter, UI acceptance, production deployment or migration performed",
+    "JSON history grows with each correction; unbounded-history performance not measured",
+    "Undo after consolidation does not automatically recertify independent recency"
+  ],
+  "unchangedObservationSources": [
+    {
+      "path": "src/provenance.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "c6b090e77aa9950fdd605cd3c5590b986a9c37d97675ef5f67b47643d8b505a0"
+    },
+    {
+      "path": "src/evidence-independence.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "a01ed01811edbaa37270c4fb5275a4494c754b9da45d13f8f7298e0766a3ac11"
+    },
+    {
+      "path": "scripts/benchmark-provenance-corrections.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "6c2511d6b0afe0620097ee3be14da0a3f6d7837523291fb76d660dccd3e92093"
+    },
+    {
+      "path": "src/similarity.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de"
+    },
+    {
+      "path": "src/semantic-review.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "adf0c99d15915c9f06fc333013b1972992594aa80dbed7994755fa79acaf4930"
+    },
+    {
+      "path": "scripts/evaluate-boundaries.mjs",
+      "earlierRevision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "finalRuntimeRevision": "5d24da6a5b564c299c515ceacc69556bde338ac4",
+      "gitBlobSha256": "f02329e7c90556adb2a5eaa9102832af82b2296330fc5349ea5413d762747a7c"
+    }
+  ],
+  "sources": [
+    {
+      "path": "package.json",
+      "gitBlobSha256": "9a0c117953e348f1263528e7185e937f487d2ae38327aedfcacea51381933670",
+      "workingTreeLfSha256": "9a0c117953e348f1263528e7185e937f487d2ae38327aedfcacea51381933670"
+    },
+    {
+      "path": "scripts/benchmark-provenance-corrections.mjs",
+      "gitBlobSha256": "6c2511d6b0afe0620097ee3be14da0a3f6d7837523291fb76d660dccd3e92093",
+      "workingTreeLfSha256": "6c2511d6b0afe0620097ee3be14da0a3f6d7837523291fb76d660dccd3e92093"
+    },
+    {
+      "path": "scripts/benchmark-retrieval.mjs",
+      "gitBlobSha256": "75340f12b173209cd0ee0aa03971fdeca2a91425bdf4dc42486c6d52a5702e51",
+      "workingTreeLfSha256": "75340f12b173209cd0ee0aa03971fdeca2a91425bdf4dc42486c6d52a5702e51"
+    },
+    {
+      "path": "scripts/benchmark-review-snapshots.mjs",
+      "gitBlobSha256": "e5f03bb1b27e90aa6d2f8ea5d4a632539d3e136e296df95f5ad31a1b562e4910",
+      "workingTreeLfSha256": "e5f03bb1b27e90aa6d2f8ea5d4a632539d3e136e296df95f5ad31a1b562e4910"
+    },
+    {
+      "path": "scripts/build-boundary-fixtures.mjs",
+      "gitBlobSha256": "8ba809bb43f19f00ffbf597e96517e6ecb90873659673e4512e02d6ab2d9a60c",
+      "workingTreeLfSha256": "8ba809bb43f19f00ffbf597e96517e6ecb90873659673e4512e02d6ab2d9a60c"
+    },
+    {
+      "path": "scripts/check-english.mjs",
+      "gitBlobSha256": "d074bf64426bd52542677fc3125b7c4cdb3c7b87d1deb496dcf750c13af65a6d",
+      "workingTreeLfSha256": "d074bf64426bd52542677fc3125b7c4cdb3c7b87d1deb496dcf750c13af65a6d"
+    },
+    {
+      "path": "scripts/check-local-encoder.mjs",
+      "gitBlobSha256": "42172b22f55cce54cd3993da9a9b19ca4e42c63d9ae0b09989854d1a9b3ca754",
+      "workingTreeLfSha256": "42172b22f55cce54cd3993da9a9b19ca4e42c63d9ae0b09989854d1a9b3ca754"
+    },
+    {
+      "path": "scripts/check-retrieval-review-workflow.mjs",
+      "gitBlobSha256": "774b416f6096f1ca3f6bf2907addf6e2cd04d0ec0d3e2b9bcd48fa903b511d66",
+      "workingTreeLfSha256": "774b416f6096f1ca3f6bf2907addf6e2cd04d0ec0d3e2b9bcd48fa903b511d66"
+    },
+    {
+      "path": "scripts/demo-provenance-correction.mjs",
+      "gitBlobSha256": "481d86a702536de9f634455df02d95913ce6a7ab6217f3e618202cd5da43a798",
+      "workingTreeLfSha256": "481d86a702536de9f634455df02d95913ce6a7ab6217f3e618202cd5da43a798"
+    },
+    {
+      "path": "scripts/download-local-encoder.py",
+      "gitBlobSha256": "5b64dcdd5ca7a968dc86093285e3a9a3d8e44e8a9ede12ec2c0414daae2e1b89",
+      "workingTreeLfSha256": "5b64dcdd5ca7a968dc86093285e3a9a3d8e44e8a9ede12ec2c0414daae2e1b89"
+    },
+    {
+      "path": "scripts/evaluate-boundaries.mjs",
+      "gitBlobSha256": "f02329e7c90556adb2a5eaa9102832af82b2296330fc5349ea5413d762747a7c",
+      "workingTreeLfSha256": "f02329e7c90556adb2a5eaa9102832af82b2296330fc5349ea5413d762747a7c"
+    },
+    {
+      "path": "scripts/evaluate-boundary-pilot.mjs",
+      "gitBlobSha256": "8767fe7514b71773abc4c4c70a11d78f70fbc4149e4f4498c762c35fb1fb6c37",
+      "workingTreeLfSha256": "8767fe7514b71773abc4c4c70a11d78f70fbc4149e4f4498c762c35fb1fb6c37"
+    },
+    {
+      "path": "scripts/evaluate-dedup.mjs",
+      "gitBlobSha256": "ca481e76b58bef6eceb0250ea58bfbf3afb32519403d04d538d1fc53f6456e73",
+      "workingTreeLfSha256": "ca481e76b58bef6eceb0250ea58bfbf3afb32519403d04d538d1fc53f6456e73"
+    },
+    {
+      "path": "scripts/evaluate-local-retrieval.mjs",
+      "gitBlobSha256": "ec87fdc48222d432bde0b7f783960b1a26b34fd93287ecb7ecd4e2e41b8c055d",
+      "workingTreeLfSha256": "ec87fdc48222d432bde0b7f783960b1a26b34fd93287ecb7ecd4e2e41b8c055d"
+    },
+    {
+      "path": "scripts/evaluate-local-reversal.mjs",
+      "gitBlobSha256": "9b4ad8d639cf66651c1851a8feec25d1000b348d85b5f7470dd59d4a25b901d0",
+      "workingTreeLfSha256": "9b4ad8d639cf66651c1851a8feec25d1000b348d85b5f7470dd59d4a25b901d0"
+    },
+    {
+      "path": "scripts/evaluate-review-continuation.mjs",
+      "gitBlobSha256": "5f43349c6d076032827c6b242a7b12765c031cb9cd4980a8ecd4aa80fd2d7577",
+      "workingTreeLfSha256": "5f43349c6d076032827c6b242a7b12765c031cb9cd4980a8ecd4aa80fd2d7577"
+    },
+    {
+      "path": "scripts/evaluate-targeted-followup.mjs",
+      "gitBlobSha256": "93800adbb15bee7cde3082c9600fdcf3391514f66cb21e8fb03133bd8d984a20",
+      "workingTreeLfSha256": "93800adbb15bee7cde3082c9600fdcf3391514f66cb21e8fb03133bd8d984a20"
+    },
+    {
+      "path": "scripts/evaluate-view-isolation.mjs",
+      "gitBlobSha256": "87581f4b309360d375c4a766f3701a59c47b5ee1544caa9b814855f90dd97941",
+      "workingTreeLfSha256": "87581f4b309360d375c4a766f3701a59c47b5ee1544caa9b814855f90dd97941"
+    },
+    {
+      "path": "scripts/frozen-followup-plan.mjs",
+      "gitBlobSha256": "034d43b54c95329da25297b73830fa16882fdaa5526b07d5f90a626eb7e9b262",
+      "workingTreeLfSha256": "034d43b54c95329da25297b73830fa16882fdaa5526b07d5f90a626eb7e9b262"
+    },
+    {
+      "path": "scripts/hermes-review.py",
+      "gitBlobSha256": "efff4ca6a7555d468d63753dcad345b391318fa5ef618e61609079e3eb76ce73",
+      "workingTreeLfSha256": "efff4ca6a7555d468d63753dcad345b391318fa5ef618e61609079e3eb76ce73"
+    },
+    {
+      "path": "scripts/local-embed.py",
+      "gitBlobSha256": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb",
+      "workingTreeLfSha256": "d087ba5e8d60f4d5cbeb5ca4df55e68a84a2a4e2bc055f3f492811608818ceeb"
+    },
+    {
+      "path": "scripts/profile-local-encoder.mjs",
+      "gitBlobSha256": "c0e732c53c9fbf4f914f66ee5ea83f364c3243cfe2d6a1304517551b0df459a3",
+      "workingTreeLfSha256": "c0e732c53c9fbf4f914f66ee5ea83f364c3243cfe2d6a1304517551b0df459a3"
+    },
+    {
+      "path": "scripts/replay-boundary-pilot.mjs",
+      "gitBlobSha256": "ebff34d0641f3a88b4e8fac4731bd814afeff9c2b6916121ff2f70bfc975ce84",
+      "workingTreeLfSha256": "ebff34d0641f3a88b4e8fac4731bd814afeff9c2b6916121ff2f70bfc975ce84"
+    },
+    {
+      "path": "scripts/replay-targeted-followup.mjs",
+      "gitBlobSha256": "7821a0382ce9ba634bc526ebad97759680a8467d9b691d924812fc4a485fa5b5",
+      "workingTreeLfSha256": "7821a0382ce9ba634bc526ebad97759680a8467d9b691d924812fc4a485fa5b5"
+    },
+    {
+      "path": "src/command-reviewer.mjs",
+      "gitBlobSha256": "cb40f442c98e4dbf688519f660712dae8bf4f4e2696846044640934607ba167e",
+      "workingTreeLfSha256": "cb40f442c98e4dbf688519f660712dae8bf4f4e2696846044640934607ba167e"
+    },
+    {
+      "path": "src/embedding-contract.mjs",
+      "gitBlobSha256": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a",
+      "workingTreeLfSha256": "4bfe60db2c3253ff8d9661284ee283f005015eeaef3e0dd4400eacb5da62315a"
+    },
+    {
+      "path": "src/evidence-corrections.mjs",
+      "gitBlobSha256": "1def997c319dca38513322ad1dd2938476857130c7b8dc8535b2442cf28b17a1",
+      "workingTreeLfSha256": "1def997c319dca38513322ad1dd2938476857130c7b8dc8535b2442cf28b17a1"
+    },
+    {
+      "path": "src/evidence-independence.mjs",
+      "gitBlobSha256": "a01ed01811edbaa37270c4fb5275a4494c754b9da45d13f8f7298e0766a3ac11",
+      "workingTreeLfSha256": "a01ed01811edbaa37270c4fb5275a4494c754b9da45d13f8f7298e0766a3ac11"
+    },
+    {
+      "path": "src/evidence-policy.mjs",
+      "gitBlobSha256": "1ab4d484c3061cb68e453c10a31495956b452ab57aa413963a03106b45f50a45",
+      "workingTreeLfSha256": "1ab4d484c3061cb68e453c10a31495956b452ab57aa413963a03106b45f50a45"
+    },
+    {
+      "path": "src/input-snapshot.mjs",
+      "gitBlobSha256": "5214cb366b52316463c88a20a7e0a45237439a06d0ddd099915d049b85ab6e24",
+      "workingTreeLfSha256": "5214cb366b52316463c88a20a7e0a45237439a06d0ddd099915d049b85ab6e24"
+    },
+    {
+      "path": "src/local-encoder.mjs",
+      "gitBlobSha256": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2",
+      "workingTreeLfSha256": "e2c1c240ec43adc8ecfa53ae20addad6572b126702aebc2354cf8e8655edccc2"
+    },
+    {
+      "path": "src/opportunity-clusters.mjs",
+      "gitBlobSha256": "79bcfdbb85dc6a06656ae4d48c333622d6e5830fe894e3e22d9dc267acb563c2",
+      "workingTreeLfSha256": "79bcfdbb85dc6a06656ae4d48c333622d6e5830fe894e3e22d9dc267acb563c2"
+    },
+    {
+      "path": "src/opportunity-state.mjs",
+      "gitBlobSha256": "1c97a654fe1d845ffc5ea150d16ace79440e69ce7b8d26f701c6514df9b35386",
+      "workingTreeLfSha256": "1c97a654fe1d845ffc5ea150d16ace79440e69ce7b8d26f701c6514df9b35386"
+    },
+    {
+      "path": "src/pipeline.mjs",
+      "gitBlobSha256": "6e385ab1887725d03b34b9f59e62fd0863bf0909bd408e580e7e636220a90a0d",
+      "workingTreeLfSha256": "6e385ab1887725d03b34b9f59e62fd0863bf0909bd408e580e7e636220a90a0d"
+    },
+    {
+      "path": "src/provenance.mjs",
+      "gitBlobSha256": "c6b090e77aa9950fdd605cd3c5590b986a9c37d97675ef5f67b47643d8b505a0",
+      "workingTreeLfSha256": "c6b090e77aa9950fdd605cd3c5590b986a9c37d97675ef5f67b47643d8b505a0"
+    },
+    {
+      "path": "src/responses-reviewer.mjs",
+      "gitBlobSha256": "e13990098f5a30079e5cad3692421bd56dfe6b8a47451010df6d22574abc6cf0",
+      "workingTreeLfSha256": "e13990098f5a30079e5cad3692421bd56dfe6b8a47451010df6d22574abc6cf0"
+    },
+    {
+      "path": "src/review-contract.mjs",
+      "gitBlobSha256": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+      "workingTreeLfSha256": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9"
+    },
+    {
+      "path": "src/review-journal-file.mjs",
+      "gitBlobSha256": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e",
+      "workingTreeLfSha256": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e"
+    },
+    {
+      "path": "src/review-journal.mjs",
+      "gitBlobSha256": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+      "workingTreeLfSha256": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233"
+    },
+    {
+      "path": "src/semantic-retrieval.mjs",
+      "gitBlobSha256": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1",
+      "workingTreeLfSha256": "75de892949e544495d5422018584e3d3b9172bcdb389d0c6dba4f7949317c1f1"
+    },
+    {
+      "path": "src/semantic-review.mjs",
+      "gitBlobSha256": "adf0c99d15915c9f06fc333013b1972992594aa80dbed7994755fa79acaf4930",
+      "workingTreeLfSha256": "adf0c99d15915c9f06fc333013b1972992594aa80dbed7994755fa79acaf4930"
+    },
+    {
+      "path": "src/similarity.mjs",
+      "gitBlobSha256": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+      "workingTreeLfSha256": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de"
+    },
+    {
+      "path": "src/timestamps.mjs",
+      "gitBlobSha256": "67aafd6f350b3bd731b59d566ad622f56166d6217a2185e9562964b09d50c7a1",
+      "workingTreeLfSha256": "67aafd6f350b3bd731b59d566ad622f56166d6217a2185e9562964b09d50c7a1"
+    },
+    {
+      "path": "tests/candidate-index.test.mjs",
+      "gitBlobSha256": "ecdbed0b5eb26cae2ade70de60b638011514fbd4a151ff5f517ebfba18621a49",
+      "workingTreeLfSha256": "ecdbed0b5eb26cae2ade70de60b638011514fbd4a151ff5f517ebfba18621a49"
+    },
+    {
+      "path": "tests/dedup.test.mjs",
+      "gitBlobSha256": "4079379bd1fc251b06f11c1e62d121753884b51a13c44854ea9e4eaeb583a813",
+      "workingTreeLfSha256": "4079379bd1fc251b06f11c1e62d121753884b51a13c44854ea9e4eaeb583a813"
+    },
+    {
+      "path": "tests/ecosystem.test.mjs",
+      "gitBlobSha256": "804e8a68eaf6d9f56c3ceeb2a216e36cf795433be8090b1095cd4e1a1effaf62",
+      "workingTreeLfSha256": "804e8a68eaf6d9f56c3ceeb2a216e36cf795433be8090b1095cd4e1a1effaf62"
+    },
+    {
+      "path": "tests/evidence-attribution-change.test.mjs",
+      "gitBlobSha256": "4f013c697105eef393ce8ed9bca17314e7b045f56b988d06ae0c97816200e63a",
+      "workingTreeLfSha256": "4f013c697105eef393ce8ed9bca17314e7b045f56b988d06ae0c97816200e63a"
+    },
+    {
+      "path": "tests/evidence-boundaries.test.mjs",
+      "gitBlobSha256": "5834cc7b64c3206d9b14c0424849a3875c43e8cf8b3c6e68c24d93f1700c1d1e",
+      "workingTreeLfSha256": "5834cc7b64c3206d9b14c0424849a3875c43e8cf8b3c6e68c24d93f1700c1d1e"
+    },
+    {
+      "path": "tests/evidence-corrections.test.mjs",
+      "gitBlobSha256": "d18e7190036b8cf16862371e4e99142185dd695234928b63b507e705921934e0",
+      "workingTreeLfSha256": "d18e7190036b8cf16862371e4e99142185dd695234928b63b507e705921934e0"
+    },
+    {
+      "path": "tests/evidence-independence.test.mjs",
+      "gitBlobSha256": "308058d1ab9b40085977bbadfe733a6f1b03853bbf5224f435aba90d772af364",
+      "workingTreeLfSha256": "308058d1ab9b40085977bbadfe733a6f1b03853bbf5224f435aba90d772af364"
+    },
+    {
+      "path": "tests/evidence-view-isolation.test.mjs",
+      "gitBlobSha256": "8814f546386e6525a8202c0f9efa8dd5f2ce4568a461553b91c25e8d1d521417",
+      "workingTreeLfSha256": "8814f546386e6525a8202c0f9efa8dd5f2ce4568a461553b91c25e8d1d521417"
+    },
+    {
+      "path": "tests/opportunity-clusters.test.mjs",
+      "gitBlobSha256": "6c9b55179f56eccfc3eef1511e6edefd2112bb56eb8752e9dbd66de31cb8adcb",
+      "workingTreeLfSha256": "6c9b55179f56eccfc3eef1511e6edefd2112bb56eb8752e9dbd66de31cb8adcb"
+    },
+    {
+      "path": "tests/opportunity-recency.test.mjs",
+      "gitBlobSha256": "36f9b8e3553cd79e8c671eef9888b4b0618c245bf7df69e584f37238e50c9e88",
+      "workingTreeLfSha256": "36f9b8e3553cd79e8c671eef9888b4b0618c245bf7df69e584f37238e50c9e88"
+    },
+    {
+      "path": "tests/pipeline.test.mjs",
+      "gitBlobSha256": "6ff1c263aa0225dbbf8d37bffd61001e4923dcb023912c84ca40ada1e1051071",
+      "workingTreeLfSha256": "6ff1c263aa0225dbbf8d37bffd61001e4923dcb023912c84ca40ada1e1051071"
+    },
+    {
+      "path": "tests/review-continuation.test.mjs",
+      "gitBlobSha256": "be401b2fabe83656162c0de78d1da62a56c0ca1e2d0ef3e874c65e5303379382",
+      "workingTreeLfSha256": "be401b2fabe83656162c0de78d1da62a56c0ca1e2d0ef3e874c65e5303379382"
+    },
+    {
+      "path": "tests/review-input-boundaries.test.mjs",
+      "gitBlobSha256": "74d55dd8ac9a9d57dd4e3ad86e4e1a909e02bf4b52b30f62bb35bd7443c309d0",
+      "workingTreeLfSha256": "74d55dd8ac9a9d57dd4e3ad86e4e1a909e02bf4b52b30f62bb35bd7443c309d0"
+    },
+    {
+      "path": "tests/review-input-consistency.test.mjs",
+      "gitBlobSha256": "7c3fe14ea3a1a37f8c829ea554f00fa4467acb6eb7c682d1216e653c742706a3",
+      "workingTreeLfSha256": "7c3fe14ea3a1a37f8c829ea554f00fa4467acb6eb7c682d1216e653c742706a3"
+    },
+    {
+      "path": "tests/review-journal-file.test.mjs",
+      "gitBlobSha256": "cfdaa9bd403f67aafeb9f02c122bd73467467d84275cb93b4e06036eaa40ab35",
+      "workingTreeLfSha256": "cfdaa9bd403f67aafeb9f02c122bd73467467d84275cb93b4e06036eaa40ab35"
+    },
+    {
+      "path": "tests/review-plain-data.test.mjs",
+      "gitBlobSha256": "ff27edc75181338b8480f5200ac7cee6b8ac06e6f332feae2d16704d1c96c942",
+      "workingTreeLfSha256": "ff27edc75181338b8480f5200ac7cee6b8ac06e6f332feae2d16704d1c96c942"
+    },
+    {
+      "path": "tests/semantic-retrieval.test.mjs",
+      "gitBlobSha256": "6e091e2756f62104db3ade22b7666a0cb3c23ab448835f62c444bc266d34c60b",
+      "workingTreeLfSha256": "6e091e2756f62104db3ade22b7666a0cb3c23ab448835f62c444bc266d34c60b"
+    },
+    {
+      "path": "tests/targeted-followup.test.mjs",
+      "gitBlobSha256": "ae1916d067b6ba0d6c0b452b2873df86b1b85fa8bc8d72e12ba3ac5edaa119d1",
+      "workingTreeLfSha256": "ae1916d067b6ba0d6c0b452b2873df86b1b85fa8bc8d72e12ba3ac5edaa119d1"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "provenance-correction-after-20261031.txt",
+      "originalLocalBytes": 5218,
+      "originalLocalSha256": "4a3d160200c4821eb6d1e605cc66aa558b8916db61cb08fa023f0bd1736d4ec4",
+      "portableBytes": 5076,
+      "portableSha256": "820088b593e19f57a0156475af9628e54b3e891907312f75eb65b425e0c05b21",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-baseline-20261031.txt",
+      "originalLocalBytes": 27583,
+      "originalLocalSha256": "90d87097f4a8a61919cb22c6aa1922fdd02aaabd49bad50d83d2c4b026a9732b",
+      "portableBytes": 26853,
+      "portableSha256": "0320184326f89aa3b61ee1643c4692e67fe1ec3cdb903e865ac6a6bb9d0d30a3",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-before-20261031.txt",
+      "originalLocalBytes": 32279,
+      "originalLocalSha256": "a5f5a68263220ba43194706b9cff94edb281046683a1b51d7b926b6ec3ea157f",
+      "portableBytes": 27767,
+      "portableSha256": "787b01718073cded2682b32bf60374630a4d2076f175467f6c1a7905ca447bf2",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-boundaries-20261031.json",
+      "originalLocalBytes": 108064,
+      "originalLocalSha256": "9de3c978ea2cf637f44a27ccfac02a5007667ec4d645369af9e48dabcc1b43dd",
+      "portableBytes": 108064,
+      "portableSha256": "9de3c978ea2cf637f44a27ccfac02a5007667ec4d645369af9e48dabcc1b43dd",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-boundaries-20261031.txt",
+      "originalLocalBytes": 250,
+      "originalLocalSha256": "a6394d2a7f8e826bb4952844e1b404a1f0cde6977c3877069951a4abf005642e",
+      "portableBytes": 249,
+      "portableSha256": "c4fe0338b518de404d30e93d04a31b79fcdc171532e4d4c54faf13017b6968b1",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-english-20261031.txt",
+      "originalLocalBytes": 28,
+      "originalLocalSha256": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+      "portableBytes": 27,
+      "portableSha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-faults-before-20261031.txt",
+      "originalLocalBytes": 8263,
+      "originalLocalSha256": "7e634c571ae81d03aa734c1467915ebb8890265b6caa506a602558f0831e7d42",
+      "portableBytes": 7777,
+      "portableSha256": "05738ea92bec6be133c308138397b7e361a297e6a2d98a500677f8d3a008802d",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-final-contracts-20261031.txt",
+      "originalLocalBytes": 6884,
+      "originalLocalSha256": "4c0c5d01f38732fc6d279f809e091e74b781fd3b294109ac0f109a2df60a7006",
+      "portableBytes": 6700,
+      "portableSha256": "74b5126ac00f0ba42c1610cc76a105e77c95c1023d3085e3587cb0f77c7e6c09",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-final-english-20261031.txt",
+      "originalLocalBytes": 28,
+      "originalLocalSha256": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+      "portableBytes": 27,
+      "portableSha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-final-full-20261031.txt",
+      "originalLocalBytes": 14322,
+      "originalLocalSha256": "f878aa890de89bc0bce7077e3315d46db226e6224d352a326364b99a3c1ee7b8",
+      "portableBytes": 14163,
+      "portableSha256": "603ee15d1d764817eeb46beae7656286250b9c7733cbde86dcd07fef4ad1541a",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-final-replay-20261031.txt",
+      "originalLocalBytes": 307,
+      "originalLocalSha256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "portableBytes": 306,
+      "portableSha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-full-20261031.txt",
+      "originalLocalBytes": 34385,
+      "originalLocalSha256": "51a1e51346e5464f59675e85cc245238f21f6778bbdb80995b4ad0845f5318f8",
+      "portableBytes": 33481,
+      "portableSha256": "ce18c9646cfc799b411f4769295a1237bb551acf7b05ea99005ee2459adf86bb",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-persistence-after-20261031.txt",
+      "originalLocalBytes": 7383,
+      "originalLocalSha256": "403a70ef2f7421a330a43342c3dfa6c03290cc3e27c36cf468de7bb04d013d14",
+      "portableBytes": 7187,
+      "portableSha256": "742ff689f4b6fb8449582d2cb9261396bd16c53ffd69ff25a9804c68c8da0256",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-persistence-before-20261031.txt",
+      "originalLocalBytes": 8073,
+      "originalLocalSha256": "a4b6c11febd4ef2b495f63526fb3e8be5248b0cda4239bc3a2db8206b1bbd680",
+      "portableBytes": 7726,
+      "portableSha256": "e2268ded3a7e19aaaba0ac5f32abec9cab5b5c52114e6685e0c51bcce28a7bcd",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-replay-20261031.txt",
+      "originalLocalBytes": 307,
+      "originalLocalSha256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "portableBytes": 306,
+      "portableSha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-scale-20261031.json",
+      "originalLocalBytes": 28629,
+      "originalLocalSha256": "cb2c65982c214570384ed5c82b4e04c3a4fc0a669eb5a66f51fd0845c4180b4e",
+      "portableBytes": 28629,
+      "portableSha256": "cb2c65982c214570384ed5c82b4e04c3a4fc0a669eb5a66f51fd0845c4180b4e",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-scale-20261031.txt",
+      "originalLocalBytes": 1202,
+      "originalLocalSha256": "97a3b452e773caa7d4e2e69f76e655492f4f89a905fd6ff50aac7eb6b92fcdff",
+      "portableBytes": 1128,
+      "portableSha256": "6b637bdf5abb9266bcd0c8d2bfce8157f72e71c46bcac6a7c82c60d5947499cb",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-walkthrough-20261031.json",
+      "originalLocalBytes": 8072,
+      "originalLocalSha256": "40d496ad6fdc1b49d0358f76916a711d55d827621ddb4b9965a003992305e6ac",
+      "portableBytes": 8072,
+      "portableSha256": "40d496ad6fdc1b49d0358f76916a711d55d827621ddb4b9965a003992305e6ac",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-walkthrough-20261031.txt",
+      "originalLocalBytes": 939,
+      "originalLocalSha256": "713b9620dbacaac07d3bbe951fc26faad4d9d799a7e0e8a20a8b1ff1ec0d5dee",
+      "portableBytes": 938,
+      "portableSha256": "e25f819191c0f9afe03c030dd8069598156159036da7fbf0236d31453b1204f8",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-walkthrough-final-20261031.json",
+      "originalLocalBytes": 8072,
+      "originalLocalSha256": "40d496ad6fdc1b49d0358f76916a711d55d827621ddb4b9965a003992305e6ac",
+      "portableBytes": 8072,
+      "portableSha256": "40d496ad6fdc1b49d0358f76916a711d55d827621ddb4b9965a003992305e6ac",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    },
+    {
+      "path": "provenance-correction-walkthrough-final-20261031.txt",
+      "originalLocalBytes": 939,
+      "originalLocalSha256": "713b9620dbacaac07d3bbe951fc26faad4d9d799a7e0e8a20a8b1ff1ec0d5dee",
+      "portableBytes": 938,
+      "portableSha256": "e25f819191c0f9afe03c030dd8069598156159036da7fbf0236d31453b1204f8",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+    }
+  ]
+}

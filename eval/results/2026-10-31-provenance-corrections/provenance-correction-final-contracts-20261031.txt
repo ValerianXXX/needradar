@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: correcting a known author on the same retained capture is neither arrival nor loss
+ok 1 - correcting a known author on the same retained capture is neither arrival nor loss
+  ---
+  duration_ms: 4.0184
+  type: 'test'
+  ...
+# Subtest: relabeling both known author and organization preserves the existing unit
+ok 2 - relabeling both known author and organization preserves the existing unit
+  ---
+  duration_ms: 0.4305
+  type: 'test'
+  ...
+# Subtest: resolving an unattributed capture after serialization does not create an arrival
+ok 3 - resolving an unattributed capture after serialization does not create an arrival
+  ---
+  duration_ms: 0.4164
+  type: 'test'
+  ...
+# Subtest: source URL identity survives an adapter key correction and attribution change
+ok 4 - source URL identity survives an adapter key correction and attribution change
+  ---
+  duration_ms: 0.6576
+  type: 'test'
+  ...
+# Subtest: collapsing two retained units reports exactly one consolidation
+ok 5 - collapsing two retained units reports exactly one consolidation
+  ---
+  duration_ms: 9.7999
+  type: 'test'
+  ...
+# Subtest: splitting an old unit is attribution resolution rather than fresh demand
+ok 6 - splitting an old unit is attribution resolution rather than fresh demand
+  ---
+  duration_ms: 0.5591
+  type: 'test'
+  ...
+# Subtest: a split cannot conceal the simultaneous loss of a different old unit
+ok 7 - a split cannot conceal the simultaneous loss of a different old unit
+  ---
+  duration_ms: 0.7101
+  type: 'test'
+  ...
+# Subtest: overlapping corrections match retained units without greedy or input-order losses
+ok 8 - overlapping corrections match retained units without greedy or input-order losses
+  ---
+  duration_ms: 3.5458
+  type: 'test'
+  ...
+# Subtest: a genuinely new unrelated capture remains new alongside an existing correction
+ok 9 - a genuinely new unrelated capture remains new alongside an existing correction
+  ---
+  duration_ms: 0.5919
+  type: 'test'
+  ...
+# Subtest: same author recaptures remain dependent while distinct comment anchors remain distinct
+ok 10 - same author recaptures remain dependent while distinct comment anchors remain distinct
+  ---
+  duration_ms: 1.1355
+  type: 'test'
+  ...
+# Subtest: explicit correction retains raw source, dates, validation and an independent prior state
+ok 11 - explicit correction retains raw source, dates, validation and an independent prior state
+  ---
+  duration_ms: 7.471
+  type: 'test'
+  ...
+# Subtest: correction requires a current full-state digest and rejects replay without another event
+ok 12 - correction requires a current full-state digest and rejects replay without another event
+  ---
+  duration_ms: 2.3736
+  type: 'test'
+  ...
+# Subtest: only explicit author and organization corrections are accepted
+ok 13 - only explicit author and organization corrections are accepted
+  ---
+  duration_ms: 1.92
+  type: 'test'
+  ...
+# Subtest: actor, reason, target keys and strictly advancing event time are required
+ok 14 - actor, reason, target keys and strictly advancing event time are required
+  ---
+  duration_ms: 2.1937
+  type: 'test'
+  ...
+# Subtest: a no-op cannot append a misleading correction or refresh recency
+ok 15 - a no-op cannot append a misleading correction or refresh recency
+  ---
+  duration_ms: 0.6082
+  type: 'test'
+  ...
+# Subtest: undo appends its own reason and restores the exact selected source without deleting history
+ok 16 - undo appends its own reason and restores the exact selected source without deleting history
+  ---
+  duration_ms: 2.0876
+  type: 'test'
+  ...
+# Subtest: undo refuses stale source snapshots and cannot discard a later capture
+ok 17 - undo refuses stale source snapshots and cannot discard a later capture
+  ---
+  duration_ms: 2.8818
+  type: 'test'
+  ...
+# Subtest: corrupt correction history is rejected instead of silently discarded or rewritten
+ok 18 - corrupt correction history is rejected instead of silently discarded or rewritten
+  ---
+  duration_ms: 1.2868
+  type: 'test'
+  ...
+# Subtest: consolidation makes recency unverified without changing recorded business validation
+ok 19 - consolidation makes recency unverified without changing recorded business validation
+  ---
+  duration_ms: 2.6638
+  type: 'test'
+  ...
+# Subtest: resolving old unknown attribution leaves the independent-arrival date unknown
+ok 20 - resolving old unknown attribution leaves the independent-arrival date unknown
+  ---
+  duration_ms: 1.375
+  type: 'test'
+  ...
+# Subtest: returned current values, audit snapshots and caller inputs never share editable objects
+ok 21 - returned current values, audit snapshots and caller inputs never share editable objects
+  ---
+  duration_ms: 1.3207
+  type: 'test'
+  ...
+# Subtest: only selected captures change; permissions, quotes, counterevidence and originals survive
+ok 22 - only selected captures change; permissions, quotes, counterevidence and originals survive
+  ---
+  duration_ms: 2.9443
+  type: 'test'
+  ...
+# Subtest: clearing ungrounded attribution withholds independence without inventing an arrival
+ok 23 - clearing ungrounded attribution withholds independence without inventing an arrival
+  ---
+  duration_ms: 1.0216
+  type: 'test'
+  ...
+# Subtest: repairing contradictory originals resolves old evidence rather than fresh demand
+ok 24 - repairing contradictory originals resolves old evidence rather than fresh demand
+  ---
+  duration_ms: 1.7994
+  type: 'test'
+  ...
+# Subtest: correcting a reposter cannot replace the original author or increase supporting independence
+ok 25 - correcting a reposter cannot replace the original author or increase supporting independence
+  ---
+  duration_ms: 1.8079
+  type: 'test'
+  ...
+# Subtest: undo requires the latest correction and a completed undo is not replayed
+ok 26 - undo requires the latest correction and a completed undo is not replayed
+  ---
+  duration_ms: 3.7483
+  type: 'test'
+  ...
+# Subtest: a present malformed history cannot be treated as an empty legacy history
+ok 27 - a present malformed history cannot be treated as an empty legacy history
+  ---
+  duration_ms: 1.4701
+  type: 'test'
+  ...
+# Subtest: hashing never silently drops hidden source data, symbol keys or non-data values
+ok 28 - hashing never silently drops hidden source data, symbol keys or non-data values
+  ---
+  duration_ms: 1.1689
+  type: 'test'
+  ...
+# Subtest: plain serialized key order and null prototypes preserve the digest but source edits do not
+ok 29 - plain serialized key order and null prototypes preserve the digest but source edits do not
+  ---
+  duration_ms: 1.016
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 187.8659
