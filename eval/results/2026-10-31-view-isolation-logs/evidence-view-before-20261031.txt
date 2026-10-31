@@ -22,7 +22,7 @@ test at tests\evidence-view-isolation.test.mjs:33:1
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
-  
+
     {
       aiPath: 'Prepare candidates for human review.',
       constraints: {
@@ -40,7 +40,7 @@ test at tests\evidence-view-isolation.test.mjs:33:1
         status: 'INTERVIEWED'
       }
     }
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:38:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)
@@ -59,7 +59,7 @@ test at tests\evidence-view-isolation.test.mjs:41:1
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
-  
+
     {
       aiPath: 'Prepare candidates for human review.',
       constraints: {
@@ -78,7 +78,7 @@ test at tests\evidence-view-isolation.test.mjs:41:1
           },
           {
             actor: 'synthetic-reviewer',
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:45:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)
@@ -99,7 +99,7 @@ test at tests\evidence-view-isolation.test.mjs:48:1
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
-  
+
     [
       {
         aiPath: 'Prepare candidates for human review.',
@@ -123,7 +123,7 @@ test at tests\evidence-view-isolation.test.mjs:48:1
             rightsApproved: true,
             sourceAccessible: true,
             sourcePolicy: 'synthetic-public'
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:52:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)
@@ -144,7 +144,7 @@ test at tests\evidence-view-isolation.test.mjs:55:1
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
-  
+
     {
       automaticMerge: false,
       blockedEdges: [],
@@ -186,7 +186,7 @@ test at tests\evidence-view-isolation.test.mjs:55:1
                   rightsApproved: true,
                   sourceAccessible: true,
                   sourcePolicy: 'synthetic-public'
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:59:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)
@@ -205,9 +205,9 @@ test at tests\evidence-view-isolation.test.mjs:55:1
 test at tests\evidence-view-isolation.test.mjs:62:1
 ✖ editing preview rights cannot turn unapproved source evidence into an eligible publication (5.514ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   true !== false
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:72:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)
@@ -228,7 +228,7 @@ test at tests\evidence-view-isolation.test.mjs:77:1
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
   ... Skipped lines
-  
+
     [
       {
         aiPath: 'Prepare candidates for human review.',
@@ -265,7 +265,7 @@ test at tests\evidence-view-isolation.test.mjs:77:1
           }
         ],
         persona: 'Synthetic reviewers',
-  
+
       at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:86:10)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1402:25)

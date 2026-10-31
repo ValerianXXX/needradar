@@ -375,7 +375,12 @@
     "before": {
       "original_sha256": "a4b7475d36e0af1fc6b2c26dafa414a33ba1ce790d5b01ac65ff5d985af9a55b",
       "portable": "eval/results/2026-10-31-view-isolation-logs/evidence-view-before-20261031.txt",
-      "portable_sha256": "4ecf81b6b8af2555facb180584cc6b5a4b922e987552f6698f32c6d1baa5f6f5"
+      "portable_sha256": "d28590430bb95afcf26d5102b1b513dbc44fc4799ce7b03c8ad09d47e4af1af4",
+      "portable_normalization": [
+        "LF newlines",
+        "Workspace path redaction",
+        "Trailing formatter whitespace removed; original raw log hash retained"
+      ]
     },
     "after": {
       "original_sha256": "fd2275e1bd7966a33ad38ab8a38ae8e61db2f037d766d5e0e9a4bc378fb025d8",
@@ -418,7 +423,7 @@
     "src/opportunity-clusters.mjs": "79bcfdbb85dc6a06656ae4d48c333622d6e5830fe894e3e22d9dc267acb563c2",
     "src/opportunity-state.mjs": "5feee7408a3bc9436ace80164105208d324a55fe785f8d9bbdd1c4e4c008f685",
     "scripts/evaluate-view-isolation.mjs": "87581f4b309360d375c4a766f3701a59c47b5ee1544caa9b814855f90dd97941",
-    "eval/results/2026-10-31-view-isolation-logs/evidence-view-before-20261031.txt": "4ecf81b6b8af2555facb180584cc6b5a4b922e987552f6698f32c6d1baa5f6f5",
+    "eval/results/2026-10-31-view-isolation-logs/evidence-view-before-20261031.txt": "d28590430bb95afcf26d5102b1b513dbc44fc4799ce7b03c8ad09d47e4af1af4",
     "eval/results/2026-10-31-view-isolation-logs/evidence-view-after-20261031.txt": "39ef3974382bb7aac38c373f2b981b01f5895918aee1dbc8a4bcd0bd7808696d",
     "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-before-20261031.txt": "8bf6acca4de21e4cba253a82ae3dff5cfe9b2e342023d2e7f40f8f43b8b2c259",
     "eval/results/2026-10-31-view-isolation-logs/evidence-view-workflow-after-20261031.txt": "176b5581eb050240d09f219457a2be7cbdec74f96c75506f3931f64ec2229ad8",
@@ -436,5 +441,10 @@
     "Independent holdouts and actual human effort",
     "Authenticated source edits and authoritative publication transactions belong to the host",
     "Trusted hosted source identification and separately approved adaptation/deployment"
-  ]
+  ],
+  "artifact_whitespace_check": {
+    "first_result": "12 trailing-whitespace lines in portable failure output",
+    "resolution": "Trim formatter whitespace only; original local log and its hash retained",
+    "product_or_assertion_change": false
+  }
 }
