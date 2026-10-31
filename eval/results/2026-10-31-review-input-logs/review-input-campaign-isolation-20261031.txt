@@ -1,0 +1,13 @@
+✔ bounded live-shaped calls resume without repeat and replay consumes zero (1054.0409ms)
+✔ two failed attempts stop all further calls including after restart (480.0722ms)
+✔ changed run identity and existing invocation lock reject before reviewer calls (449.861ms)
+✔ contract checks reject all caller-supplied provider callbacks before creating a run (10.0616ms)
+✔ real follow-up retains the historical product hashes and cannot reopen on changed source (42.7308ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2250.6304

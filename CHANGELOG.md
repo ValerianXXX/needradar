@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased - 2026-10-31
+
+- Isolate asynchronous review inputs, requests and returned observations. Detect
+  changed drafts, comparison lists, corrections and publication evidence/rules;
+  stop subsequent calls and preserve completed responses without clearing review.
+- Add an optional synchronous revision guard for caller-managed immutable indexes;
+  keep publication transactions and authenticated human actions with the caller.
+- Separate fixed historical replay from real execution source checks. Contract
+  campaign tests accept only built-in stubs; the live campaign remains closed on
+  changed product source, with its original plan, results and limits preserved.
+- Retain initial failures, 112 passing checks, the unchanged 140-pair unresolved
+  results, zero-call replay and 100/1,000/10,000-record snapshot cost observations.
+
 ## Unreleased - 2026-10-30
 
 - Separate capture grouping from typed author/organization independence units.

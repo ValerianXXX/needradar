@@ -1,0 +1,89 @@
+✔ missing text cannot become a literal null persona or task match (9.3235ms)
+✔ Chinese survives normalization and exact text deduplicates across evidence keys (5.1304ms)
+✔ shared personas, nearby needs, negation and constraints never auto-merge (4.619ms)
+✔ small-corpus retrieval retains cross-language and zero-overlap paraphrases (4.7642ms)
+✔ invalid, failed, ungrounded and over-budget reviewers fail to human review (13.3708ms)
+✔ reposts, repeat crawls, tracking URLs and copied content count once (5.6643ms)
+✔ new evidence, last_seen, counterevidence and validation are separate state (11.1476ms)
+✔ human correction is reversible and bound to the actual compared content (1.1998ms)
+✔ optional provider requires explicit cloud opt-in and validates completed no-tool output (48.8344ms)
+✔ counterevidence cannot satisfy supporting-demand gates and rejected captures do not advance last_seen (1.7336ms)
+✔ human correction actually controls the async publication decision and expires when content changes (3.2566ms)
+✔ command transport requires opt-in, sends JSON on stdin and rejects tools or invalid output (248.8682ms)
+✔ holds a complete draft when evidence is not sufficiently independent (5.8737ms)
+✔ accepts independence through three author groups (2.703ms)
+✔ filters inaccessible or personal-data observations before applying thresholds (0.5852ms)
+✔ suppresses a candidate that substantially repeats a published brief (4.966ms)
+✔ requires semantic review before asserting low-overlap drafts are distinct (1.2989ms)
+✔ reports transparent similarity components (0.6449ms)
+✔ three bounded invocations reach twenty candidates instead of repeating the first eight (53.3849ms)
+✔ zero-budget replay retains proposals without charging cached costs again (3.7408ms)
+✔ write-ahead checkpoint failure prevents a provider call (3.6098ms)
+✔ lost completion checkpoint stays interrupted and is not silently retried (1.8027ms)
+✔ failed pair requires an explicit bounded retry and retains its failure record (2.5507ms)
+✔ journal binds the reviewer revision and rejects a silent provider change (1.2318ms)
+✔ changed content is reconsidered but reordering and returned-state mutation do not affect the input journal (2.1772ms)
+✔ cancelled work starts no requests and remains explicitly unresolved (3.8995ms)
+✔ cancellation after an active response preserves that attempt and starts no more (4.8208ms)
+✔ current human correction wins over a cached model proposal (1.9106ms)
+✔ malformed and ungrounded saved results fail closed before model execution (3.8745ms)
+✔ a partial retrieval remains incomplete after its whole shortlist has been visited (80.1226ms)
+✔ an edit observed after a response stays invalid even if a later checkpoint restores the value (13.0659ms)
+✔ revoking evidence rights stops subsequent requests as well as publication (7.1209ms)
+✔ an optional external revision check must explicitly stay true and never reaches the adapter (2.8052ms)
+✔ a revision change in a failed response stops further calls and retains the failure (1.7139ms)
+✔ the publication wrapper preserves a caller revision gate (2.4356ms)
+✔ inaccessible evidence holds before any adapter or caller revision work (0.4522ms)
+✔ stateless: a draft edit during a response cannot change its quoted snapshot or clear review (6.8332ms)
+✔ checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review (5.4151ms)
+✔ a newly arrived exact duplicate invalidates an otherwise complete distinct result (0.9799ms)
+✔ editing a later peer never mixes old constraints with new source content (1.3637ms)
+✔ human corrections arriving during review require a new coherent invocation (2.4249ms)
+✔ request adapters receive detached constraints and cannot mutate the validation schema (3.1443ms)
+✔ response usage is copied before a later adapter invocation can alter it (1.6474ms)
+✔ a checkpoint-time edit starts no provider request and preserves the interrupted attempt (2.4038ms)
+✔ a completed old-snapshot response remains replayable without hiding its original cost (3.4216ms)
+✔ publication cannot clear an input edit during review: rights (6.3898ms)
+✔ publication cannot clear an input edit during review: draft (1.0183ms)
+✔ publication cannot clear an input edit during review: rules (1.5395ms)
+✔ publication cannot clear an input edit during review: new-peer (1.8985ms)
+✔ unchanged inputs still permit a distinct decision with no schema or digest migration (2.5412ms)
+✔ an explicit immutable index remains bound to its own snapshot when its old source array changes (1.564ms)
+✔ real file resumes across new Node processes and retains twenty attempts (998.6397ms)
+✔ a concurrent writer is rejected without a second provider call (27.4839ms)
+✔ an external journal edit is retained and prevents subsequent provider calls (33.2505ms)
+✔ killed process leaves an owned lock and an incomplete attempt; recovery needs explicit intervention (167.8317ms)
+✔ corrupt, oversized and wrong-version files block before invoking a reviewer (41.5326ms)
+✔ retry ceiling counts failed and uncertainly completed starts, never removing history (2.7632ms)
+✔ cancellation during checkpoint never starts the subsequent provider call (0.6791ms)
+✔ only allowlisted usage metadata persists and unknown cost stays unknown (1.0939ms)
+✖ caller edits during an awaited model response do not change the active snapshot (1.5987ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 59
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1610.4174
+
+✖ failing tests:
+
+test at tests\review-journal-file.test.mjs:143:1
+✖ caller edits during an awaited model response do not change the active snapshot (1.5987ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'REVIEW_INPUT_CHANGED'
+  - 'MODEL_PROPOSAL'
+
+      at TestContext.<anonymous> ([repository]/tests/review-journal-file.test.mjs:151:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'REVIEW_INPUT_CHANGED',
+    expected: 'MODEL_PROPOSAL',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

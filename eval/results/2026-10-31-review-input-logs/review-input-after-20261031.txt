@@ -1,0 +1,23 @@
+✔ stateless: a draft edit during a response cannot change its quoted snapshot or clear review (4.5296ms)
+✔ checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review (3.4088ms)
+✔ a newly arrived exact duplicate invalidates an otherwise complete distinct result (1.0579ms)
+✔ editing a later peer never mixes old constraints with new source content (0.6829ms)
+✔ human corrections arriving during review require a new coherent invocation (1.1435ms)
+✔ request adapters receive detached constraints and cannot mutate the validation schema (2.2766ms)
+✔ response usage is copied before a later adapter invocation can alter it (1.378ms)
+✔ a checkpoint-time edit starts no provider request and preserves the interrupted attempt (1.3359ms)
+✔ a completed old-snapshot response remains replayable without hiding its original cost (2.0892ms)
+✔ publication cannot clear an input edit during review: rights (4.8615ms)
+✔ publication cannot clear an input edit during review: draft (1.4873ms)
+✔ publication cannot clear an input edit during review: rules (1.3184ms)
+✔ publication cannot clear an input edit during review: new-peer (0.8329ms)
+✔ unchanged inputs still permit a distinct decision with no schema or digest migration (1.3615ms)
+✔ an explicit immutable index remains bound to its own snapshot when its old source array changes (0.9186ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.9463

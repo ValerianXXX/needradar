@@ -1,0 +1,1 @@
+{"pairs":140,"false_merges":0,"missed_merges":0,"unresolved_duplicates":40,"human_review_pairs":80,"correct_duplicate_proposals":40,"decided_distinct":20,"synchronous_exact_identity_misses":0,"reverse_disagreements":0,"evidence_count_mismatches":0}

@@ -1,0 +1,9 @@
+[repository]/scripts/evaluate-targeted-followup.mjs:44
+    if (hash(await readLF(join(root, path))) !== expected) throw new Error('FOLLOWUP_PRODUCT_CHANGED');
+                                                                 ^
+
+Error: FOLLOWUP_PRODUCT_CHANGED
+    at loadProtocol ([repository]/scripts/evaluate-targeted-followup.mjs:44:66)
+    at async [repository]/scripts/replay-targeted-followup.mjs:10:51
+
+Node.js v24.22.1
