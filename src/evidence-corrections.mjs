@@ -19,6 +19,9 @@ function encoded(value, active = new Set()) {
   const array = Array.isArray(value), prototype = Object.getPrototypeOf(value);
   if (!array && prototype !== Object.prototype && prototype !== null) throw new TypeError('EVIDENCE_CORRECTION_INPUT_INVALID');
   const keys = Object.keys(value);
+  if (Reflect.ownKeys(value).length !== keys.length + (array ? 1 : 0)) {
+    throw new TypeError('EVIDENCE_CORRECTION_INPUT_INVALID');
+  }
   if (array && (keys.length !== value.length || keys.some((key, index) => key !== String(index)))) {
     throw new TypeError('EVIDENCE_CORRECTION_INPUT_INVALID');
   }
@@ -41,7 +44,7 @@ export function evidenceCorrectionDigest(opportunity) {
 }
 
 function historyOf(state) {
-  const history = state.provenance_corrections ?? [];
+  const history = state.provenance_corrections === undefined ? [] : state.provenance_corrections;
   try {
     if (!Array.isArray(history)) throw new Error();
     let previous = '';
