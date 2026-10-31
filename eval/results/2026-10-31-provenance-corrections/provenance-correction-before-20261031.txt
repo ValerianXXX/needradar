@@ -9,7 +9,7 @@ not ok 1 - correcting a known author on the same retained capture is neither arr
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     +   consolidatedOrLost: 1,
@@ -18,7 +18,7 @@ not ok 1 - correcting a known author on the same retained capture is neither arr
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -47,7 +47,7 @@ not ok 2 - relabeling both known author and organization preserves the existing 
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     +   consolidatedOrLost: 1,
@@ -56,7 +56,7 @@ not ok 2 - relabeling both known author and organization preserves the existing 
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -87,7 +87,7 @@ not ok 3 - resolving an unattributed capture after serialization does not create
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     -   added: 0,
@@ -95,7 +95,7 @@ not ok 3 - resolving an unattributed capture after serialization does not create
     +   resolvedExisting: 0
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -126,7 +126,7 @@ not ok 4 - source URL identity survives an adapter key correction and attributio
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     +   consolidatedOrLost: 1,
@@ -135,7 +135,7 @@ not ok 4 - source URL identity survives an adapter key correction and attributio
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -166,7 +166,7 @@ not ok 5 - collapsing two retained units reports exactly one consolidation
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     +   consolidatedOrLost: 2,
@@ -175,7 +175,7 @@ not ok 5 - collapsing two retained units reports exactly one consolidation
     -   consolidatedOrLost: 1,
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -206,7 +206,7 @@ not ok 6 - splitting an old unit is attribution resolution rather than fresh dem
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 2,
     +   consolidatedOrLost: 1,
@@ -215,7 +215,7 @@ not ok 6 - splitting an old unit is attribution resolution rather than fresh dem
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 2
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -246,7 +246,7 @@ not ok 7 - a split cannot conceal the simultaneous loss of a different old unit
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 1,
     -   added: 0,
@@ -254,7 +254,7 @@ not ok 7 - a split cannot conceal the simultaneous loss of a different old unit
     +   resolvedExisting: 0
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -285,7 +285,7 @@ not ok 8 - overlapping corrections match retained units without greedy or input-
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 2,
     +   consolidatedOrLost: 2,
@@ -294,7 +294,7 @@ not ok 8 - overlapping corrections match retained units without greedy or input-
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 2
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -325,7 +325,7 @@ not ok 9 - a genuinely new unrelated capture remains new alongside an existing c
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       {
     +   added: 2,
     +   consolidatedOrLost: 1,
@@ -334,7 +334,7 @@ not ok 9 - a genuinely new unrelated capture remains new alongside an existing c
     -   consolidatedOrLost: 0,
     -   resolvedExisting: 1
       }
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:

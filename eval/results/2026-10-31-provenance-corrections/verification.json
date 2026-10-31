@@ -587,9 +587,10 @@
       "path": "provenance-correction-before-20261031.txt",
       "originalLocalBytes": 32279,
       "originalLocalSha256": "a5f5a68263220ba43194706b9cff94edb281046683a1b51d7b926b6ec3ea157f",
-      "portableBytes": 27767,
-      "portableSha256": "787b01718073cded2682b32bf60374630a4d2076f175467f6c1a7905ca447bf2",
-      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
+      "portableBytes": 27695,
+      "portableSha256": "fcb683c59467eaee9a0d6df3bdc17ace1a72cc28b3838ffad497048c2d1db4f9",
+      "normalization": "UTF-8 LF; local workspace path replaced with <workspace>; trailing whitespace removed on 18 blank diagnostic lines",
+      "beforeTrailingWhitespaceNormalizationSha256": "787b01718073cded2682b32bf60374630a4d2076f175467f6c1a7905ca447bf2"
     },
     {
       "path": "provenance-correction-boundaries-20261031.json",
@@ -735,5 +736,10 @@
       "portableSha256": "e25f819191c0f9afe03c030dd8069598156159036da7fbf0236d31453b1204f8",
       "normalization": "UTF-8 LF; local workspace path replaced with <workspace>"
     }
-  ]
+  ],
+  "formattingFollowup": {
+    "reason": "Git diff whitespace check found 18 blank diagnostic lines with spaces",
+    "sourceAndAssertionsChanged": false,
+    "rawFailureLogPreserved": true
+  }
 }
