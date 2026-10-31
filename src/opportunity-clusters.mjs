@@ -87,11 +87,13 @@ export function buildReviewClusters(opportunities, { humanDecisions = [], maxPai
     evidence: evidenceSummary(memberIds.flatMap(id => byId.get(id).observations ?? [])),
   }));
   const unreviewedPairs = ids.length * (ids.length - 1) / 2 - active.size;
-  return { protocol: 'HUMAN_REVIEW_CLUSTER_VIEW_V1', groups, ignoredReviews: ignored, blockedEdges,
+  // Evidence grouping deliberately retains capture identity internally. Detach
+  // the completed view here, before a caller can edit its preview or rights.
+  return structuredClone({ protocol: 'HUMAN_REVIEW_CLUSTER_VIEW_V1', groups, ignoredReviews: ignored, blockedEdges,
     pairChecks, maxPairChecks, unreviewedPairs,
     requiresReview: unreviewedPairs > 0 || blockedEdges.length > 0 || [...active.values()].some(review => review.decision === 'uncertain'),
     automaticMerge: false, originalRecordsRemoved: 0,
-    scope: 'Deterministic conservative grouping, not an optimal partition or proof of novelty. Original records and the full review journal remain caller-owned.' };
+    scope: 'Deterministic conservative grouping, not an optimal partition or proof of novelty. Original records and the full review journal remain caller-owned.' });
 }
 
 // Append these decisions to the existing journal. The prior journal still
