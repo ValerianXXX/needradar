@@ -1,0 +1,297 @@
+✖ one durable budget spans separate pair journals (37.6651ms)
+✖ reopening the same journal cannot reset the total call ceiling (84.3021ms)
+✖ per-invocation pacing remains separate from the durable ceiling (67.7425ms)
+✖ zero total budget persists without creating pair attempts (76.3767ms)
+✖ cached proposals consume no new budget and retain original cost (15.1123ms)
+✖ unknown cost is not a zero-price completed campaign (78.6652ms)
+✖ a failed reviewer still consumes a reserved call (28.7269ms)
+✖ provider-returned but invalid decisions do not become successful reviews (14.9211ms)
+✖ stored ceiling cannot change on resume (80.6622ms)
+✖ stored scope cannot change on resume (84.4639ms)
+✖ reviewer revision is bound across different pair journals (93.226ms)
+✖ malformed durable budget blocks before any reviewer call (79.2809ms)
+✖ existing campaign lock blocks every pair journal (81.8054ms)
+✖ concurrent distinct pair files cannot share one reservation (23.2518ms)
+✖ a reservation is on disk before the potentially billable callback (14.786ms)
+✖ a lost budget completion checkpoint propagates instead of looking completed (15.1577ms)
+✖ already aborted work neither calls the reviewer nor reserves budget (5.6639ms)
+✖ separate Node processes obey the same durable ceiling (307.0587ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 0
+ℹ fail 18
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1308.4485
+
+✖ failing tests:
+
+test at tests\campaign-budget.test.mjs:25:1
+✖ one durable budget spans separate pair journals (37.6651ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:31:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:38:1
+✖ reopening the same journal cannot reset the total call ceiling (84.3021ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   5,
+  -   2,
+      0
+    ]
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:41:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 5, 0 ],
+    expected: [ 2, 0 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:47:1
+✖ per-invocation pacing remains separate from the durable ceiling (67.7425ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      1,
+      1,
+      1,
+  +   1
+  -   0
+    ]
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:50:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 1, 1, 1, 1 ],
+    expected: [ 1, 1, 1, 0 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:53:1
+✖ zero total budget persists without creating pair attempts (76.3767ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  5 !== 0
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:56:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:62:1
+✖ cached proposals consume no new budget and retain original cost (15.1123ms)
+  Error: ENOENT: no such file or directory, open '$USER_HOME\AppData\Local\Temp\needradar-budget-xhhA1Y\budget.json'
+      at async open (node:internal/fs/promises:1345:25)
+      at async readFile (node:internal/fs/promises:2003:14)
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:65:18)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\10418\\AppData\\Local\\Temp\\needradar-budget-xhhA1Y\\budget.json'
+  }
+
+test at tests\campaign-budget.test.mjs:73:1
+✖ unknown cost is not a zero-price completed campaign (78.6652ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'reservedCalls')
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:76:40)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\campaign-budget.test.mjs:82:1
+✖ a failed reviewer still consumes a reserved call (28.7269ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:88:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:93:1
+✖ provider-returned but invalid decisions do not become successful reviews (14.9211ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'returnedCalls')
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:97:40)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\campaign-budget.test.mjs:103:3
+✖ stored ceiling cannot change on resume (80.6622ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:106:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_POLICY_MISMATCH/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:103:3
+✖ stored scope cannot change on resume (84.4639ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:106:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_POLICY_MISMATCH/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:112:1
+✖ reviewer revision is bound across different pair journals (93.226ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:114:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_POLICY_MISMATCH/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:117:1
+✖ malformed durable budget blocks before any reviewer call (79.2809ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:119:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_JSON_INVALID/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:123:1
+✖ existing campaign lock blocks every pair journal (81.8054ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:125:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_LOCKED/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:130:1
+✖ concurrent distinct pair files cannot share one reservation (23.2518ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:137:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_LOCKED/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:141:1
+✖ a reservation is on disk before the potentially billable callback (14.786ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:148:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:152:1
+✖ a lost budget completion checkpoint propagates instead of looking completed (15.1577ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:154:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /REVIEW_BUDGET_FILE_CHANGED/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\campaign-budget.test.mjs:159:1
+✖ already aborted work neither calls the reviewer nor reserves budget (5.6639ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'reservedCalls')
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:163:40)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\campaign-budget.test.mjs:167:1
+✖ separate Node processes obey the same durable ceiling (307.0587ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   5,
+  -   1,
+      0
+    ]
+
+      at TestContext.<anonymous> (file:///$WORKSPACE/needradar-campaign-budget/tests/campaign-budget.test.mjs:178:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 5, 0 ],
+    expected: [ 1, 0 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

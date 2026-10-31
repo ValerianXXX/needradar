@@ -1,0 +1,213 @@
+{
+  "observed_at": "2026-10-31T21:40:10.928382+00:00",
+  "status": "LOCAL_FULL_CONTRACTS_AND_FIXED_GLOBAL_STUB_QUEUE_PASS_HOSTED_PENDING",
+  "branch": "codex/durable-review-budget-20261031",
+  "base": "f2f00aeaad3b8ad16c81dd81a1572aa028b53582",
+  "frozen": "d5e6430464525398baa2998006903fffeddda11d",
+  "runtime": "73045c3b72a2ffe21ed24614ab6a75c4803c0433",
+  "global_protocol_commit": "b6c7ed6112f4957b4f796b81f7ce918fa8edd4dd",
+  "baseline": {
+    "tests": 178,
+    "pass": 178,
+    "skipped": 0,
+    "duration_ms": 1930.6854
+  },
+  "frozen_contracts": {
+    "tests": 18,
+    "before_pass": 0,
+    "before_fail": 18,
+    "before_duration_ms": 1308.4485,
+    "assertions_unchanged": true,
+    "scope": "Cross-journal ceilings, restart, cost, policy binding, lock contention, write-ahead and persistence propagation; some assertions require new metadata"
+  },
+  "first_related": {
+    "tests": 27,
+    "pass": 27,
+    "duration_ms": 1044.9029
+  },
+  "final_related": {
+    "tests": 30,
+    "pass": 30,
+    "skipped": 0,
+    "duration_ms": 1072.19
+  },
+  "full_local": {
+    "tests": 199,
+    "pass": 199,
+    "skipped": 0,
+    "duration_ms": 1778.4147,
+    "node": "v24.22.1",
+    "platform": "Windows"
+  },
+  "native_process_recovery": {
+    "owned_child_exit": 73,
+    "reservations_after_exit": 1,
+    "automatic_lock_removal": false,
+    "fixture_manual_ownership_recovery_only": true,
+    "remaining_allowance_after_recovery": 0,
+    "new_calls_after_recovery": 0
+  },
+  "checks": {
+    "english": "PASS",
+    "fourteen_saved_real_proposals": "PASS_WITH_ZERO_NEW_CALLS",
+    "local_npm_wrapper": "Node equivalents executed; hosted workflow must execute the existing npm check wrapper"
+  },
+  "global_queue": {
+    "scopeDigest": "ae8b5979477d27f9ffd7741936a65ecac56e6bdad5323c3e747db0025827d1e8",
+    "evaluatorLFHash": "f54a593d217808b6ac62354ec445a63a01a3f11553ecf54a0ed4cf5f54388de1",
+    "same_fixture_and_queue": true,
+    "before": {
+      "sourceCommit": "f2f00aeaad3b8ad16c81dd81a1572aa028b53582",
+      "queries": 140,
+      "selected": 4480,
+      "uncertain": 3800,
+      "cached": 2734,
+      "pending": 0,
+      "stubCallbacks": 1066,
+      "callbacksAboveCeiling": 766,
+      "elapsedMs": 24211.3424
+    },
+    "after": {
+      "sourceCommit": "b6c7ed6112f4957b4f796b81f7ce918fa8edd4dd",
+      "queries": 140,
+      "selected": 4480,
+      "uncertain": 3800,
+      "cached": 843,
+      "pending": 2657,
+      "stubCallbacks": 300,
+      "callbacksAboveCeiling": 0,
+      "elapsedMs": 59253.7776,
+      "campaignProgress": {
+        "maxModelCalls": 300,
+        "reservedCalls": 300,
+        "remainingCalls": 0,
+        "returnedCalls": 300,
+        "failedCalls": 0,
+        "unfinishedReservations": 0,
+        "knownCostUsd": 0,
+        "unknownCostCalls": 300,
+        "totalCostUsd": null
+      },
+      "pairJournalFiles": 300,
+      "remainingOwnedLocks": 0
+    },
+    "all_140_retrieval_queries_remain_incomplete": true,
+    "real_provider_calls": 0,
+    "measured_model_accuracy_gain": null,
+    "human_correction_effort_measured": false,
+    "interpretation": "Enforce the planned callback ceiling across real file shards; all callback answers are explicit uncertain stubs; additional durability increases local elapsed time"
+  },
+  "original_pair_journal_limits_unchanged": true,
+  "new_dependencies": 0,
+  "source_reference": {
+    "repository": "ValerianXXX/needradar",
+    "revision": "f2f00aeaad3b8ad16c81dd81a1572aa028b53582",
+    "license": "MIT",
+    "reuse": "Extract the existing bounded file persistence into one helper shared by pair proposals and aggregate budgets"
+  },
+  "new_provider_calls": 0,
+  "provider_cost_usd": null,
+  "automatic_merges": 0,
+  "ui_changes": 0,
+  "production_actions": 0,
+  "data_migrations": 0,
+  "pending": [
+    "Exact-delivery hosted check",
+    "Full hybrid/global semantic validation with separately authorized budget",
+    "Independent authored holdouts and human correction effort",
+    "Attributable provider cost and internal-request receipts",
+    "Hosted transactional acceptance and production approval"
+  ],
+  "limitations": [
+    "Budget applies to cooperating callers of one operator-selected file, not an account-wide quota or dollar ceiling",
+    "Callback count does not prove provider internal request or retry counts",
+    "Host must bind actual input membership to the frozen plan",
+    "Valid filesystem rollback or switching files is outside this local trust boundary",
+    "All 140 original retrieval queries remain incomplete",
+    "Uncertain stub results are not semantic accuracy or customer outcomes"
+  ],
+  "portable_log_transforms": [
+    "LF UTF-8",
+    "Redact workspace/home roots",
+    "Strip trailing whitespace; preserve raw local hashes"
+  ],
+  "dependency_lockfile": "Not present in this dependency-free base or delivery; no lockfile claim",
+  "artifact_preparation": "Initial receipt writer assumed a nonexistent package-lock.json; partial observations retained and checked byte-for-byte before completing the receipt",
+  "observations": {
+    "campaign-budget-baseline-20261031.txt": {
+      "raw_local_sha256": "63f0f4579f7b3878f4b87b68f501fc52331a44c272e6bb23a417b493d5d71319",
+      "portable_sha256": "19abb018ba60cd293812c6cb10ab38c2fc7393a16bdfa2fb87a0bffa93377121"
+    },
+    "campaign-budget-before-20261031.txt": {
+      "raw_local_sha256": "f40f80bacef860bb743dd18ae74067d7def15d733c2f282d5f1c983dd3cb0b49",
+      "portable_sha256": "c88bce88ecb888c1d4dc15076ca48718b71d1f3211343e7dc7fafb82d08d39a2"
+    },
+    "campaign-budget-english-20261031.txt": {
+      "raw_local_sha256": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+      "portable_sha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363"
+    },
+    "campaign-budget-first-after-20261031.txt": {
+      "raw_local_sha256": "4d05f11f160f9a4afeec4080c303435a1c736dfe634ea5bd07827f23c6b7ae16",
+      "portable_sha256": "4f8daf939bdc81067a7ecf4e5379990469ece61fba9c745fc44b43ef3aa62af4"
+    },
+    "campaign-budget-full-20261031.txt": {
+      "raw_local_sha256": "bf749688c3904ed23a15a50d8efef801eb0a67497f6b5f6b0a339c8ab8fd786f",
+      "portable_sha256": "0912d9f930f78b87ec17b3bb06610fcf11d7c21d2fb4f0fe4c15b4f5ad1902d2"
+    },
+    "campaign-budget-global-after-20261031.json": {
+      "raw_local_sha256": "02f9bc05df2b94e89a347c7d8024f3a290c0ff92a63b04e03af7cc1e10f7d3da",
+      "portable_sha256": "02f9bc05df2b94e89a347c7d8024f3a290c0ff92a63b04e03af7cc1e10f7d3da"
+    },
+    "campaign-budget-global-after-20261031.txt": {
+      "raw_local_sha256": "7c8d47c6a82ab7c2444503e439d1fb9f5f5656f0bf6f9dd0edde50a007561f57",
+      "portable_sha256": "2b2f05512b2462e5e8560c2d1508c1599d7a50c0c46e2e52a2dece99fbd6d793"
+    },
+    "campaign-budget-global-before-20261031.json": {
+      "raw_local_sha256": "02a395cecee02f3a55dd6b7eed2eb351974bddbd69dfc35ec863bb8a39fa9823",
+      "portable_sha256": "02a395cecee02f3a55dd6b7eed2eb351974bddbd69dfc35ec863bb8a39fa9823"
+    },
+    "campaign-budget-global-before-20261031.txt": {
+      "raw_local_sha256": "4ed9a1f6257dfb99d4d7004cf3c8e81b92644cbe43a45c97e5829934fb3c6c08",
+      "portable_sha256": "caa84bc3283890f03a467438594c50f0293deed44c81272d9147c91c304a9209"
+    },
+    "campaign-budget-historical-replay-20261031.txt": {
+      "raw_local_sha256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "portable_sha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06"
+    },
+    "campaign-budget-recovery-after-20261031.txt": {
+      "raw_local_sha256": "6d974d99526ad276d856e6d12a5586ae8601fd3336d08587fc0a97bfa6e1349a",
+      "portable_sha256": "225a83f576cefe0a3029f6a05cf62b72f9bf9d4584dad6c25852a899cd1554a1"
+    }
+  },
+  "source_sha256": {
+    "src/review-journal-file.mjs": "b85828ad6d3b4bfa9caea4b63453ea0a87c7703f98fbb709cfdcd7f3d5b48dce",
+    "src/review-state-file.mjs": "3d4bd46deea312f7b1d74af65ff00e2ef5c85cf07d5ada3d7cb2894b97d5bb1b",
+    "src/review-budget.mjs": "6c71b3c4e012f4c62cf11354d5761bae7c10a236b5a3036a49c40f3eb8c11b90",
+    "src/semantic-review.mjs": "0c0149a1b4a3bbbd33a4a9851aa96a948c61db581c1ffd99eab642e6bb232587",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de",
+    "tests/campaign-budget.test.mjs": "006f90cf9d128c4c9763cd3fbbd6efdd78d2ec99f3231c47a562eb0e71e1df48",
+    "tests/campaign-budget-recovery.test.mjs": "334eaf2ef1a3b8d2fc60252752a654883ecf40a71332f71271b0cf3fae99d9a6",
+    "scripts/evaluate-campaign-budget.mjs": "f54a593d217808b6ac62354ec445a63a01a3f11553ecf54a0ed4cf5f54388de1",
+    "eval/boundaries-v2/campaign-budget-plan.json": "ae8b5979477d27f9ffd7741936a65ecac56e6bdad5323c3e747db0025827d1e8",
+    "eval/boundaries-v2/cases.json": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+    "docs/campaign-budget-2026-10-31.md": "cf406721ac640b2be652714c32ea2ad5248cba8d344b582ccf7e1cf35791dfbd",
+    "package.json": "9a0c117953e348f1263528e7185e937f487d2ae38327aedfcacea51381933670",
+    "LICENSE": "04d515f88a55bb96e8c01e8630a984b5c5d34724e2cc4f2f6f04ad5992c6cec9"
+  },
+  "artifact_sha256": {
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-baseline-20261031.txt": "19abb018ba60cd293812c6cb10ab38c2fc7393a16bdfa2fb87a0bffa93377121",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-before-20261031.txt": "c88bce88ecb888c1d4dc15076ca48718b71d1f3211343e7dc7fafb82d08d39a2",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-english-20261031.txt": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-first-after-20261031.txt": "4f8daf939bdc81067a7ecf4e5379990469ece61fba9c745fc44b43ef3aa62af4",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-full-20261031.txt": "0912d9f930f78b87ec17b3bb06610fcf11d7c21d2fb4f0fe4c15b4f5ad1902d2",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-global-after-20261031.json": "02f9bc05df2b94e89a347c7d8024f3a290c0ff92a63b04e03af7cc1e10f7d3da",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-global-after-20261031.txt": "2b2f05512b2462e5e8560c2d1508c1599d7a50c0c46e2e52a2dece99fbd6d793",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-global-before-20261031.json": "02a395cecee02f3a55dd6b7eed2eb351974bddbd69dfc35ec863bb8a39fa9823",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-global-before-20261031.txt": "caa84bc3283890f03a467438594c50f0293deed44c81272d9147c91c304a9209",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-historical-replay-20261031.txt": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06",
+    "eval/results/2026-10-31-campaign-budget/campaign-budget-recovery-after-20261031.txt": "225a83f576cefe0a3029f6a05cf62b72f9bf9d4584dad6c25852a899cd1554a1",
+    "eval/results/2026-10-31-campaign-budget/comparison.json": "35b4568fd8b1054b4627be8f9e9b67941e669f05a0b8f4a5f4f609f15e6254f2"
+  }
+}
