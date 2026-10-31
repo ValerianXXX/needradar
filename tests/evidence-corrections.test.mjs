@@ -144,3 +144,76 @@ test('only selected captures change; permissions, quotes, counterevidence and or
   assert.ok(after.observations.every(row => row.rightsApproved && row.sourceAccessible && !row.containsPersonalData));
   assert.equal(after.observations.length, before.observations.length);
 });
+
+test('clearing ungrounded attribution withholds independence without inventing an arrival', async () => {
+  const module = await api(), before = initial();
+  const after = module.correctEvidenceAttribution(before, request(module, before,
+    {patch: {authorGroup: null, originGroup: null}}));
+  assert.equal(after.independent_evidence, 0); assert.equal(after.independent_evidence_added, 0);
+  assert.equal(after.provenance_change.consolidatedOrLostOrigins, 1);
+  assert.equal(after.last_new_independent_evidence, early);
+  assert.equal(after.independent_recency_verified, false);
+  assert.equal(after.observations[0].quote, before.observations[0].quote);
+});
+
+test('repairing contradictory originals resolves old evidence rather than fresh demand', async () => {
+  const module = await api(), before = initial([row('a'), row('a', {authorGroup: 'contradictory'})]);
+  assert.equal(before.independent_evidence, 0);
+  const after = module.correctEvidenceAttribution(before, request(module, before));
+  assert.equal(after.independent_evidence, 1); assert.equal(after.independent_evidence_added, 0);
+  assert.equal(after.last_new_independent_evidence, null); assert.equal(after.independent_recency_verified, false);
+  assert.equal(after.provenance_corrections[0].changes.length, 2);
+});
+
+test('correcting a reposter cannot replace the original author or increase supporting independence', async () => {
+  const module = await api(), before = initial([row('a'), row('repost', {repostOf: 'a'})]);
+  const after = module.correctEvidenceAttribution(before, request(module, before,
+    {evidenceKeys: ['repost'], patch: {authorGroup: 'other', originGroup: 'unrelated'}}));
+  assert.equal(after.independent_evidence, 1); assert.equal(after.independent_evidence_added, 0);
+  assert.equal(after.observations[0].authorGroup, 'author-a');
+  assert.equal(evaluateEvidenceCluster(after).eligible, false);
+});
+
+test('undo requires the latest correction and a completed undo is not replayed', async () => {
+  const module = await api(), first = initial();
+  const second = module.correctEvidenceAttribution(first, request(module, first));
+  const third = module.correctEvidenceAttribution(second, request(module, second,
+    {patch: {originGroup: 'org'}, recordedAt: next}));
+  const undo = (state, eventId, recordedAt = '2026-10-31T14:00:00Z') => module.revertEvidenceAttribution(state,
+    {expectedDigest: module.evidenceCorrectionDigest(state), eventId, recordedAt,
+      actor: 'synthetic-reviewer', reason: 'Reconsidered the latest attribution.'});
+  assert.throws(() => undo(third, second.provenance_corrections[0].id), /EVIDENCE_CORRECTION_UNDO_NOT_CURRENT/);
+  const restored = undo(third, third.provenance_corrections[1].id);
+  assert.throws(() => undo(restored, third.provenance_corrections[1].id, '2026-10-31T15:00:00Z'), /EVIDENCE_CORRECTION_UNDO_NOT_CURRENT/);
+  assert.equal(restored.provenance_corrections.length, 3);
+});
+
+test('a present malformed history cannot be treated as an empty legacy history', async () => {
+  const module = await api();
+  for (const history of [null, {}, [null], [{schemaVersion: 999}]]) {
+    const before = {...initial(), provenance_corrections: history};
+    assert.throws(() => module.correctEvidenceAttribution(before, request(module, before)), /EVIDENCE_CORRECTION_HISTORY_INVALID/);
+  }
+});
+
+test('hashing never silently drops hidden source data, symbol keys or non-data values', async () => {
+  const module = await api();
+  for (const build of [state => Object.defineProperty(state.observations[0], 'hidden', {value: 'source detail'}),
+    state => { state.observations[0][Symbol('source detail')] = 'value'; },
+    state => { state.observations[0].extra = new Date(); },
+    state => { state.observations[0].extra = () => 'source detail'; }]) {
+    const state = initial(); build(state);
+    assert.throws(() => module.evidenceCorrectionDigest(state), /EVIDENCE_CORRECTION_INPUT_INVALID/);
+  }
+});
+
+test('plain serialized key order and null prototypes preserve the digest but source edits do not', async () => {
+  const module = await api(), before = initial();
+  const reordered = Object.fromEntries(Object.entries(before).reverse());
+  assert.equal(module.evidenceCorrectionDigest(before), module.evidenceCorrectionDigest(reordered));
+  const nullPrototype = Object.assign(Object.create(null), before);
+  assert.equal(module.evidenceCorrectionDigest(before), module.evidenceCorrectionDigest(nullPrototype));
+  const changed = structuredClone(before); changed.observations[0].rightsApproved = false;
+  assert.notEqual(module.evidenceCorrectionDigest(before), module.evidenceCorrectionDigest(changed));
+  assert.throws(() => module.correctEvidenceAttribution(changed, request(module, before)), /EVIDENCE_CORRECTION_STALE_INPUT/);
+});
