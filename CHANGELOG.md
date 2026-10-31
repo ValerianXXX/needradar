@@ -2,6 +2,14 @@
 
 ## Unreleased - 2026-10-31
 
+- Reuse source-bound model proposals when pair order reverses, preserving original
+  observations and swapping only the returned quotations. Share explicit retry
+  limits across both orientations; expose conflicting saved verdicts for review.
+- Preserve 27 frozen contracts, 178 passing full checks, zero-call historical
+  reverse replay and complete synthetic per-domain scheduling comparisons. The
+  global retrieval queue and real model/cost/user acceptance remain open. See
+  [behavior, observations and rollback](docs/symmetric-review-2026-10-31.md).
+
 - Match independent evidence across stable capture identities and reviewed
   author changes, including serialized records and overlapping split/loss cases.
 - Add opt-in attribution correction and latest-event undo with stale-input

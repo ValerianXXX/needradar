@@ -1,0 +1,344 @@
+✖ reverse same proposal reuses one observation with correctly oriented quotes (6.8101ms)
+✖ reverse different proposal reuses one observation with correctly oriented quotes (1.0782ms)
+✖ reverse uncertain proposal reuses one observation with correctly oriented quotes (0.816ms)
+✖ same-direction cached metadata and original journal remain intact (0.713ms)
+✖ two agreeing legacy orientations select the latest attempt without deleting either (0.8313ms)
+✖ contradictory same/different legacy observations require human review in both directions (0.8772ms)
+✖ contradictory same/uncertain legacy observations require human review in both directions (1.0692ms)
+✖ agreeing distinct verdicts can retain different reasons while showing the latest source (0.5907ms)
+✔ an authenticated caller human correction still takes precedence over model disagreement (0.855ms)
+✔ explicit constraint conflicts continue to defeat cached positive proposals (0.5662ms)
+✖ incomplete constraints do not become same merely because the reverse proposal says same (0.8251ms)
+✔ changed source text remains a new bound request instead of reusing another pair (0.6475ms)
+✔ reverse reuse cannot switch reviewer revision (0.482ms)
+✖ all applicable reverse quotations are validated before any new request (1.6544ms)
+✖ reverse FAILED attempt cannot be silently retried (0.8535ms)
+✖ reverse STARTED attempt cannot be silently retried (1.0688ms)
+✔ explicit retry accepts the current digest and appends one retained attempt (0.7501ms)
+✔ explicit retry accepts the original digest and appends one retained attempt (0.4815ms)
+✖ three attempts across both orientations share one retry ceiling (0.7105ms)
+✔ legacy journals with six cross-direction failures remain readable but allow no seventh call (0.6724ms)
+✖ a newer incomplete opposite attempt cannot be hidden behind an older positive result (0.4888ms)
+✖ a newer saved result can resolve an older failed opposite request without another call (0.5132ms)
+✔ equal digests count each attempt once rather than doubling the retry ceiling (0.5766ms)
+✔ cancelling an explicitly requested reverse retry records no new attempt (0.4098ms)
+✔ a stale caller revision cannot publish an otherwise reusable reverse proposal (0.337ms)
+✖ returned reverse quotations and metadata cannot edit the trusted saved observation (0.7485ms)
+✖ separate Node processes share a persisted pair when the second request is reversed (255.1565ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 10
+ℹ fail 17
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 391.2024
+
+✖ failing tests:
+
+test at tests\review-symmetry.test.mjs:42:59
+✖ reverse same proposal reuses one observation with correctly oriented quotes (6.8101ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:45:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:42:59
+✖ reverse different proposal reuses one observation with correctly oriented quotes (1.0782ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:45:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:42:59
+✖ reverse uncertain proposal reuses one observation with correctly oriented quotes (0.816ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:45:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:64:1
+✖ same-direction cached metadata and original journal remain intact (0.713ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'same'
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:67:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'same',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:73:1
+✖ two agreeing legacy orientations select the latest attempt without deleting either (0.8313ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 2
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:78:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:85:55
+✖ contradictory same/different legacy observations require human review in both directions (0.8772ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'MODEL_PROPOSAL_REUSED'
+  - 'MODEL_PROPOSAL_CONFLICT'
+                    ^
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:91:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'MODEL_PROPOSAL_REUSED',
+    expected: 'MODEL_PROPOSAL_CONFLICT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:85:55
+✖ contradictory same/uncertain legacy observations require human review in both directions (1.0692ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'MODEL_PROPOSAL_REUSED'
+  - 'MODEL_PROPOSAL_CONFLICT'
+                    ^
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:91:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'MODEL_PROPOSAL_REUSED',
+    expected: 'MODEL_PROPOSAL_CONFLICT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:103:1
+✖ agreeing distinct verdicts can retain different reasons while showing the latest source (0.5907ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'DIFFERENT_TASK'
+  - 'DIFFERENT_PERSONA'
+               ^
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:108:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'DIFFERENT_TASK',
+    expected: 'DIFFERENT_PERSONA',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:132:1
+✖ incomplete constraints do not become same merely because the reverse proposal says same (0.8251ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:135:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:154:1
+✖ all applicable reverse quotations are validated before any new request (1.6544ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:158:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /UNGROUNDED_SEMANTIC_REVIEW/u,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:164:43
+✖ reverse FAILED attempt cannot be silently retried (0.8535ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:166:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:164:43
+✖ reverse STARTED attempt cannot be silently retried (1.0688ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:166:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:183:1
+✖ three attempts across both orientations share one retry ceiling (0.7105ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:186:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:199:1
+✖ a newer incomplete opposite attempt cannot be hidden behind an older positive result (0.4888ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'MODEL_PROPOSAL_REUSED'
+  - 'REVIEW_INTERRUPTED'
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:204:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'MODEL_PROPOSAL_REUSED',
+    expected: 'REVIEW_INTERRUPTED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:209:1
+✖ a newer saved result can resolve an older failed opposite request without another call (0.5132ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'REVIEW_FAILED'
+  - 'MODEL_PROPOSAL_REUSED'
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:213:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'REVIEW_FAILED',
+    expected: 'MODEL_PROPOSAL_REUSED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:245:1
+✖ returned reverse quotations and metadata cannot edit the trusted saved observation (0.7485ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:248:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\review-symmetry.test.mjs:254:1
+✖ separate Node processes share a persisted pair when the second request is reversed (255.1565ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      1,
+  +   1
+  -   0
+    ]
+
+      at TestContext.<anonymous> (file:///<WORKTREE>/tests/review-symmetry.test.mjs:274:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 1, 1 ],
+    expected: [ 1, 0 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -26,6 +26,26 @@ export function resolveHumanDecision(left, right, events = []) {
   return { decision: representative.decision, reason: representative.reason, method: 'HUMAN_DECISION', reviewId: representative.id, reviewIds };
 }
 
+// V1 records retain their original orientation and digests. Reuse the same
+// symmetric relationship without rewriting history or counting a reverse retry
+// as a new pair. Both latest observations remain available for conflict checks.
+function relatedProposals(continuation, left, right) {
+  const digest = pairDigest(left, right), reverseDigest = pairDigest(right, left);
+  const digests = [...new Set([digest, reverseDigest])];
+  const saved = digests.map(key => continuation?.latest(key)).filter(Boolean)
+    .sort((a, b) => a.attemptId - b.attemptId);
+  const proposals = saved.filter(event => event.type === 'RESULT').map(event => {
+    const response = structuredClone(event.response);
+    const reversed = event.pairDigest !== digest;
+    if (reversed) [response.decision.leftQuote, response.decision.rightQuote]
+      = [response.decision.rightQuote, response.decision.leftQuote];
+    validateReview(response.decision, left, right);
+    return { event, response, reversed };
+  });
+  return { digests, saved, latest: saved.at(-1), proposals,
+    conflict: new Set(proposals.map(proposal => proposal.response.decision.verdict)).size > 1 };
+}
+
 export async function reviewDuplicates(candidate, existing, { reviewer, humanDecisions = [], maxModelCalls = 8,
   reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs, signal, isInputCurrent, ...retrievalOptions } = {}) {
   if (!Number.isInteger(maxModelCalls) || maxModelCalls < 0 || maxModelCalls > 64) throw new TypeError('INVALID_REVIEW_BUDGET');
@@ -40,13 +60,10 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
   const retrieval = isSemanticCandidateIndex(existing)
     ? retrieveSemanticCandidates(candidate, existing, retrievalOptions) : retrieveCandidates(candidate, existing, retrievalOptions);
   // Validate every applicable saved proposal before starting any new provider call.
-  for (const row of retrieval.rows) {
-    const cached = continuation?.latest(pairDigest(candidate, row.existing));
-    if (cached?.type === 'RESULT') validateReview(cached.response.decision, candidate, row.existing);
-  }
+  const savedByRow = retrieval.rows.map(row => relatedProposals(continuation, candidate, row.existing));
   const reviews = [];
   let modelCalls = 0, invalidated = input.changed();
-  for (const row of retrieval.rows) {
+  for (const [rowIndex, row] of retrieval.rows.entries()) {
     const common = { index: row.index, pairDigest: pairDigest(candidate, row.existing), lexicalScore: row.score,
       ...(row.retrievalEvidence ? { retrievalEvidence: row.retrievalEvidence } : {}) };
     const unresolved = method => reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method });
@@ -61,19 +78,33 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
     else if (row.constraints.conflicts.length) reviews.push({ ...common, verdict: 'different', reason: 'CONSTRAINT_CONFLICT', method: 'EXPLICIT_CONSTRAINTS' });
     else if (row.autoDuplicate) reviews.push({ ...common, verdict: 'same', reason: 'SAME_TASK_AND_CONSTRAINTS', method: 'EXACT_TASK' });
     else {
-      const previous = continuation?.latest(common.pairDigest);
+      // Recompute after earlier rows: two catalog records can have identical
+      // review content and share the result just checkpointed in this invocation.
+      const related = rowIndex === 0 ? savedByRow[0] : relatedProposals(continuation, candidate, row.existing);
+      const previous = related.latest;
       const constrained = result => (row.constraints.missing.length || row.invalidIdentityFields.length) && result.verdict === 'same'
         ? { ...result, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION' } : result;
-      if (previous?.type === 'RESULT') {
-        const { decision, ...observation } = previous.response;
-        reviews.push({ ...common, ...constrained(decision), ...observation, method: 'MODEL_PROPOSAL_REUSED', originalAttemptId: previous.attemptId });
+      if (related.conflict) {
+        reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method: 'MODEL_PROPOSAL_CONFLICT',
+          conflictingAttemptIds: related.proposals.map(proposal => proposal.event.attemptId),
+          conflictingPairDigests: related.proposals.map(proposal => proposal.event.pairDigest) });
         continue;
       }
-      if (previous && !continuation.retryRequested(common.pairDigest)) {
+      if (previous?.type === 'RESULT') {
+        const proposal = related.proposals.find(item => item.event.attemptId === previous.attemptId);
+        const { decision, ...observation } = proposal.response;
+        reviews.push({ ...common, ...constrained(decision), ...observation, method: 'MODEL_PROPOSAL_REUSED',
+          originalAttemptId: previous.attemptId, originalPairDigest: previous.pairDigest,
+          cacheOrientation: proposal.reversed ? 'reversed' : 'same' });
+        continue;
+      }
+      if (previous && !related.digests.some(digest => continuation.retryRequested(digest))) {
         unresolved(previous.type === 'FAILED' ? 'REVIEW_FAILED' : 'REVIEW_INTERRUPTED');
         continue;
       }
-      if (continuation && continuation.attempts(common.pairDigest) >= MAX_PAIR_ATTEMPTS) { unresolved('REVIEW_RETRY_LIMIT'); continue; }
+      if (continuation && related.digests.reduce((count, digest) => count + continuation.attempts(digest), 0) >= MAX_PAIR_ATTEMPTS) {
+        unresolved('REVIEW_RETRY_LIMIT'); continue;
+      }
       if (signal?.aborted) { unresolved('REVIEW_CANCELLED'); continue; }
       if (!reviewer || modelCalls >= maxModelCalls) { unresolved('HUMAN_REVIEW_REQUIRED'); continue; }
       const started = continuation ? await continuation.start(common.pairDigest) : null;
@@ -117,6 +148,7 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       interruptedPairs: reviews.filter(row => row.method === 'REVIEW_INTERRUPTED').length,
       cancelledPairs: reviews.filter(row => row.method === 'REVIEW_CANCELLED').length,
       invalidatedPairs: reviews.filter(row => row.method === 'REVIEW_INPUT_CHANGED').length,
+      conflictingPairs: reviews.filter(row => row.method === 'MODEL_PROPOSAL_CONFLICT').length,
       uncertainPairs: reviews.filter(row => row.verdict === 'uncertain').length,
     } } : {}),
     automaticMerge: false };
