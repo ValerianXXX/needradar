@@ -8,13 +8,12 @@ import { timestamp } from './timestamps.mjs';
 const token = value => typeof value === 'string' && value.trim().length > 0;
 const digestPattern = /^[a-f0-9]{64}$/u;
 
-// Plain source records only. Tagged encoding preserves undefined versus null,
-// sorts object keys, and rejects cycles, getters and non-data object types.
+// JSON-persistable source records only. Tagged encoding sorts object keys and
+// rejects data that persistence would drop/change, cycles and accessors.
 function encoded(value, active = new Set()) {
   if (value === null) return ['null'];
-  if (value === undefined) return ['undefined'];
   if (['string', 'boolean'].includes(typeof value)) return [typeof value, value];
-  if (typeof value === 'number' && Number.isFinite(value)) return ['number', Object.is(value, -0) ? '-0' : value];
+  if (typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)) return ['number', value];
   if (!value || typeof value !== 'object' || active.has(value)) throw new TypeError('EVIDENCE_CORRECTION_INPUT_INVALID');
   const array = Array.isArray(value), prototype = Object.getPrototypeOf(value);
   if (!array && prototype !== Object.prototype && prototype !== null) throw new TypeError('EVIDENCE_CORRECTION_INPUT_INVALID');
