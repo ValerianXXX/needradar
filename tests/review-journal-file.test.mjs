@@ -140,7 +140,7 @@ test('only allowlisted usage metadata persists and unknown cost stays unknown', 
   assert.equal(result.reviews[0].usage.total_tokens, 10);
 });
 
-test('caller edits during an awaited model response do not change the active snapshot', async () => {
+test('caller edits preserve original pair bindings and stop subsequent model requests', async () => {
   const query = structuredClone(candidate), peers = structuredClone(corpus.slice(0, 2));
   const result = await reviewDuplicates(query, peers, { reviewerRevision: revision, reviewer: async request => {
     query.constraints.processing = 'cloud';
@@ -148,5 +148,12 @@ test('caller edits during an awaited model response do not change the active sna
     return reviewer(request);
   } });
   assert.equal(result.reviews[1].pairDigest, pairDigest(candidate, corpus[1]));
-  assert.equal(result.reviews[1].method, 'MODEL_PROPOSAL');
+  assert.equal(result.reviews[0].pairDigest, pairDigest(candidate, corpus[0]));
+  assert.equal(result.reviews[0].method, 'MODEL_PROPOSAL');
+  assert.equal(result.reviews[0].leftQuote, candidate.jobToBeDone);
+  assert.equal(result.reviews[1].method, 'REVIEW_INPUT_CHANGED');
+  assert.equal(result.modelCalls, 1);
+  assert.equal(result.inputChanged, true);
+  assert.equal(result.requiresReview, true);
+  assert.equal(result.duplicate, false);
 });

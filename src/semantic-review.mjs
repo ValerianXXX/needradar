@@ -27,12 +27,12 @@ export function resolveHumanDecision(left, right, events = []) {
 }
 
 export async function reviewDuplicates(candidate, existing, { reviewer, humanDecisions = [], maxModelCalls = 8,
-  reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs, signal, ...retrievalOptions } = {}) {
+  reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs, signal, isInputCurrent, ...retrievalOptions } = {}) {
   if (!Number.isInteger(maxModelCalls) || maxModelCalls < 0 || maxModelCalls > 64) throw new TypeError('INVALID_REVIEW_BUDGET');
   if (reviewerRevision === undefined && [reviewJournal, onCheckpoint, retryFailedPairs].some(value => value !== undefined)) throw new TypeError('REVIEW_JOURNAL_REVISION_REQUIRED');
   const submittedCandidate = candidate, submittedExisting = existing, submittedHumanDecisions = humanDecisions;
   const input = captureInput(() => ({ candidate: submittedCandidate,
-    existing: Array.isArray(submittedExisting) ? submittedExisting : null, humanDecisions: submittedHumanDecisions }));
+    existing: Array.isArray(submittedExisting) ? submittedExisting : null, humanDecisions: submittedHumanDecisions }), isInputCurrent);
   candidate = input.snapshot.candidate;
   existing = input.snapshot.existing ?? existing;
   humanDecisions = input.snapshot.humanDecisions;
@@ -45,12 +45,12 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
     if (cached?.type === 'RESULT') validateReview(cached.response.decision, candidate, row.existing);
   }
   const reviews = [];
-  let modelCalls = 0;
+  let modelCalls = 0, invalidated = input.changed();
   for (const row of retrieval.rows) {
     const common = { index: row.index, pairDigest: pairDigest(candidate, row.existing), lexicalScore: row.score,
       ...(row.retrievalEvidence ? { retrievalEvidence: row.retrievalEvidence } : {}) };
     const unresolved = method => reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method });
-    if (input.changed()) { unresolved('REVIEW_INPUT_CHANGED'); continue; }
+    if (invalidated) { unresolved('REVIEW_INPUT_CHANGED'); continue; }
     // Caller-owned review records must come from authenticated human actions, never model output.
     const human = resolveHumanDecision(candidate, row.existing, humanDecisions);
     if (human?.decision === 'same' && (row.constraints.conflicts.length || row.constraints.missing.length || row.invalidIdentityFields.length)) {
@@ -77,9 +77,11 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       if (signal?.aborted) { unresolved('REVIEW_CANCELLED'); continue; }
       if (!reviewer || modelCalls >= maxModelCalls) { unresolved('HUMAN_REVIEW_REQUIRED'); continue; }
       const started = continuation ? await continuation.start(common.pairDigest) : null;
-      if (input.changed() || signal?.aborted) {
+      if (continuation) invalidated = input.changed();
+      if (invalidated || signal?.aborted) {
         if (continuation) await continuation.finish(started, null);
-        unresolved(input.changed() ? 'REVIEW_INPUT_CHANGED' : 'REVIEW_CANCELLED');
+        invalidated = input.changed();
+        unresolved(invalidated ? 'REVIEW_INPUT_CHANGED' : 'REVIEW_CANCELLED');
         continue;
       }
       modelCalls++;
@@ -93,8 +95,12 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       } catch {
         response = null;
       }
+      invalidated = input.changed();
       // Persistence errors propagate; they must never look like a completed review.
-      if (continuation) await continuation.finish(started, response);
+      if (continuation) {
+        await continuation.finish(started, response);
+        invalidated = input.changed();
+      }
       if (response) reviews.push({ ...common, ...constrained(result), method: 'MODEL_PROPOSAL', model: response.model ?? null,
         elapsedMs: response.elapsedMs ?? null, usage: response.usage ?? null, costUsd: response.costUsd ?? null });
       else unresolved('REVIEW_FAILED');

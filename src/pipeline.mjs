@@ -53,7 +53,10 @@ export async function decidePublicationWithReview(cluster, existingOpportunities
   const initial = structuredClone(decidePublication(input.snapshot.cluster, existingOpportunities,
     { ...options, rules: input.snapshot.rules }));
   if (initial.decision === 'HOLD') return initial;
-  const semantic = await reviewDuplicates(cluster.draft, existingOpportunities, options);
+  const callerCurrent = options.isInputCurrent;
+  if (callerCurrent !== undefined && typeof callerCurrent !== 'function') throw new TypeError('INPUT_CURRENT_CALLBACK_REQUIRED');
+  const semantic = await reviewDuplicates(cluster.draft, existingOpportunities, { ...options,
+    isInputCurrent: () => !input.changed() && (callerCurrent === undefined || callerCurrent() === true) });
   if (input.changed() || semantic.inputChanged) return { ...initial, decision: 'REVIEW', semantic,
     reasons: ['REVIEW_INPUT_CHANGED'], inputChanged: true, automaticMerge: false };
   const decision = semantic.duplicate ? 'SUPPRESS_DUPLICATE' : semantic.requiresReview ? 'REVIEW' : 'PUBLISH';
