@@ -8,7 +8,9 @@ export function captureInput(read, isCurrent) {
   const snapshot = structuredClone(read());
   let changed = false;
   return { snapshot, changed() {
-    try { changed ||= (isCurrent !== undefined && isCurrent() !== true) || !isDeepStrictEqual(read(), snapshot); }
+    // Normalize both sides with the same clone contract. In particular, cloning
+    // a supported null-prototype record must not itself look like a user edit.
+    try { changed ||= (isCurrent !== undefined && isCurrent() !== true) || !isDeepStrictEqual(structuredClone(read()), snapshot); }
     catch { changed = true; }
     return changed;
   } };
