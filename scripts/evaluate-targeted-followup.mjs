@@ -8,8 +8,8 @@ import { createCommandReviewer } from '../src/command-reviewer.mjs';
 import { reviewDuplicates, validateReview } from '../src/semantic-review.mjs';
 import { reviewDuplicatesWithJournalFile } from '../src/review-journal-file.mjs';
 import { validateReviewJournal } from '../src/review-journal.mjs';
-import { fixtureHash, loadFixtures } from '../eval/boundaries-v2/load.mjs';
 import { asciiJSON } from './build-boundary-fixtures.mjs';
+import { readFrozenFollowupPlan } from './frozen-followup-plan.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const hash = text => createHash('sha256').update(text).digest('hex');
@@ -29,27 +29,29 @@ export function summarize(rows, field) {
 }
 
 export async function loadProtocol() {
-  const text = await readLF(join(root, 'eval/targeted-followup-v1/plan.json'));
-  const plan = JSON.parse(text), fixtures = await loadFixtures();
-  const observation = await readLF(join(root, 'eval/results/2026-10-29-local-retrieval-pairs.json'));
-  if (plan.protocol !== 'TARGETED_SEMANTIC_FOLLOWUP_V1' || plan.fixtureHash !== fixtureHash
-      || plan.maxAdapterAttempts !== 14 || plan.maxNewCallsPerInvocation !== 7 || plan.stopAfterFailures !== 2
-      || hash(observation) !== plan.retrievalObservationLFHash) throw new Error('FOLLOWUP_PROTOCOL_INVALID');
-  const targets = JSON.parse(observation).observations.filter(r => r.expected === 'same' && !r.withinDefaultReviewBudget);
-  const ids = targets.flatMap(r => [r.id, r.id.split('--')[0] + '--nearby_distinct']);
-  if (ids.length !== 14 || new Set(ids).size !== 14 || JSON.stringify(ids) !== JSON.stringify(plan.selectedIds)) throw new Error('FOLLOWUP_SELECTION_CHANGED');
-  const cases = ids.map(id => fixtures.cases.find(r => r.id === id));
-  if (cases.some(r => !r) || cases.filter(r => r.expected === 'same').length !== 7) throw new Error('FOLLOWUP_FIXTURE_MISSING');
+  const { plan, cases, protocolHash } = await readFrozenFollowupPlan();
   for (const [path, expected] of Object.entries(plan.productLFHashes)) {
     if (hash(await readLF(join(root, path))) !== expected) throw new Error('FOLLOWUP_PRODUCT_CHANGED');
   }
-  return { plan, cases, protocolHash: hash(text), runnerHash: hash(await readLF(fileURLToPath(import.meta.url))) };
+  return { plan, cases, protocolHash, runnerHash: hash(await readLF(fileURLToPath(import.meta.url))) };
 }
 
-export async function runFollowup({ directory, mode, runtime, reviewer, observationMode = 'CONTRACT_ONLY' }) {
+export async function runFollowup({ directory, mode, runtime, reviewer, observationMode = 'CONTRACT_ONLY', contractScenario = 'uncertain' }) {
   if (!['start', 'continue', 'replay'].includes(mode) || typeof directory !== 'string'
       || !['CONTRACT_ONLY', 'REAL_CONFIGURED_HERMES'].includes(observationMode)) throw new Error('FOLLOWUP_EXPLICIT_MODE_REQUIRED');
-  const { plan, cases, protocolHash, runnerHash } = await loadProtocol();
+  const contractOnly = observationMode === 'CONTRACT_ONLY';
+  // Contract checks cannot accept a transport, executable or provider callback.
+  // Real runs always retain the original product hashes and run-identity checks.
+  if (contractOnly && (reviewer !== undefined || !['uncertain', 'failure'].includes(contractScenario))) throw new Error('FOLLOWUP_CONTRACT_STUB_ONLY');
+  const protocol = contractOnly ? await readFrozenFollowupPlan() : await loadProtocol();
+  const { plan, cases, protocolHash } = protocol;
+  const runnerHash = hash(await readLF(fileURLToPath(import.meta.url)));
+  if (contractOnly) reviewer = async request => {
+    if (contractScenario === 'failure') throw new Error('sensitive-error-must-not-escape');
+    return { decision: { verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION',
+      leftQuote: request.left.jobToBeDone, rightQuote: request.right.jobToBeDone },
+      model: 'CONTRACT_STUB', toolCalls: 0, usage: null, costUsd: null };
+  };
   const requested = resolve(directory), parent = await realpath(dirname(requested));
   directory = join(parent, requested.split(sep).at(-1));
   if (directory === root || directory.startsWith(root + sep)) throw new Error('FOLLOWUP_DIRECTORY_MUST_BE_OUTSIDE_CHECKOUT');
@@ -92,7 +94,7 @@ export async function runFollowup({ directory, mode, runtime, reviewer, observat
       await append({ type: 'REQUEST_STARTED', at: new Date().toISOString(), ordinal: atStart + calls, request });
       try {
         const response = await reviewer(request);
-        if (response.model !== plan.runtime.configuredModel || response.toolCalls !== 0) throw new Error('FOLLOWUP_RESPONSE_RUNTIME_MISMATCH');
+        if (response.model !== (contractOnly ? 'CONTRACT_STUB' : plan.runtime.configuredModel) || response.toolCalls !== 0) throw new Error('FOLLOWUP_RESPONSE_RUNTIME_MISMATCH');
         validateReview(response.decision, request.left, request.right);
         await append({ type: 'RESPONSE', at: new Date().toISOString(), ordinal: atStart + calls, response });
         return response;
