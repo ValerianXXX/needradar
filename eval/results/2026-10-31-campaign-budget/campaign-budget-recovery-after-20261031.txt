@@ -1,0 +1,38 @@
+✔ a real exited callback leaves a reservation and locks; explicit fixture recovery cannot restore its budget (186.1729ms)
+✔ invalid ceilings fail before dispatch (2.6335ms)
+✔ duplicate reservations in edited budget history are rejected (10.9915ms)
+✔ one durable budget spans separate pair journals (52.304ms)
+✔ reopening the same journal cannot reset the total call ceiling (58.7348ms)
+✔ per-invocation pacing remains separate from the durable ceiling (96.534ms)
+✔ zero total budget persists without creating pair attempts (10.9352ms)
+✔ cached proposals consume no new budget and retain original cost (35.8775ms)
+✔ unknown cost is not a zero-price completed campaign (52.8903ms)
+✔ a failed reviewer still consumes a reserved call (32.7974ms)
+✔ provider-returned but invalid decisions do not become successful reviews (24.8802ms)
+✔ stored ceiling cannot change on resume (29.3045ms)
+✔ stored scope cannot change on resume (29.1028ms)
+✔ reviewer revision is bound across different pair journals (29.4411ms)
+✔ malformed durable budget blocks before any reviewer call (5.3079ms)
+✔ existing campaign lock blocks every pair journal (7.201ms)
+✔ concurrent distinct pair files cannot share one reservation (24.9458ms)
+✔ a reservation is on disk before the potentially billable callback (27.0993ms)
+✔ a lost budget completion checkpoint propagates instead of looking completed (24.1379ms)
+✔ already aborted work neither calls the reviewer nor reserves budget (11.0011ms)
+✔ separate Node processes obey the same durable ceiling (275.7988ms)
+✔ real file resumes across new Node processes and retains twenty attempts (729.5137ms)
+✔ a concurrent writer is rejected without a second provider call (19.1072ms)
+✔ an external journal edit is retained and prevents subsequent provider calls (16.1059ms)
+✔ killed process leaves an owned lock and an incomplete attempt; recovery needs explicit intervention (129.8842ms)
+✔ corrupt, oversized and wrong-version files block before invoking a reviewer (21.4263ms)
+✔ retry ceiling counts failed and uncertainly completed starts, never removing history (2.6919ms)
+✔ cancellation during checkpoint never starts the subsequent provider call (0.5656ms)
+✔ only allowlisted usage metadata persists and unknown cost stays unknown (1.0773ms)
+✔ caller edits preserve original pair bindings and stop subsequent model requests (0.5765ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1072.19

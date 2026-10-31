@@ -1,0 +1,1304 @@
+{
+  "observedAt": "2026-10-31T21:33:56.461Z",
+  "mode": "GLOBAL_QUEUE_WITH_EXPLICIT_UNCERTAIN_STUB",
+  "sourceCommit": "f2f00aeaad3b8ad16c81dd81a1572aa028b53582",
+  "sourceLFHashes": {
+    "src/review-journal-file.mjs": "e2963df8b75562e92d2c172c3d3a016e4ae3454b22addf7a46851b4a8fa5933e",
+    "src/review-budget.mjs": null,
+    "src/review-state-file.mjs": null,
+    "src/semantic-review.mjs": "0c0149a1b4a3bbbd33a4a9851aa96a948c61db581c1ffd99eab642e6bb232587",
+    "src/review-journal.mjs": "92baa8f6197a2059a03e7f919f6bd46b1f4711c24979b3f5fbd92a4e0c799233",
+    "src/review-contract.mjs": "ae1df22ec7a0010d3837dfea53a18a03d7a72330d804dd10e253f5b670bb22e9",
+    "src/similarity.mjs": "b7a1df956309805529b0766d39fc829f47a30df9d7de78c45b623bcf799582de"
+  },
+  "node": "v24.22.1",
+  "fixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+  "scopeDigest": "ae8b5979477d27f9ffd7741936a65ecac56e6bdad5323c3e747db0025827d1e8",
+  "evaluatorLFHash": "f54a593d217808b6ac62354ec445a63a01a3f11553ecf54a0ed4cf5f54388de1",
+  "syntheticOnly": true,
+  "newProviderCalls": 0,
+  "providerCostUsd": null,
+  "independentHumanReview": false,
+  "queries": 140,
+  "incompleteRetrievalQueries": 140,
+  "maxStubCallbacks": 300,
+  "selected": 4480,
+  "uncertain": 3800,
+  "cached": 2734,
+  "pending": 0,
+  "stubCallbacks": 1066,
+  "distinctStubRelationships": 1066,
+  "callbacksAboveCeiling": 766,
+  "campaignProgress": null,
+  "pairJournalFiles": 1066,
+  "remainingOwnedLocks": 0,
+  "elapsedMs": 24211.3424,
+  "results": [
+    {
+      "queryId": "invoice--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "invoice--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "invoice--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "invoice--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "invoice--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "invoice--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "invoice--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "clinic--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "clinic--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "clinic--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "clinic--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "clinic--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "clinic--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "clinic--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "school--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 26,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 1
+    },
+    {
+      "queryId": "school--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "school--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "school--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "school--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "school--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "school--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "property--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 29,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 1
+    },
+    {
+      "queryId": "property--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 29,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "property--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "property--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "property--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "property--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "property--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "freight--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 26,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "freight--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "freight--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "freight--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "freight--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 26,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "freight--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "freight--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "nonprofit--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 2
+    },
+    {
+      "queryId": "nonprofit--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 3
+    },
+    {
+      "queryId": "nonprofit--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "nonprofit--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "nonprofit--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 26,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "nonprofit--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "nonprofit--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "support--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 1
+    },
+    {
+      "queryId": "support--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "support--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "support--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "support--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "support--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "support--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 25,
+      "pending": 0,
+      "cached": 25
+    },
+    {
+      "queryId": "insurance--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 3
+    },
+    {
+      "queryId": "insurance--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 2
+    },
+    {
+      "queryId": "insurance--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "insurance--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "insurance--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "insurance--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "insurance--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "procurement--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 2
+    },
+    {
+      "queryId": "procurement--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "procurement--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "procurement--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "procurement--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "procurement--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "procurement--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "expenses--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 3
+    },
+    {
+      "queryId": "expenses--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 25,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 2
+    },
+    {
+      "queryId": "expenses--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "expenses--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "expenses--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "expenses--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "expenses--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "retail--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 22,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 2
+    },
+    {
+      "queryId": "retail--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 24
+    },
+    {
+      "queryId": "retail--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 24
+    },
+    {
+      "queryId": "retail--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 24
+    },
+    {
+      "queryId": "retail--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "retail--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 24
+    },
+    {
+      "queryId": "retail--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 24,
+      "pending": 0,
+      "cached": 24
+    },
+    {
+      "queryId": "equipment--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 25,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 5
+    },
+    {
+      "queryId": "equipment--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 25,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 4
+    },
+    {
+      "queryId": "equipment--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "equipment--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "equipment--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "equipment--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "equipment--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "research--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 21,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 5
+    },
+    {
+      "queryId": "research--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "research--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "research--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "research--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "research--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "research--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "shipment--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 6
+    },
+    {
+      "queryId": "shipment--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 23,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 4
+    },
+    {
+      "queryId": "shipment--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "shipment--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "shipment--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "shipment--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "shipment--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "laboratory--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 20,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 7
+    },
+    {
+      "queryId": "laboratory--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "laboratory--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "laboratory--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "laboratory--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "laboratory--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "laboratory--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "software--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 24,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 6
+    },
+    {
+      "queryId": "software--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 1
+    },
+    {
+      "queryId": "software--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "software--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "software--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "software--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "software--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 28
+    },
+    {
+      "queryId": "museum--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 22,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 5
+    },
+    {
+      "queryId": "museum--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "museum--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "museum--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "museum--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 28,
+      "uncertain": 28,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "museum--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "museum--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 27
+    },
+    {
+      "queryId": "utilities--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 22,
+      "uncertain": 30,
+      "pending": 0,
+      "cached": 8
+    },
+    {
+      "queryId": "utilities--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 26,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 3
+    },
+    {
+      "queryId": "utilities--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "utilities--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "utilities--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 27,
+      "uncertain": 27,
+      "pending": 0,
+      "cached": 0
+    },
+    {
+      "queryId": "utilities--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "utilities--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 29
+    },
+    {
+      "queryId": "recruiting--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 23,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 3
+    },
+    {
+      "queryId": "recruiting--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "recruiting--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "recruiting--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "recruiting--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "recruiting--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "recruiting--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "construction--different_evidence",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 22,
+      "uncertain": 29,
+      "pending": 0,
+      "cached": 7
+    },
+    {
+      "queryId": "construction--cross_language",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 19,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 7
+    },
+    {
+      "queryId": "construction--low_overlap",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "construction--same_persona_different_task",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "construction--same_task_different_constraint",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "construction--repost_same_origin",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    },
+    {
+      "queryId": "construction--nearby_distinct",
+      "selected": 32,
+      "retrievalComplete": false,
+      "stubCallbacks": 0,
+      "uncertain": 26,
+      "pending": 0,
+      "cached": 26
+    }
+  ],
+  "limitations": [
+    "All model answers are explicit uncertain stubs; no new semantic accuracy measurement",
+    "All selected global rows were processed, but the existing top-32 retrieval remains incomplete",
+    "Unknown provider costs and human effort stay unknown; no deployment or publication",
+    "A separate authorized frozen protocol is required for real calls; old campaign remains closed"
+  ]
+}

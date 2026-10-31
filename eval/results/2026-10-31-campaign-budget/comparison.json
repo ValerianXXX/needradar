@@ -1,0 +1,45 @@
+{
+  "scopeDigest": "ae8b5979477d27f9ffd7741936a65ecac56e6bdad5323c3e747db0025827d1e8",
+  "evaluatorLFHash": "f54a593d217808b6ac62354ec445a63a01a3f11553ecf54a0ed4cf5f54388de1",
+  "same_fixture_and_queue": true,
+  "before": {
+    "sourceCommit": "f2f00aeaad3b8ad16c81dd81a1572aa028b53582",
+    "queries": 140,
+    "selected": 4480,
+    "uncertain": 3800,
+    "cached": 2734,
+    "pending": 0,
+    "stubCallbacks": 1066,
+    "callbacksAboveCeiling": 766,
+    "elapsedMs": 24211.3424
+  },
+  "after": {
+    "sourceCommit": "b6c7ed6112f4957b4f796b81f7ce918fa8edd4dd",
+    "queries": 140,
+    "selected": 4480,
+    "uncertain": 3800,
+    "cached": 843,
+    "pending": 2657,
+    "stubCallbacks": 300,
+    "callbacksAboveCeiling": 0,
+    "elapsedMs": 59253.7776,
+    "campaignProgress": {
+      "maxModelCalls": 300,
+      "reservedCalls": 300,
+      "remainingCalls": 0,
+      "returnedCalls": 300,
+      "failedCalls": 0,
+      "unfinishedReservations": 0,
+      "knownCostUsd": 0,
+      "unknownCostCalls": 300,
+      "totalCostUsd": null
+    },
+    "pairJournalFiles": 300,
+    "remainingOwnedLocks": 0
+  },
+  "all_140_retrieval_queries_remain_incomplete": true,
+  "real_provider_calls": 0,
+  "measured_model_accuracy_gain": null,
+  "human_correction_effort_measured": false,
+  "interpretation": "Enforce the planned callback ceiling across real file shards; all callback answers are explicit uncertain stubs; additional durability increases local elapsed time"
+}

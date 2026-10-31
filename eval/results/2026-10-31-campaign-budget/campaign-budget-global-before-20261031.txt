@@ -1,0 +1,1 @@
+{"sourceCommit":"f2f00aeaad3b8ad16c81dd81a1572aa028b53582","queries":140,"selected":4480,"uncertain":3800,"cached":2734,"pending":0,"stubCallbacks":1066,"callbacksAboveCeiling":766,"progress":null,"elapsedMs":24211.3424,"newProviderCalls":0}

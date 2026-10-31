@@ -21,6 +21,10 @@ and an installation from `main` do not establish that these changes are deployed
   across restarts, with [stale-input detection](docs/review-input-consistency-2026-10-31.md).
   [Reverse comparisons](docs/symmetric-review-2026-10-31.md) reuse source-bound
   proposals and share retry limits; contradictory saved proposals require review.
+  An optional [durable campaign budget](docs/campaign-budget-2026-10-31.md)
+  shares a stored callback ceiling across proposal files and process restarts,
+  retaining failed reservations and unknown costs. A frozen 140-query synthetic
+  queue checks aggregate scheduling; it does not authorize a real-model campaign.
   Returned [evidence views](docs/evidence-view-isolation-2026-10-31.md) cannot
   accidentally edit the original sources or rights.
 - Separate capture, independent-demand and validation state. The latest change
@@ -28,7 +32,7 @@ and an installation from `main` do not establish that these changes are deployed
   with preserved originals, review history and stable identity after save/load.
   Correcting an author does not count as a new source or refresh old demand.
 
-The final local suite passes 178 tests. The 140-pair offline evaluation still has
+The current local suite passes 199 tests. The 140-pair offline evaluation still has
 40 unresolved duplicates and 80 pairs requiring review. A separate historical
 [14-request Hermes follow-up](docs/targeted-semantic-followup-2026-10-30.md) matched
 the selected synthetic labels and supports zero-call replay; it is not a full

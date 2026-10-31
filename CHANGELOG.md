@@ -2,6 +2,13 @@
 
 ## Unreleased - 2026-10-31
 
+- Add optional durable campaign callback ceilings across existing V1 proposal
+  files, with write-ahead reservations, shared locking and unknown-cost tracking.
+  Preserve failed/interrupted reservations, existing file rules and all approval
+  boundaries. Retain 18 pre-fix failures, native process-exit recovery and a
+  frozen global synthetic queue. No new model/provider calls or dependencies.
+  [Configuration, evidence and rollback](docs/campaign-budget-2026-10-31.md).
+
 - Reuse source-bound model proposals when pair order reverses, preserving original
   observations and swapping only the returned quotations. Share explicit retry
   limits across both orientations; expose conflicting saved verdicts for review.

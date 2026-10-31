@@ -1,0 +1,35 @@
+✔ one durable budget spans separate pair journals (49.1655ms)
+✔ reopening the same journal cannot reset the total call ceiling (55.0186ms)
+✔ per-invocation pacing remains separate from the durable ceiling (86.3937ms)
+✔ zero total budget persists without creating pair attempts (12.2241ms)
+✔ cached proposals consume no new budget and retain original cost (34.7253ms)
+✔ unknown cost is not a zero-price completed campaign (49.6905ms)
+✔ a failed reviewer still consumes a reserved call (31.5311ms)
+✔ provider-returned but invalid decisions do not become successful reviews (24.8765ms)
+✔ stored ceiling cannot change on resume (29.41ms)
+✔ stored scope cannot change on resume (28.3746ms)
+✔ reviewer revision is bound across different pair journals (29.6495ms)
+✔ malformed durable budget blocks before any reviewer call (6.1784ms)
+✔ existing campaign lock blocks every pair journal (3.3167ms)
+✔ concurrent distinct pair files cannot share one reservation (32.2885ms)
+✔ a reservation is on disk before the potentially billable callback (33.5201ms)
+✔ a lost budget completion checkpoint propagates instead of looking completed (25.5545ms)
+✔ already aborted work neither calls the reviewer nor reserves budget (9.9001ms)
+✔ separate Node processes obey the same durable ceiling (272.0971ms)
+✔ real file resumes across new Node processes and retains twenty attempts (716.5614ms)
+✔ a concurrent writer is rejected without a second provider call (19.7742ms)
+✔ an external journal edit is retained and prevents subsequent provider calls (15.306ms)
+✔ killed process leaves an owned lock and an incomplete attempt; recovery needs explicit intervention (126.2171ms)
+✔ corrupt, oversized and wrong-version files block before invoking a reviewer (26.1411ms)
+✔ retry ceiling counts failed and uncertainly completed starts, never removing history (2.2795ms)
+✔ cancellation during checkpoint never starts the subsequent provider call (0.5266ms)
+✔ only allowlisted usage metadata persists and unknown cost stays unknown (1.0882ms)
+✔ caller edits preserve original pair bindings and stop subsequent model requests (0.6219ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1044.9029
