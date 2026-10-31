@@ -1,0 +1,282 @@
+✖ editing returned validation history cannot rewrite the prior state (5.1595ms)
+✖ later edits of the prior history cannot rewrite a returned transition (1.1997ms)
+✖ cluster original and capture objects are detached from source records (7.2794ms)
+✖ later edits of source records do not rewrite an already returned cluster view (3.4271ms)
+✖ editing preview rights cannot turn unapproved source evidence into an eligible publication (5.514ms)
+✖ a split view preserves original rights and source snapshots independently (3.84ms)
+✔ explicit review events and their originals already remain detached (0.5741ms)
+✔ new validation event input and original source observations remain detached (0.3131ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 2
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 199.4777
+
+✖ failing tests:
+
+test at tests\evidence-view-isolation.test.mjs:33:1
+✖ editing returned validation history cannot rewrite the prior state (5.1595ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      aiPath: 'Prepare candidates for human review.',
+      constraints: {
+        processing: 'offline'
+      },
+  ...
+              'source-a',
+  +           'invented'
+            ],
+            recordedAt: '2026-10-31T12:00:00.000Z',
+  +         status: 'OUTCOME_OBSERVED'
+  -         status: 'INTERVIEWED'
+          }
+        ],
+        status: 'INTERVIEWED'
+      }
+    }
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:38:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [ 'Review source rights' ], counterEvidence: [ 'No independent adoption observation' ], unknowns: [ 'Real workflow demand' ], constraints: { processing: 'offline' }, observations: [ [Object] ], validation: { status: 'INTERVIEWED', events: [Array] } },
+    expected: { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [ 'Review source rights' ], counterEvidence: [ 'No independent adoption observation' ], unknowns: [ 'Real workflow demand' ], constraints: { processing: 'offline' }, observations: [ [Object] ], validation: { status: 'INTERVIEWED', events: [Array] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\evidence-view-isolation.test.mjs:41:1
+✖ later edits of the prior history cannot rewrite a returned transition (1.1997ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      aiPath: 'Prepare candidates for human review.',
+      constraints: {
+        processing: 'offline'
+      },
+  ...
+          {
+  +         actor: 'changed caller',
+  +         evidenceKeys: [],
+  -         actor: 'synthetic-reviewer',
+  -         evidenceKeys: [
+  -           'source-a'
+  -         ],
+            recordedAt: '2026-10-31T12:00:00.000Z',
+            status: 'INTERVIEWED'
+          },
+          {
+            actor: 'synthetic-reviewer',
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:45:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [ 'Review source rights' ], counterEvidence: [ 'No independent adoption observation' ], unknowns: [ 'Real workflow demand' ], constraints: { processing: 'offline' }, observations: [ [Object] ], validation: { status: 'INVALIDATED', events: [Array] } },
+    expected: { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [ 'Review source rights' ], counterEvidence: [ 'No independent adoption observation' ], unknowns: [ 'Real workflow demand' ], constraints: { processing: 'offline' }, observations: [ [Object] ], validation: { status: 'INVALIDATED', events: [Array] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\evidence-view-isolation.test.mjs:48:1
+✖ cluster original and capture objects are detached from source records (7.2794ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+      {
+        aiPath: 'Prepare candidates for human review.',
+        constraints: {
+          processing: 'offline'
+  ...
+            },
+  +         quote: 'Local draft edit',
+  -         quote: 'Synthetic statement a',
+            rightsApproved: true,
+            sourceAccessible: true,
+            sourcePolicy: 'synthetic-public'
+          }
+        ],
+  ...
+            metadata: {
+  +           label: 'Edited preview label'
+  -           label: 'b'
+            },
+            quote: 'Synthetic statement b',
+            rightsApproved: true,
+            sourceAccessible: true,
+            sourcePolicy: 'synthetic-public'
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:52:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'b', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'c', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] } ],
+    expected: [ { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'b', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'c', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\evidence-view-isolation.test.mjs:55:1
+✖ later edits of source records do not rewrite an already returned cluster view (3.4271ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      automaticMerge: false,
+      blockedEdges: [],
+      groups: [
+        {
+  ...
+                    },
+  +                 quote: 'New source revision',
+  -                 quote: 'Synthetic statement a',
+                    rightsApproved: true,
+                    sourceAccessible: true,
+                    sourcePolicy: 'synthetic-public'
+                  }
+                ],
+  ...
+                  },
+  +               quote: 'New source revision',
+  -               quote: 'Synthetic statement a',
+                  rightsApproved: true,
+                  sourceAccessible: true,
+                  sourcePolicy: 'synthetic-public'
+                }
+              },
+  ...
+                    metadata: {
+  +                   label: 'New annotation'
+  -                   label: 'b'
+                    },
+                    quote: 'Synthetic statement b',
+                    rightsApproved: true,
+                    sourceAccessible: true,
+                    sourcePolicy: 'synthetic-public'
+  ...
+                  metadata: {
+  +                 label: 'New annotation'
+  -                 label: 'b'
+                  },
+                  quote: 'Synthetic statement b',
+                  rightsApproved: true,
+                  sourceAccessible: true,
+                  sourcePolicy: 'synthetic-public'
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:59:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { protocol: 'HUMAN_REVIEW_CLUSTER_VIEW_V1', groups: [ [Object] ], ignoredReviews: [], blockedEdges: [], pairChecks: 3, maxPairChecks: 100000, unreviewedPairs: 0, requiresReview: false, automaticMerge: false, originalRecordsRemoved: 0, scope: 'Deterministic conservative grouping, not an optimal partition or proof of novelty. Original records and the full review journal remain caller-owned.' },
+    expected: { protocol: 'HUMAN_REVIEW_CLUSTER_VIEW_V1', groups: [ [Object] ], ignoredReviews: [], blockedEdges: [], pairChecks: 3, maxPairChecks: 100000, unreviewedPairs: 0, requiresReview: false, automaticMerge: false, originalRecordsRemoved: 0, scope: 'Deterministic conservative grouping, not an optimal partition or proof of novelty. Original records and the full review journal remain caller-owned.' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\evidence-view-isolation.test.mjs:62:1
+✖ editing preview rights cannot turn unapproved source evidence into an eligible publication (5.514ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:72:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\evidence-view-isolation.test.mjs:77:1
+✖ a split view preserves original rights and source snapshots independently (3.84ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    [
+      {
+        aiPath: 'Prepare candidates for human review.',
+        constraints: {
+          processing: 'offline'
+  ...
+            metadata: {
+  +           label: 'Local split preview edit'
+  -           label: 'a'
+            },
+            quote: 'Synthetic statement a',
+            rightsApproved: true,
+            sourceAccessible: true,
+            sourcePolicy: 'synthetic-public'
+  ...
+            metadata: {
+  +           label: 'Local split preview edit'
+  -           label: 'b'
+            },
+            quote: 'Synthetic statement b',
+            rightsApproved: true,
+            sourceAccessible: true,
+            sourcePolicy: 'synthetic-public'
+  ...
+            metadata: {
+  +           label: 'Local split preview edit'
+  -           label: 'c'
+            },
+            quote: 'Synthetic statement c',
+  +         rightsApproved: true,
+  -         rightsApproved: false,
+            sourceAccessible: true,
+            sourcePolicy: 'synthetic-public'
+          }
+        ],
+        persona: 'Synthetic reviewers',
+
+      at TestContext.<anonymous> (file:///<repo>/tests/evidence-view-isolation.test.mjs:86:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'b', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'c', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] } ],
+    expected: [ { id: 'a', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'b', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] }, { id: 'c', title: 'Synthetic evidence review', persona: 'Synthetic reviewers', jobToBeDone: 'Check supplied records and retain source evidence.', currentWorkflow: 'Read source records manually.', desiredOutcome: 'A traceable review.', aiPath: 'Prepare candidates for human review.', humanGates: [Array], counterEvidence: [Array], unknowns: [Array], constraints: [Object], observations: [Array] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

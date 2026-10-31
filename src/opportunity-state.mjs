@@ -46,8 +46,10 @@ export function recordValidation(opportunity, { status, evidenceKeys, recordedAt
   if ((opportunity.validation?.events ?? []).some((item) => timestamp(item.recordedAt) >= event.recordedAt)) {
     throw new Error('VALIDATION_EVENT_MUST_ADVANCE');
   }
-  return { ...structuredClone(opportunity), validation: { status,
-    events: [...(opportunity.validation?.events ?? []), event] } };
+  // Clone the completed transition: a shallow replacement after cloning the
+  // opportunity would reattach its caller-owned historical event objects.
+  return structuredClone({ ...opportunity, validation: { status,
+    events: [...(opportunity.validation?.events ?? []), event] } });
 }
 
 export function recordPairDecision(left, right, { digest, decision, actor, reason, recordedAt } = {}) {

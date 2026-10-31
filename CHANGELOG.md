@@ -2,6 +2,14 @@
 
 ## Unreleased - 2026-10-31
 
+- Detach completed cluster views and validation transitions from caller-owned
+  evidence and prior event objects. A synthetic preview-rights edit previously
+  changed the source publication decision from HOLD to PUBLISH; it now stays HOLD.
+- Preserve the eight frozen contracts (two passes/six failures before, eight
+  unchanged passes after), 120-test full result, zero-call historical replay and
+  matched 100/1,000/10,000-record view measurements. No semantic accuracy or hosted
+  product change is claimed; 40 unresolved duplicates and 80 review pairs remain.
+
 - Isolate asynchronous review inputs, requests and returned observations. Detect
   changed drafts, comparison lists, corrections and publication evidence/rules;
   stop subsequent calls and preserve completed responses without clearing review.
