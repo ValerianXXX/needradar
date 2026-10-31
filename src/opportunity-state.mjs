@@ -13,7 +13,7 @@ export function addEvidence(opportunity, observations, { observedAt } = {}) {
   const before = evidenceSummary(prior), after = evidenceSummary(combined);
   const lastSeen = opportunity.last_seen ? timestamp(opportunity.last_seen) : seenAt;
   const priorCaptures = new Set(prior);
-  const change = independentEvidenceChange(before, after, priorCaptures);
+  const change = independentEvidenceChange(before, after);
   const newIndependent = change.added;
   const lastIndependent = opportunity.last_new_independent_evidence ? timestamp(opportunity.last_new_independent_evidence) : seenAt;
   const priorRecencyVerified = opportunity.evidence_state_version === 2 && opportunity.independent_recency_verified === true;

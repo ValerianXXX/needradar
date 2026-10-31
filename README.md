@@ -12,53 +12,27 @@ The live product opens in English and includes a persistent Chinese-language swi
 The following development work is on unmerged draft branches. The hosted site
 and an installation from `main` do not establish that these changes are deployed.
 
-**29 October 2026 code milestones:** the public edition has immutable retrieval
-snapshots, conservative review clusters, reversible split records and separate
-evidence/validation state. Optional local multilingual embeddings now recover the
-paired targets in the 140-case synthetic retrieval test, including the two prior
-stress-query misses at 100/1,000/10,000 records. This improves candidate retrieval;
-the offline pair policy still leaves 80 cases for semantic adjudication. The
-earlier actual 12-pair Hermes pilot remains a separate, limited observation.
-Default checks need only Node; local embeddings require explicit setup and have
-measured CPU, startup and memory costs. No hosted deployment or market result is claimed.
-See [local retrieval, measurements and setup](docs/local-retrieval-2026-10-29.md)
-and [evidence clusters and reversible decisions](docs/evidence-clusters-2026-10-29.md).
-The [earlier 16-pair comparison](docs/dedup-upgrade-2026-10-27.md) remains historical evidence.
+**Current source capabilities, checked 31 October 2026:**
 
-Optional [review checkpoints](docs/review-continuation-2026-10-29.md) now let an
-eight-call budget advance through later candidates across restarts. Content and
-reviewer revision bind saved proposals; human corrections remain authoritative.
-The fixed offline replay visits 20 distinct pairs in three invocations instead of
-repeating the first eight. This improves scheduling, not measured model accuracy.
+- Unicode retrieval, optional local multilingual embeddings and conservative
+  human-reviewed clusters. [Retrieval setup and measurements](docs/local-retrieval-2026-10-29.md)
+  and [reversible cluster decisions](docs/evidence-clusters-2026-10-29.md).
+- Budgeted [review checkpoints](docs/review-continuation-2026-10-29.md) that resume
+  across restarts, with [stale-input detection](docs/review-input-consistency-2026-10-31.md).
+  Returned [evidence views](docs/evidence-view-isolation-2026-10-31.md) cannot
+  accidentally edit the original sources or rights.
+- Separate capture, independent-demand and validation state. The latest change
+  adds explicit [attribution correction and undo](docs/provenance-corrections-2026-10-31.md)
+  with preserved originals, review history and stable identity after save/load.
+  Correcting an author does not count as a new source or refresh old demand.
 
-**30 October targeted follow-up:** fourteen real Hermes requests directly reviewed
-the seven previously over-budget translated targets and seven nearby-distinct
-controls. All matched the frozen synthetic labels; a separate zero-call replay
-reused all fourteen grounded proposals. This is a selected-pair observation, not
-completion of every retrieval queue, an independent accuracy estimate or measured
-human time saved. [Protocol, results and offline replay](docs/targeted-semantic-followup-2026-10-30.md)
-preserve unknown costs and the unchanged historical population results.
-
-**Independent evidence correction:** attribution enrichment and repeat posts by
-one author no longer create fresh independent demand. Known shared organizations
-also constrain the author-count gate. Original captures and validation history
-remain intact; legacy recency stays unverified until a new tracked arrival can
-establish it. See [behavior, tests and migration boundaries](docs/evidence-origin-units-2026-10-30.md).
-
-**31 October review consistency:** edits to a draft, evidence rights, human
-corrections or comparison inputs during an asynchronous review now stop subsequent
-requests and require a new review. Original responses stay bound to their original
-content. [Behavior, integration, tests and snapshot costs](docs/review-input-consistency-2026-10-31.md)
-also distinguish historical zero-call replay from the closed live experiment.
-This fixes consistency; the 80 unresolved offline pairs remain unresolved.
-
-**31 October evidence-view repair:** editing a returned cluster preview no longer
-changes original source evidence or rights, and a new validation transition keeps
-its historical events separate from the prior state. The same synthetic preview
-edit now leaves publication on HOLD. Full local checks pass 120 tests; measured
-10,000-record view construction rises from 3.46 to 3.61 seconds on the shared host.
-[Reproduction, costs, run instructions and limits](docs/evidence-view-isolation-2026-10-31.md)
-retain the original failure and unchanged semantic-review workload.
+The final local suite passes 151 tests. The 140-pair offline evaluation still has
+40 unresolved duplicates and 80 pairs requiring review. A separate historical
+[14-request Hermes follow-up](docs/targeted-semantic-followup-2026-10-30.md) matched
+the selected synthetic labels and supports zero-call replay; it is not a full
+population accuracy estimate. Default checks need only Node, while embeddings
+need explicit setup. Model costs, real reviewer time saved and hosted adoption
+remain unestablished. Dated reproductions and earlier failures remain in `docs`.
 
 ## Executive answer
 
@@ -147,6 +121,7 @@ This public repository is a **curated portfolio edition**, not a deployment mirr
 - [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
 - [src/provenance.mjs](src/provenance.mjs) — capture grouping and provenance diagnostics;
 - [src/evidence-independence.mjs](src/evidence-independence.mjs) — independent attribution units and arrival accounting;
+- [src/evidence-corrections.mjs](src/evidence-corrections.mjs) — explicit reviewed attribution changes, stale guards and append-only undo;
 - [src/opportunity-state.mjs](src/opportunity-state.mjs) — evidence and validation history;
 - [src/opportunity-clusters.mjs](src/opportunity-clusters.mjs) — conservative human-reviewed groups and non-destructive splits;
 - [src/pipeline.mjs](src/pipeline.mjs) — publication, suppression, and hold decisions;
@@ -158,6 +133,7 @@ Run the checks with Node.js 20 or newer:
 npm test
 npm run check:english
 npm run eval:dedup
+node scripts/demo-provenance-correction.mjs --output correction-demo.json
 node scripts/evaluate-boundaries.mjs --output boundary-results.json
 node --expose-gc scripts/benchmark-retrieval.mjs --output retrieval-results.json
 ```

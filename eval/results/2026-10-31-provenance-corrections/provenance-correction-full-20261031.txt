@@ -1,0 +1,904 @@
+TAP version 13
+# Subtest: known exact identity survives a large high-overlap lexical shortlist
+ok 1 - known exact identity survives a large high-overlap lexical shortlist
+  ---
+  duration_ms: 32.7399
+  type: 'test'
+  ...
+# Subtest: frozen corpus contains twenty pairs in each of seven categories with domain isolation
+ok 2 - frozen corpus contains twenty pairs in each of seven categories with domain isolation
+  ---
+  duration_ms: 23.2074
+  type: 'test'
+  ...
+# Subtest: indexed and uncached retrieval agree on all fixed pairs without claiming semantic quality
+ok 3 - indexed and uncached retrieval agree on all fixed pairs without claiming semantic quality
+  ---
+  duration_ms: 155.7921
+  type: 'test'
+  ...
+# Subtest: an index is immutable, omits raw evidence and must be rebuilt for source changes
+ok 4 - an index is immutable, omits raw evidence and must be rebuilt for source changes
+  ---
+  duration_ms: 11.0397
+  type: 'test'
+  ...
+# Subtest: stable IDs resolve lexical ties while incomplete retrieval remains visible
+ok 5 - stable IDs resolve lexical ties while incomplete retrieval remains visible
+  ---
+  duration_ms: 8.0726
+  type: 'test'
+  ...
+# Subtest: missing text cannot become a literal null persona or task match
+ok 6 - missing text cannot become a literal null persona or task match
+  ---
+  duration_ms: 6.0672
+  type: 'test'
+  ...
+# Subtest: Chinese survives normalization and exact text deduplicates across evidence keys
+ok 7 - Chinese survives normalization and exact text deduplicates across evidence keys
+  ---
+  duration_ms: 2.778
+  type: 'test'
+  ...
+# Subtest: shared personas, nearby needs, negation and constraints never auto-merge
+ok 8 - shared personas, nearby needs, negation and constraints never auto-merge
+  ---
+  duration_ms: 4.1915
+  type: 'test'
+  ...
+# Subtest: small-corpus retrieval retains cross-language and zero-overlap paraphrases
+ok 9 - small-corpus retrieval retains cross-language and zero-overlap paraphrases
+  ---
+  duration_ms: 3.524
+  type: 'test'
+  ...
+# Subtest: invalid, failed, ungrounded and over-budget reviewers fail to human review
+ok 10 - invalid, failed, ungrounded and over-budget reviewers fail to human review
+  ---
+  duration_ms: 14.1784
+  type: 'test'
+  ...
+# Subtest: reposts, repeat crawls, tracking URLs and copied content count once
+ok 11 - reposts, repeat crawls, tracking URLs and copied content count once
+  ---
+  duration_ms: 4.2458
+  type: 'test'
+  ...
+# Subtest: new evidence, last_seen, counterevidence and validation are separate state
+ok 12 - new evidence, last_seen, counterevidence and validation are separate state
+  ---
+  duration_ms: 7.8136
+  type: 'test'
+  ...
+# Subtest: human correction is reversible and bound to the actual compared content
+ok 13 - human correction is reversible and bound to the actual compared content
+  ---
+  duration_ms: 0.5758
+  type: 'test'
+  ...
+# Subtest: optional provider requires explicit cloud opt-in and validates completed no-tool output
+ok 14 - optional provider requires explicit cloud opt-in and validates completed no-tool output
+  ---
+  duration_ms: 49.1917
+  type: 'test'
+  ...
+# Subtest: counterevidence cannot satisfy supporting-demand gates and rejected captures do not advance last_seen
+ok 15 - counterevidence cannot satisfy supporting-demand gates and rejected captures do not advance last_seen
+  ---
+  duration_ms: 4.9108
+  type: 'test'
+  ...
+# Subtest: human correction actually controls the async publication decision and expires when content changes
+ok 16 - human correction actually controls the async publication decision and expires when content changes
+  ---
+  duration_ms: 9.3502
+  type: 'test'
+  ...
+# Subtest: command transport requires opt-in, sends JSON on stdin and rejects tools or invalid output
+ok 17 - command transport requires opt-in, sends JSON on stdin and rejects tools or invalid output
+  ---
+  duration_ms: 278.5376
+  type: 'test'
+  ...
+# Subtest: project registry contains only the personal public portfolio
+ok 18 - project registry contains only the personal public portfolio
+  ---
+  duration_ms: 7.3015
+  type: 'test'
+  ...
+# Subtest: connection schemas preserve manual decisions and non-circular evidence
+ok 19 - connection schemas preserve manual decisions and non-circular evidence
+  ---
+  duration_ms: 2.2926
+  type: 'test'
+  ...
+# Subtest: correcting a known author on the same retained capture is neither arrival nor loss
+ok 20 - correcting a known author on the same retained capture is neither arrival nor loss
+  ---
+  duration_ms: 6.8595
+  type: 'test'
+  ...
+# Subtest: relabeling both known author and organization preserves the existing unit
+ok 21 - relabeling both known author and organization preserves the existing unit
+  ---
+  duration_ms: 1.0177
+  type: 'test'
+  ...
+# Subtest: resolving an unattributed capture after serialization does not create an arrival
+ok 22 - resolving an unattributed capture after serialization does not create an arrival
+  ---
+  duration_ms: 1.1006
+  type: 'test'
+  ...
+# Subtest: source URL identity survives an adapter key correction and attribution change
+ok 23 - source URL identity survives an adapter key correction and attribution change
+  ---
+  duration_ms: 1.5151
+  type: 'test'
+  ...
+# Subtest: collapsing two retained units reports exactly one consolidation
+ok 24 - collapsing two retained units reports exactly one consolidation
+  ---
+  duration_ms: 19.7595
+  type: 'test'
+  ...
+# Subtest: splitting an old unit is attribution resolution rather than fresh demand
+ok 25 - splitting an old unit is attribution resolution rather than fresh demand
+  ---
+  duration_ms: 1.5616
+  type: 'test'
+  ...
+# Subtest: a split cannot conceal the simultaneous loss of a different old unit
+ok 26 - a split cannot conceal the simultaneous loss of a different old unit
+  ---
+  duration_ms: 1.5849
+  type: 'test'
+  ...
+# Subtest: overlapping corrections match retained units without greedy or input-order losses
+ok 27 - overlapping corrections match retained units without greedy or input-order losses
+  ---
+  duration_ms: 8.8565
+  type: 'test'
+  ...
+# Subtest: a genuinely new unrelated capture remains new alongside an existing correction
+ok 28 - a genuinely new unrelated capture remains new alongside an existing correction
+  ---
+  duration_ms: 1.4621
+  type: 'test'
+  ...
+# Subtest: same author recaptures remain dependent while distinct comment anchors remain distinct
+ok 29 - same author recaptures remain dependent while distinct comment anchors remain distinct
+  ---
+  duration_ms: 4.0488
+  type: 'test'
+  ...
+# Subtest: an exact opportunity does not become novel when only its title changes
+ok 30 - an exact opportunity does not become novel when only its title changes
+  ---
+  duration_ms: 5.1121
+  type: 'test'
+  ...
+# Subtest: malformed identity values do not become matching literal object strings
+ok 31 - malformed identity values do not become matching literal object strings
+  ---
+  duration_ms: 14.9494
+  type: 'test'
+  ...
+# Subtest: different URL fragments can identify independent comments on one page
+ok 32 - different URL fragments can identify independent comments on one page
+  ---
+  duration_ms: 5.0838
+  type: 'test'
+  ...
+# Subtest: conflicting original authors do not acquire independence from input order
+ok 33 - conflicting original authors do not acquire independence from input order
+  ---
+  duration_ms: 1.8138
+  type: 'test'
+  ...
+# Subtest: an explicit original reference resolves a repost without discarding any capture
+ok 34 - an explicit original reference resolves a repost without discarding any capture
+  ---
+  duration_ms: 1.9477
+  type: 'test'
+  ...
+# Subtest: a new independent observation is counted even when another input joins two old groups
+ok 35 - a new independent observation is counted even when another input joins two old groups
+  ---
+  duration_ms: 7.7038
+  type: 'test'
+  ...
+# Subtest: human correction applies to either comparison direction and expires on changed content
+ok 36 - human correction applies to either comparison direction and expires on changed content
+  ---
+  duration_ms: 1.3846
+  type: 'test'
+  ...
+# Subtest: same-time conflicting human decisions are uncertain regardless of event order
+ok 37 - same-time conflicting human decisions are uncertain regardless of event order
+  ---
+  duration_ms: 3.1962
+  type: 'test'
+  ...
+# Subtest: human same proposals cannot bypass conflicting or incomplete current boundaries
+ok 38 - human same proposals cannot bypass conflicting or incomplete current boundaries
+  ---
+  duration_ms: 2.0887
+  type: 'test'
+  ...
+# Subtest: explicit correction retains raw source, dates, validation and an independent prior state
+ok 39 - explicit correction retains raw source, dates, validation and an independent prior state
+  ---
+  duration_ms: 12.5373
+  type: 'test'
+  ...
+# Subtest: correction requires a current full-state digest and rejects replay without another event
+ok 40 - correction requires a current full-state digest and rejects replay without another event
+  ---
+  duration_ms: 4.3275
+  type: 'test'
+  ...
+# Subtest: only explicit author and organization corrections are accepted
+ok 41 - only explicit author and organization corrections are accepted
+  ---
+  duration_ms: 4.0754
+  type: 'test'
+  ...
+# Subtest: actor, reason, target keys and strictly advancing event time are required
+ok 42 - actor, reason, target keys and strictly advancing event time are required
+  ---
+  duration_ms: 4.378
+  type: 'test'
+  ...
+# Subtest: a no-op cannot append a misleading correction or refresh recency
+ok 43 - a no-op cannot append a misleading correction or refresh recency
+  ---
+  duration_ms: 1.2676
+  type: 'test'
+  ...
+# Subtest: undo appends its own reason and restores the exact selected source without deleting history
+ok 44 - undo appends its own reason and restores the exact selected source without deleting history
+  ---
+  duration_ms: 3.5173
+  type: 'test'
+  ...
+# Subtest: undo refuses stale source snapshots and cannot discard a later capture
+ok 45 - undo refuses stale source snapshots and cannot discard a later capture
+  ---
+  duration_ms: 6.712
+  type: 'test'
+  ...
+# Subtest: corrupt correction history is rejected instead of silently discarded or rewritten
+ok 46 - corrupt correction history is rejected instead of silently discarded or rewritten
+  ---
+  duration_ms: 2.2184
+  type: 'test'
+  ...
+# Subtest: consolidation makes recency unverified without changing recorded business validation
+ok 47 - consolidation makes recency unverified without changing recorded business validation
+  ---
+  duration_ms: 4.8896
+  type: 'test'
+  ...
+# Subtest: resolving old unknown attribution leaves the independent-arrival date unknown
+ok 48 - resolving old unknown attribution leaves the independent-arrival date unknown
+  ---
+  duration_ms: 2.2796
+  type: 'test'
+  ...
+# Subtest: returned current values, audit snapshots and caller inputs never share editable objects
+ok 49 - returned current values, audit snapshots and caller inputs never share editable objects
+  ---
+  duration_ms: 2.1789
+  type: 'test'
+  ...
+# Subtest: only selected captures change; permissions, quotes, counterevidence and originals survive
+ok 50 - only selected captures change; permissions, quotes, counterevidence and originals survive
+  ---
+  duration_ms: 5.3543
+  type: 'test'
+  ...
+# Subtest: clearing ungrounded attribution withholds independence without inventing an arrival
+ok 51 - clearing ungrounded attribution withholds independence without inventing an arrival
+  ---
+  duration_ms: 1.8965
+  type: 'test'
+  ...
+# Subtest: repairing contradictory originals resolves old evidence rather than fresh demand
+ok 52 - repairing contradictory originals resolves old evidence rather than fresh demand
+  ---
+  duration_ms: 3.2614
+  type: 'test'
+  ...
+# Subtest: correcting a reposter cannot replace the original author or increase supporting independence
+ok 53 - correcting a reposter cannot replace the original author or increase supporting independence
+  ---
+  duration_ms: 3.1854
+  type: 'test'
+  ...
+# Subtest: undo requires the latest correction and a completed undo is not replayed
+ok 54 - undo requires the latest correction and a completed undo is not replayed
+  ---
+  duration_ms: 8.1097
+  type: 'test'
+  ...
+# Subtest: a present malformed history cannot be treated as an empty legacy history
+ok 55 - a present malformed history cannot be treated as an empty legacy history
+  ---
+  duration_ms: 2.7794
+  type: 'test'
+  ...
+# Subtest: hashing never silently drops hidden source data, symbol keys or non-data values
+ok 56 - hashing never silently drops hidden source data, symbol keys or non-data values
+  ---
+  duration_ms: 2.1897
+  type: 'test'
+  ...
+# Subtest: plain serialized key order and null prototypes preserve the digest but source edits do not
+ok 57 - plain serialized key order and null prototypes preserve the digest but source edits do not
+  ---
+  duration_ms: 1.6901
+  type: 'test'
+  ...
+# Subtest: enriching a capture with an organization does not report fresh independent demand
+ok 58 - enriching a capture with an organization does not report fresh independent demand
+  ---
+  duration_ms: 13.6273
+  type: 'test'
+  ...
+# Subtest: one author across policies remains one origin despite partially enriched attribution
+ok 59 - one author across policies remains one origin despite partially enriched attribution
+  ---
+  duration_ms: 2.3772
+  type: 'test'
+  ...
+# Subtest: different authors in a known shared origin cannot pass the author-count shortcut
+ok 60 - different authors in a known shared origin cannot pass the author-count shortcut
+  ---
+  duration_ms: 1.6044
+  type: 'test'
+  ...
+# Subtest: author and organization namespaces do not collide merely because their labels match
+ok 61 - author and organization namespaces do not collide merely because their labels match
+  ---
+  duration_ms: 2.3103
+  type: 'test'
+  ...
+# Subtest: complementary original annotations and transitive attribution are order invariant
+ok 62 - complementary original annotations and transitive attribution are order invariant
+  ---
+  duration_ms: 2.279
+  type: 'test'
+  ...
+# Subtest: malformed attribution does not create independence through JavaScript coercion
+ok 63 - malformed attribution does not create independence through JavaScript coercion
+  ---
+  duration_ms: 3.7808
+  type: 'test'
+  ...
+# Subtest: nonempty trimmed attribution is stable without name guessing or lowercasing
+ok 64 - nonempty trimmed attribution is stable without name guessing or lowercasing
+  ---
+  duration_ms: 1.199
+  type: 'test'
+  ...
+# Subtest: resolving an existing unattributed capture does not invent its observation date
+ok 65 - resolving an existing unattributed capture does not invent its observation date
+  ---
+  duration_ms: 3.7274
+  type: 'test'
+  ...
+# Subtest: a new unrelated origin still counts when other annotations consolidate old origins
+ok 66 - a new unrelated origin still counts when other annotations consolidate old origins
+  ---
+  duration_ms: 3.6257
+  type: 'test'
+  ...
+# Subtest: legacy derived recency remains visible but is not silently certified by a recapture
+ok 67 - legacy derived recency remains visible but is not silently certified by a recapture
+  ---
+  duration_ms: 2.3974
+  type: 'test'
+  ...
+# Subtest: an earlier new origin cannot certify an unverified later legacy clock
+ok 68 - an earlier new origin cannot certify an unverified later legacy clock
+  ---
+  duration_ms: 2.6164
+  type: 'test'
+  ...
+# Subtest: losing or consolidating previously known origins requires recency review
+ok 69 - losing or consolidating previously known origins requires recency review
+  ---
+  duration_ms: 4.8001
+  type: 'test'
+  ...
+# Subtest: reposts and rejected private captures do not supply new attribution
+ok 70 - reposts and rejected private captures do not supply new attribution
+  ---
+  duration_ms: 13.6967
+  type: 'test'
+  ...
+# Subtest: genuinely independent authors can qualify while counterevidence stays outside support gates
+ok 71 - genuinely independent authors can qualify while counterevidence stays outside support gates
+  ---
+  duration_ms: 21.1689
+  type: 'test'
+  ...
+# Subtest: editing returned validation history cannot rewrite the prior state
+ok 72 - editing returned validation history cannot rewrite the prior state
+  ---
+  duration_ms: 4.3948
+  type: 'test'
+  ...
+# Subtest: later edits of the prior history cannot rewrite a returned transition
+ok 73 - later edits of the prior history cannot rewrite a returned transition
+  ---
+  duration_ms: 0.5575
+  type: 'test'
+  ...
+# Subtest: cluster original and capture objects are detached from source records
+ok 74 - cluster original and capture objects are detached from source records
+  ---
+  duration_ms: 8.8522
+  type: 'test'
+  ...
+# Subtest: later edits of source records do not rewrite an already returned cluster view
+ok 75 - later edits of source records do not rewrite an already returned cluster view
+  ---
+  duration_ms: 3.0716
+  type: 'test'
+  ...
+# Subtest: editing preview rights cannot turn unapproved source evidence into an eligible publication
+ok 76 - editing preview rights cannot turn unapproved source evidence into an eligible publication
+  ---
+  duration_ms: 3.3503
+  type: 'test'
+  ...
+# Subtest: a split view preserves original rights and source snapshots independently
+ok 77 - a split view preserves original rights and source snapshots independently
+  ---
+  duration_ms: 2.2362
+  type: 'test'
+  ...
+# Subtest: explicit review events and their originals already remain detached
+ok 78 - explicit review events and their originals already remain detached
+  ---
+  duration_ms: 0.4413
+  type: 'test'
+  ...
+# Subtest: new validation event input and original source observations remain detached
+ok 79 - new validation event input and original source observations remain detached
+  ---
+  duration_ms: 0.2846
+  type: 'test'
+  ...
+# Subtest: transitive positive links cannot hide a cannot-link decision
+ok 80 - transitive positive links cannot hide a cannot-link decision
+  ---
+  duration_ms: 23.7135
+  type: 'test'
+  ...
+# Subtest: every cross-pair must be reviewed before a group can join
+ok 81 - every cross-pair must be reviewed before a group can join
+  ---
+  duration_ms: 22.5391
+  type: 'test'
+  ...
+# Subtest: split, historical replay and explicit relinking preserve originals and journal
+ok 82 - split, historical replay and explicit relinking preserve originals and journal
+  ---
+  duration_ms: 5.3777
+  type: 'test'
+  ...
+# Subtest: changed content, missing targets and conflicting constraints do not reuse old merges
+ok 83 - changed content, missing targets and conflicting constraints do not reuse old merges
+  ---
+  duration_ms: 2.656
+  type: 'test'
+  ...
+# Subtest: bounded checks leave groups separate and malformed split membership fails
+ok 84 - bounded checks leave groups separate and malformed split membership fails
+  ---
+  duration_ms: 2.1297
+  type: 'test'
+  ...
+# Subtest: recapture and counterevidence do not become new supporting demand or change validation
+ok 85 - recapture and counterevidence do not become new supporting demand or change validation
+  ---
+  duration_ms: 22.5358
+  type: 'test'
+  ...
+# Subtest: freshness boundaries, unknown legacy dates and future timestamps remain explicit
+ok 86 - freshness boundaries, unknown legacy dates and future timestamps remain explicit
+  ---
+  duration_ms: 0.9327
+  type: 'test'
+  ...
+# Subtest: out-of-order evidence keeps both clocks monotonic and rejected evidence advances neither
+ok 87 - out-of-order evidence keeps both clocks monotonic and rejected evidence advances neither
+  ---
+  duration_ms: 2.858
+  type: 'test'
+  ...
+# Subtest: journal timestamps reject impossible dates and local times without throwing on malformed entries
+ok 88 - journal timestamps reject impossible dates and local times without throwing on malformed entries
+  ---
+  duration_ms: 1.7964
+  type: 'test'
+  ...
+# Subtest: holds a complete draft when evidence is not sufficiently independent
+ok 89 - holds a complete draft when evidence is not sufficiently independent
+  ---
+  duration_ms: 3.5785
+  type: 'test'
+  ...
+# Subtest: accepts independence through three author groups
+ok 90 - accepts independence through three author groups
+  ---
+  duration_ms: 2.1543
+  type: 'test'
+  ...
+# Subtest: filters inaccessible or personal-data observations before applying thresholds
+ok 91 - filters inaccessible or personal-data observations before applying thresholds
+  ---
+  duration_ms: 0.5819
+  type: 'test'
+  ...
+# Subtest: suppresses a candidate that substantially repeats a published brief
+ok 92 - suppresses a candidate that substantially repeats a published brief
+  ---
+  duration_ms: 2.4014
+  type: 'test'
+  ...
+# Subtest: requires semantic review before asserting low-overlap drafts are distinct
+ok 93 - requires semantic review before asserting low-overlap drafts are distinct
+  ---
+  duration_ms: 1.1893
+  type: 'test'
+  ...
+# Subtest: reports transparent similarity components
+ok 94 - reports transparent similarity components
+  ---
+  duration_ms: 0.4962
+  type: 'test'
+  ...
+# Subtest: three bounded invocations reach twenty candidates instead of repeating the first eight
+ok 95 - three bounded invocations reach twenty candidates instead of repeating the first eight
+  ---
+  duration_ms: 54.8497
+  type: 'test'
+  ...
+# Subtest: zero-budget replay retains proposals without charging cached costs again
+ok 96 - zero-budget replay retains proposals without charging cached costs again
+  ---
+  duration_ms: 2.3813
+  type: 'test'
+  ...
+# Subtest: write-ahead checkpoint failure prevents a provider call
+ok 97 - write-ahead checkpoint failure prevents a provider call
+  ---
+  duration_ms: 2.4937
+  type: 'test'
+  ...
+# Subtest: lost completion checkpoint stays interrupted and is not silently retried
+ok 98 - lost completion checkpoint stays interrupted and is not silently retried
+  ---
+  duration_ms: 1.7014
+  type: 'test'
+  ...
+# Subtest: failed pair requires an explicit bounded retry and retains its failure record
+ok 99 - failed pair requires an explicit bounded retry and retains its failure record
+  ---
+  duration_ms: 2.2638
+  type: 'test'
+  ...
+# Subtest: journal binds the reviewer revision and rejects a silent provider change
+ok 100 - journal binds the reviewer revision and rejects a silent provider change
+  ---
+  duration_ms: 1.4357
+  type: 'test'
+  ...
+# Subtest: changed content is reconsidered but reordering and returned-state mutation do not affect the input journal
+ok 101 - changed content is reconsidered but reordering and returned-state mutation do not affect the input journal
+  ---
+  duration_ms: 2.0374
+  type: 'test'
+  ...
+# Subtest: cancelled work starts no requests and remains explicitly unresolved
+ok 102 - cancelled work starts no requests and remains explicitly unresolved
+  ---
+  duration_ms: 2.578
+  type: 'test'
+  ...
+# Subtest: cancellation after an active response preserves that attempt and starts no more
+ok 103 - cancellation after an active response preserves that attempt and starts no more
+  ---
+  duration_ms: 3.4821
+  type: 'test'
+  ...
+# Subtest: current human correction wins over a cached model proposal
+ok 104 - current human correction wins over a cached model proposal
+  ---
+  duration_ms: 3.0942
+  type: 'test'
+  ...
+# Subtest: malformed and ungrounded saved results fail closed before model execution
+ok 105 - malformed and ungrounded saved results fail closed before model execution
+  ---
+  duration_ms: 2.8309
+  type: 'test'
+  ...
+# Subtest: a partial retrieval remains incomplete after its whole shortlist has been visited
+ok 106 - a partial retrieval remains incomplete after its whole shortlist has been visited
+  ---
+  duration_ms: 68.0976
+  type: 'test'
+  ...
+# Subtest: an edit observed after a response stays invalid even if a later checkpoint restores the value
+ok 107 - an edit observed after a response stays invalid even if a later checkpoint restores the value
+  ---
+  duration_ms: 9.3101
+  type: 'test'
+  ...
+# Subtest: revoking evidence rights stops subsequent requests as well as publication
+ok 108 - revoking evidence rights stops subsequent requests as well as publication
+  ---
+  duration_ms: 4.9876
+  type: 'test'
+  ...
+# Subtest: an optional external revision check must explicitly stay true and never reaches the adapter
+ok 109 - an optional external revision check must explicitly stay true and never reaches the adapter
+  ---
+  duration_ms: 1.8377
+  type: 'test'
+  ...
+# Subtest: a revision change in a failed response stops further calls and retains the failure
+ok 110 - a revision change in a failed response stops further calls and retains the failure
+  ---
+  duration_ms: 2.2412
+  type: 'test'
+  ...
+# Subtest: the publication wrapper preserves a caller revision gate
+ok 111 - the publication wrapper preserves a caller revision gate
+  ---
+  duration_ms: 2.9907
+  type: 'test'
+  ...
+# Subtest: inaccessible evidence holds before any adapter or caller revision work
+ok 112 - inaccessible evidence holds before any adapter or caller revision work
+  ---
+  duration_ms: 0.3738
+  type: 'test'
+  ...
+# Subtest: stateless: a draft edit during a response cannot change its quoted snapshot or clear review
+ok 113 - stateless: a draft edit during a response cannot change its quoted snapshot or clear review
+  ---
+  duration_ms: 6.4777
+  type: 'test'
+  ...
+# Subtest: checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review
+ok 114 - checkpointed: a draft edit during a response cannot change its quoted snapshot or clear review
+  ---
+  duration_ms: 4.6993
+  type: 'test'
+  ...
+# Subtest: a newly arrived exact duplicate invalidates an otherwise complete distinct result
+ok 115 - a newly arrived exact duplicate invalidates an otherwise complete distinct result
+  ---
+  duration_ms: 1.4386
+  type: 'test'
+  ...
+# Subtest: editing a later peer never mixes old constraints with new source content
+ok 116 - editing a later peer never mixes old constraints with new source content
+  ---
+  duration_ms: 1.7483
+  type: 'test'
+  ...
+# Subtest: human corrections arriving during review require a new coherent invocation
+ok 117 - human corrections arriving during review require a new coherent invocation
+  ---
+  duration_ms: 2.4192
+  type: 'test'
+  ...
+# Subtest: request adapters receive detached constraints and cannot mutate the validation schema
+ok 118 - request adapters receive detached constraints and cannot mutate the validation schema
+  ---
+  duration_ms: 1.9868
+  type: 'test'
+  ...
+# Subtest: response usage is copied before a later adapter invocation can alter it
+ok 119 - response usage is copied before a later adapter invocation can alter it
+  ---
+  duration_ms: 1.4043
+  type: 'test'
+  ...
+# Subtest: a checkpoint-time edit starts no provider request and preserves the interrupted attempt
+ok 120 - a checkpoint-time edit starts no provider request and preserves the interrupted attempt
+  ---
+  duration_ms: 1.7284
+  type: 'test'
+  ...
+# Subtest: a completed old-snapshot response remains replayable without hiding its original cost
+ok 121 - a completed old-snapshot response remains replayable without hiding its original cost
+  ---
+  duration_ms: 3.7101
+  type: 'test'
+  ...
+# Subtest: publication cannot clear an input edit during review: rights
+ok 122 - publication cannot clear an input edit during review: rights
+  ---
+  duration_ms: 5.6636
+  type: 'test'
+  ...
+# Subtest: publication cannot clear an input edit during review: draft
+ok 123 - publication cannot clear an input edit during review: draft
+  ---
+  duration_ms: 1.0738
+  type: 'test'
+  ...
+# Subtest: publication cannot clear an input edit during review: rules
+ok 124 - publication cannot clear an input edit during review: rules
+  ---
+  duration_ms: 1.2782
+  type: 'test'
+  ...
+# Subtest: publication cannot clear an input edit during review: new-peer
+ok 125 - publication cannot clear an input edit during review: new-peer
+  ---
+  duration_ms: 1.9555
+  type: 'test'
+  ...
+# Subtest: unchanged inputs still permit a distinct decision with no schema or digest migration
+ok 126 - unchanged inputs still permit a distinct decision with no schema or digest migration
+  ---
+  duration_ms: 1.3413
+  type: 'test'
+  ...
+# Subtest: an explicit immutable index remains bound to its own snapshot when its old source array changes
+ok 127 - an explicit immutable index remains bound to its own snapshot when its old source array changes
+  ---
+  duration_ms: 0.9372
+  type: 'test'
+  ...
+# Subtest: real file resumes across new Node processes and retains twenty attempts
+ok 128 - real file resumes across new Node processes and retains twenty attempts
+  ---
+  duration_ms: 772.9169
+  type: 'test'
+  ...
+# Subtest: a concurrent writer is rejected without a second provider call
+ok 129 - a concurrent writer is rejected without a second provider call
+  ---
+  duration_ms: 18.8116
+  type: 'test'
+  ...
+# Subtest: an external journal edit is retained and prevents subsequent provider calls
+ok 130 - an external journal edit is retained and prevents subsequent provider calls
+  ---
+  duration_ms: 17.0254
+  type: 'test'
+  ...
+# Subtest: killed process leaves an owned lock and an incomplete attempt; recovery needs explicit intervention
+ok 131 - killed process leaves an owned lock and an incomplete attempt; recovery needs explicit intervention
+  ---
+  duration_ms: 127.4899
+  type: 'test'
+  ...
+# Subtest: corrupt, oversized and wrong-version files block before invoking a reviewer
+ok 132 - corrupt, oversized and wrong-version files block before invoking a reviewer
+  ---
+  duration_ms: 24.814
+  type: 'test'
+  ...
+# Subtest: retry ceiling counts failed and uncertainly completed starts, never removing history
+ok 133 - retry ceiling counts failed and uncertainly completed starts, never removing history
+  ---
+  duration_ms: 2.5897
+  type: 'test'
+  ...
+# Subtest: cancellation during checkpoint never starts the subsequent provider call
+ok 134 - cancellation during checkpoint never starts the subsequent provider call
+  ---
+  duration_ms: 0.5762
+  type: 'test'
+  ...
+# Subtest: only allowlisted usage metadata persists and unknown cost stays unknown
+ok 135 - only allowlisted usage metadata persists and unknown cost stays unknown
+  ---
+  duration_ms: 0.9799
+  type: 'test'
+  ...
+# Subtest: caller edits preserve original pair bindings and stop subsequent model requests
+ok 136 - caller edits preserve original pair bindings and stop subsequent model requests
+  ---
+  duration_ms: 0.5812
+  type: 'test'
+  ...
+# Subtest: supported null-prototype records and constraints do not appear edited after cloning
+ok 137 - supported null-prototype records and constraints do not appear edited after cloning
+  ---
+  duration_ms: 5.0483
+  type: 'test'
+  ...
+# Subtest: hybrid candidates preserve low-lexical targets without treating vectors as identity
+ok 138 - hybrid candidates preserve low-lexical targets without treating vectors as identity
+  ---
+  duration_ms: 48.8674
+  type: 'test'
+  ...
+# Subtest: dense equality cannot bypass material constraints or publication evidence gates
+ok 139 - dense equality cannot bypass material constraints or publication evidence gates
+  ---
+  duration_ms: 1.8596
+  type: 'test'
+  ...
+# Subtest: exact identity has priority even when its dense rank is deliberately poor
+ok 140 - exact identity has priority even when its dense rank is deliberately poor
+  ---
+  duration_ms: 25.3012
+  type: 'test'
+  ...
+# Subtest: snapshots bind every embedding to source content, model and dimensions
+ok 141 - snapshots bind every embedding to source content, model and dimensions
+  ---
+  duration_ms: 2.3946
+  type: 'test'
+  ...
+# Subtest: source and vector mutation cannot change a built index; equal ranks use stable IDs
+ok 142 - source and vector mutation cannot change a built index; equal ranks use stable IDs
+  ---
+  duration_ms: 29.761
+  type: 'test'
+  ...
+# Subtest: embedding inputs exclude raw evidence and executable configuration
+ok 143 - embedding inputs exclude raw evidence and executable configuration
+  ---
+  duration_ms: 1.0622
+  type: 'test'
+  ...
+# Subtest: diversity admits a weaker multilingual candidate among repeated high-score neighbors
+ok 144 - diversity admits a weaker multilingual candidate among repeated high-score neighbors
+  ---
+  duration_ms: 25.333
+  type: 'test'
+  ...
+# Subtest: bounded live-shaped calls resume without repeat and replay consumes zero
+ok 145 - bounded live-shaped calls resume without repeat and replay consumes zero
+  ---
+  duration_ms: 642.8019
+  type: 'test'
+  ...
+# Subtest: two failed attempts stop all further calls including after restart
+ok 146 - two failed attempts stop all further calls including after restart
+  ---
+  duration_ms: 235.8159
+  type: 'test'
+  ...
+# Subtest: changed run identity and existing invocation lock reject before reviewer calls
+ok 147 - changed run identity and existing invocation lock reject before reviewer calls
+  ---
+  duration_ms: 192.0408
+  type: 'test'
+  ...
+# Subtest: contract checks reject all caller-supplied provider callbacks before creating a run
+ok 148 - contract checks reject all caller-supplied provider callbacks before creating a run
+  ---
+  duration_ms: 4.2343
+  type: 'test'
+  ...
+# Subtest: real follow-up retains the historical product hashes and cannot reopen on changed source
+ok 149 - real follow-up retains the historical product hashes and cannot reopen on changed source
+  ---
+  duration_ms: 19.0409
+  type: 'test'
+  ...
+1..149
+# tests 149
+# suites 0
+# pass 149
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1565.6359

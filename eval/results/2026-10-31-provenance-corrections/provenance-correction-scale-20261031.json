@@ -1,0 +1,984 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-31T18:20:47.650Z",
+  "node": "v24.22.1",
+  "platform": "win32",
+  "syntheticOnly": true,
+  "modelCalls": 0,
+  "garbageCollectionRequested": true,
+  "scope": "Two provenance summaries plus delta matching. Shared host, warm modules, memory snapshots rather than peaks. No speed, semantic quality or user-effort improvement claim.",
+  "rows": [
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 100,
+      "mode": "unchanged",
+      "inputHash": "3e4bdc5302ff25438247d1812937137f8c423c70e17d7e1e9e9e4906c967017e",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 28.24600000000001,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 33.37360000000001,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 5634552,
+          "heapAfterBytes": 7951672,
+          "rssBeforeBytes": 45633536,
+          "rssAfterBytes": 49340416
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 27.29570000000001,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 5914544,
+          "heapAfterBytes": 7775392,
+          "rssBeforeBytes": 49635328,
+          "rssAfterBytes": 49979392
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 28.24600000000001,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 5929624,
+          "heapAfterBytes": 7753296,
+          "rssBeforeBytes": 49979392,
+          "rssAfterBytes": 50130944
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 100,
+      "mode": "unchanged",
+      "inputHash": "3e4bdc5302ff25438247d1812937137f8c423c70e17d7e1e9e9e4906c967017e",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 30.962500000000034,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 27.14609999999999,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 5939672,
+          "heapAfterBytes": 6367560,
+          "rssBeforeBytes": 50200576,
+          "rssAfterBytes": 50585600
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 30.962500000000034,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6063336,
+          "heapAfterBytes": 6333152,
+          "rssBeforeBytes": 50618368,
+          "rssAfterBytes": 50507776
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 35.535999999999945,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6075576,
+          "heapAfterBytes": 6383736,
+          "rssBeforeBytes": 50536448,
+          "rssAfterBytes": 53350400
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 100,
+      "mode": "relabel_each_author",
+      "inputHash": "cce7271a1cc246749b12fbd8881b7df3ad319d1517373f4a7d38641763ad5375",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 100,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 29.88130000000001,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 29.88130000000001,
+          "result": {
+            "added": 100,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 100
+          },
+          "heapBeforeBytes": 6120872,
+          "heapAfterBytes": 9909944,
+          "rssBeforeBytes": 53485568,
+          "rssAfterBytes": 54800384
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 27.96640000000002,
+          "result": {
+            "added": 100,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 100
+          },
+          "heapBeforeBytes": 6093280,
+          "heapAfterBytes": 9880256,
+          "rssBeforeBytes": 54972416,
+          "rssAfterBytes": 56647680
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 31.67199999999997,
+          "result": {
+            "added": 100,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 100
+          },
+          "heapBeforeBytes": 6102448,
+          "heapAfterBytes": 10192872,
+          "rssBeforeBytes": 56762368,
+          "rssAfterBytes": 57147392
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 100,
+      "mode": "relabel_each_author",
+      "inputHash": "cce7271a1cc246749b12fbd8881b7df3ad319d1517373f4a7d38641763ad5375",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 100,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 31.393600000000106,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 27.109999999999957,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 100,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6102312,
+          "heapAfterBytes": 10155584,
+          "rssBeforeBytes": 57249792,
+          "rssAfterBytes": 57507840
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 32.25940000000003,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 100,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6105232,
+          "heapAfterBytes": 10160360,
+          "rssBeforeBytes": 57622528,
+          "rssAfterBytes": 57905152
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 31.393600000000106,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 100,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6292464,
+          "heapAfterBytes": 10128848,
+          "rssBeforeBytes": 57962496,
+          "rssAfterBytes": 58007552
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 100,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "a7ed199fb31e6582c05547d0468c0a5db0e05eff6a97295fd9c7699079f18918",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 50,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 29.20760000000007,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 29.20760000000007,
+          "result": {
+            "added": 50,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 50
+          },
+          "heapBeforeBytes": 6135264,
+          "heapAfterBytes": 9681072,
+          "rssBeforeBytes": 58138624,
+          "rssAfterBytes": 58138624
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 29.018100000000004,
+          "result": {
+            "added": 50,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 50
+          },
+          "heapBeforeBytes": 6092744,
+          "heapAfterBytes": 9638472,
+          "rssBeforeBytes": 58138624,
+          "rssAfterBytes": 58138624
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 29.918700000000058,
+          "result": {
+            "added": 50,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 50
+          },
+          "heapBeforeBytes": 6092952,
+          "heapAfterBytes": 9599264,
+          "rssBeforeBytes": 57843712,
+          "rssAfterBytes": 58425344
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 100,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "a7ed199fb31e6582c05547d0468c0a5db0e05eff6a97295fd9c7699079f18918",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 50,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 29.875299999999925,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 29.875299999999925,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 50,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6090608,
+          "heapAfterBytes": 9854328,
+          "rssBeforeBytes": 58515456,
+          "rssAfterBytes": 58519552
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 30.002399999999966,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 50,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6093992,
+          "heapAfterBytes": 9870304,
+          "rssBeforeBytes": 58556416,
+          "rssAfterBytes": 58179584
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 29.722999999999956,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 50,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6108160,
+          "heapAfterBytes": 9828704,
+          "rssBeforeBytes": 58314752,
+          "rssAfterBytes": 58404864
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 1000,
+      "mode": "unchanged",
+      "inputHash": "0d57c4223e5ada3b04ed2f8e53a2e90f536aab7533a090d4943e2c7af8704a96",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 306.6314,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 331.95640000000003,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 6339944,
+          "heapAfterBytes": 10233256,
+          "rssBeforeBytes": 58404864,
+          "rssAfterBytes": 68857856
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 306.6314,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7917768,
+          "heapAfterBytes": 11758544,
+          "rssBeforeBytes": 68808704,
+          "rssAfterBytes": 70541312
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 300.75620000000004,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7918528,
+          "heapAfterBytes": 18847128,
+          "rssBeforeBytes": 70823936,
+          "rssAfterBytes": 73027584
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 1000,
+      "mode": "unchanged",
+      "inputHash": "0d57c4223e5ada3b04ed2f8e53a2e90f536aab7533a090d4943e2c7af8704a96",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 300.5138999999999,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 326.20510000000013,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7930656,
+          "heapAfterBytes": 13781456,
+          "rssBeforeBytes": 72736768,
+          "rssAfterBytes": 88010752
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 300.3386999999998,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7931392,
+          "heapAfterBytes": 13894296,
+          "rssBeforeBytes": 88072192,
+          "rssAfterBytes": 88047616
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 300.5138999999999,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7927600,
+          "heapAfterBytes": 13341568,
+          "rssBeforeBytes": 88080384,
+          "rssAfterBytes": 88182784
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 1000,
+      "mode": "relabel_each_author",
+      "inputHash": "1ae4099042f9e8cb608b4c3f75ebf27eeb2df1a6d8f3fa32d34289330e9bb69e",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 1000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 316.6089999999999,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 302.1005,
+          "result": {
+            "added": 1000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 1000
+          },
+          "heapBeforeBytes": 8172880,
+          "heapAfterBytes": 10399232,
+          "rssBeforeBytes": 88121344,
+          "rssAfterBytes": 88354816
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 316.6089999999999,
+          "result": {
+            "added": 1000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 1000
+          },
+          "heapBeforeBytes": 7985184,
+          "heapAfterBytes": 10314600,
+          "rssBeforeBytes": 88444928,
+          "rssAfterBytes": 89858048
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 325.61739999999963,
+          "result": {
+            "added": 1000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 1000
+          },
+          "heapBeforeBytes": 7987472,
+          "heapAfterBytes": 41048640,
+          "rssBeforeBytes": 89935872,
+          "rssAfterBytes": 106856448
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 1000,
+      "mode": "relabel_each_author",
+      "inputHash": "1ae4099042f9e8cb608b4c3f75ebf27eeb2df1a6d8f3fa32d34289330e9bb69e",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 1000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 303.75670000000036,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 300.78009999999995,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 1000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 8036440,
+          "heapAfterBytes": 12111576,
+          "rssBeforeBytes": 106049536,
+          "rssAfterBytes": 122757120
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 303.75670000000036,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 1000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7993816,
+          "heapAfterBytes": 12285440,
+          "rssBeforeBytes": 122822656,
+          "rssAfterBytes": 122761216
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 311.86159999999927,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 1000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7995000,
+          "heapAfterBytes": 11988264,
+          "rssBeforeBytes": 122851328,
+          "rssAfterBytes": 122789888
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 1000,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "90a0a2d3e3f5067c411e76b45b2751f93fcb1a6f01c408ac91f64ced5781c943",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 500,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 291.9206000000004,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 289.58889999999974,
+          "result": {
+            "added": 500,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 500
+          },
+          "heapBeforeBytes": 8236640,
+          "heapAfterBytes": 40242568,
+          "rssBeforeBytes": 123150336,
+          "rssAfterBytes": 123219968
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 292.2664999999997,
+          "result": {
+            "added": 500,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 500
+          },
+          "heapBeforeBytes": 7802584,
+          "heapAfterBytes": 39785176,
+          "rssBeforeBytes": 122318848,
+          "rssAfterBytes": 123981824
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 291.9206000000004,
+          "result": {
+            "added": 500,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 500
+          },
+          "heapBeforeBytes": 7802536,
+          "heapAfterBytes": 39780256,
+          "rssBeforeBytes": 123084800,
+          "rssAfterBytes": 123850752
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 1000,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "90a0a2d3e3f5067c411e76b45b2751f93fcb1a6f01c408ac91f64ced5781c943",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 500,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 293.71959999999945,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 292.9282000000003,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 500,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7780856,
+          "heapAfterBytes": 10197664,
+          "rssBeforeBytes": 123060224,
+          "rssAfterBytes": 123027456
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 309.0150000000003,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 500,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7737480,
+          "heapAfterBytes": 10278752,
+          "rssBeforeBytes": 123060224,
+          "rssAfterBytes": 123039744
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 293.71959999999945,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 500,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 7741696,
+          "heapAfterBytes": 10134800,
+          "rssBeforeBytes": 123080704,
+          "rssAfterBytes": 122978304
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 10000,
+      "mode": "unchanged",
+      "inputHash": "50460856f072c5e915976c0aea6fdfcfebb4950e95f6d13435e13ea8b73f6605",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3408.6793,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3408.6793,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 10573616,
+          "heapAfterBytes": 59221960,
+          "rssBeforeBytes": 123297792,
+          "rssAfterBytes": 217235456
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3415.3882000000012,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 26342688,
+          "heapAfterBytes": 107125712,
+          "rssBeforeBytes": 208760832,
+          "rssAfterBytes": 234549248
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3381.0489000000016,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 26441192,
+          "heapAfterBytes": 106012752,
+          "rssBeforeBytes": 223465472,
+          "rssAfterBytes": 234024960
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 10000,
+      "mode": "unchanged",
+      "inputHash": "50460856f072c5e915976c0aea6fdfcfebb4950e95f6d13435e13ea8b73f6605",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 0,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3425.809400000002,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3411.3172000000013,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 26111888,
+          "heapAfterBytes": 73196856,
+          "rssBeforeBytes": 223162368,
+          "rssAfterBytes": 233095168
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3440.481499999998,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 26338384,
+          "heapAfterBytes": 73150888,
+          "rssBeforeBytes": 227430400,
+          "rssAfterBytes": 234946560
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3425.809400000002,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 28512144,
+          "heapAfterBytes": 73059216,
+          "rssBeforeBytes": 231170048,
+          "rssAfterBytes": 236482560
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 10000,
+      "mode": "relabel_each_author",
+      "inputHash": "26d8d8d7ab02796ac44fd64b90ae9494be2e16166be273612b1d12ea25159ab1",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 10000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3404.5833999999995,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3371.116399999999,
+          "result": {
+            "added": 10000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 10000
+          },
+          "heapBeforeBytes": 28720424,
+          "heapAfterBytes": 107069392,
+          "rssBeforeBytes": 227225600,
+          "rssAfterBytes": 239620096
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3404.5833999999995,
+          "result": {
+            "added": 10000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 10000
+          },
+          "heapBeforeBytes": 26434296,
+          "heapAfterBytes": 106858584,
+          "rssBeforeBytes": 229298176,
+          "rssAfterBytes": 239996928
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3430.0178000000014,
+          "result": {
+            "added": 10000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 10000
+          },
+          "heapBeforeBytes": 26442512,
+          "heapAfterBytes": 105366648,
+          "rssBeforeBytes": 229306368,
+          "rssAfterBytes": 240340992
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 10000,
+      "mode": "relabel_each_author",
+      "inputHash": "26d8d8d7ab02796ac44fd64b90ae9494be2e16166be273612b1d12ea25159ab1",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 10000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3413.248200000002,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3413.248200000002,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 10000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 26110920,
+          "heapAfterBytes": 64676720,
+          "rssBeforeBytes": 228929536,
+          "rssAfterBytes": 236331008
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3408.683299999997,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 10000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 28501504,
+          "heapAfterBytes": 68618632,
+          "rssBeforeBytes": 233099264,
+          "rssAfterBytes": 239136768
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3442.5299000000014,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 10000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 28502440,
+          "heapAfterBytes": 66181960,
+          "rssBeforeBytes": 233091072,
+          "rssAfterBytes": 243564544
+        }
+      ]
+    },
+    {
+      "revision": "b3f28694c3aad17ff1acd7c6801d2aaf7a6defaa",
+      "implementation": "before",
+      "recordsPerSnapshot": 10000,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "cbf009fa5cdc9dd79b6ef802126227bf00c468082a2721581faf9c47f0cbc22d",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 5000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3363.8040000000037,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3317.2368999999962,
+          "result": {
+            "added": 5000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 5000
+          },
+          "heapBeforeBytes": 28715000,
+          "heapAfterBytes": 96643552,
+          "rssBeforeBytes": 234696704,
+          "rssAfterBytes": 237441024
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3364.2723999999944,
+          "result": {
+            "added": 5000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 5000
+          },
+          "heapBeforeBytes": 23868496,
+          "heapAfterBytes": 91740464,
+          "rssBeforeBytes": 231002112,
+          "rssAfterBytes": 238084096
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3363.8040000000037,
+          "result": {
+            "added": 5000,
+            "resolvedExisting": 0,
+            "consolidatedOrLost": 5000
+          },
+          "heapBeforeBytes": 23868400,
+          "heapAfterBytes": 91806216,
+          "rssBeforeBytes": 231018496,
+          "rssAfterBytes": 237899776
+        }
+      ]
+    },
+    {
+      "revision": "fd0fbf7a01c6d773285e64271e645852e4c9a224",
+      "implementation": "after",
+      "recordsPerSnapshot": 10000,
+      "mode": "overlapping_correction_chain",
+      "inputHash": "cbf009fa5cdc9dd79b6ef802126227bf00c468082a2721581faf9c47f0cbc22d",
+      "expected": {
+        "added": 0,
+        "resolvedExisting": 5000,
+        "consolidatedOrLost": 0
+      },
+      "medianMs": 3368.9141999999993,
+      "observations": [
+        {
+          "repetition": 1,
+          "elapsedMs": 3368.980000000003,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 5000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 23540272,
+          "heapAfterBytes": 48134056,
+          "rssBeforeBytes": 233918464,
+          "rssAfterBytes": 238637056
+        },
+        {
+          "repetition": 2,
+          "elapsedMs": 3353.320700000004,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 5000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 23774344,
+          "heapAfterBytes": 48210432,
+          "rssBeforeBytes": 233910272,
+          "rssAfterBytes": 239329280
+        },
+        {
+          "repetition": 3,
+          "elapsedMs": 3368.9141999999993,
+          "result": {
+            "added": 0,
+            "resolvedExisting": 5000,
+            "consolidatedOrLost": 0
+          },
+          "heapBeforeBytes": 23772632,
+          "heapAfterBytes": 47422696,
+          "rssBeforeBytes": 234250240,
+          "rssAfterBytes": 236068864
+        }
+      ]
+    }
+  ]
+}

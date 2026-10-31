@@ -1,0 +1,624 @@
+TAP version 13
+# Subtest: correcting a known author on the same retained capture is neither arrival nor loss
+not ok 1 - correcting a known author on the same retained capture is neither arrival nor loss
+  ---
+  duration_ms: 5.6987
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    +   consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 0
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:11:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: relabeling both known author and organization preserves the existing unit
+not ok 2 - relabeling both known author and organization preserves the existing unit
+  ---
+  duration_ms: 0.6534
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:15:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    +   consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 0
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:16:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: resolving an unattributed capture after serialization does not create an arrival
+not ok 3 - resolving an unattributed capture after serialization does not create an arrival
+  ---
+  duration_ms: 0.5776
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:21:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    -   added: 0,
+        consolidatedOrLost: 0,
+    +   resolvedExisting: 0
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 0
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 0
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:22:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: source URL identity survives an adapter key correction and attribution change
+not ok 4 - source URL identity survives an adapter key correction and attribution change
+  ---
+  duration_ms: 0.7595
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:26:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    +   consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 0
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:27:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: collapsing two retained units reports exactly one consolidation
+not ok 5 - collapsing two retained units reports exactly one consolidation
+  ---
+  duration_ms: 10.4498
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:32:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    +   consolidatedOrLost: 2,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 1,
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 1
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 2
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:33:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: splitting an old unit is attribution resolution rather than fresh demand
+not ok 6 - splitting an old unit is attribution resolution rather than fresh demand
+  ---
+  duration_ms: 0.7557
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:38:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 2,
+    +   consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 2
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 2
+    consolidatedOrLost: 0
+  actual:
+    added: 2
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:39:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: a split cannot conceal the simultaneous loss of a different old unit
+not ok 7 - a split cannot conceal the simultaneous loss of a different old unit
+  ---
+  duration_ms: 0.9788
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:43:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 1,
+    -   added: 0,
+        consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 1
+    consolidatedOrLost: 1
+  actual:
+    added: 1
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:46:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: overlapping corrections match retained units without greedy or input-order losses
+not ok 8 - overlapping corrections match retained units without greedy or input-order losses
+  ---
+  duration_ms: 0.8506
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:49:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 2,
+    +   consolidatedOrLost: 2,
+    +   resolvedExisting: 0
+    -   added: 0,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 2
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 0
+    resolvedExisting: 2
+    consolidatedOrLost: 0
+  actual:
+    added: 2
+    resolvedExisting: 0
+    consolidatedOrLost: 2
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:55:14)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: a genuinely new unrelated capture remains new alongside an existing correction
+not ok 9 - a genuinely new unrelated capture remains new alongside an existing correction
+  ---
+  duration_ms: 0.5674
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-attribution-change.test.mjs:60:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      {
+    +   added: 2,
+    +   consolidatedOrLost: 1,
+    +   resolvedExisting: 0
+    -   added: 1,
+    -   consolidatedOrLost: 0,
+    -   resolvedExisting: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    added: 1
+    resolvedExisting: 1
+    consolidatedOrLost: 0
+  actual:
+    added: 2
+    resolvedExisting: 0
+    consolidatedOrLost: 1
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///<workspace>/needradar-provenance-corrections/tests/evidence-attribution-change.test.mjs:61:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: same author recaptures remain dependent while distinct comment anchors remain distinct
+ok 10 - same author recaptures remain dependent while distinct comment anchors remain distinct
+  ---
+  duration_ms: 1.1251
+  type: 'test'
+  ...
+# Subtest: explicit correction retains raw source, dates, validation and an independent prior state
+not ok 11 - explicit correction retains raw source, dates, validation and an independent prior state
+  ---
+  duration_ms: 2.5825
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:22:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: correction requires a current full-state digest and rejects replay without another event
+not ok 12 - correction requires a current full-state digest and rejects replay without another event
+  ---
+  duration_ms: 0.9719
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:40:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: only explicit author and organization corrections are accepted
+not ok 13 - only explicit author and organization corrections are accepted
+  ---
+  duration_ms: 0.7671
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:49:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: actor, reason, target keys and strictly advancing event time are required
+not ok 14 - actor, reason, target keys and strictly advancing event time are required
+  ---
+  duration_ms: 0.847
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:58:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: a no-op cannot append a misleading correction or refresh recency
+not ok 15 - a no-op cannot append a misleading correction or refresh recency
+  ---
+  duration_ms: 0.6307
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:68:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: undo appends its own reason and restores the exact selected source without deleting history
+not ok 16 - undo appends its own reason and restores the exact selected source without deleting history
+  ---
+  duration_ms: 0.5512
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:75:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: undo refuses stale source snapshots and cannot discard a later capture
+not ok 17 - undo refuses stale source snapshots and cannot discard a later capture
+  ---
+  duration_ms: 0.5285
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:89:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: corrupt correction history is rejected instead of silently discarded or rewritten
+not ok 18 - corrupt correction history is rejected instead of silently discarded or rewritten
+  ---
+  duration_ms: 0.5894
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:98:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: consolidation makes recency unverified without changing recorded business validation
+not ok 19 - consolidation makes recency unverified without changing recorded business validation
+  ---
+  duration_ms: 0.6231
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:105:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: resolving old unknown attribution leaves the independent-arrival date unknown
+not ok 20 - resolving old unknown attribution leaves the independent-arrival date unknown
+  ---
+  duration_ms: 0.6697
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:117:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: returned current values, audit snapshots and caller inputs never share editable objects
+not ok 21 - returned current values, audit snapshots and caller inputs never share editable objects
+  ---
+  duration_ms: 0.5091
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:125:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+# Subtest: only selected captures change; permissions, quotes, counterevidence and originals survive
+not ok 22 - only selected captures change; permissions, quotes, counterevidence and originals survive
+  ---
+  duration_ms: 0.4856
+  type: 'test'
+  location: '<workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs:136:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '<workspace>\\needradar-provenance-corrections\\src\\evidence-corrections.mjs' imported from <workspace>\\needradar-provenance-corrections\\tests\\evidence-corrections.test.mjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    moduleResolve (node:internal/modules/esm/resolve:879:10)
+    defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)
+    #resolve (node:internal/modules/esm/loader:687:17)
+    ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)
+    node:internal/modules/esm/loader:636:32
+    TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 1
+# fail 21
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 157.3295

@@ -38,16 +38,59 @@ export function independentEvidenceUnits(groups) {
 
 // Unit digests can change when attribution improves. Newness must follow both
 // prior capture membership and attribution, never a set difference of digests.
-export function independentEvidenceChange(before, after, priorCaptures) {
-  const priorKeys = new Set(before.independentUnits.flatMap(unit => unit.attributionKeys));
-  const groups = new Map(after.groups.map(group => [group.id, group]));
-  let added = 0, resolvedExisting = 0, survivingPriorUnits = 0;
-  for (const unit of after.independentUnits) {
-    if (unit.attributionKeys.some(key => priorKeys.has(key))) { survivingPriorUnits++; continue; }
-    const includesPriorCapture = unit.evidenceGroupIds.some(id => groups.get(id).observations.some(item => priorCaptures.has(item)));
-    if (includesPriorCapture) resolvedExisting++;
-    else added++;
-  }
+export function independentEvidenceChange(before, after) {
+  const beforeGroups = new Map(before.groups.map(group => [group.id, group]));
+  const afterGroups = new Map(after.groups.map(group => [group.id, group]));
+  const priorAttribution = new Map(), priorIndependentCaptures = new Map();
+  const priorCaptureKeys = new Set(before.groups.flatMap(group => group.identityKeys));
+  before.independentUnits.forEach((unit, index) => {
+    for (const key of unit.attributionKeys) priorAttribution.set(key, index);
+    for (const id of unit.evidenceGroupIds) {
+      for (const key of beforeGroups.get(id).identityKeys) priorIndependentCaptures.set(key, index);
+    }
+  });
+  let added = 0, resolvedExisting = 0;
+  const retainedCandidates = after.independentUnits.map(unit => {
+    const captureKeys = unit.evidenceGroupIds.flatMap(id => afterGroups.get(id).identityKeys);
+    const sameAttribution = unit.attributionKeys.some(key => priorAttribution.has(key));
+    const sameCapture = captureKeys.some(key => priorCaptureKeys.has(key));
+    if (!sameAttribution) {
+      if (sameCapture) resolvedExisting++;
+      else added++;
+    }
+    return [...new Set([
+      ...unit.attributionKeys.filter(key => priorAttribution.has(key)).map(key => priorAttribution.get(key)),
+      ...captureKeys.filter(key => priorIndependentCaptures.has(key)).map(key => priorIndependentCaptures.get(key)),
+    ])].sort((a, b) => a - b);
+  });
   return { added, resolvedExisting,
-    consolidatedOrLost: Math.max(0, before.independentUnits.length - survivingPriorUnits) };
+    consolidatedOrLost: before.independentUnits.length - retainedUnitCount(retainedCandidates) };
+}
+
+// Each prior independent unit can survive at most once. A split must not hide
+// another unit's loss, and a merge retains one unit rather than all its inputs.
+// Iterative augmenting paths avoid order-dependent greedy losses and recursion
+// limits on long correction chains. These matches never merge source records.
+function retainedUnitCount(candidates) {
+  const matchedBefore = new Map(), matchedAfter = new Map();
+  for (let start = 0; start < candidates.length; start++) {
+    const queue = [start], visitedAfter = new Set(queue), predecessor = new Map();
+    let free;
+    search: for (let cursor = 0; cursor < queue.length; cursor++) {
+      const after = queue[cursor];
+      for (const before of candidates[after]) {
+        if (predecessor.has(before)) continue;
+        predecessor.set(before, after);
+        if (!matchedBefore.has(before)) { free = before; break search; }
+        const next = matchedBefore.get(before);
+        if (!visitedAfter.has(next)) { visitedAfter.add(next); queue.push(next); }
+      }
+    }
+    while (free !== undefined) {
+      const after = predecessor.get(free), previous = matchedAfter.get(after);
+      matchedAfter.set(after, free); matchedBefore.set(free, after);
+      free = previous;
+    }
+  }
+  return matchedAfter.size;
 }

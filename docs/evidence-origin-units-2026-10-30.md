@@ -3,6 +3,10 @@
 Scope: the public curated edition, synthetic engineering observations, 30 October
 2026. This is not a hosted deployment or a new semantic-model experiment.
 
+The [31 October follow-up](provenance-corrections-2026-10-31.md) fixes known-author
+relabeling and serialized-capture accounting, and adds reviewed correction/undo.
+The observations below remain the original milestone's results.
+
 ## Observed defects
 
 At `5b58e5378a204bc10b35c70f3706c66ec8f79eec`, independent origins used

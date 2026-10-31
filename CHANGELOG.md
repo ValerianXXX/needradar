@@ -2,6 +2,17 @@
 
 ## Unreleased - 2026-10-31
 
+- Match independent evidence across stable capture identities and reviewed
+  author changes, including serialized records and overlapping split/loss cases.
+- Add opt-in attribution correction and latest-event undo with stale-input
+  checks, preserved source snapshots and lossless JSON history. Corrections
+  create no new arrivals, do not advance observation dates and do not grant
+  authentication, publication or database transaction authority.
+- Preserve 31 frozen correction contracts, original failures, 151 passing final
+  checks, a synthetic correction/undo walkthrough and matched scale observations.
+  No speed gain, new model-quality result or hosted change is claimed. See
+  [integration, evidence and rollback](docs/provenance-corrections-2026-10-31.md).
+
 - Detach completed cluster views and validation transitions from caller-owned
   evidence and prior event objects. A synthetic preview-rights edit previously
   changed the source publication decision from HOLD to PUBLISH; it now stays HOLD.
