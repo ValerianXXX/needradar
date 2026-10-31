@@ -217,3 +217,26 @@ test('plain serialized key order and null prototypes preserve the digest but sou
   assert.notEqual(module.evidenceCorrectionDigest(before), module.evidenceCorrectionDigest(changed));
   assert.throws(() => module.correctEvidenceAttribution(changed, request(module, before)), /EVIDENCE_CORRECTION_STALE_INPUT/);
 });
+
+test('accepted correction history survives JSON persistence before a further edit and undo', async () => {
+  const module = await api(), before = initial(), first = module.correctEvidenceAttribution(before, request(module, before));
+  const loaded = JSON.parse(JSON.stringify(first));
+  assert.equal(module.evidenceCorrectionDigest(first), module.evidenceCorrectionDigest(loaded));
+  const second = module.correctEvidenceAttribution(loaded, request(module, loaded,
+    {patch: {originGroup: 'org'}, recordedAt: next}));
+  const reloaded = JSON.parse(JSON.stringify(second));
+  const restored = module.revertEvidenceAttribution(reloaded, {expectedDigest: module.evidenceCorrectionDigest(reloaded),
+    eventId: reloaded.provenance_corrections[1].id, actor: 'synthetic-reviewer', reason: 'Reviewed after reload.',
+    recordedAt: '2026-10-31T14:00:00Z'});
+  assert.deepEqual(restored.observations, first.observations);
+  assert.equal(restored.provenance_corrections.length, 3);
+});
+
+test('values that JSON would drop or alter are rejected before recording an unpersistable audit', async () => {
+  const module = await api();
+  for (const value of [undefined, -0, NaN, Infinity]) {
+    const before = initial(); before.observations[0].adapterMetadata = value;
+    assert.throws(() => module.evidenceCorrectionDigest(before), /EVIDENCE_CORRECTION_INPUT_INVALID/);
+    assert.equal(before.provenance_corrections, undefined);
+  }
+});
