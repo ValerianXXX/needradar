@@ -3,6 +3,7 @@ import { timestamp } from './timestamps.mjs';
 import { isSemanticCandidateIndex, retrieveSemanticCandidates } from './semantic-retrieval.mjs';
 import { REVIEW_VERSION, publicDraft, pairDigest, reviewSchema, validateReview } from './review-contract.mjs';
 import { createReviewContinuation, journalResponse, MAX_PAIR_ATTEMPTS } from './review-journal.mjs';
+import { captureInput } from './input-snapshot.mjs';
 export { REVIEW_VERSION, pairDigest, reviewSchema, validateReview } from './review-contract.mjs';
 
 // Existing V1 digests stay valid. A same/different relationship is symmetric;
@@ -29,11 +30,15 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
   reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs, signal, ...retrievalOptions } = {}) {
   if (!Number.isInteger(maxModelCalls) || maxModelCalls < 0 || maxModelCalls > 64) throw new TypeError('INVALID_REVIEW_BUDGET');
   if (reviewerRevision === undefined && [reviewJournal, onCheckpoint, retryFailedPairs].some(value => value !== undefined)) throw new TypeError('REVIEW_JOURNAL_REVISION_REQUIRED');
+  const submittedCandidate = candidate, submittedExisting = existing, submittedHumanDecisions = humanDecisions;
+  const input = captureInput(() => ({ candidate: submittedCandidate,
+    existing: Array.isArray(submittedExisting) ? submittedExisting : null, humanDecisions: submittedHumanDecisions }));
+  candidate = input.snapshot.candidate;
+  existing = input.snapshot.existing ?? existing;
+  humanDecisions = input.snapshot.humanDecisions;
   const continuation = reviewerRevision === undefined ? null : createReviewContinuation({ reviewerRevision, reviewJournal, onCheckpoint, retryFailedPairs });
-  if (continuation) candidate = structuredClone(candidate);
   const retrieval = isSemanticCandidateIndex(existing)
     ? retrieveSemanticCandidates(candidate, existing, retrievalOptions) : retrieveCandidates(candidate, existing, retrievalOptions);
-  if (continuation) retrieval.rows = retrieval.rows.map(row => ({ ...row, existing: structuredClone(row.existing) }));
   // Validate every applicable saved proposal before starting any new provider call.
   for (const row of retrieval.rows) {
     const cached = continuation?.latest(pairDigest(candidate, row.existing));
@@ -44,6 +49,8 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
   for (const row of retrieval.rows) {
     const common = { index: row.index, pairDigest: pairDigest(candidate, row.existing), lexicalScore: row.score,
       ...(row.retrievalEvidence ? { retrievalEvidence: row.retrievalEvidence } : {}) };
+    const unresolved = method => reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method });
+    if (input.changed()) { unresolved('REVIEW_INPUT_CHANGED'); continue; }
     // Caller-owned review records must come from authenticated human actions, never model output.
     const human = resolveHumanDecision(candidate, row.existing, humanDecisions);
     if (human?.decision === 'same' && (row.constraints.conflicts.length || row.constraints.missing.length || row.invalidIdentityFields.length)) {
@@ -57,7 +64,6 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       const previous = continuation?.latest(common.pairDigest);
       const constrained = result => (row.constraints.missing.length || row.invalidIdentityFields.length) && result.verdict === 'same'
         ? { ...result, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION' } : result;
-      const unresolved = method => reviews.push({ ...common, verdict: 'uncertain', reason: 'INSUFFICIENT_INFORMATION', method });
       if (previous?.type === 'RESULT') {
         const { decision, ...observation } = previous.response;
         reviews.push({ ...common, ...constrained(decision), ...observation, method: 'MODEL_PROPOSAL_REUSED', originalAttemptId: previous.attemptId });
@@ -71,20 +77,19 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       if (signal?.aborted) { unresolved('REVIEW_CANCELLED'); continue; }
       if (!reviewer || modelCalls >= maxModelCalls) { unresolved('HUMAN_REVIEW_REQUIRED'); continue; }
       const started = continuation ? await continuation.start(common.pairDigest) : null;
-      if (signal?.aborted) {
+      if (input.changed() || signal?.aborted) {
         if (continuation) await continuation.finish(started, null);
-        unresolved('REVIEW_CANCELLED');
+        unresolved(input.changed() ? 'REVIEW_INPUT_CHANGED' : 'REVIEW_CANCELLED');
         continue;
       }
       modelCalls++;
       let response = null, result;
       try {
-        response = await reviewer({ protocol: REVIEW_VERSION, left: publicDraft(candidate), right: publicDraft(row.existing), schema: reviewSchema }, { signal });
-        result = validateReview(response.decision, candidate, row.existing);
-        if (continuation) {
-          response = journalResponse(response);
-          result = response.decision;
-        }
+        response = await reviewer(structuredClone({ protocol: REVIEW_VERSION, left: publicDraft(candidate),
+          right: publicDraft(row.existing), schema: reviewSchema }), { signal });
+        validateReview(response.decision, candidate, row.existing);
+        response = journalResponse(response);
+        result = response.decision;
       } catch {
         response = null;
       }
@@ -95,15 +100,17 @@ export async function reviewDuplicates(candidate, existing, { reviewer, humanDec
       else unresolved('REVIEW_FAILED');
     }
   }
-  return { protocol: REVIEW_VERSION, reviews, modelCalls, retrievalComplete: retrieval.complete,
-    duplicate: reviews.some((item) => item.verdict === 'same'),
-    requiresReview: !retrieval.complete || reviews.some((item) => item.verdict === 'uncertain'),
+  const inputChanged = input.changed();
+  return { protocol: REVIEW_VERSION, reviews, modelCalls, retrievalComplete: retrieval.complete, inputChanged,
+    duplicate: !inputChanged && reviews.some((item) => item.verdict === 'same'),
+    requiresReview: inputChanged || !retrieval.complete || reviews.some((item) => item.verdict === 'uncertain'),
     ...(continuation ? { reviewJournal: continuation.snapshot(), reviewProgress: {
       retrievedPairs: reviews.length, cachedProposals: reviews.filter(row => row.method === 'MODEL_PROPOSAL_REUSED').length,
       pendingPairs: reviews.filter(row => row.method === 'HUMAN_REVIEW_REQUIRED').length,
       failedPairs: reviews.filter(row => ['REVIEW_FAILED', 'REVIEW_RETRY_LIMIT'].includes(row.method)).length,
       interruptedPairs: reviews.filter(row => row.method === 'REVIEW_INTERRUPTED').length,
       cancelledPairs: reviews.filter(row => row.method === 'REVIEW_CANCELLED').length,
+      invalidatedPairs: reviews.filter(row => row.method === 'REVIEW_INPUT_CHANGED').length,
       uncertainPairs: reviews.filter(row => row.verdict === 'uncertain').length,
     } } : {}),
     automaticMerge: false };
