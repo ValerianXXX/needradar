@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased - 2026-11-01
+
+- Bind recorded human corrections and event identities to the reviewed record
+  IDs as well as their contents. Resolve older original-snapshot events without
+  rewriting history; retain explicit legacy content-only compatibility. Keep
+  model suggestions reusable, without granting them human authority.
+- Consolidate human decision creation/resolution behind the existing imports.
+  Preserve frozen failures, publication/split/persistence contracts and a matched
+  sixty-observation synthetic comparison. Semantic accuracy and actual reviewer
+  effort remain open. [Evidence and rollback](docs/human-review-scope-2026-11-01.md).
+
 ## Unreleased - 2026-10-31
 
 - Add optional durable campaign callback ceilings across existing V1 proposal

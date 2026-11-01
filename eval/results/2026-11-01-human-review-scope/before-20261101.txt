@@ -1,0 +1,425 @@
+✖ recorded same correction cannot apply to another pair with the same text (6.0495ms)
+✖ recorded different correction cannot apply to another pair with the same text (1.0289ms)
+✖ recorded uncertain correction cannot apply to another pair with the same text (0.5775ms)
+✖ the same IDs and contents survive reverse order and JSON persistence (0.7908ms)
+✖ event identities distinguish different record pairs at the same time (0.3149ms)
+✖ legacy full snapshots bind their own IDs without rewriting their history (0.4913ms)
+✖ a partially identified pair does not treat its missing ID as a wildcard (0.4296ms)
+✖ unidentified source snapshots remain usable only without newly assigned IDs (0.3841ms)
+✖ IDs cannot be swapped independently of their reviewed contents (0.4731ms)
+✖ malformed scopes or a scope conflicting with original snapshots cannot fall back to content (0.5974ms)
+✖ inconsistent source snapshots cannot validate an otherwise matching content digest (0.332ms)
+✖ a later foreign correction cannot supersede the current pair decision (0.3048ms)
+✖ split events agree between cluster and direct-pair views without changing other records (0.8919ms)
+✖ foreign human decisions cannot clear publication review or suppress a different pair (3.36ms)
+✔ model proposals still reuse identical public content across IDs (2.7509ms)
+✖ invalid provided record IDs cannot create new recorded decisions (0.3664ms)
+✖ legacy caller-built content decisions remain explicit compatibility observations (0.2713ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 1
+ℹ fail 16
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.3239
+
+✖ failing tests:
+
+test at tests\human-review-scope.test.mjs:20:3
+✖ recorded same correction cannot apply to another pair with the same text (6.0495ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'HUMAN_DECISION'
+  - 'HUMAN_REVIEW_REQUIRED'
+           ^
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:24:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HUMAN_DECISION',
+    expected: 'HUMAN_REVIEW_REQUIRED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:20:3
+✖ recorded different correction cannot apply to another pair with the same text (1.0289ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'HUMAN_DECISION'
+  - 'HUMAN_REVIEW_REQUIRED'
+           ^
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:24:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HUMAN_DECISION',
+    expected: 'HUMAN_REVIEW_REQUIRED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:20:3
+✖ recorded uncertain correction cannot apply to another pair with the same text (0.5775ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'HUMAN_DECISION'
+  - 'HUMAN_REVIEW_REQUIRED'
+           ^
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:24:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HUMAN_DECISION',
+    expected: 'HUMAN_REVIEW_REQUIRED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:33:1
+✖ the same IDs and contents survive reverse order and JSON persistence (0.7908ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + undefined
+  - {
+  -   ids: [
+  -     'reviewed-left',
+  -     'reviewed-right'
+  -   ],
+  -   protocol: 'OPPORTUNITY_RECORD_PAIR_V1'
+  - }
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:35:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { protocol: 'OPPORTUNITY_RECORD_PAIR_V1', ids: [ 'reviewed-left', 'reviewed-right' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:44:1
+✖ event identities distinguish different record pairs at the same time (0.3149ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+
+  '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:45:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+    expected: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:49:1
+✖ legacy full snapshots bind their own IDs without rewriting their history (0.4913ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:52:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:56:1
+✖ a partially identified pair does not treat its missing ID as a wildcard (0.4296ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:60:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:64:1
+✖ unidentified source snapshots remain usable only without newly assigned IDs (0.3841ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:71:1
+✖ IDs cannot be swapped independently of their reviewed contents (0.4731ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:73:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:77:1
+✖ malformed scopes or a scope conflicting with original snapshots cannot fall back to content (0.5974ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:82:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:86:1
+✖ inconsistent source snapshots cannot validate an otherwise matching content digest (0.332ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Reviewed this specific pair of source records',
+  +   reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b',
+  +   reviewIds: [
+  +     '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:89:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Reviewed this specific pair of source records', method: 'HUMAN_DECISION', reviewId: '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b', reviewIds: [ '1e72e4f04162eb5b8fe871472f61265a9e53cd50690458b322307db075604a1b' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:92:1
+✖ a later foreign correction cannot supersede the current pair decision (0.3048ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'different'
+  - 'same'
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:95:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'different',
+    expected: 'same',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:99:1
+✖ split events agree between cluster and direct-pair views without changing other records (0.8919ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'HUMAN_DECISION'
+  - 'HUMAN_REVIEW_REQUIRED'
+           ^
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:104:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HUMAN_DECISION',
+    expected: 'HUMAN_REVIEW_REQUIRED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:111:1
+✖ foreign human decisions cannot clear publication review or suppress a different pair (3.36ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'SUPPRESS_DUPLICATE'
+  - 'REVIEW'
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:119:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'SUPPRESS_DUPLICATE',
+    expected: 'REVIEW',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:135:1
+✖ invalid provided record IDs cannot create new recorded decisions (0.3664ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:137:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /HUMAN_REVIEW_RECORD_ID_REQUIRED/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests\human-review-scope.test.mjs:141:1
+✖ legacy caller-built content decisions remain explicit compatibility observations (0.2713ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'LEGACY_CONTENT_ONLY'
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope.test.mjs:145:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'LEGACY_CONTENT_ONLY',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

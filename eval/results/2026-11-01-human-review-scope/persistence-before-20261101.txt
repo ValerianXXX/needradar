@@ -1,0 +1,41 @@
+✖ lossy sparse scope IDs do not become valid after JSON persistence (3.4235ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 123.8908
+
+✖ failing tests:
+
+test at tests\human-review-scope-persistence.test.mjs:6:1
+✖ lossy sparse scope IDs do not become valid after JSON persistence (3.4235ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   decision: 'same',
+  +   humanScope: 'RECORD_PAIR',
+  +   method: 'HUMAN_DECISION',
+  +   reason: 'Scope persistence contract',
+  +   reviewId: '939d1aadf502ff6e2688a715b7ebda70458a14e733c0be2a0e3a5b00cb43838d',
+  +   reviewIds: [
+  +     '939d1aadf502ff6e2688a715b7ebda70458a14e733c0be2a0e3a5b00cb43838d'
+  +   ]
+  + }
+  - null
+
+      at TestContext.<anonymous> (file:///<WORKSPACE>/needradar-human-review-scope/tests/human-review-scope-persistence.test.mjs:13:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { decision: 'same', reason: 'Scope persistence contract', method: 'HUMAN_DECISION', reviewId: '939d1aadf502ff6e2688a715b7ebda70458a14e733c0be2a0e3a5b00cb43838d', reviewIds: [ '939d1aadf502ff6e2688a715b7ebda70458a14e733c0be2a0e3a5b00cb43838d' ], humanScope: 'RECORD_PAIR' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
