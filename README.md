@@ -12,11 +12,14 @@ The live product opens in English and includes a persistent Chinese-language swi
 The following development work is on unmerged draft branches. The hosted site
 and an installation from `main` do not establish that these changes are deployed.
 
-**Current source capabilities, checked 31 October 2026:**
+**Current source capabilities, checked 1 November 2026:**
 
 - Unicode retrieval, optional local multilingual embeddings and conservative
   human-reviewed clusters. [Retrieval setup and measurements](docs/local-retrieval-2026-10-29.md)
   and [reversible cluster decisions](docs/evidence-clusters-2026-10-29.md).
+  Recorded [human corrections bind to the reviewed records](docs/human-review-scope-2026-11-01.md),
+  so matching wording cannot transfer an approval to another pair. Legacy
+  content-only judgments remain explicitly identified for integration review.
 - Budgeted [review checkpoints](docs/review-continuation-2026-10-29.md) that resume
   across restarts, with [stale-input detection](docs/review-input-consistency-2026-10-31.md).
   [Reverse comparisons](docs/symmetric-review-2026-10-31.md) reuse source-bound
@@ -32,7 +35,7 @@ and an installation from `main` do not establish that these changes are deployed
   with preserved originals, review history and stable identity after save/load.
   Correcting an author does not count as a new source or refresh old demand.
 
-The current local suite passes 199 tests. The 140-pair offline evaluation still has
+The current local suite passes 217 tests. The 140-pair offline evaluation still has
 40 unresolved duplicates and 80 pairs requiring review. A separate historical
 [14-request Hermes follow-up](docs/targeted-semantic-followup-2026-10-30.md) matched
 the selected synthetic labels and supports zero-call replay; it is not a full
@@ -125,6 +128,7 @@ This public repository is a **curated portfolio edition**, not a deployment mirr
 - [src/similarity.mjs](src/similarity.mjs) — Unicode lexical retrieval and conservative identity checks;
 - [src/semantic-retrieval.mjs](src/semantic-retrieval.mjs) — optional local dense/lexical candidates with diversity and source-bound vectors;
 - [src/semantic-review.mjs](src/semantic-review.mjs) — bounded grounded review and human corrections;
+- [src/human-review.mjs](src/human-review.mjs) — record-bound human decisions with preserved legacy history;
 - [src/provenance.mjs](src/provenance.mjs) — capture grouping and provenance diagnostics;
 - [src/evidence-independence.mjs](src/evidence-independence.mjs) — independent attribution units and arrival accounting;
 - [src/evidence-corrections.mjs](src/evidence-corrections.mjs) — explicit reviewed attribution changes, stale guards and append-only undo;

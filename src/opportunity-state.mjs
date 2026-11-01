@@ -1,9 +1,8 @@
-import { createHash } from 'node:crypto';
 import { evidenceSummary } from './provenance.mjs';
 import { independentEvidenceChange } from './evidence-independence.mjs';
 import { qualifyingObservations } from './evidence-policy.mjs';
-import { pairDigest } from './semantic-review.mjs';
 import { timestamp } from './timestamps.mjs';
+export { recordPairDecision } from './human-review.mjs';
 
 export function addEvidence(opportunity, observations, { observedAt } = {}) {
   const seenAt = timestamp(observedAt);
@@ -50,16 +49,6 @@ export function recordValidation(opportunity, { status, evidenceKeys, recordedAt
   // opportunity would reattach its caller-owned historical event objects.
   return structuredClone({ ...opportunity, validation: { status,
     events: [...(opportunity.validation?.events ?? []), event] } });
-}
-
-export function recordPairDecision(left, right, { digest, decision, actor, reason, recordedAt } = {}) {
-  if (digest !== pairDigest(left, right) || !['same', 'different', 'uncertain'].includes(decision)
-      || typeof actor !== 'string' || !actor.trim() || typeof reason !== 'string' || !reason.trim()) {
-    throw new Error('CURRENT_HUMAN_REVIEW_REQUIRED');
-  }
-  const event = { digest, decision, actor, reason, recordedAt: timestamp(recordedAt) };
-  return { ...event, id: createHash('sha256').update(JSON.stringify(event)).digest('hex'),
-    reversible: true, originals: structuredClone([left, right]) };
 }
 
 // Deterministic review scheduling, not a calibrated probability of demand.

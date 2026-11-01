@@ -1,0 +1,25 @@
+✔ recorded same correction cannot apply to another pair with the same text (5.6011ms)
+✔ recorded different correction cannot apply to another pair with the same text (0.8119ms)
+✔ recorded uncertain correction cannot apply to another pair with the same text (0.8539ms)
+✔ the same IDs and contents survive reverse order and JSON persistence (1.002ms)
+✔ event identities distinguish different record pairs at the same time (0.3676ms)
+✔ legacy full snapshots bind their own IDs without rewriting their history (0.3778ms)
+✔ a partially identified pair does not treat its missing ID as a wildcard (0.3015ms)
+✔ unidentified source snapshots remain usable only without newly assigned IDs (0.2267ms)
+✔ IDs cannot be swapped independently of their reviewed contents (0.2356ms)
+✔ malformed scopes or a scope conflicting with original snapshots cannot fall back to content (0.419ms)
+✔ inconsistent source snapshots cannot validate an otherwise matching content digest (0.2494ms)
+✔ a later foreign correction cannot supersede the current pair decision (0.3935ms)
+✔ split events agree between cluster and direct-pair views without changing other records (2.2569ms)
+✔ foreign human decisions cannot clear publication review or suppress a different pair (3.8081ms)
+✔ model proposals still reuse identical public content across IDs (1.9347ms)
+✔ invalid provided record IDs cannot create new recorded decisions (0.5932ms)
+✔ legacy caller-built content decisions remain explicit compatibility observations (0.1819ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.0415

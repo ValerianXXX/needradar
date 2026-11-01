@@ -1,0 +1,189 @@
+{
+  "protocol": "HUMAN_REVIEW_SCOPE_DELIVERY_V1",
+  "observedAt": "2026-11-01T04:16:51.527872+00:00",
+  "baselineCommit": "659c1768096d0e443eb5c4221998f91e523b31db",
+  "frozenContractCommit": "cf53c1ceb76d4c3021a34e12a81f8fe0a737e75a",
+  "runtimeCommit": "b751fa25b79d938e7dda7db6dcf965f3b1261bfe",
+  "syntheticOnly": true,
+  "independentHumanReview": false,
+  "newProviderCalls": 0,
+  "newEncoderCalls": 0,
+  "sourceLFHashes": {
+    "src/human-review.mjs": "9106df6a7857f1da9e59696ca6fb1551c6f2215c478d6f52052eff8278e80f38",
+    "src/semantic-review.mjs": "2063117e41966c84eaa1381487fa701ce3c68f6735811b896106630235cfd704",
+    "src/opportunity-state.mjs": "a0d1e627b248b8e577849241d267c7d09f584621de5320bc70bacb7e9e36dba1",
+    "tests/human-review-scope.test.mjs": "a59f7423be675872cce229281062446aaad0f629d40a11dbf4d9851411df6b57",
+    "tests/human-review-scope-persistence.test.mjs": "74d348bbfc7c568a2660f23bcd5ddedbec85ba8e1075ea20643d5fe177d5a25c",
+    "scripts/evaluate-human-review-scope.mjs": "a38145022bc385912e2e264dd7ebe58909b1e890c16f21e6b6ae8887bf7d5953"
+  },
+  "artifacts": [
+    {
+      "path": "baseline-20261101.txt",
+      "originalBytes": 18430,
+      "originalSha256": "188bbe7e9341041b86b75a968a55a419744649a36540f9d9c3e44b52a9d1d340",
+      "publishedBytes": 18223,
+      "publishedSha256": "bcc925a6517fb6b79281871a51ebd22aff1ada03a1f322a58acf70e951e25597"
+    },
+    {
+      "path": "before-20261101.txt",
+      "originalBytes": 20868,
+      "originalSha256": "b41cbabd9ec5051f3ccc664431c03f5e12007d34d46d2b7858dcafcd41ab0b4e",
+      "publishedBytes": 19313,
+      "publishedSha256": "d1191a6778070cf179054767d69845fa6ba468e6ceed743f435f2b43e49c8d95"
+    },
+    {
+      "path": "after-20261101.txt",
+      "originalBytes": 1672,
+      "originalSha256": "08b26a4b31900761c2b24b6f512cf4c10ed8c584168ec9139748796bace468c5",
+      "publishedBytes": 1647,
+      "publishedSha256": "a892ff63305e512507f94d59fc5f86798db4014421f7fbde3f7a76db4c2a5d58"
+    },
+    {
+      "path": "related-20261101.txt",
+      "originalBytes": 7582,
+      "originalSha256": "83c0d97759379e4fe3a2cdb71a64ff1bca69e53d1218a9d28356b5d35c4ce2a5",
+      "publishedBytes": 7494,
+      "publishedSha256": "c19e81f0d60d7ee37454cb938ad8f269a2adace8600b08fbff21fdbb14d4547f"
+    },
+    {
+      "path": "persistence-before-20261101.txt",
+      "originalBytes": 1708,
+      "originalSha256": "97049a310cad8821014a4947dff769970ab1ea94decc2725c0e702f564a7b6e5",
+      "publishedBytes": 1596,
+      "publishedSha256": "09a14f6a3e19bc7338f96068ea3f6dcdb79cb71cac50737cfd66a03a54e7905e"
+    },
+    {
+      "path": "full-20261101.txt",
+      "originalBytes": 20062,
+      "originalSha256": "ee65c0fdf6066e3d685fa3984ed7ded1186dd9c466b5b2cb78352870cf4aea41",
+      "publishedBytes": 19837,
+      "publishedSha256": "9f32e12b6adfe24728b9abdc895847cfc8f1a864b7634503478d0486c6a5e71d"
+    },
+    {
+      "path": "english-20261101.txt",
+      "originalBytes": 28,
+      "originalSha256": "1db5c90f39839c7eb69c6970e27f75538e4f4b8e31fb2ed657817ba9d45389ba",
+      "publishedBytes": 27,
+      "publishedSha256": "1763931440e824624191c22664181dac975141215a2db10a5d6a5f064c2e3363"
+    },
+    {
+      "path": "replay-20261101.txt",
+      "originalBytes": 307,
+      "originalSha256": "c88c40adcb6814b43e38df185dddd78744b998391bd98405dbe20cc98926c91a",
+      "publishedBytes": 306,
+      "publishedSha256": "75976fdeed63af13c202ca3062d7a69bf2d1ea19756496d2b84e86a9b9812c06"
+    },
+    {
+      "path": "evaluation-before-20261101.json",
+      "originalBytes": 25207,
+      "originalSha256": "f311b3ff43c1ef6c3a6c35b9e16ee5838b991b30a8abea714a31ea411a0a841e",
+      "publishedBytes": 25207,
+      "publishedSha256": "f311b3ff43c1ef6c3a6c35b9e16ee5838b991b30a8abea714a31ea411a0a841e"
+    },
+    {
+      "path": "evaluation-after-20261101.json",
+      "originalBytes": 26279,
+      "originalSha256": "2109597e234d1e8db42d45878aa3b298c95576ac711e543772c12d420e00021e",
+      "publishedBytes": 26279,
+      "publishedSha256": "2109597e234d1e8db42d45878aa3b298c95576ac711e543772c12d420e00021e"
+    },
+    {
+      "path": "population-20261101.json",
+      "originalBytes": 108074,
+      "originalSha256": "c4a62c4c74689f30ce3e7ba30c7ceb2e9465010c487375b621ca185e5fc9f720",
+      "publishedBytes": 108074,
+      "publishedSha256": "c4a62c4c74689f30ce3e7ba30c7ceb2e9465010c487375b621ca185e5fc9f720"
+    }
+  ],
+  "baselineTests": {
+    "passed": 199,
+    "failed": 0,
+    "durationMs": 1869.0459
+  },
+  "frozenScopeBefore": {
+    "passed": 1,
+    "failed": 16,
+    "note": "Includes missing new scope metadata, not sixteen independent production incidents"
+  },
+  "frozenScopeAfter": {
+    "passed": 17,
+    "failed": 0,
+    "durationMs": 145.0415
+  },
+  "intermediatePersistenceFailure": {
+    "passed": 0,
+    "failed": 1,
+    "initialHumanModuleSha256": "76dcb74fa7aaafdd5aa43f3aa0ec621480782ac2e39776028679183d4b379dec",
+    "contractSha256": "74d348bbfc7c568a2660f23bcd5ddedbec85ba8e1075ea20643d5fe177d5a25c",
+    "resolution": "Reject sparse scope IDs before interpreting them; final full suite includes the unchanged failing contract"
+  },
+  "relatedTests": {
+    "passed": 80,
+    "failed": 0,
+    "durationMs": 526.3438
+  },
+  "fullTests": {
+    "passed": 217,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1831.8153
+  },
+  "englishCheck": "PASS",
+  "historicalSavedProposalReplay": {
+    "passed": 14,
+    "newCalls": 0,
+    "originalCostUsd": null
+  },
+  "scopeComparison": {
+    "before": {
+      "cases": 60,
+      "ownDecisionsPreserved": 60,
+      "foreignHumanDecisionsApplied": 60,
+      "foreignDefiniteDecisions": 40,
+      "foreignPairsRequiringReview": 20,
+      "foreignClusterSingletons": 60,
+      "eventIdCollisions": 60,
+      "reverseHumanDecisionsApplied": 60,
+      "providerCalls": 0
+    },
+    "after": {
+      "cases": 60,
+      "ownDecisionsPreserved": 60,
+      "foreignHumanDecisionsApplied": 0,
+      "foreignDefiniteDecisions": 0,
+      "foreignPairsRequiringReview": 60,
+      "foreignClusterSingletons": 60,
+      "eventIdCollisions": 0,
+      "reverseHumanDecisionsApplied": 0,
+      "providerCalls": 0
+    },
+    "sameFixtureHash": "5b4b8c0ca22c0a28d95d02622714838bdcef0dc3cc3a0fcee536a7e40e6b1cb9",
+    "runnerUnchanged": true,
+    "contractsUnchanged": true
+  },
+  "offlinePopulation": {
+    "pairs": 140,
+    "false_merges": 0,
+    "missed_merges": 0,
+    "unresolved_duplicates": 40,
+    "human_review_pairs": 80,
+    "correct_duplicate_proposals": 40,
+    "decided_distinct": 20,
+    "synchronous_exact_identity_misses": 0,
+    "reverse_disagreements": 0,
+    "evidence_count_mismatches": 0
+  },
+  "evidenceTransformation": "Replace only local workspace prefix with <WORKSPACE>; normalize UTF-8/LF and trailing whitespace. Preserve originals and their hashes.",
+  "hostedChecks": "PENDING_EXACT_DELIVERY",
+  "uiChanged": false,
+  "hostedApplicationChanged": false,
+  "migration": "No automatic migration; preserve source snapshots/journals and inspect changed derived decisions before adoption",
+  "rollback": "Older consumers ignore scope. Stop affected decision consumers and retain explicit review before rolling back.",
+  "limitations": [
+    "Legacy caller-built events without originals/scope remain content-wide and are explicitly labeled",
+    "Human actors and journals require host authentication and transactional persistence",
+    "No semantic accuracy, cost reduction, real operator effort or independent human acceptance gain established",
+    "Offline population retains 40 unresolved duplicates and 80 review pairs",
+    "Closed live model campaign not reopened; no production action"
+  ]
+}
